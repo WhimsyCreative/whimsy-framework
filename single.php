@@ -2,19 +2,19 @@
 /**
  * The template for displaying all single posts.
  *
- * @package _s
+ * @package whimsy
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="c8">
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php _s_post_nav(); ?>
+			<?php whimsy_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

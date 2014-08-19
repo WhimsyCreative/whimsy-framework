@@ -1,19 +1,20 @@
 /*
-Theme Name: _s
+Theme Name: whimsy
 Theme URI: http://underscores.me/
-Author: Automattic
-Author URI: http://automattic.com/
-Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Author: Natasha K. Cross
+Author URI: http://thefanciful.com
+Description: A Fanciful Theme
 Version: 1.0-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: _s
+Text Domain: whimsy
+Domain Path: /languages/
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
- _s is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+ whimsy is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -66,14 +67,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	vertical-align: baseline;
 }
-
 html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
-
 *,
 *:before,
 *:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
@@ -81,11 +80,10 @@ html {
 	-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
 	box-sizing:         border-box;
 }
-
 body {
 	background: #fff; /* Fallback for when there is no custom background color defined. */
+	-webkit-font-smoothing: antialiased;
 }
-
 article,
 aside,
 details,
@@ -98,44 +96,43 @@ nav,
 section {
 	display: block;
 }
-
-ol,
-ul {
+ol, ul {
 	list-style: none;
 }
-
 table { /* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
 }
-
-caption,
-th,
-td {
+caption, th, td {
 	font-weight: normal;
 	text-align: left;
 }
 blockquote:before,
+q:before {
+  content: '\f10d';
+  font-family: 'FontAwesome';
+  float:left;
+  display:inline-block;
+}
 blockquote:after,
-q:before,
 q:after {
-	content: "";
+  content: '\f10e';
+  font-family: 'FontAwesome';
+  float:right;
+  display:inline-block;
 }
-
-blockquote,
-q {
+blockquote, q {
 	quotes: "" "";
+	padding:0 5%;
+	display:inline-block;
 }
-
 a:focus {
 	outline: thin dotted;
 }
-
 a:hover,
 a:active {
 	outline: 0;
 }
-
 a img {
 	border: 0;
 }
@@ -148,46 +145,31 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
+	color: #4b4b4b;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
-	line-height: 1.5;
+	font-weight: 400;
+	line-height: 1.7;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
-
 p {
 	margin-bottom: 1.5em;
 }
-
-b,
-strong {
+b, strong {
 	font-weight: bold;
 }
-
-dfn,
-cite,
-em,
-i {
+dfn, cite, em, i {
 	font-style: italic;
 }
-
 blockquote {
 	margin: 0 1.5em;
 }
-
 address {
 	margin: 0 0 1.5em;
 }
-
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
@@ -199,26 +181,17 @@ pre {
 	overflow: auto;
 	padding: 1.6em;
 }
-
-code,
-kbd,
-tt,
-var {
+code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
-
-abbr,
-acronym {
+abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
-
-mark,
-ins {
+mark, ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
-
 sup,
 sub {
 	font-size: 75%;
@@ -227,19 +200,15 @@ sub {
 	position: relative;
 	vertical-align: baseline;
 }
-
 sup {
 	bottom: 1ex;
 }
-
 sub {
 	top: .5ex;
 }
-
 small {
 	font-size: 75%;
 }
-
 big {
 	font-size: 125%;
 }
@@ -253,51 +222,64 @@ hr {
 	height: 1px;
 	margin-bottom: 1.5em;
 }
-
-ul,
-ol {
+ul, ol {
 	margin: 0 0 1.5em 3em;
 }
-
 ul {
 	list-style: disc;
 }
-
 ol {
 	list-style: decimal;
 }
-
 li > ul,
 li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
-
 dt {
 	font-weight: bold;
 }
-
 dd {
 	margin: 0 1.5em 1.5em;
 }
-
 img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
-
 figure {
 	margin: 0;
 }
-
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
-
 th {
 	font-weight: bold;
 }
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+	line-height:2.4em;
+	}
+h1 {
+	font-size:2em;
+	}
+h2 {
+	font-size:1.8em;
+	}
+h3 {
+	font-size:1.6em;
+	}
+h4 {
+	font-size:1.4em;
+	}
+h5 {
+	font-size:1.2em;
+	}
+h6 {
+	font-size:0.8em;
+	}
+	
+/*  */
 
 /*--------------------------------------------------------------
 4.0 Forms
@@ -310,26 +292,21 @@ textarea {
 	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
 	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
 }
-
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
+	border: 2px solid #000;
+	border-radius: 6px;
+	background: transparent;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	font-size: 12px;
-	font-size: 1.2rem;
+	font-size: 1em;
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: 1% 2%;
+	font-weight: 700;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
-
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -337,7 +314,6 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
-
 button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
@@ -349,29 +325,24 @@ input[type="submit"]:active {
 	border-color: #aaa #bbb #bbb;
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
-
 input[type="checkbox"],
 input[type="radio"] {
 	padding: 0; /* Addresses excess padding in IE8/9 */
 }
-
 input[type="search"] {
 	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
 	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
 	-moz-box-sizing:    content-box;
 	box-sizing:         content-box;
 }
-
 input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 	-webkit-appearance: none;
 }
-
 button::-moz-focus-inner,
 input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
 	border: 0;
 	padding: 0;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -379,10 +350,9 @@ input[type="password"],
 input[type="search"],
 textarea {
 	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 6px;
 }
-
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -391,7 +361,6 @@ input[type="search"]:focus,
 textarea:focus {
 	color: #111;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -399,7 +368,6 @@ input[type="password"],
 input[type="search"] {
 	padding: 3px;
 }
-
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 	padding-left: 3px;
@@ -410,97 +378,108 @@ textarea {
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
+
+
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
-a {
-	color: royalblue;
-}
-
-a:visited {
-	color: purple;
+a, a:visited {
+	color:#000;
+	text-decoration: none;
+	font-weight: 700;
+	-webkit-transition: color 200ms ease;
+	-moz-transition: color 200ms ease;
+	-ms-transition: color 200ms ease;
+	-o-transition: color 200ms ease;
+	transition: color 200ms ease;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #0099cc;
 }
 
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
+#site-navigation {
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	font-weight: 100;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+}
+ul.nav-menu {
+	text-align: center;
+}
+ul.nav-menu li {
+	display: inline-block;
+	float: none;
+	padding: 1%;
+}
 .main-navigation {
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
 }
-
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
-
 .main-navigation li {
 	float: left;
 	position: relative;
 }
-
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	font-weight: 100;
 }
-
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
+    left: -999em;
+    position: absolute;
+    top: 4em;
+	background: rgba(255,255,255,1);
+	letter-spacing: 0;
+	-webkit-box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.1);
+	box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.1);
+    float: left;
 	z-index: 99999;
 }
-
 .main-navigation ul ul ul {
 	left: -999em;
 	top: 0;
 }
-
 .main-navigation ul ul a {
 	width: 200px;
+	font-weight: 700;
+	text-align: left;
+	text-transform: none;
+	padding: 2% 4%;
 }
-
 .main-navigation ul ul li {
-
 }
-
 .main-navigation li:hover > a {
 }
-
 .main-navigation ul ul :hover > a {
 }
-
 .main-navigation ul ul a:hover {
 }
-
 .main-navigation ul li:hover > ul {
 	left: auto;
 }
-
 .main-navigation ul ul li:hover > ul {
 	left: 100%;
 }
-
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a {
 }
-
 /* Small menu */
 .menu-toggle {
 	display: none;
 }
-
 @media screen and (max-width: 600px) {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
@@ -511,21 +490,18 @@ a:active {
 		display: none;
 	}
 }
-
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
-
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
 	float: left;
 	width: 50%;
 }
-
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
 .post-navigation .nav-next {
@@ -575,13 +551,11 @@ a:active {
 	float: left;
 	margin-right: 1.5em;
 }
-
 .alignright {
 	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
-
 .aligncenter {
 	clear: both;
 	display: block;
@@ -628,41 +602,123 @@ a:active {
 	max-width: 100%;
 }
 
+/* Special Widget Styles */
+h1.widget-title {
+	font-size:0.9em;
+	text-transform:uppercase;
+	letter-spacing:0.2em;
+	padding:2% 0;
+}
+.widget li {
+	list-style: none;
+}
+.widget li:before {
+	content: '\f105';
+	font-family: 'FontAwesome';
+	float: left;
+	margin-left: -1.5em;
+}
+
+/* Whimsy About Me Widget */
+
+/* Whimsy Social Networks Widget */
+#widget-whimsy-social ul {
+    text-align: center;
+}
+#widget-whimsy-social li {
+	display:inline-block;
+	padding:1%;
+	margin:0 2%;
+	font-size:2em;
+	}
+#widget-whimsy-social li:before {
+	content: ''; 
+	}
 /* Search widget */
 .widget_search .search-submit {
 	display: none;
 }
 
+/* Calendar widget */
+#wp-calendar {
+	max-width:250px;
+}
+#wp-calendar caption{
+	letter-spacing:0.2em;
+	text-align:center;
+	}
+#wp-calendar th, #wp-calendar tr, #wp-calendar td{
+	text-align:center;
+	}
+#wp-calendar a{
+	border:1px solid rgba(0,0,0,0.1);
+	border-radius:6px;
+	display:block;
+	}
+
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
+
+/* HEADER STYLES */
+#masthead {
+	padding:2% 0;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	text-align: center;
+	clear: both;
+}
+.site-branding > h1.site-title {
+	font-size: 3em;
+	font-weight: 100;
+	font-style: italic;
+	text-transform: uppercase;
+}
+
+/* CONTENT STYLES */
+#content {
+	padding:2% 6%;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* FOOTER STYLES */
+#footer {
+	padding:2% 6%;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
-.sticky {
-	display: block;
+.entry-header {
+	padding-bottom: 2%;
 }
-
+.entry-header > h1.entry-title {
+	font-size: 2em;
+	font-weight: 100;
+}
+.entry-header a {
+	font-weight: 100;
+}
+.posted-on {
+	display: block;
+	font-style: italic;
+}
+.sticky {
+	border-radius: 6px;
+	border: 1px solid rgba(0,0,0,0.1);
+	padding:4%;
+}
 .hentry {
 	margin: 0 0 1.5em;
 }
-
 .byline,
-.updated:not(.published) {
+.updated {
 	display: none;
 }
-
 .single .byline,
 .group-blog .byline {
 	display: inline;
 }
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -682,9 +738,7 @@ a:active {
 .comment-content a {
 	word-wrap: break-word;
 }
-
 .bypostauthor {
-	display: block;
 }
 
 /*--------------------------------------------------------------
@@ -695,7 +749,6 @@ a:active {
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
 	display: none;
 }
-
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
@@ -712,7 +765,6 @@ a:active {
 	margin-top: 0;
 	padding: 0;
 }
-
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
@@ -727,16 +779,13 @@ object {
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
-
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin: 0 auto;
 }
-
 .wp-caption-text {
 	text-align: center;
 }
-
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
@@ -747,46 +796,148 @@ object {
 .gallery {
 	margin-bottom: 1.5em;
 }
-
 .gallery-item {
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
 }
-
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
-
 .gallery-columns-3 .gallery-item {
 	max-width: 33.33%;
 }
-
 .gallery-columns-4 .gallery-item {
 	max-width: 25%;
 }
-
 .gallery-columns-5 .gallery-item {
 	max-width: 20%;
 }
-
 .gallery-columns-6 .gallery-item {
 	max-width: 16.66%;
 }
-
 .gallery-columns-7 .gallery-item {
 	max-width: 14.28%;
 }
-
 .gallery-columns-8 .gallery-item {
 	max-width: 12.5%;
 }
-
 .gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
 }
+.gallery-caption {}
 
-.gallery-caption {
-	display: block;
+/*--------------------------------------------------------------
+13.0 Shortcodes
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+14.0 Shortcodes
+--------------------------------------------------------------*/
+a.btn-shortcode {
+	display: inline-block;
+	border: 2px solid #000;
+	border-radius: 6px;
+	background: transparent;
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	font-size: 1em;
+	line-height: 1;
+	padding: 1% 2%;
+	margin: 1%;
+	font-weight: 700;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+
+	-webkit-transition: color 0 ease;
+	-moz-transition: color 0 ease;
+	-ms-transition: color 0 ease;
+	-o-transition: color 0 ease;
+	transition: color 0 ease;
+}
+a.btn-shortcode:hover {
+	border-color: #0099cc;
+}
+a.btn-shortcode:focus,
+a.btn-shortcode:active{
+	border-color: #aaa #bbb #bbb;
+
+	-webkit-transition: color 200ms ease;
+	-moz-transition: color 200ms ease;
+	-ms-transition: color 200ms ease;
+	-o-transition: color 200ms ease;
+	transition: color 200ms ease;
+}
+
+/* Pink Button */
+a.btn-shortcode.pink {
+	color: rgba(236,69,165,1);
+	border: 2px solid rgba(236,69,165,1);
+}
+a.btn-shortcode.pink:hover {
+	color:#000;
+	border-color:#000;
+}
+
+/* Violet Button */
+a.btn-shortcode.violet {
+	color: rgba(202,19,229,1);
+	border: 2px solid rgba(202,19,229,1);
+}
+a.btn-shortcode.violet:hover {
+	color:#000;
+	border-color:#000;
+}
+/* Purple Button */
+a.btn-shortcode.purple {
+	color: rgba(139,62,242,1);
+	border: 2px solid rgba(139,62,242,1);
+}
+a.btn-shortcode.purple:hover {
+	color:#000;
+	border-color:#000;
+}
+/* Aqua Button */
+a.btn-shortcode.aqua {
+	color: rgba(40,217,233,1);
+	border: 2px solid rgba(40,217,233,1);
+}
+a.btn-shortcode.aqua:hover {
+	color:#000;
+	border-color:#000;
+}
+/* Green Button */
+a.btn-shortcode.green {
+	color: rgba(40,217,233,1);
+	border: 2px solid rgba(40,217,233,1);
+}
+a.btn-shortcode.green:hover {
+	color:#000;
+	border-color:#000;
+}
+/* Yellow Button */
+a.btn-shortcode.yellow {
+	color: rgba(229,231,27,1);
+	border: 2px solid rgba(229,231,27,1);
+}
+a.btn-shortcode.yellow:hover {
+	color:#000;
+	border-color:#000;
+}
+/* Yellow Button */
+a.btn-shortcode.orange {
+	color: rgba(224,152,13,1);
+	border: 2px solid rgba(230,255,89,1);
+}
+a.btn-shortcode.orange:hover {
+	color:#000;
+	border-color:#000;
+}
+/* Red Button */
+a.btn-shortcode.red {
+	color: rgba(175,35,44,1);
+	border: 2px solid rgba(175,35,44,1);
+}
+a.btn-shortcode.red:hover {
+	color:#000;
+	border-color:#000;
 }
