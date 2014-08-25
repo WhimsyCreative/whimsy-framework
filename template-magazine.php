@@ -1,22 +1,22 @@
 <?php
 /*
-Template Name: Business Template
+Template Name: Magazine Template
 */
 
 get_header(); ?>
-
-
-	<div id="magazine-slider" class="c12">
-			<?php echo whimsy_slider_template(); ?>
-    </div>
     
 	<div id="primary" class="c8">
+
+		<div id="magazine-slider">
+				<?php echo whimsy_slider_template(); ?>
+	    </div>
+
 		<main id="main" class="site-main" role="main">
 
             
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php get_template_part( 'content', 'post' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template

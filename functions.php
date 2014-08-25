@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 750; /* pixels */
+	$content_width = 1200; /* pixels */
 }
 
 if ( ! function_exists( 'whimsy_setup' ) ) :
@@ -90,6 +90,24 @@ function whimsy_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Home Sidebar', 'whimsy' ),
+		'id'            => 'home-sidebar',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Business Sidebar', 'whimsy' ),
+		'id'            => 'business-sidebar',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
 }
 add_action( 'widgets_init', 'whimsy_widgets_init' );
 
@@ -104,15 +122,15 @@ function whimsy_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	//wp_register_style( 'whimsy-layout', get_stylesheet_directory_uri() . '/css/layouts/content-sidebar.css', false, false );
-	//wp_enqueue_style( 'whimsy-layout' );
+	if ( is_page_template('template-mosaic.php') ) {
+ 		wp_enqueue_script( 'jquery-masonry' );
+	}
 	wp_register_style( 'whimsy-grid', get_stylesheet_directory_uri() . '/css/grid.css', false, false );
 	wp_enqueue_style( 'whimsy-grid' );
-	//wp_register_style( 'whimsy-pretty', get_stylesheet_directory_uri() . '/css/pretty.css', false, false );
-	//wp_enqueue_style( 'whimsy-pretty' );
-	wp_enqueue_style( 'prefix-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '4.1.0' );
+	wp_enqueue_style( 'whimsy-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '4.1.0' );
 	wp_register_style( 'whimsy-custom', get_stylesheet_directory_uri() . '/custom.css', array( 'whimsy-pretty' ), false );
 	wp_enqueue_style( 'whimsy-custom' );
+
 }
 add_action( 'wp_enqueue_scripts', 'whimsy_scripts' );
 

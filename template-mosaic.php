@@ -7,20 +7,37 @@ get_header(); ?>
 
 	<div id="whimsy-full" class="12">
 		<main id="main" class="site-main" role="main">
-
-            
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'content', 'page' ); ?>
+		
+<!-- Start the Loop. -->
+			<div id="mosaic" >
+<?php
+$temp = $wp_query;
+$wp_query= null;
+$wp_query = new WP_Query();
+$wp_query->query('posts_per_page=100'.'&paged='.$paged);
+while ($wp_query->have_posts()) : $wp_query->the_post();
+?>
 
 				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template();
-					endif;
+					/* Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'content', 'mosaic' );
 				?>
 
-			<?php endwhile; // end of the loop. ?>
+<?php endwhile;?>
+<?php $wp_query = null; $wp_query = $temp;?>
+
+			<?php whimsy_paging_nav(); ?>
+
+
+			</div><!-- #mosaic -->
 
 		</main><!-- #main -->
+		<script type="text/javascript">
+			jQuery( document ).ready( function( $ ) {
+			$( '#mosaic' ).masonry( { columnWidth: 300 } );
+			} );
+		</script>
 <?php get_footer(); ?>
