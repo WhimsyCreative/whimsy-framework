@@ -14,6 +14,26 @@ function whimsy_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	$wp_customize->add_setting(
+	    'alt_color',
+	    array(
+	        'default' => '#1fb4ca',
+	        'sanitize_callback' => 'sanitize_hex_color',
+	    )
+	);
+	 
+	$wp_customize->add_control(
+	    new WP_Customize_Color_Control(
+	        $wp_customize,
+	        'alt_color',
+	        array(
+	            'label' => 'Highlight Color',
+	            'section' => 'colors',
+	            'settings' => 'alt_color'
+	        )
+	    )
+	);
 }
 add_action( 'customize_register', 'whimsy_customize_register' );
 
