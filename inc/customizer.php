@@ -16,24 +16,42 @@ function whimsy_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	$wp_customize->add_setting(
-	    'alt_color',
+	    'whimsy_link_color',
+	    array(
+	        'default' => '#000',
+	        'sanitize_callback' => 'sanitize_hex_color',
+	    )
+	);
+	$wp_customize->add_control(
+	    new WP_Customize_Color_Control(
+	        $wp_customize,
+	        'whimsy_link_color',
+	        array(
+	            'label' => 'Link Color',
+	            'section' => 'colors',
+	            'settings' => 'whimsy_link_color'
+	        )
+	    )
+	);
+	$wp_customize->add_setting(
+	    'whimsy_alt_color',
 	    array(
 	        'default' => '#1fb4ca',
 	        'sanitize_callback' => 'sanitize_hex_color',
 	    )
 	);
-	 
 	$wp_customize->add_control(
 	    new WP_Customize_Color_Control(
 	        $wp_customize,
-	        'alt_color',
+	        'whimsy_alt_color',
 	        array(
 	            'label' => 'Highlight Color',
 	            'section' => 'colors',
-	            'settings' => 'alt_color'
+	            'settings' => 'whimsy_alt_color'
 	        )
 	    )
 	);
+
 }
 add_action( 'customize_register', 'whimsy_customize_register' );
 

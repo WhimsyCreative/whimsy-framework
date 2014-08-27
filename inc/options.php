@@ -119,6 +119,13 @@ function optionsframework_options() {
 		'id' => 'whimsy_analytics',
 		'std' => 'Default Text',
 		'type' => 'textarea');
+
+	$options[] = array(
+		'name' => __('Twitter Handle', 'whimsy'),
+		'desc' => __('Your Twitter username, without the @.', 'whimsy'),
+		'id' => 'whimsy_twitter',
+		'placeholder' => 'twitterhandle',
+		'type' => 'text');
 		
 	// Content
 	$options[] = array(
@@ -159,6 +166,13 @@ function optionsframework_options() {
 		'id' => 'whimsy_analytics',
 		'std' => 'Default Text',
 		'type' => 'textarea');
+
+	$options[] = array(
+		'name' => __('Input with Placeholder', 'whimsy'),
+		'desc' => __('A text input field with an HTML5 placeholder.', 'whimsy'),
+		'id' => 'whimsy_placeholder',
+		'placeholder' => 'Placeholder',
+		'type' => 'text');
 		
 	// Social
 	$options[] = array(

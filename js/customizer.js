@@ -33,4 +33,42 @@
 			}
 		} );
 	} );
+	// Link color.
+	wp.customize( 'whimsy_link_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( a ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( a ).css( {
+					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+	// Alternate color
+	wp.customize( 'whimsy_alt_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$("a").hover(function() {
+					$( 'a:hover' ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+					} );
+				});
+			} else {
+				$("a").hover(function() {
+				$( '.sub-menu' ).css( {
+					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+					} );
+				});
+			}
+		} );
+	} );
 } )( jQuery );

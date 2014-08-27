@@ -6,13 +6,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<div class="entry-img"><?php if ( has_post_thumbnail() ) { the_post_thumbnail('full'); } ?></div>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 	<section class="entry-grid grid clear">
-		<div class="entry-meta c2">
+		<div class="entry-meta c3">
 			<?php whimsy_posted_on(); ?>
+			<?php do_action('after_post_meta'); ?>
 		</div><!-- .entry-meta -->
-		<div class="entry-content c10 end">
+		<div class="entry-content c9 end">
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(

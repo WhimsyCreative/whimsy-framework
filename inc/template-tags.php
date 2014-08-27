@@ -88,7 +88,7 @@ function whimsy_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>';
 
 }
 endif;
@@ -133,3 +133,31 @@ function whimsy_category_transient_flusher() {
 }
 add_action( 'edit_category', 'whimsy_category_transient_flusher' );
 add_action( 'save_post',     'whimsy_category_transient_flusher' );
+
+function whimsy_head() {
+    echo '<style type="text/css">';
+	$whimsy_logo_position = get_theme_mod( 'logo_placement' );
+    if( $whimsy_logo_position != '' ) {
+        switch ( $whimsy_logo_position ) {
+            case 'left':
+                // Do nothing. The theme already aligns the logo to the left
+                break;
+            case 'right':
+                echo '#header #logo{ float: right; }';
+                break;
+            case 'center':
+                echo '#header{ text-align: center; }';
+                echo '#header #logo{ float: none; margin-left: auto; margin-right: auto; }';
+                break;
+        }
+    }
+   $whimsy_link_color = get_theme_mod( 'whimsy_link_color' );
+   echo 'a, a:visited { color: '.$whimsy_link_color.' }';
+   $whimsy_alt_color = get_theme_mod( 'whimsy_alt_color' );
+   echo 'a:hover, a:focus, a:active { color: '.$whimsy_alt_color.' }';
+   echo '.main-navigation ul ul { background: '.$whimsy_alt_color.' }';
+   echo '::selection { background: '.$whimsy_alt_color.' }';
+   echo '::-moz-selection { background: '.$whimsy_alt_color.' }';
+
+   echo '</style>';
+}

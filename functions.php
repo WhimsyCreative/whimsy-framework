@@ -184,6 +184,11 @@ require( get_template_directory() . '/inc/slider/slider_post_type.php' );
 require( get_template_directory() . '/inc/slider/slider.php' );
 
 /*
+ * Load Social Sharing
+ */
+function social_sharing() { include( get_template_directory() . '/inc/sharing.php'); }
+add_action('after_post_meta', 'social_sharing');
+/*
  * Load Pin It
 
 define( 'PIN_IT_DIRECTORY', get_stylesheet_directory_uri() . '/inc/pin-it/' );

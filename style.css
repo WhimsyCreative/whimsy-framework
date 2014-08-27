@@ -282,6 +282,15 @@ h5 {
 h6 {
 	font-size:0.8em;
 	}
+
+::selection {
+  background: #1fb4ca;
+  color: #fff;
+}
+::-moz-selection {
+  background: #1fb4ca;
+  color: #fff;
+}
 	
 /*  */
 
@@ -391,7 +400,6 @@ textarea {
 a, a:visited {
 	color:#000;
 	text-decoration: none;
-	font-weight: 700;
 	-webkit-transition: color 200ms ease;
 	-moz-transition: color 200ms ease;
 	-ms-transition: color 200ms ease;
@@ -405,6 +413,10 @@ a:active {
 	color: #1fb4ca;
 }
 
+.entry-content a, .entry-footer a, #comments a, .widget a {
+	font-weight: 700;
+}
+
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
@@ -412,7 +424,7 @@ a:active {
 	border-bottom: 1px solid rgba(0,0,0,.1);
 	font-weight: 100;
 	text-transform: uppercase;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.9px;
 }
 ul.nav-menu {
 	text-align: center;
@@ -459,7 +471,7 @@ ul.nav-menu li {
 }
 .main-navigation ul ul a {
 	width: 200px;
-	font-weight: 300;
+	font-weight: 500;
 	text-align: left;
 	text-transform: none;
 	padding: 2% 4%;
@@ -470,7 +482,7 @@ ul.nav-menu li {
 .main-navigation li:hover > a {
 }
 .main-navigation ul ul :hover > a {
-	background: rgba(255,255,255,0.9);
+	background: rgba(255,255,255,0.95);
 	color: #000;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
@@ -638,10 +650,10 @@ font-size: 1em;
 
 /* Special Widget Styles */
 h1.widget-title {
-	font-size:0.9em;
+	font-size:1.2em;
 	text-transform:uppercase;
-	letter-spacing:0.2em;
-	padding:2% 0;
+	letter-spacing:0.9px;
+    width: 100%;
 }
 .widget li {
 	list-style: none;
@@ -701,7 +713,6 @@ h1.widget-title {
 
 /* HEADER STYLES */
 #masthead {
-	padding:2% 0;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
 	text-align: center;
 	clear: both;
@@ -758,20 +769,27 @@ h1.widget-title {
 	padding-bottom: 2%;
 }
 .entry-header > h1.entry-title {
-	font-size: 2em;
+	font-size: 3em;
 	font-weight: 100;
+	line-height: 1.2em;
+	margin-bottom: 0;
 }
-.entry-header a {
-	font-weight: 100;
+.entry-header img {
+	width:100%;
+}
+.entry-footer {
+	font-size: 80%;
 }
 .posted-on {
 	display: block;
-	font-style: italic;
+	font-size: 1.6em;
+	font-weight: 100;
+	line-height: 1.4em;
 }
 .sticky {
 	border-radius: 6px;
 	border: 1px solid rgba(0,0,0,0.1);
-	padding:4%;
+	padding:3%;
 }
 .hentry {
 	margin: 0 0 1.5em;
@@ -783,12 +801,36 @@ h1.widget-title {
 .single .byline,
 .group-blog .byline {
 	display: inline;
+	font-size: 80%;
+	font-style: italic;
 }
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+.entry-img {
+	padding-bottom: 2%;
+}
+.entry-img img {
+	border-radius: 6px;
+}
+/* Social Sharing */
 
+article #social-sharing {
+	font-size: 0.8em;
+	text-transform: uppercase;
+	letter-spacing: .9px;
+	margin: 1em 0;
+}
+ 
+#social-sharing > .sharing-icon{
+    font-size:3em;
+    text-align: center;
+}
+ 
+#social-sharing > span{
+	display: block;
+}
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
@@ -889,6 +931,9 @@ object {
 }
 .wp-caption-text {
 	text-align: center;
+	font-size: 70%;
+	line-height: 1.4em;
+	font-style: italic;
 }
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
@@ -905,6 +950,7 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+	padding-bottom: 1.5em;
 }
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
