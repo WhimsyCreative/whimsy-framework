@@ -1,14 +1,14 @@
 /*
-Theme Name: whimsy
+Theme Name: Whimsy Framework
 Theme URI: http://thefanciful.com
-Author: Natasha K. Cross
+Author: The Fanciful
 Author URI: http://thefanciful.com
-Description: A Fanciful Theme
-Version: 1.0-wpcom
+Description: A WordPress Parent Theme
+Version: 0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whimsy
-Tags:
+Tags: framework, parent theme
 */
 
 /*--------------------------------------------------------------
@@ -33,6 +33,10 @@ Tags:
 12.0 - Media
 	12.1 - Captions
 	12.2 - Galleries
+13.0 - Template Page Styles
+14.0 - Shortcodes
+15.0 - Media Queries
+
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -670,6 +674,8 @@ h1.widget-title {
 /* Whimsy Social Networks Widget */
 #widget-whimsy-social ul {
     text-align: center;
+    margin-left: 0;
+    margin-bottom: 0;
 }
 #widget-whimsy-social li {
 	display:inline-block;
@@ -711,6 +717,11 @@ h1.widget-title {
 10.0 Content
 --------------------------------------------------------------*/
 
+#header, #special-container, #content, .menu-footer-container, #footer-widgets {
+  margin: 0 auto;
+  max-width: 1180px;
+}
+
 /* HEADER STYLES */
 #masthead {
 	border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -739,7 +750,7 @@ h1.widget-title {
 #content {
     padding: 2% 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    width: 1200px;
+    width: 1180px;
     margin: 0 auto;
 }
 
@@ -982,35 +993,42 @@ object {
 13.0 Template Page Styles
 --------------------------------------------------------------*/
 .full-width {
-    width: 1200px; // width of the entire container for the wall
+    width: 1180px; // width of the entire container for the wall
     margin:0 auto;
 }
 
 /* 13.1 Mosaic */
 #mosaic {
-    width: 1200px; // width of the entire container for the wall
+    width: 1180px; // width of the entire container for the wall
     margin:0 auto;
 }
- 
-.brick {
-    width: 280px; // width of each brick less the padding inbetween
-    padding: 0px 10px 15px 10px;
-	border-radius: 6px;
-	border: 1px solid rgba(0,0,0,0.1);
-	padding:4%;
-}
+
 .sticky.brick {
 	background: rgba(0,0,0,0.1);
 }
-@media screen and (max-width: 800px) {
-	.brick {
-    width: 100%; // width of each brick less the padding inbetween
-    padding: 0px 10px 15px 10px;
-	border-radius: 6px;
-	border: 1px solid rgba(0,0,0,0.1);
+#mosaic .entry-header, #mosaic .entry-content, #mosaic .entry-footer {
 	padding:4%;
-	}
 }
+#mosaic .entry-img img {
+	border-radius: 6px 6px 0 0;
+}
+#mosaic .sticky {
+	padding:0;
+}
+#mosaic .entry-header > h1.entry-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1em;
+    margin-bottom: 0px;
+}
+#mosaic .posted-on {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 100;
+    line-height: 1em;
+    float: right;
+}
+
 /*--------------------------------------------------------------
 14.0 Shortcodes
 --------------------------------------------------------------*/
@@ -1119,4 +1137,53 @@ a.btn-shortcode.red {
 a.btn-shortcode.red:hover {
 	color:#000;
 	border-color:#000;
+}
+
+/*--------------------------------------------------------------
+15.0 Media Queries 
+--------------------------------------------------------------*/
+#header, #special-container, #content, .menu-footer-container, #footer-widgets {
+	margin: 0 auto;
+	max-width: 90%;
+}
+.brick {
+    width: 100%;
+    padding: 0px 10px 15px 10px;
+	border-radius: 6px;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+@media only screen and (min-width: 480px) {
+/* 480 =================================================== */
+}
+@media only screen and (min-width: 600px) {
+/* 600 =================================================== */
+}
+@media only screen and (min-width: 768px) {
+/* 768 =================================================== */
+}
+@media only screen and (min-width: 992px) {
+/* 992 =================================================== */
+	#header, #special-container, #content, .menu-footer-container, #footer-widgets {
+	  margin: 0 auto;
+	  max-width: 1000px;
+	}
+	.brick {
+	    width: 250px;
+	    padding: 0px 10px 15px 10px;
+	}
+}
+@media only screen and (min-width: 1179px) {
+/* 1179 =================================================== */
+}
+@media only screen and (min-width: 1382px) {
+/* 1382 =================================================== */
+	#header, #special-container, #content, .menu-footer-container, #footer-widgets {
+	  margin: 0 auto;
+	  max-width: 1220px;
+	}
+	.brick {
+	    width: 250px;
+	    padding: 0px 10px 15px 10px;
+		font-size: 85%;
+	}
 }

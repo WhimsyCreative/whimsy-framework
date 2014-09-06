@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 1200; /* pixels */
+	$content_width = 850; /* pixels */
 }
 
 if ( ! function_exists( 'whimsy_setup' ) ) :
@@ -44,10 +44,14 @@ function whimsy_setup() {
 	set_post_thumbnail_size( 1200, 9999, true );
 	add_image_size( 'single-background', 1200, 9999 ); //300 pixels wide (and unlimited height)
 
-
+	/*
+	 * WooCommerce Support
+	 */
+	add_theme_support( 'woocommerce' ); 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'whimsy' ),
+		'footer' => __( 'Footer Menu', 'whimsy' ),
 	) );
 	
 	/*
@@ -108,6 +112,33 @@ function whimsy_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Widgets (1)', 'whimsy' ),
+		'id'            => 'footer-widgets-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Widgets (2)', 'whimsy' ),
+		'id'            => 'footer-widgets-2',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Widgets (3)', 'whimsy' ),
+		'id'            => 'footer-widgets-3',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'whimsy_widgets_init' );
 
@@ -125,10 +156,10 @@ function whimsy_scripts() {
 	if ( is_page_template('template-mosaic.php') ) {
  		wp_enqueue_script( 'jquery-masonry' );
 	}
-	wp_register_style( 'whimsy-grid', get_stylesheet_directory_uri() . '/css/grid.css', false, false );
+	wp_register_style( 'whimsy-grid', get_template_directory_uri() . '/css/grid.css', false, false );
 	wp_enqueue_style( 'whimsy-grid' );
 	wp_enqueue_style( 'whimsy-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '4.1.0' );
-	wp_register_style( 'whimsy-custom', get_stylesheet_directory_uri() . '/custom.css', array( 'whimsy-pretty' ), false );
+	wp_register_style( 'whimsy-custom', get_stylesheet_directory_uri() . '/custom.css', false, false );
 	wp_enqueue_style( 'whimsy-custom' );
 
 }
@@ -188,6 +219,23 @@ require( get_template_directory() . '/inc/slider/slider.php' );
  */
 function social_sharing() { include( get_template_directory() . '/inc/sharing.php'); }
 add_action('after_post_meta', 'social_sharing');
+
+/*
+ * WooCommerce
+ */
+// check for plugin using plugin name
+if (class_exists('woocommerce')) {
+	add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+	add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+	function my_theme_wrapper_start() {
+	  echo '<div id="whimsy-commerce" class="c8">';
+	}
+
+	function my_theme_wrapper_end() {
+	  echo '</div>';
+	}
+} 
 /*
  * Load Pin It
 

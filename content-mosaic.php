@@ -7,7 +7,10 @@
 
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('brick'); ?>>
+	<div class="entry-img"><?php if ( has_post_thumbnail() ) { the_post_thumbnail('full'); } ?></div>
+
 	<header class="entry-header">
+
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
@@ -18,7 +21,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'whimsy' ) ); ?>
+		<?php the_excerpt( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'whimsy' ) ); ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'whimsy' ),

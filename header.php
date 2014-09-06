@@ -46,4 +46,5 @@
 		</header><!-- #masthead -->
 	</div><!-- #header-container -->
 
-	<div id="content" class="row">
+	<div id="content-container">
+		<div id="content" class="row">

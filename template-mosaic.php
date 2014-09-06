@@ -10,13 +10,13 @@ get_header(); ?>
 		
 <!-- Start the Loop. -->
 			<div id="mosaic" >
-<?php
-$temp = $wp_query;
-$wp_query= null;
-$wp_query = new WP_Query();
-$wp_query->query('posts_per_page=100'.'&paged='.$paged);
-while ($wp_query->have_posts()) : $wp_query->the_post();
-?>
+				<?php
+					$temp = $wp_query;
+					$wp_query= null;
+					$wp_query = new WP_Query();
+					$wp_query->query('posts_per_page=100'.'&paged='.$paged);
+					while ($wp_query->have_posts()) : $wp_query->the_post();
+				?>
 
 				<?php
 					/* Include the Post-Format-specific template for the content.
@@ -26,8 +26,8 @@ while ($wp_query->have_posts()) : $wp_query->the_post();
 					get_template_part( 'content', 'mosaic' );
 				?>
 
-<?php endwhile;?>
-<?php $wp_query = null; $wp_query = $temp;?>
+				<?php endwhile;?>
+				<?php $wp_query = null; $wp_query = $temp;?>
 
 			<?php whimsy_paging_nav(); ?>
 
@@ -37,7 +37,7 @@ while ($wp_query->have_posts()) : $wp_query->the_post();
 		</main><!-- #main -->
 		<script type="text/javascript">
 			jQuery( document ).ready( function( $ ) {
-			$( '#mosaic' ).masonry( { columnWidth: 300 } );
+			$( '#mosaic' ).masonry( { columnWidth: 290 } );
 			} );
 		</script>
 <?php get_footer(); ?>
