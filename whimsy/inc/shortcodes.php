@@ -52,7 +52,7 @@ function whimsy_button( $atts , $content = null ) {
 		array(
 			'link' => 'http://',
 			'style' => '',
-			'target' => '_blank',
+			'target' => '_self',
 			'size' => ''
 		), $atts )
 	);
