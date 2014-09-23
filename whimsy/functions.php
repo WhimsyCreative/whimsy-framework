@@ -139,7 +139,7 @@ function whimsy_scripts() {
 	}
 	if ( is_page_template('template-mosaic.php') ) {
  		wp_enqueue_script( 'jquery-masonry' );
-		wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/js/mosaic.js', array(), '1.0', true );
+		wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/js/mosaic.js', array('jquery'), '1.0', true );
 	}
 	wp_enqueue_style( 'whimsy-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '4.1.0' );
 	wp_register_style( 'whimsy-custom', get_stylesheet_directory_uri() . '/custom.css', false, false );
