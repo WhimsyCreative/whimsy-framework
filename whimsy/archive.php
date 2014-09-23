@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="c8">
+	<section id="primary" class="c9">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
