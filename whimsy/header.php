@@ -46,4 +46,3 @@
 	</div><!-- #header-container -->
 
 	<div id="content-container">
-		<div id="content" class="row">

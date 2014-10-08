@@ -50,6 +50,23 @@
 			}
 		} );
 	} );
+	// Body text color.
+	wp.customize( 'whimsy_body_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( body ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( body ).css( {
+					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
 	// Alternate color
 	wp.customize( 'whimsy_alt_color', function( value ) {
 		value.bind( function( to ) {

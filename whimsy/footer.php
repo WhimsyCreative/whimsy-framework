@@ -10,7 +10,6 @@
 		
 		</div><!-- #content -->
 	</div><!-- #content-container -->
-	</div><!-- #content-container -->
 
 	<footer id="colophon" class="site-footer grid" role="contentinfo">
 		<div id="footer-menu">

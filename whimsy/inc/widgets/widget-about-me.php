@@ -16,7 +16,7 @@ class widget_whimsy_about extends WP_Widget {
         $whimsy_image_url = strip_tags($instance['whimsy_image_url']);
         $whimsy_more = strip_tags($instance['whimsy_more']);
         $whimsy_more_link = strip_tags($instance['whimsy_more_link']);
-        $whimsy_text = strip_tags($instance['whimsy_text']);
+        $whimsy_text = strip_tags($instance['whimsy_text'], '<a><p><br><span>');
 
         ?>
 
@@ -31,14 +31,14 @@ class widget_whimsy_about extends WP_Widget {
                 </div> <!-- .whimsy-img -->
                 <?php endif; ?>
                 <?php if( !empty( $whimsy_text ) ) : ?>
-                <span class="whimsy-text">
+                <div class="whimsy-text">
                     <?php echo $whimsy_text; ?>
-                </span> <!-- .whimsy-text -->
+                </div> <!-- .whimsy-text -->
                 <?php endif; ?>
                 <?php if( !empty( $whimsy_more_link ) ) : ?>
-                <span class="whimsy-more">
+                <div class="whimsy-more">
                     <a href="<?php echo $whimsy_more_link; ?>"><?php echo $whimsy_more; ?></a>
-                </span> <!-- .whimsy-more -->
+                </div> <!-- .whimsy-more -->
                 <?php endif; ?>
 
             </div> <!-- #whimsy-about-box -->

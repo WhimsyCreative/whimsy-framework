@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
   $container.imagesLoaded( function() {
     $container.masonry({
       itemSelector: ".brick",
-      gutter: 15
+      gutter:32
     });
   });
 });

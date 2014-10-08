@@ -51,7 +51,24 @@ function whimsy_customize_register( $wp_customize ) {
 	        )
 	    )
 	);
-
+	$wp_customize->add_setting(
+	    'whimsy_body_color',
+	    array(
+	        'default' => '#1e1d1f',
+	        'sanitize_callback' => 'sanitize_hex_color',
+	    )
+	);
+	$wp_customize->add_control(
+	    new WP_Customize_Color_Control(
+	        $wp_customize,
+	        'whimsy_body_color',
+	        array(
+	            'label' => 'Body Text Color',
+	            'section' => 'colors',
+	            'settings' => 'whimsy_body_color'
+	        )
+	    )
+	);
 }
 add_action( 'customize_register', 'whimsy_customize_register' );
 

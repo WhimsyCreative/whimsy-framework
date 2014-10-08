@@ -11,7 +11,7 @@
  */
 
 get_header(); ?>
-
+<div id="content" class="row">
 	<div id="primary" class="c9">
 		<main id="main" class="site-main" role="main">
 

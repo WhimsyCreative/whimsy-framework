@@ -133,7 +133,6 @@ function whimsy_scripts() {
 	wp_enqueue_style( 'whimsy-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'whimsy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'whimsy-shortcodes', get_template_directory_uri() . '/js/shortcodes.js', array('jquery'), '20140711', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -172,11 +171,6 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Custom shortcodes built for whimsical inclusion, but also regular inclusion too.
- */
-require get_template_directory() . '/inc/shortcodes.php';
 
 /**
  * Whimsical Widgets

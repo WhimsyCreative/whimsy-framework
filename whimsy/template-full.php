@@ -5,11 +5,9 @@ Template Name: Full-width Template
 
 get_header(); ?>
 
-	<div id="whimsy-full" class="12">
+<div id="content" class="row">
+	<div id="whimsy-full" class="12 end">
 		<main id="main" class="site-main" role="main">
-		
-<!-- Start the Loop. -->
-			<div id="featured-posts">
             
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -26,9 +24,10 @@ get_header(); ?>
 
 			<?php whimsy_paging_nav(); ?>
 
-			</div><!-- #featured-posts -->
 
 		</main><!-- #main -->
+	</div><!-- #whimsy-full -->
+</div><!-- #content -->
 
 
 <?php get_footer(); ?>

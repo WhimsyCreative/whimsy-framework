@@ -156,12 +156,14 @@ function whimsy_head() {
     }
    $whimsy_link_color = get_theme_mod( 'whimsy_link_color' );
    echo 'a, a:visited { color: '.$whimsy_link_color.' }';
+   echo 'a.btn-shortcode { border-color: '.$whimsy_link_color.' }';
    $whimsy_alt_color = get_theme_mod( 'whimsy_alt_color' );
    echo 'a:hover, a:focus, a:active { color: '.$whimsy_alt_color.' }';
    echo '.main-navigation ul ul { background: '.$whimsy_alt_color.' }';
    echo '::selection { background: '.$whimsy_alt_color.' }';
    echo '::-moz-selection { background: '.$whimsy_alt_color.' }';
-
+   $whimsy_body_color = get_theme_mod( 'whimsy_body_color' );
+   echo 'body, .widget { color: '.$whimsy_body_color.' }';
    echo '</style>';
 }
 
