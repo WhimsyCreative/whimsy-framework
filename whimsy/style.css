@@ -1093,7 +1093,6 @@ body.woocommerce-demo-store #page {
 	#masthead { padding-top: 0;}
 	.site-branding {
 		top: 0;
-		padding: 17px 20px;
 		left: 0;
 		margin: 0;
 		z-index: 1000;
@@ -1103,12 +1102,13 @@ body.woocommerce-demo-store #page {
 	.site-branding > h1.site-title  {
 		font-size: 1.6em;
 		line-height: 1em;
+		padding: 17px 20px;
 	}
 	.site-branding > h2.site-description {
 		display: none;
 	}
 	.site-branding img{
-		max-width: 200px;
+		max-width: 170px;
 	}
 	#content, #whimsy-full {
 		margin-top: 2%;
@@ -1143,10 +1143,10 @@ body.woocommerce-demo-store #page {
 		padding-left: 2em;
 	}
 	.site-branding {
-		padding: 20px 7px;
 	}
 	.site-branding > h1.site-title  {
 		font-size: 1.2em;
 		line-height: 1em;
+		padding: 20px 7px;
 	}
 }
