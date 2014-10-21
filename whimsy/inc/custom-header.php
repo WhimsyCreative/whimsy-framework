@@ -20,7 +20,7 @@ function whimsy_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1200,
-		'height'                 => 250,
+		'height'                 => 500,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'whimsy_header_style',
 		'admin-head-callback'    => 'whimsy_admin_header_style',

@@ -28,6 +28,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #whimsy-full -->
 </div><!-- #content -->
-
-
 <?php get_footer(); ?>

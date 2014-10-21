@@ -54,14 +54,14 @@ img{max-width:100%;height:auto;display:block;margin-left:auto;margin-right:auto}
 
 /* =Media query for 960 Screens - sets nested grids to 100%
 -------------------------------------------------------------- */
-@media only screen and (max-width:960px){
+@media only screen and (max-width:980px){
 .row .row .c1,.row .row .c2,.row .row .c3,.row .row .c4,.row .row .c5,.row .row .c6,.row .row .c7,.row .row .c8,.row .row .c9,.row .row .c10,.row .row .c11,.row .row .c12{width:100%;margin-bottom:20px}
 .row .row > div:last-child{margin-bottom:0 !important}
 }
 
 /* =Media query for iPad and tablets
 -------------------------------------------------------------- */
-@media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait){
+@media handheld, only screen and (max-width: 980px), only screen and (max-device-width: 980px) and (orientation:portrait){
 .row{margin-bottom:0!important}
-.c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8,.c9,.c10,.c11,.c12{width:100%;margin-right:0;margin-left:0;margin-bottom:20px}
+.c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8,.c9,.c10,.c11,.c12{width:100%;margin-right:0;margin-left:0;margin-bottom:20px;padding-right:0;}
 }

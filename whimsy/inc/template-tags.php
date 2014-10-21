@@ -155,13 +155,14 @@ function whimsy_head() {
         }
     }
    $whimsy_link_color = get_theme_mod( 'whimsy_link_color' );
-   echo 'a, a:visited { color: '.$whimsy_link_color.' }';
-   echo 'a.btn-shortcode { border-color: '.$whimsy_link_color.' }';
+   echo 'a, a:visited, ul.slimmenu li a:hover, ul.slimmenu li a:focus, .entry-title a { color: '.$whimsy_link_color.' }';
+   echo 'a.btn-shortcode { border-color: '.$whimsy_link_color.'; color:'.$whimsy_link_color.' }';
    $whimsy_alt_color = get_theme_mod( 'whimsy_alt_color' );
-   echo 'a:hover, a:focus, a:active { color: '.$whimsy_alt_color.' }';
+   echo 'a:hover, a:focus, a:active, .collapse-button, ul.slimmenu li a { color: '.$whimsy_alt_color.' }';
    echo '.main-navigation ul ul { background: '.$whimsy_alt_color.' }';
-   echo '::selection { background: '.$whimsy_alt_color.' }';
-   echo '::-moz-selection { background: '.$whimsy_alt_color.' }';
+   echo '::selection { background: '.$whimsy_link_color.' }';
+   echo '::-moz-selection { background: '.$whimsy_link_color.' }';
+   echo '.collapse-button:hover, .collapse-button:focus { background-color: '.$whimsy_alt_color.'; }';
    $whimsy_body_color = get_theme_mod( 'whimsy_body_color' );
    echo 'body, .widget { color: '.$whimsy_body_color.' }';
    echo '</style>';
@@ -172,4 +173,18 @@ function whimsy_head() {
  */
 function whimsy_after_post_meta() {
 	do_action('after_post_meta');
+}
+
+/**
+ * Whimsy Responsive Nav
+ */
+function whimsy_responsive_nav() {
+	wp_nav_menu( array( 
+		'theme_location' => 'primary',
+		'container'       => 'nav',
+		'container_id' => 'site-navigation',
+		'container_class' => '',
+		'menu_class' => 'slimmenu',
+		'items_wrap' => '<ul id="whimsy-nav" class="%2$s">%3$s</ul>', // Adding data-breakpoint for FlexNav
+	));
 }

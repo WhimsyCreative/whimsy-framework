@@ -1,14 +1,14 @@
 /*
 Theme Name: Whimsy Framework
 Theme URI: http://thefanciful.com/whimsy/
-Author: The Fanciful
+Author: thefanciful
 Author URI: http://thefanciful.com
-Description: The Whimsy Framework is a Parent Theme ready for customization with plenty of extras baked in.
-Version: 0.9
+Description: The Whimsy Framework is a minimal theme ready for customization with lots of extras baked in.
+Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whimsy
-Tags: framework, parent theme
+Tags: minimal, clean, responsive, framework, parent
 */
 
 /*--------------------------------------------------------------
@@ -105,30 +105,24 @@ q:before {
 	content: '\f10d';
 	font-family: 'FontAwesome';
 	display: block;
-	font-size: 150%;
+	font-size: 200%;
+	margin-left: -50px;
 	position: relative;
-	color:rgba(220,220,220,0.7);
-}
-blockquote:after,
-q:after {
-	content: '\f10e';
-	font-family: 'FontAwesome';
-	font-size: 150%;
-	display:block;
-	position: relative;
-	color:rgba(220,220,220,0.7);
-	text-align: right;
+	color:rgba(216,216,216,0.4);
 }
 blockquote, q {
 	quotes: "" "";
-	padding:0 2%;
+	padding:0 5%;
 	display:block;
 	margin:0 2%;
 	position: relative;
 	font-size: 120%;
 }
 blockquote > p, q > p {
-	margin-bottom: 0;
+	margin-bottom: 1em;
+	margin-top: -1.2em;
+	position: relative;
+	text-shadow: 1px 2px 1px rgba(216,216,216,0.6);
 }
 a:focus {
 	outline: thin dotted;
@@ -154,7 +148,7 @@ textarea {
 	font-size: 16px;
 	font-size: 1.6rem;
 	font-weight: 400;
-	line-height: 1.7;
+	line-height: 1.7em;
 }
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
@@ -173,6 +167,8 @@ blockquote {
 }
 cite { 
 	font-size: 75%;
+	display: block;
+	font-weight: 300;
 }
 address {
 	margin: 0 0 1.5em;
@@ -219,7 +215,6 @@ small {
 big {
 	font-size: 125%;
 }
-
 /*--------------------------------------------------------------
 3.0 Elements
 --------------------------------------------------------------*/
@@ -286,7 +281,6 @@ h5 {
 h6 {
 	font-size:0.8em;
 	}
-
 ::selection {
   background: #1fb4ca;
   color: #fff;
@@ -295,9 +289,6 @@ h6 {
   background: #1fb4ca;
   color: #fff;
 }
-	
-/*  */
-
 /*--------------------------------------------------------------
 4.0 Forms
 --------------------------------------------------------------*/
@@ -352,7 +343,7 @@ input[type="search"] {
 	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
 	-moz-box-sizing:    content-box;
 	box-sizing:         content-box;
-	width: 100%;
+	width: 98%;
 }
 input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 	-webkit-appearance: none;
@@ -397,13 +388,11 @@ textarea {
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
-
-
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
 a, a:visited {
-	color:#000;
+	color:#1fb4ca;
 	text-decoration: none;
 	-webkit-transition: color 200ms ease;
 	-moz-transition: color 200ms ease;
@@ -415,7 +404,7 @@ a, a:visited {
 a:hover,
 a:focus,
 a:active {
-	color: #1fb4ca;
+	color: #000;
 }
 
 .entry-content a, .entry-footer a, #comments a, .widget a {
@@ -426,42 +415,42 @@ a:active {
 5.2 Menus
 --------------------------------------------------------------*/
 #site-navigation {
-	border-bottom: 1px solid rgba(0,0,0,.1);
-	font-weight: 100;
+	background: rgba(255,255,255,0.9);
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(16, 21, 22, 0.15);
+	box-shadow: 0px 1px 3px 0px rgba(16, 21, 22, 0.15);
+	font-weight: 300;
 	text-transform: uppercase;
 	letter-spacing: 0.9px;
 }
-ul.nav-menu {
+ul.whimsy-nav {
 	text-align: left;
 }
-ul.nav-menu li {
+ul.whimsy-nav li {
 	display: inline-block;
 	float: none;
 	padding: 0.6em;
 }
-.main-navigation {
+.whimsy-nav {
 	clear: both;
 	display: block;
-	float: left;
 	width: 100%;
 }
-.main-navigation ul {
+.whimsy-nav ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-	text-align: center;
 }
-.main-navigation li {
+.whimsy-nav li {
 	float: left;
 	position: relative;
 	display: block;
 }
-.main-navigation a {
+.whimsy-nav a {
 	display: block;
 	text-decoration: none;
 	font-weight: 100;
 }
-.main-navigation ul ul {
+.whimsy-nav ul ul {
     left: -999em;
     position: absolute;
     top: 2.9em;
@@ -471,70 +460,50 @@ ul.nav-menu li {
 	z-index: 99999;
 	border-radius: 0 0 3px 3px;
 }
-.main-navigation ul ul ul {
+.whimsy-nav ul ul ul {
 	left: -999em;
 	top: 0;
 }
-.main-navigation ul ul a {
+.whimsy-nav ul ul a {
 	width: 200px;
 	font-weight: 500;
 	text-align: left;
 	text-transform: none;
 	padding: 2% 4%;
-	color:#fff;
-}
-.main-navigation ul ul li {
-}
-.main-navigation li:hover > a {
-}
-.main-navigation ul ul :hover > a {
-	background: rgba(255,255,255,0.95);
-	color: #000;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
+}
+.whimsy-nav ul ul li {
+}
+.whimsy-nav li:hover > a {
+}
+.whimsy-nav ul ul :hover > a {
 	font-weight: 500;
 }
-.main-navigation ul ul a:hover {
+.whimsy-nav ul ul a:hover {
 }
-.main-navigation ul li:hover > ul {
+.whimsy-nav ul li:hover > ul {
 	left: auto;
 }
-.main-navigation ul ul li:hover > ul {
+.whimsy-nav ul ul li:hover > ul {
 	left: 100%;
 }
-.main-navigation .current_page_item a,
-.main-navigation .current-menu-item a {
-	font-weight: 900;
+.whimsy-nav .current_page_item a,
+.whimsy-nav .current-menu-item a {
+	font-weight: 700;
 }
 /* Sub-menu */
 ul.sub-menu li {
 	display: inline-block;
 	float: none;
 	padding: 0;
-	text-align: center;
-}
-#site-navigation ul.sub-menu li.menu-item-has-children > a:after  {
-	font-family: FontAwesome;
-	padding-left: 1em;
-	content: '\f054';
-	speak: none;
-	font-size: 1em;
-}
-/* Small menu */
-.menu-toggle {
-	display: none;
-}
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-	.main-navigation ul {
-		display: none;
-	}
+	background: rgba(255,255,255,0.95);
+	font-size: 90%;
+	font-weight: 500;
+	border-bottom: 1px solid rgba(216,216,216,0.3);
 }
 .site-main .comment-navigation,
 .site-main .paging-navigation,
@@ -555,7 +524,6 @@ ul.sub-menu li {
 	text-align: right;
 	width: 50%;
 }
-
 /*--------------------------------------------------------------
 6.0 Accessibility
 --------------------------------------------------------------*/
@@ -567,7 +535,6 @@ ul.sub-menu li {
 	width: 1px;
 	overflow: hidden;
 }
-
 .screen-reader-text:hover,
 .screen-reader-text:active,
 .screen-reader-text:focus {
@@ -588,7 +555,6 @@ ul.sub-menu li {
 	width: auto;
 	z-index: 100000; /* Above WP toolbar */
 }
-
 /*--------------------------------------------------------------
 7.0 Alignments
 --------------------------------------------------------------*/
@@ -607,7 +573,6 @@ ul.sub-menu li {
 	display: block;
 	margin: 0 auto;
 }
-
 /*--------------------------------------------------------------
 8.0 Clearings
 --------------------------------------------------------------*/
@@ -626,7 +591,6 @@ ul.sub-menu li {
 	content: '';
 	display: table;
 }
-
 .clear:after,
 .entry-content:after,
 .comment-content:after,
@@ -635,22 +599,20 @@ ul.sub-menu li {
 .site-footer:after {
 	clear: both;
 }
-
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 1.5em;
 }
-
 /* Make sure select elements fit in widgets */
 .widget select {
+	width: 98%;
 	max-width: 100%;
 }
-
 /* Special Widget Styles */
 h1.widget-title {
-	font-size:1.2em;
+	font-size:1em;
 	text-transform:uppercase;
 	letter-spacing:0.9px;
     width: 100%;
@@ -664,7 +626,6 @@ h1.widget-title {
 	float: left;
 	margin-left: -1.5em;
 }
-
 /* Whimsy About Me Widget */
 
 /* Whimsy Social Networks Widget */
@@ -686,88 +647,78 @@ h1.widget-title {
 .widget_search .search-submit {
 	display: none;
 }
-
 /* Calendar widget */
 #wp-calendar {
-	max-width:250px;
 }
 #wp-calendar caption{
-	letter-spacing:0.2em;
-	text-align:center;
+	letter-spacing: 2px;
+	text-align: left;
+	text-transform: uppercase;
+	font-size: 90%;
+	font-weight: 700;
+	padding: 0 0 1% 0;
+	border-bottom: 1px solid rgba(216,216,216,0.3);
+	margin: 0 0 3% 0;
 	}
 #wp-calendar th, #wp-calendar tr, #wp-calendar td{
 	text-align:center;
+	font-size: 100%;
 	}
 #wp-calendar a{
 	border:1px solid rgba(0,0,0,0.1);
 	border-radius:6px;
 	display:block;
 	}
-
 /* Tag Cloud */
 .widget_tag_cloud a {
 	font-weight: 100;
+	}
+/* RSS */
+.rsswidget img { 
+	float: right;
+	}
+/* Menu Widget Tweaks */
+.widget ul.sub-menu li {
+	background: rgba(0,0,0,0);
+	display: block;
 }
-
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
-
 #header, #masthead, #special-container, #content, #footer-menu, #footer-widgets {
-  margin: 0 auto;
-  max-width: 1180px;
+	margin: 0 auto;
+	max-width: 1180px;
 	clear: both;
 }
-
 /* HEADER STYLES */
+#header-container {
+	position: relative;
+	z-index: 90;
+}
 #masthead {
 	text-align: center;
-	padding-top: 1em;
+	padding: 1em 0;
 }
 .site-branding > h1.site-title {
-	font-size: 3em;
-	line-height: 1em;
+	font-size:4em;
+	line-height: 1.4em;
 	margin-bottom: 0;
-	text-transform: uppercase;
 }
 .site-branding > h1.site-title a{
 	font-weight: 100;
 }
 .site-branding > h2.site-description {
-	font-size: 1em;
+	font-size: 1.2em;
 	line-height: 2em;
 	font-weight: 100;
 	margin-bottom: 0;
 	font-style: italic;
 }
-
-/* CONTENT STYLES */
-#content {
-    padding: 1em 0;
-    width: 1180px;
-    margin: 0 auto;
-}
-
-
-@media screen and (max-width: 800px) {
-	#content {
-    	padding: 2% 6%;
-    	width: 100%;
-    	margin: 0 auto;
-		font-size: 120%;
-	}
-
-	#sidebar {
-		font-size: 120%;
-	}
-}
-
 /* FOOTER STYLES */
 #footer {
 	padding:2% 6%;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
 }
-
 .site-info {
 	font-size: 80%;
 	text-transform: uppercase;
@@ -792,7 +743,8 @@ h1.widget-title {
 body.single .entry-meta {
     border:1px solid rgba(0,0,0,0.1);
 	padding: 0.7em;
-	margin:1em 0; 
+	margin:1em 0; 	
+	border-radius: 6px;
 }
 .entry-content {
 	font-size: 120%;
@@ -803,7 +755,6 @@ body.single .entry-meta {
 }
 .entry-category {
 	font-size: 80%;
-	padding: 1em 0;
 	text-transform: uppercase;
 }
 .entry-footer {
@@ -838,13 +789,12 @@ body.single .entry-meta {
 	margin: 0 0 1.5em;
 }
 .entry-img {
-	padding-bottom: 2%;
 }
 .entry-img img {
 	border-radius: 6px;
+	padding-bottom: 2%;
 }
 /* Social Sharing */
-
 article #social-sharing {
 	font-size: 0.8em;
 	text-transform: uppercase;
@@ -1018,10 +968,8 @@ object {
     width: 1180px; 
     margin:0 auto;
 }
-
 /* 13.1 Mosaic */
 #mosaic {
-    width: 1180px; 
     margin:0 auto;
 }
 .sticky.brick {
@@ -1060,32 +1008,49 @@ object {
     display: block;
 }
 /*--------------------------------------------------------------
+14.0 Plugin Integrations 
+--------------------------------------------------------------*/
+/* WooCommerce */
+body.woocommerce-demo-store p.demo_store {
+	position: absolute;
+	font-size: 70%;
+	overflow: hidden;
+	line-height: 1em;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 1px;
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) inset;
+}
+body.woocommerce-demo-store #page {
+	top: 23px;
+}
+/*--------------------------------------------------------------
 15.0 Media Queries 
 --------------------------------------------------------------*/
-#header, #masthead, #special-container, #content, #footer-menu, #footer-widgets, #mosaic, .full-width {
+/* Globals */
+#page {
+	width: 100%;
+	position: relative;
+}
+#header, #masthead, #special-container, #content, #footer-menu, #footer-widgets, .full-width {
 	margin: 0 auto;
-	max-width: 97%;
+	max-width: 95%;
 }
 .brick {
-    width: 100%;
+    width: 31%;
 	border-radius: 6px;
 	border: 1px solid rgba(0,0,0,0.1);
+	overflow: hidden;
 }
-@media only screen and (min-width: 480px) {
-/* 480 =================================================== */
+#colophon, #infinite-footer .container {
+	border: none;
 }
-@media only screen and (max-width: 600px) {
-/* 600 =================================================== */
-	#site-navigation {
-		border-bottom: none;
-		padding: 1em;
+@media screen and (max-width: 980px) {	
+	#header, #masthead, #special-container, #content, #footer-menu, #footer-widgets, .full-width {
+	  margin: 0 auto;
+	  max-width: 97%;
 	}
-	.main-navigation li {
-		float: none;
-		text-align: left;
-		width: 100%;
-	}
-	.main-navigation ul ul {
+	.whimsy-nav ul ul {
 	    left: auto;
 	    position: relative;
 	    top: auto;
@@ -1096,34 +1061,88 @@ object {
 		border-radius: 0;
 		display: block;
 	}
-	.main-navigation ul ul a {
+	.whimsy-nav ul ul a {
 		width: 100%;
 	}
+	#site-navigation { 
+		border-bottom: none;
+		padding: 1%; 
+		height: 60px;
+	}
+	.whimsy-nav li {
+		float: none;
+		text-align: left;
+		width: 100%;
+		font-size: 1.2em;
+		display: block;
+		line-height: 1.3em;
+	}
+	.menu-toggle,
+	.whimsy-nav.toggled .nav-menu {
+		display: block;
+		font-size: 1em;
+		border: 0;
+	}
+	.whimsy-nav ul {
+		display: none;
+	}
+	#masthead { padding-top: 0;}
+	.site-branding {
+		top: 0;
+		padding: 17px 20px;
+		left: 0;
+		margin: 0;
+		z-index: 1000;
+		max-width: 85%;
+		position: absolute;
+	}
+	.site-branding > h1.site-title  {
+		font-size: 1.6em;
+		line-height: 1em;
+	}
+	.site-branding > h2.site-description {
+		display: none;
+	}
+	.site-branding img{
+		max-width: 200px;
+	}
+	#content, #whimsy-full {
+		margin-top: 2%;
+	}
+	#colophon, #infinite-footer .container {
+		position: relative;
+	}
+	.brick { 
+		width: 47%;
+		margin-left: 1%;
+	}
 }
-@media only screen and (min-width: 768px) {
-/* 768 =================================================== */
-	#header, #masthead, #special-container, #content, #footer-menu, #footer-widgets, #mosaic, .full-width {
-	  margin: 0 auto;
-	  max-width: 97%;
+@media screen and (max-width: 768px) {
+/* 360 =================================================== */
+	#site-navigation { 
+		padding: 1%; 
+	}
+	#masthead {
+    	padding-top: 7px;
 	}
 	.brick {
-	    width: 31%;
+	    width: 98%;
 	}
 }
-@media only screen and (min-width: 992px) {
-/* 992 =================================================== */
-}
-@media only screen and (min-width: 1122px) {
-/* 1122 =================================================== */
-	#header, #masthead, #special-container, #content, #footer-menu, #footer-widgets, #mosaic, .full-width {
-	  margin: 0 auto;
-	  max-width: 1100px;
+@media screen and (max-width: 360px) {
+/* 360 =================================================== */
+	#site-navigation { 
+		padding: 2%; 
 	}
-}
-@media only screen and (min-width: 1382px) {
-/* 1382 =================================================== */
-	#header, #masthead, #special-container, #content, #footer-menu, #footer-widgets, #mosaic, .full-width {
-	  margin: 0 auto;
-	  max-width: 1220px;
+	ul.sub-menu li {
+		background: rgba(255,255,255,0);
+		padding-left: 2em;
+	}
+	.site-branding {
+		padding: 20px 7px;
+	}
+	.site-branding > h1.site-title  {
+		font-size: 1.2em;
+		line-height: 1em;
 	}
 }

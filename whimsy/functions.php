@@ -128,11 +128,14 @@ add_action( 'widgets_init', 'whimsy_widgets_init' );
  * Enqueue scripts and styles.
  */
 function whimsy_scripts() {
-	wp_register_style( 'whimsy-grid', get_template_directory_uri() . '/css/grid.css', false, false );
+	wp_register_style( 'whimsy-grid', get_template_directory_uri() . '/css/grid.css', '1.0', false, false );
 	wp_enqueue_style( 'whimsy-grid' );
+	wp_register_style( 'whimsy-menu', get_template_directory_uri() . '/css/navigation.css', '1.0', false, false );
+	wp_enqueue_style( 'whimsy-menu' );
 	wp_enqueue_style( 'whimsy-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-	wp_enqueue_script( 'whimsy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'whimsy-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true );
+	wp_enqueue_script( 'whimsy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -177,15 +180,20 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory() . '/inc/widgets.php';
 
+/**
+ * Plugin Recommendations
+ */
+require get_template_directory() . '/inc/plugins.php';
+
 /*
- * WooCommerce
+ * WooCommerce Integration
  */
 if (class_exists('woocommerce')) {
 	add_action('woocommerce_before_main_content', 'whimsy_woo_wrapper_start', 10);
 	add_action('woocommerce_after_main_content', 'whimsy_woo_wrapper_end', 10);
 
 	function whimsy_woo_wrapper_start() {
-	  echo '<div id="whimsy-commerce" class="c8">';
+	  echo '<div id="whimsy-commerce" class="c9">';
 	}
 
 	function whimsy_woo_wrapper_end() {
