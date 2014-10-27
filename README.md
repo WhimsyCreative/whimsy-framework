@@ -1,28 +1,26 @@
-Whimsy Framework
-======
-
-The foundation of Whimsy+Child WordPress Themes by The Fanciful.
-
 === Whimsy Framework ===
-Contributors: thefanciful
-Theme URI: http://thefanciful.com/whimsy/
-Author: thefanciful
-Author URI: http://thefanciful.com
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Requires at least: 3.9
-Tested up to: 4.0
-Stable tag: 1.0.1
-Text Domain: whimsy
-Donate link: http://bit.ly/whimsywp
+<h1>Details</h1>
+<ul>
+	<li>Contributors: thefanciful</li>
+	<li>Theme URI: http://thefanciful.com/whimsy/</li>
+	<li>Author: thefanciful</li>
+	<li>Author URI: http://thefanciful.com</li>
+	<li>License: GNU General Public License v2 or later</li>
+	<li>License URI: http://www.gnu.org/licenses/gpl-2.0.html</li>
+	<li>Requires at least: 3.9</li>
+	<li>Tested up to: 4.0</li>
+	<li>Stable tag: 1.0.1</li>
+	<li>Text Domain: whimsy</li>
+	<li>Donate link: http://bit.ly/whimsywp</li>
+</ul>
 
-The Whimsy Framework is a minimal theme ready for customization with lots of extras baked in.
+<p>The Whimsy Framework is a minimal theme ready for customization with lots of extras baked in.</p>
 
-== Description ==
+<h1>Description</h1>
 The Whimsy Framework was built as an easy to customize foundation for child themes.
 
-== Installation ==
-= Uploading through the WordPress Dashboard =
+<h1>Installation</h1>
+<h2>Uploading through the WordPress Dashboard</h2>
 
 The WordPress dashboard offers the  easiest way to install any WordPress theme including the Whimsy Framework.
 
@@ -32,7 +30,7 @@ The WordPress dashboard offers the  easiest way to install any WordPress theme i
 * Select Browse, and install the whimsy.zip file.
 * Activate the Whimsy Framework, or upload a child theme. 
 
-= Uploading via FTP =
+<h2>Uploading via FTP</h2>
 
 * Download the Whimsy Framework, and extract the file to your desktop.
 * Log in to your hosting server via FTP.
@@ -41,18 +39,18 @@ The WordPress dashboard offers the  easiest way to install any WordPress theme i
 * On your WordPress site go to Dashboard > Appearance.
 * Activate the Whimsy Framework, or upload a child theme.
 
-= Using the Customizer =
+<h2>Using the Customizer</h2>
 For detailed instructions on using the built-in WordPress Customizer with the Whimsy Framework please visit The Fanciful. http://docs.thefanciful.com/whimsy-framework/using-customizer/
 
-= Full Documentation =
+<h2>Full Documentation</h2>
 http://docs.thefanciful.com/whimsy-framework/
 
-== Frequently Asked Questions ==
+<h1>Frequently Asked Questions</h1>
 
-= Will this theme work on mobile devices? =
+<h2>Will this theme work on mobile devices?</h2>
 Yes, the Whimsy Framework is fully responsive and made to work great on every device.
 
-== Changelog ==
+<h1>Changelog</h1>
  
 = 1.0.1 =
 * 404.php - Added .container to #content div.
