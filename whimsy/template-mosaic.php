@@ -4,7 +4,7 @@ Template Name: Mosaic Template
 */
 
 get_header(); ?>
-	<div id="mosaic" class="full-width">
+	<div id="mosaic" class="container">
 		<?php
 		$mosaic_query = new WP_Query('posts_per_page=100'.'&paged='.$paged); // exclude category
 		while($mosaic_query->have_posts()) : $mosaic_query->the_post();
