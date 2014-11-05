@@ -631,7 +631,12 @@ h1.widget-title {
 	margin-left: -1.5em;
 }
 /* Whimsy About Me Widget */
-
+.whimsy-more {
+	text-align: right;
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 0.9px;
+}
 /* Whimsy Social Networks Widget */
 #widget-whimsy-social ul {
     text-align: center;
@@ -756,10 +761,7 @@ h1.widget-title {
 	width:100%;
 }
 body.single .entry-meta {
-    border:1px solid rgba(0,0,0,0.1);
-	padding: 0.7em;
 	margin:1em 0; 	
-	border-radius: 6px;
 }
 .entry-content {
 	font-size: 120%;
@@ -1049,7 +1051,7 @@ body.woocommerce-demo-store #page {
 }
 #header, #masthead, #special-container, #content, .full-width {
 	margin: 0 auto;
-	max-width: 95%;
+	max-width: 90%;
 }
 .brick {
     width: 31%;
@@ -1063,7 +1065,7 @@ body.woocommerce-demo-store #page {
 @media screen and (max-width: 980px) {	
 	#header, #masthead, #special-container, #content, .full-width {
 	  margin: 0 auto;
-	  max-width: 97%;
+	  max-width: 90%;
 	}
 	.whimsy-nav ul ul {
 	    left: auto;

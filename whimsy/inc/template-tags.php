@@ -164,7 +164,7 @@ function whimsy_head() {
    echo '::-moz-selection { background: '.$whimsy_link_color.' }';
    echo '.collapse-button:hover, .collapse-button:focus { background-color: '.$whimsy_alt_color.'; }';
    $whimsy_body_color = get_theme_mod( 'whimsy_body_color' );
-   echo 'body, .widget { color: '.$whimsy_body_color.' }';
+   echo '#content, .widget { color: '.$whimsy_body_color.' }';
    echo '</style>';
 }
 
@@ -185,6 +185,6 @@ function whimsy_responsive_nav() {
 		'container_id' => 'site-navigation',
 		'container_class' => '',
 		'menu_class' => 'slimmenu',
-		'items_wrap' => '<ul id="whimsy-nav" class="%2$s">%3$s</ul>', // Adding data-breakpoint for FlexNav
+		'items_wrap' => '<ul id="whimsy-nav" class="%2$s">%3$s</ul>', 
 	));
 }
