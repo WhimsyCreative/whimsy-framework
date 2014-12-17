@@ -1,9 +1,10 @@
 /*
 Theme Name: Whimsy Framework
+Theme URI: http://demo.thefanciful.com
 Author: thefanciful
 Author URI: http://thefanciful.com
-Description: Whimsy framework is a minimal theme ready for customization with lots of extras baked in.
-Version: 1.0.2
+Description: Whimsy Framework is a minimalist theme ready to be customized; with plenty of extras baked in.
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whimsy-framework
@@ -647,6 +648,10 @@ h1.widget-title {
 	margin-left: -1.5em;
 }
 /* Whimsy About Me Widget */
+.whimsy-img img{
+	border-radius: 6px;
+    margin-bottom: 1em;
+}
 .whimsy-more {
 	text-align: right;
 	text-transform: uppercase;
@@ -702,11 +707,6 @@ h1.widget-title {
 .rsswidget img { 
 	float: right;
 	}
-/* Menu Widget Tweaks */
-.widget ul.sub-menu li {
-	background: rgba(0,0,0,0);
-	display: block;
-}
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
@@ -722,7 +722,7 @@ h1.widget-title {
 }
 #masthead {
 	text-align: center;
-	padding: 1em 0;
+	padding: 1em 0 1.4em 0;
 }
 .site-branding > h1.site-title {
 	font-size:4em;

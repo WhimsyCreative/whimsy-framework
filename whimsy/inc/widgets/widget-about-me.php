@@ -27,7 +27,7 @@ class widget_whimsy_about extends WP_Widget {
                 <?php endif; ?>
                 <?php if( !empty( $whimsy_image_url ) ) : ?>
                 <div class="whimsy-img">
-                    <a href="<?php echo esc_url('$whimsy_more_link'); ?>"><img src="<?php echo esc_url($whimsy_image_url); ?>"></a>
+                    <a href="<?php echo esc_url($whimsy_more_link); ?>"><img src="<?php echo esc_url($whimsy_image_url); ?>"></a>
                 </div> <!-- .whimsy-img -->
                 <?php endif; ?>
                 <?php if( !empty( $whimsy_text ) ) : ?>
