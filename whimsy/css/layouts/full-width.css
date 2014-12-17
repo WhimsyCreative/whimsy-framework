@@ -1,22 +1,21 @@
 /*
 Theme Name: whimsy
-Layout: Sidebar-Content
+Layout: Full-Width
 */
 
 #primary.c9 {
-	float: right;
-	margin: 0 0 0 -25%;
-	width: 75%;
-	padding-left: 6%;
+	float: none;
+	margin: 0;
+	width: 100%;
+	padding-left: 0;
 	padding-right: 0;
 }
 .end {
-	margin: 0 25% 0 0;
+	margin: 0;
 }
 #secondary.c3 {
-	float: left;
-	overflow: hidden;
-	width: 25%;
+	float: none;
+	width: 100%;
 }
 .site-footer {
 	clear: both;

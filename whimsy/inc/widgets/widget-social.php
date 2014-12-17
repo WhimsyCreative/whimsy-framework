@@ -12,26 +12,26 @@ class widget_whimsy_social extends WP_Widget {
     // Widget Content
     function widget($args, $instance) { 
         extract( $args );
-        $whimsy_social_twitter = strip_tags($instance['whimsy_social_twitter']);
-        $whimsy_social_pinterest = strip_tags($instance['whimsy_social_pinterest']);
-        $whimsy_social_facebook = strip_tags($instance['whimsy_social_facebook']);
-        $whimsy_social_google_plus = strip_tags($instance['whimsy_social_google_plus']);
-        $whimsy_social_linkedin = strip_tags($instance['whimsy_social_linkedin']);
+        $whimsy_social_twitter = sanitize_text_field($instance['whimsy_social_twitter']);
+        $whimsy_social_pinterest = sanitize_text_field($instance['whimsy_social_pinterest']);
+        $whimsy_social_facebook = sanitize_text_field($instance['whimsy_social_facebook']);
+        $whimsy_social_google_plus = sanitize_text_field($instance['whimsy_social_google_plus']);
+        $whimsy_social_linkedin = sanitize_text_field($instance['whimsy_social_linkedin']);
 
         ?>
 
             <div id="widget-whimsy-social" class="widget">
                 <ul>
                 <?php if ($whimsy_social_twitter) {
-                   echo '<li><a href="'.$whimsy_social_twitter.'"><i class="fa fa-twitter"></i></a></li>'; };
+                    echo '<li><a href="' .esc_url($whimsy_social_twitter).'"><i class="fa fa-twitter"></i></a></li>'; };
 				    if ($whimsy_social_pinterest) {
-                    echo '<li><a href="'.$whimsy_social_pinterest.'"><i class="fa fa-pinterest"></i></a></li>'; };
+                    echo '<li><a href="'.esc_url($whimsy_social_pinterest).'"><i class="fa fa-pinterest"></i></a></li>'; };
 				    if ($whimsy_social_facebook) {					
-                    echo '<li><a href="'.$whimsy_social_facebook.'"><i class="fa fa-facebook"></i></a></li>'; };
+                    echo '<li><a href="'.esc_url($whimsy_social_facebook).'"><i class="fa fa-facebook"></i></a></li>'; };
 				    if ($whimsy_social_google_plus) {					
-                    echo '<li><a href="'.$whimsy_social_google_plus.'"><i class="fa fa-google-plus"></i></a></li>'; };
+                    echo '<li><a href="'.esc_url($whimsy_social_google_plus).'"><i class="fa fa-google-plus"></i></a></li>'; };
 				    if ($whimsy_social_linkedin) {					
-                    echo '<li><a href="'.$whimsy_social_linkedin.'"><i class="fa fa-linkedin"></i></a></li>'; 
+                    echo '<li><a href="'.esc_url($whimsy_social_linkedin).'"><i class="fa fa-linkedin"></i></a></li>'; 
 					} ?>
                 </ul>
             </div> <!-- #whimsy-about-box -->

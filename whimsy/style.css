@@ -1,19 +1,40 @@
 /*
 Theme Name: Whimsy Framework
-Theme URI: http://thefanciful.com/whimsy/
 Author: thefanciful
 Author URI: http://thefanciful.com
-Description: The Whimsy Framework is a minimal theme ready for customization with lots of extras baked in.
-Version: 1.0
+Description: Whimsy framework is a minimal theme ready for customization with lots of extras baked in.
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: whimsy
-Tags: responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, two-columns
+Text Domain: whimsy-framework
+Tags: responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, two-columns
 
-Whimsy Framework WordPress Theme, Copyright 2014 WordPress.org
-Whimsy Framework is distributed under the terms of the GNU GPL
+ * Whimsy Framework WordPress Theme, Copyright 2014 WordPress.org
+ * Whimsy Framework is distributed under the terms of the GNU GPL
 
-*/
+ * @package    SlimMenu (navigation.js)
+ * @link       http://adnantopal.github.io/slimmenu/
+ * @author     Author: @adnantopal
+ * @copyright  Copyright 2013, Adnan Topal (atopal.com)
+ * @licence    Licensed under the MIT license.
+
+ * @package    Font Awesome 
+ * @version    4.2.0 
+ * @author     @davegandy - http://fontawesome.io - @fontawesome
+ * @license    http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ 
+ * @package    Gridiculous (css/grid.css)
+ * @author     http://gridiculo.us by c.bavota - http://bavotasan.com/about
+ * @license    GPL v2
+
+ * @package    TGM-Plugin-Activation
+ * @version    2.4.0
+ * @author     Thomas Griffin <thomasgriffinmedia.com>
+ * @author     Gary Jones <gamajo.com>
+ * @copyright  Copyright (c) 2014, Thomas Griffin
+ * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
+ * @link       https://github.com/thomasgriffin/TGM-Plugin-Activation
+ */
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -425,29 +446,23 @@ a:active {
 	font-weight: 300;
 	text-transform: uppercase;
 	letter-spacing: 0.9px;
-}
-ul.whimsy-nav {
-	text-align: left;
-}
-ul.whimsy-nav li {
+	width: 100%;
 	display: inline-block;
-	float: none;
-	padding: 0.6em;
 }
 .whimsy-nav {
 	clear: both;
 	display: block;
 	width: 100%;
 }
-.whimsy-nav ul {
+ul.whimsy-nav  {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	text-align: center;
 }
 .whimsy-nav li {
-	float: left;
 	position: relative;
-	display: block;
+	display: inline-block;
 }
 .whimsy-nav a {
 	display: block;
@@ -458,7 +473,7 @@ ul.whimsy-nav li {
     left: -999em;
     position: absolute;
     top: 2.9em;
-	background: rgba(31,180,202,0.9);
+	background: rgba(255,255,255,0.9);
 	letter-spacing: 0;
     float: left;
 	z-index: 99999;
@@ -497,7 +512,7 @@ ul.whimsy-nav li {
 }
 .whimsy-nav .current_page_item a,
 .whimsy-nav .current-menu-item a {
-	font-weight: 700;
+	font-weight: 500;
 }
 /* Sub-menu */
 ul.sub-menu li {
@@ -528,6 +543,7 @@ ul.sub-menu li {
 	text-align: right;
 	width: 50%;
 }
+
 /*--------------------------------------------------------------
 6.0 Accessibility
 --------------------------------------------------------------*/
@@ -743,7 +759,7 @@ h1.widget-title {
 	font-size: 80%;
 	text-transform: uppercase;
 	padding: 1em 0;
-	text-align: right;
+	text-align: left;
 }
 /*--------------------------------------------------------------
 10.1 Posts and pages
@@ -804,6 +820,7 @@ body.single .entry-meta {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+	text-transform: uppercase;
 }
 .entry-img {
 }
@@ -989,7 +1006,7 @@ object {
 #mosaic {
     margin:0 auto;
 }
-.sticky.brick {
+#mosaic .sticky.brick {
 	background: rgba(0,0,0,0.1);
 }
 #mosaic .entry-header, #mosaic .entry-content, #mosaic .entry-footer {
@@ -1049,10 +1066,12 @@ body.woocommerce-demo-store #page {
 	width: 100%;
 	position: relative;
 }
-#header, #masthead, #special-container, #content, .full-width {
+#header, #masthead, #content-container, #special-container, .full-width {
 	margin: 0 auto;
 	max-width: 90%;
 }
+#secondary.c3.end { padding-right: 0; float: right; }
+.whimsy-nav li { text-align: center; }
 .brick {
     width: 31%;
 	border-radius: 6px;
@@ -1063,26 +1082,32 @@ body.woocommerce-demo-store #page {
 	border: none;
 }
 @media screen and (max-width: 980px) {	
-	#header, #masthead, #special-container, #content, .full-width {
+	#header, #masthead, #special-container, #content-container, .full-width, #colophon {
 	  margin: 0 auto;
 	  max-width: 90%;
 	}
-	.whimsy-nav ul ul {
+	#secondary.c3.end { padding-right: 0; float: none!important; clear: both; }
+	.whimsy-nav ul {
 	    left: auto;
 	    position: relative;
 	    top: auto;
-		background: rgba(31,180,202,0.9);
+		background: rgba(255,255,255,0.9);
 		letter-spacing: 0;
 	    float: none;
-		z-index: 99999;
+		z-index: 90;
 		border-radius: 0;
 		display: block;
+	}
+	.whimsy-nav li > ul {
+		box-shadow: none;
 	}
 	.whimsy-nav ul ul a {
 		width: 100%;
 	}
+	.whimsy-nav li .sub-collapser > i {
+		font-size: 2em;
+	}
 	#site-navigation { 
-		border-bottom: none;
 		padding: 1%; 
 		height: 60px;
 	}
@@ -1099,9 +1124,6 @@ body.woocommerce-demo-store #page {
 		display: block;
 		font-size: 1em;
 		border: 0;
-	}
-	.whimsy-nav ul {
-		display: none;
 	}
 	#masthead { padding-top: 0;}
 	.site-branding {

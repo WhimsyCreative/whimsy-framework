@@ -60,7 +60,7 @@ function whimsy_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'whimsy' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'whimsy-framework' ), max( $paged, $page ) );
 	}
 
 	return $title;

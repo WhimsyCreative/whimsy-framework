@@ -25,46 +25,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'whimsy' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'whimsy-framework' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'whimsy' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'whimsy-framework' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'whimsy' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'whimsy' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'whimsy-framework' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'whimsy-framework' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'whimsy' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'whimsy' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'whimsy-framework' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'whimsy-framework' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'whimsy' );
+							_e( 'Asides', 'whimsy-framework' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'whimsy' );
+							_e( 'Galleries', 'whimsy-framework' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'whimsy' );
+							_e( 'Images', 'whimsy-framework' );
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'whimsy' );
+							_e( 'Videos', 'whimsy-framework' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'whimsy' );
+							_e( 'Quotes', 'whimsy-framework' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'whimsy' );
+							_e( 'Links', 'whimsy-framework' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'whimsy' );
+							_e( 'Statuses', 'whimsy-framework' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'whimsy' );
+							_e( 'Audios', 'whimsy-framework' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'whimsy' );
+							_e( 'Chats', 'whimsy-framework' );
 
 						else :
-							_e( 'Archives', 'whimsy' );
+							_e( 'Archives', 'whimsy-framework' );
 
 						endif;
 					?>

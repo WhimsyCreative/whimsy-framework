@@ -3,7 +3,7 @@
 
 jQuery(document).ready(function($){
 
-	jQuery('#whimsy-nav').slimmenu(
+	jQuery('.whimsy-nav').slimmenu(
 	{
 	    resizeWidth: '980',
 	    collapserTitle: '',

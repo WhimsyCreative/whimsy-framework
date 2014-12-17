@@ -28,7 +28,7 @@
 			}?>
 		</div>
 		<div class="site-info">
-			<?php printf( __( '%1$s by %2$s.', 'whimsy' ), 'WordPress Theme', '<a href="http://thefanciful.com" rel="designer">The Fanciful</a>' ); ?>
+			<?php printf( __( '%1$s by %2$s.', 'whimsy-framework' ), 'WordPress Theme', '<a href="http://thefanciful.com" rel="designer">The Fanciful</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

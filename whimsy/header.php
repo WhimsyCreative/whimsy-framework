@@ -21,8 +21,8 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site grid">
 	<div id="header-container">
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'whimsy' ); ?></a>		
-		<?php whimsy_responsive_nav(); ?>
+		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'whimsy-framework' ); ?></a>		
+		<nav id="site-navigation"><?php whimsy_responsive_nav(); ?></nav>
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-branding">
 				<?php if ( get_header_image() ) : ?>

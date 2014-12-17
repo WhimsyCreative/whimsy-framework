@@ -18,15 +18,15 @@ function whimsy_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'whimsy' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'whimsy-framework' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'whimsy' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'whimsy-framework' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'whimsy' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'whimsy-framework' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -49,11 +49,11 @@ function whimsy_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'whimsy' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'whimsy-framework' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'whimsy' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'whimsy' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'whimsy-framework' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'whimsy-framework' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -79,12 +79,12 @@ function whimsy_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( '%s', 'post date', 'whimsy' ),
+		_x( '%s', 'post date', 'whimsy-framework' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', 'whimsy' ),
+		_x( 'by %s', 'post author', 'whimsy-framework' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -155,16 +155,17 @@ function whimsy_head() {
         }
     }
    $whimsy_link_color = get_theme_mod( 'whimsy_link_color' );
-   echo 'a, a:visited, ul.slimmenu li a:hover, ul.slimmenu li a:focus, .entry-title a { color: '.$whimsy_link_color.' }';
-   echo 'a.btn-shortcode { border-color: '.$whimsy_link_color.'; color:'.$whimsy_link_color.' }';
+   echo 'a, a:visited, ul.whimsy-nav li a:hover, ul.whimsy-nav li a:focus, .entry-title a { color: '.esc_html($whimsy_link_color).' }';
+   echo 'a.btn-shortcode { border-color: '.$whimsy_link_color.'; color:'.esc_html($whimsy_link_color).' }';
    $whimsy_alt_color = get_theme_mod( 'whimsy_alt_color' );
-   echo 'a:hover, a:focus, a:active, .collapse-button, ul.slimmenu li a { color: '.$whimsy_alt_color.' }';
-   echo '.main-navigation ul ul { background: '.$whimsy_alt_color.' }';
-   echo '::selection { background: '.$whimsy_link_color.' }';
-   echo '::-moz-selection { background: '.$whimsy_link_color.' }';
-   echo '.collapse-button:hover, .collapse-button:focus { background-color: '.$whimsy_alt_color.'; }';
+   echo 'a:hover, a:focus, a:active, .collapse-button, ul.whimsy-nav li a { color: '.esc_html($whimsy_alt_color).' }';
+   echo '::selection { background: '.esc_html($whimsy_link_color).' }';
+   echo '::-moz-selection { background: '.esc_html($whimsy_link_color).' }';
+   echo '.collapse-button:hover, .collapse-button:focus { background-color: '.esc_html($whimsy_alt_color).'; }';
+   echo 'h1,h2,h3,h4,h5,h6 { color: '.esc_html($whimsy_alt_color).' }';
+   echo 'a.btn-shortcode:hover { border-color: '.esc_html($whimsy_alt_color).' }';
    $whimsy_body_color = get_theme_mod( 'whimsy_body_color' );
-   echo '#content, .widget { color: '.$whimsy_body_color.' }';
+   echo '#content, .widget { color: '.esc_html($whimsy_body_color).' }';
    echo '</style>';
 }
 
@@ -181,10 +182,8 @@ function whimsy_after_post_meta() {
 function whimsy_responsive_nav() {
 	wp_nav_menu( array( 
 		'theme_location' => 'primary',
-		'container'       => 'nav',
-		'container_id' => 'site-navigation',
 		'container_class' => '',
-		'menu_class' => 'slimmenu',
+		'menu_class' => 'whimsy-nav',
 		'items_wrap' => '<ul id="whimsy-nav" class="%2$s">%3$s</ul>', 
 	));
 }
