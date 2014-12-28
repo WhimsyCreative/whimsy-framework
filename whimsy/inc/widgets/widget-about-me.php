@@ -2,90 +2,106 @@
 /**
  * @package whimsy
  */
-class widget_whimsy_about extends WP_Widget {
+class Widget_Whimsy_About extends WP_Widget {
 
     // Create Widget
-    function widget_whimsy_about() {
-        parent::WP_Widget(false, $name = '(Whimsy) About Me', array('description' => 'Your photo, a blurb about yourself, and a link for more info!'));
+    function __construct() {
+        parent::__construct(
+            'widget_whimsy_about', // Base ID
+            __( '(Whimsy) About Me', 'whimsy-framework' ), // Name
+            array( 'description' => __( 'Your photo, a blurb about yourself, and a link for more info.', 'whimsy-framework' ), ) // Args
+        );
     }
-
     // Widget Content
-    function widget($args, $instance) { 
-        extract( $args );
-        $whimsy_title = sanitize_text_field($instance['whimsy_title']);
-        $whimsy_image_url = sanitize_text_field($instance['whimsy_image_url']);
-        $whimsy_more = sanitize_text_field($instance['whimsy_more']);
-        $whimsy_more_link = sanitize_text_field($instance['whimsy_more_link']);
-        $whimsy_text = sanitize_text_field($instance['whimsy_text'], '<a><p><br><span>');
+    public function widget( $args, $instance ) {
 
+        echo $args[ 'before_widget' ];
+    
+        $whimsy_title       = apply_filters( 'widget_title', $instance[ 'whimsy_title' ]);
+        $whimsy_image_url   = empty( $instance[ 'whimsy_image_url' ] ) ? '' : $instance[ 'whimsy_image_url' ];
+        $whimsy_text        = empty( $instance[ 'whimsy_text' ] ) ? '' : $instance[ 'whimsy_text' ];
+        $whimsy_more_link   = empty( $instance[ 'whimsy_more_link' ] ) ? '' : $instance[ 'whimsy_more_link' ];
+        $whimsy_more        = empty( $instance[ 'whimsy_more' ] ) ? '' : $instance[ 'whimsy_more' ];
+        
+        if ( ! empty( $instance['whimsy_title'] ) ) {
+            echo $args['before_title'] . apply_filters( 'widget_title', $instance['whimsy_title'] ). $args['after_title'];
+        }
         ?>
 
-            <div id="widget_whimsy_about" class="widget">
-                
-                <?php if( !empty( $whimsy_title ) ) : ?>
-                <h3 class="whimsy-title"><?php echo esc_html($whimsy_title); ?></h3><!-- .whimsy-title -->
-                <?php endif; ?>
                 <?php if( !empty( $whimsy_image_url ) ) : ?>
                 <div class="whimsy-img">
-                    <a href="<?php echo esc_url($whimsy_more_link); ?>"><img src="<?php echo esc_url($whimsy_image_url); ?>"></a>
+                    <a href="<?php echo esc_url_raw( $whimsy_more_link ); ?>"><img src="<?php echo esc_url_raw( $whimsy_image_url ); ?>"></a>
                 </div> <!-- .whimsy-img -->
                 <?php endif; ?>
                 <?php if( !empty( $whimsy_text ) ) : ?>
                 <div class="whimsy-text">
-                    <?php echo esc_attr($whimsy_text); ?>
+                    <?php echo esc_attr( $whimsy_text ); ?>
                 </div> <!-- .whimsy-text -->
                 <?php endif; ?>
                 <?php if( !empty( $whimsy_more_link ) ) : ?>
                 <div class="whimsy-more">
-                    <a href="<?php echo esc_url($whimsy_more_link); ?>"><?php echo esc_attr($whimsy_more); ?></a>
+                    <a href="<?php echo esc_url_raw( $whimsy_more_link ); ?>"><?php echo esc_attr( $whimsy_more ); ?></a>
                 </div> <!-- .whimsy-more -->
                 <?php endif; ?>
 
-            </div> <!-- #whimsy-about-box -->
-
         <?php
+            
+            echo $args['after_widget'];
+
      }
 
-    // Update and save the widget
-    function update($new_instance, $old_instance) {
-        return $new_instance;
-    }
+        // Form for widget content
+        public function form( $instance ) {
 
-    // If widget content needs a form
-    function form($instance) {
+            $whimsy_title       = ! empty( $instance[ 'whimsy_title' ] ) ? $instance[ 'whimsy_title' ] : '';
+            $whimsy_image_url   = ! empty( $instance[ 'whimsy_image_url' ] ) ? $instance[ 'whimsy_image_url' ] : '';
+            $whimsy_more        = ! empty( $instance[ 'whimsy_more' ] ) ? $instance[ 'whimsy_more' ] : '';
+            $whimsy_more_link   = ! empty( $instance[ 'whimsy_more_link' ] ) ? $instance[ 'whimsy_more_link' ] : '';
+            $whimsy_text        = ! empty( $instance[ 'whimsy_text' ] ) ? $instance[ 'whimsy_text' ] : '';
 
-        // Check values
-
-        //widgetform in backend
-        $whimsy_title = isset( $instance['whimsy_title'] ) ? esc_html( $instance['whimsy_title'] ) : '';
-        $whimsy_image_url = isset( $instance['whimsy_image_url'] ) ? esc_url( $instance['whimsy_image_url'] ) : '';
-		$whimsy_more = isset( $instance['whimsy_more'] ) ? esc_attr( $instance['whimsy_more'] ) : 'Read More';
-		$whimsy_more_link = isset( $instance['whimsy_more_link'] ) ? esc_url( $instance['whimsy_more_link'] ) : '';
-		$whimsy_text = isset( $instance['whimsy_text'] ) ? esc_attr( $instance['whimsy_text'] ) : '';
         ?>
+
             <p>
-                <label for="<?php echo $this->get_field_id('whimsy_title'); ?>"><?php _e('Title', 'whimsy'); ?></label></p>
-                <input class="widefat" id="<?php echo $this->get_field_id('whimsy_title'); ?>" name="<?php echo $this->get_field_name('whimsy_title'); ?>" type="text" value="<?php echo esc_html($whimsy_title); ?>" />
-            <p>
-                <label for="<?php echo $this->get_field_id('whimsy_image_url'); ?>"><?php _e('Image', 'whimsy'); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id('whimsy_image_url'); ?>" name="<?php echo $this->get_field_name('whimsy_image_url'); ?>" type="text" value="<?php echo esc_url($whimsy_image_url); ?>" />
+                <label for="<?php echo esc_attr( $this->get_field_id( 'whimsy_title' ) ); ?>"><?php esc_html_e( 'Title:', 'whimsy-framework' ); ?></label> 
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'whimsy_title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'whimsy_title' ) ); ?>" type="text" value="<?php echo esc_attr( $whimsy_title ); ?>">
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id('whimsy_text'); ?>"><?php _e('Bio Blurb', 'whimsy'); ?></label>
-                <textarea class="widefat" id="<?php echo $this->get_field_id('whimsy_text'); ?>" name="<?php echo $this->get_field_name('whimsy_text'); ?>"><?php echo esc_attr($whimsy_text); ?></textarea>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'whimsy_image_url' ) ); ?>"><?php esc_html_e( 'Image URL:', 'whimsy-framework' ); ?></label> 
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'whimsy_image_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'whimsy_image_url' ) ); ?>" type="text" value="<?php echo esc_attr( $whimsy_image_url ); ?>">
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id('whimsy_more'); ?>"><?php _e('<em>Read More</em> Text', 'whimsy'); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id('whimsy_more'); ?>" name="<?php echo $this->get_field_name('whimsy_more'); ?>" type="text" value="<?php echo esc_attr($whimsy_more); ?>" />
+                <label for="<?php echo esc_attr( $this->get_field_id( 'whimsy_text' ) ); ?>"><?php esc_html_e( 'Bio Blurb:', 'whimsy-framework' ); ?></label> 
+                <textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id('whimsy_text') ); ?>" name="<?php echo esc_attr( $this->get_field_name('whimsy_text') ); ?>"><?php echo esc_attr($whimsy_text); ?></textarea>
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id('whimsy_more_link'); ?>"><?php _e('<em>Read More</em> Link', 'whimsy'); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id('whimsy_more_link'); ?>" name="<?php echo $this->get_field_name('whimsy_more_link'); ?>" type="text" value="<?php echo esc_attr($whimsy_more_link); ?>" />
+                <label for="<?php echo esc_attr( $this->get_field_id( 'whimsy_more' ) ); ?>"><?php esc_html_e( 'Read More Text:', 'whimsy-framework' ); ?></label> 
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'whimsy_more' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'whimsy_more' ) ); ?>" type="text" value="<?php echo esc_attr( $whimsy_more ); ?>">
+            </p>
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'whimsy_more_link' ) ); ?>"><?php esc_html_e( 'Read More Link:', 'whimsy-framework' ); ?></label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'whimsy_more_link' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'whimsy_more_link' ) ); ?>" type="text" value="<?php echo esc_attr( $whimsy_more_link ); ?>">
             </p>
 
         <?php       
     }
 
+    // Update and save the widget
+    public function update( $new_instance, $old_instance ) {
+
+        $instance = array();
+        $instance[ 'whimsy_title' ]     = ( ! empty( $new_instance[ 'whimsy_title' ] ) ) ? esc_attr( $new_instance[ 'whimsy_title' ] ) : '';
+        $instance[ 'whimsy_image_url' ] = ( ! empty( $new_instance[ 'whimsy_image_url' ] ) ) ? esc_attr( $new_instance[ 'whimsy_image_url' ] ) : '';
+        $instance[ 'whimsy_more' ]      = ( ! empty( $new_instance[ 'whimsy_more' ] ) ) ? esc_attr( $new_instance[ 'whimsy_more' ] ) : '';
+        $instance[ 'whimsy_more_link' ] = ( ! empty( $new_instance[ 'whimsy_more_link' ] ) ) ? esc_attr( $new_instance[ 'whimsy_more_link' ] ) : '';
+        $instance[ 'whimsy_text' ]      = ( ! empty( $new_instance[ 'whimsy_text' ] ) ) ? esc_textarea( $new_instance[ 'whimsy_text' ] ) : '';
+
+        return $instance;
+    }
+
 }
 
-register_widget('widget_whimsy_about');
+// register Widget_Whimsy_About widget
+function widget_whimsy_about() {
+    register_widget( 'Widget_Whimsy_About' );
+}
+add_action( 'widgets_init', 'widget_whimsy_about' );

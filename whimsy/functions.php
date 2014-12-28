@@ -132,7 +132,7 @@ function whimsy_scripts() {
 	wp_enqueue_style( 'whimsy-menu', get_template_directory_uri() . '/css/navigation.css', '1.0', false, false );
 	wp_enqueue_style( 'whimsy-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '1.0', true );
-	wp_enqueue_script( 'whimsy-scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '1.0', true );
+	wp_enqueue_script( 'whimsy-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true );
 	wp_enqueue_script( 'whimsy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -143,14 +143,14 @@ function whimsy_scripts() {
 	}
 	wp_enqueue_style( 'whimsy-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.2.0', false );
 	/* Enqueue custom styles last for easier style overrides */
-	wp_enqueue_style( 'whimsy-custom', get_stylesheet_directory_uri() . '/custom.css', false, false );
+	wp_enqueue_style( 'whimsy-custom', get_template_directory_uri() . '/custom.css', false, false );
 	/* Enqueue the appropriate CSS based on which layout is selected via Theme Customizer */
 	$whimsy_framework_layout = get_theme_mod( 'whimsy_framework_layout' );
-	if ( $whimsy_framework_layout  == 'two' ) {
-	    wp_enqueue_style( 'whimsy-layout-two', get_stylesheet_directory_uri() . '/css/layouts/sidebar-content.css' );
+	if ( $whimsy_framework_layout  == 'sidebar-content' ) {
+	    wp_enqueue_style( 'whimsy-layout-sidebar-content', get_template_directory_uri() . '/css/layouts/sidebar-content.css' );
 	}
-	if ( $whimsy_framework_layout  == 'three' ) {
-	    wp_enqueue_style( 'whimsy-layout-three', get_stylesheet_directory_uri() . '/css/layouts/full-width.css' );
+	if ( $whimsy_framework_layout  == 'full-width' ) {
+	    wp_enqueue_style( 'whimsy-layout-full-width', get_template_directory_uri() . '/css/layouts/full-width.css' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'whimsy_scripts' );

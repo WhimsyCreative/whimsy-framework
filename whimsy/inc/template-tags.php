@@ -168,6 +168,8 @@ function whimsy_head() {
    echo '#content, .widget { color: '.esc_html($whimsy_body_color).' }';
    echo '</style>';
 }
+add_action('wp_head', 'whimsy_head');
+
 
 /**
  * Whimsy After Post Hook
