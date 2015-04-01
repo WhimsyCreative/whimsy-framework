@@ -1,14 +1,14 @@
 /*
 Theme Name: Whimsy Framework
-Theme URI: http://demo.thefanciful.com
+Theme URI: http://thefanciful.com/whimsy
 Author: thefanciful
 Author URI: http://thefanciful.com
 Description: Whimsy Framework is a minimalist theme ready to be customized; with plenty of extras baked in.
-Version: 1.0.4
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whimsy-framework
-Tags: responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, two-columns
+Tags: responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, two-columns, translation-ready
 
  * Whimsy Framework WordPress Theme, Copyright 2014 WordPress.org
  * Whimsy Framework is distributed under the terms of the GNU GPL
@@ -20,7 +20,7 @@ Tags: responsive-layout, custom-background, custom-colors, custom-header, custom
  * along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  * and Blueprint http://www.blueprintcss.org/
 
- * @package    SlimMenu (navigation.js)
+ * @package    SlimMenu (jquery.slimmenu.js)
  * @link       http://adnantopal.github.io/slimmenu/
  * @author     Author: @adnantopal
  * @copyright  Copyright 2013, Adnan Topal (atopal.com)
@@ -486,6 +486,9 @@ ul.whimsy-nav  {
     float: left;
 	z-index: 99999;
 	border-radius: 0 0 3px 3px;
+}
+ul.whimsy-nav.collapsed {
+	background: rgba(255,255,255,0.9);
 }
 .whimsy-nav ul ul ul {
 	left: -999em;
@@ -1073,7 +1076,7 @@ body.woocommerce-demo-store #page {
 	width: 100%;
 	position: relative;
 }
-#header, #masthead, #content-container, #special-container, .full-width {
+#header, #masthead, #content-container, #special-container, .full-width, #colophon {
 	margin: 0 auto;
 	max-width: 90%;
 }

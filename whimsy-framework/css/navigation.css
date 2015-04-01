@@ -42,21 +42,18 @@
     background-color: #040404;
     color: #FFF;
 }
+.collapse-button:before {
+    font-family: 'FontAwesome';
+    content: '\f0c9';    
+}
 .collapse-button .icon-bar {
-    background-color: #F5F5F5;
-    border-radius: 1px 1px 1px 1px;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-    display: block;
-    height: 2px;
-    width: 18px;
-    margin: 2px 0;
+    display: none;
 }
 .whimsy-nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 100%;
-    background: rgba(255,255,255,0.95);
 }
 .whimsy-nav li {
     position: relative;
@@ -81,7 +78,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 30px;
+    width: 20px;
     height: 100%;
     text-align: center;
     z-index: 999;
@@ -89,16 +86,15 @@
 }
 .whimsy-nav li .sub-collapser :hover, .whimsy-nav li .sub-collapser :focus { color:rgba(0,0,0,0.6); }
 .whimsy-nav li .sub-collapser:before {
-    content: '';
-    display: inline-block;
+    font-family: 'FontAwesome';
+    content: '\f107';
+    display: block;
     height: 100%;
     vertical-align: middle;
+    padding-top: 45%;
 }
 .whimsy-nav li .sub-collapser > i {
-    color: #333;
-    font-size: 1.3em;
-    display: inline-block;
-    vertical-align: middle;
+    display: none;
 }
 .whimsy-nav li ul {
     margin: 0;
@@ -146,4 +142,8 @@
 .whimsy-nav.collapsed li > ul {
     display: none;
     position: static;
+}
+.whimsy-nav li .sub-collapser .expanded:before {
+    font-family: 'FontAwesome';
+    content: '\f106';
 }

@@ -131,19 +131,16 @@ function whimsy_scripts() {
 	wp_enqueue_style( 'whimsy-grid', get_template_directory_uri() . '/css/grid.css', '1.0', false, false );
 	wp_enqueue_style( 'whimsy-menu', get_template_directory_uri() . '/css/navigation.css', '1.0', false, false );
 	wp_enqueue_style( 'whimsy-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/js/jquery.slimmenu.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'whimsy-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true );
 	wp_enqueue_script( 'whimsy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	if ( is_page_template('template-mosaic.php') ) {
- 		wp_enqueue_script( 'jquery-masonry' );
-		wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/js/mosaic.js', array('jquery'), '1.0', true );
+		wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/js/mosaic.js', array('jquery-masonry'), '1.0', true );
 	}
 	wp_enqueue_style( 'whimsy-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.2.0', false );
-	/* Enqueue custom styles last for easier style overrides */
-	wp_enqueue_style( 'whimsy-custom', get_template_directory_uri() . '/custom.css', false, false );
 	/* Enqueue the appropriate CSS based on which layout is selected via Theme Customizer */
 	$whimsy_framework_layout = get_theme_mod( 'whimsy_framework_layout' );
 	if ( $whimsy_framework_layout  == 'sidebar-content' ) {
