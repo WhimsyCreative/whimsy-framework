@@ -8,7 +8,7 @@
 	<li>License: GNU General Public License v2 or later</li>
 	<li>License URI: http://www.gnu.org/licenses/gpl-2.0.html</li>
 	<li>Requires at least: 3.9</li>
-	<li>Tested up to: 4.0</li>
+	<li>Tested up to: 4.1.1</li>
 	<li>Stable tag: 1.0.6</li>
 	<li>Text Domain: whimsy-framework</li>
 	<li>Donate link: http://bit.ly/whimsywp</li>
