@@ -9,8 +9,8 @@
 	<li>License URI: http://www.gnu.org/licenses/gpl-2.0.html</li>
 	<li>Requires at least: 3.9</li>
 	<li>Tested up to: 4.0</li>
-	<li>Stable tag: 1.0.1</li>
-	<li>Text Domain: whimsy</li>
+	<li>Stable tag: 1.0.6</li>
+	<li>Text Domain: whimsy-framework</li>
 	<li>Donate link: http://bit.ly/whimsywp</li>
 </ul>
 
@@ -51,7 +51,10 @@ http://docs.thefanciful.com/whimsy-framework/
 Yes, the Whimsy Framework is fully responsive and made to work great on every device.
 
 <h1>Changelog</h1>
- 
+
+= 1.0.6 =
+* Official WordPress Release.
+* NOTE: So many changes were made over the course of releasing this theme on the WordPress Repository. Development changes will be detailed in future releases.
 = 1.0.1 =
 * 404.php - Added .container to #content div.
 * archive.php - Added .container to #content div.
