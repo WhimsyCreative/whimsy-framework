@@ -1,0 +1,31 @@
+/*
+Theme Name: whimsy
+Layout: Sidebar-Content
+*/
+
+#primary.c9 {
+	float: right;
+	margin: 0 0 0 -25%;
+	width: 75%;
+	padding-left: 6%;
+	padding-right: 0;
+}
+.end {
+	margin: 0 25% 0 0;
+}
+#secondary.c3 {
+	float: left;
+	overflow: hidden;
+	width: 25%;
+}
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+@media screen and (max-width: 980px) {	
+	#primary.c9 {
+		margin: 0 auto;
+		width: 100%;
+		padding-left: 0;
+	}
+}
