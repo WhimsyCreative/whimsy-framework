@@ -88,4 +88,22 @@
 			}
 		} );
 	} );
+	// Menu bg color.
+	wp.customize( 'whimsy_menu_background_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#site-navigation" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#site-navigation" ).css( {
+					'clip': 'auto',
+					'background': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+
 } )( jQuery );
