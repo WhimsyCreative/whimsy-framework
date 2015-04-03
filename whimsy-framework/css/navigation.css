@@ -1,7 +1,103 @@
+/*--------------------------------------------------------------
+5.2 Menus
+--------------------------------------------------------------*/
+#site-navigation {
+    background: rgba(255,255,255,0.9);
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(16, 21, 22, 0.15);
+    box-shadow: 0px 1px 3px 0px rgba(16, 21, 22, 0.15);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    width: 100%;
+    display: block;
+}
+.whimsy-nav {
+    clear: both;
+    display: block;
+    width: 100%;
+}
+ul.whimsy-nav  {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    text-align: center;
+}
+.whimsy-nav li {
+    position: relative;
+    display: inline-block;
+}
+.whimsy-nav a {
+    display: block;
+    text-decoration: none;
+    font-weight: 100;
+}
+.whimsy-nav ul ul {
+    left: -999em;
+    position: absolute;
+    top: 2.9em;
+    background: rgba(255,255,255,0.9);
+    letter-spacing: 0;
+    float: left;
+    z-index: 99999;
+    border-radius: 0 0 3px 3px;
+}
+ul.whimsy-nav.collapsed {
+    background: rgba(255,255,255,0.9);
+}
+.whimsy-nav ul ul ul {
+    left: -999em;
+    top: 0;
+}
+.whimsy-nav ul ul a {
+    width: 200px;
+    font-weight: 500;
+    text-align: left;
+    text-transform: none;
+    padding: 2% 4%;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.whimsy-nav ul ul li { }
+.whimsy-nav li:hover > a {
+}
+.whimsy-nav ul ul :hover > a {
+    font-weight: 500;
+
+}
+.whimsy-nav ul ul a:hover {
+}
+.whimsy-nav ul li:hover > ul {
+    left: auto;
+}
+.whimsy-nav ul ul li:hover > ul {
+    left: 100%;
+}
+.whimsy-nav .current_page_item a,
+.whimsy-nav .current-menu-item a {
+    font-weight: 600;
+}
+/* Sub-menu */
+#site-navigation ul.sub-menu li {
+    display: inline-block;
+    float: none;
+    padding: 0;
+    background: rgba(255,255,255,0.95);
+    font-size: 90%;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(216,216,216,0.3);
+}
+
+#site-navigation ul.sub-menu li:hover, .whimsy-nav.collapsed li:hover {
+    background:rgba(255,255,255,0.1);
+}
+
 .menu-collapser {
     position: relative;
     width: 100%;
-    height: 48px;
+    height: 60px;
     padding: 0 8px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -10,16 +106,15 @@
 .collapse-button {
     position: absolute;
     right: 0;
-    top: 47%;
-    width: 45px;
-    padding: 6px 10px;
+    top: 49%;
+    width: 60px;
+    padding: 14px;
     cursor: pointer;
-    font-size: 1.6em;
+    font-size: 2em;
     text-align: center;
     transform: translate(0px, -50%);
     box-sizing: border-box;
     line-height: 1em;
-    border-radius: 6px;
 
     transform: translate(0, -50%);
     -o-transform: translate(0, -50%);
@@ -109,8 +204,8 @@
     width: 100%;
     min-width: 170px;
     text-align: left;
-    -webkit-box-shadow: 0px 3px 3px 0px rgba(16, 21, 22, 0.15);
-    box-shadow: 0px 3px 3px 0px rgba(16, 21, 22, 0.15);
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(2, 2, 2, 0.15);
+    box-shadow: 0px 3px 3px 0px rgba(2, 2, 2, 0.15);
 }
 .whimsy-nav li > ul > li ul {
     display: none;
