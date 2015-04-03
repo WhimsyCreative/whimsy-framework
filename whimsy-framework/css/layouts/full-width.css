@@ -1,0 +1,30 @@
+/*
+Theme Name: whimsy
+Layout: Full-Width
+*/
+
+#primary.c9 {
+	float: none;
+	margin: 0;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+.end {
+	margin: 0;
+}
+#secondary.c3 {
+	float: none;
+	width: 100%;
+}
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+@media screen and (max-width: 980px) {	
+	#primary.c9 {
+		margin: 0 auto;
+		width: 100%;
+		padding-left: 0;
+	}
+}
