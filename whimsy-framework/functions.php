@@ -34,6 +34,14 @@ function whimsy_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+	
+	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -48,7 +56,8 @@ function whimsy_setup() {
 	 * WooCommerce Support
 	 */
 	add_theme_support( 'woocommerce' ); 
-	// This theme uses wp_nav_menu() in one location.
+
+	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'whimsy-framework' ),
 		'footer' => __( 'Footer Menu', 'whimsy-framework' ),
@@ -67,7 +76,7 @@ function whimsy_setup() {
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link'
+		'aside', 'image', 'video', 'quote', 'link', 'gallery'
 	) );
 
 	// Setup the WordPress core custom background feature.
@@ -77,6 +86,7 @@ function whimsy_setup() {
 	) ) );
 }
 endif; // whimsy_setup
+
 add_action( 'after_setup_theme', 'whimsy_setup' );
 
 /**
@@ -128,27 +138,39 @@ add_action( 'widgets_init', 'whimsy_widgets_init' );
  * Enqueue scripts and styles.
  */
 function whimsy_scripts() {
+	
 	wp_enqueue_style( 'whimsy-grid', get_template_directory_uri() . '/css/grid.css', '1.0', false, false );
+	
 	wp_enqueue_style( 'whimsy-menu', get_template_directory_uri() . '/css/navigation.css', '1.0', false, false );
+	
 	wp_enqueue_style( 'whimsy-style', get_stylesheet_uri() );
+	
 	wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/js/jquery.slimmenu.js', array('jquery'), '1.0', true );
+	
 	wp_enqueue_script( 'whimsy-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true );
+	
 	wp_enqueue_script( 'whimsy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0', true );
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	
 	if ( is_page_template('template-mosaic.php') ) {
 		wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/js/mosaic.js', array('jquery-masonry'), '1.0', true );
 	}
+	
 	wp_enqueue_style( 'whimsy-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.2.0', false );
+	
 	/* Enqueue the appropriate CSS based on which layout is selected via Theme Customizer */
 	$whimsy_framework_layout = get_theme_mod( 'whimsy_framework_layout' );
 	if ( $whimsy_framework_layout  == 'sidebar-content' ) {
 	    wp_enqueue_style( 'whimsy-layout-sidebar-content', get_template_directory_uri() . '/css/layouts/sidebar-content.css' );
 	}
+
 	if ( $whimsy_framework_layout  == 'full-width' ) {
 	    wp_enqueue_style( 'whimsy-layout-full-width', get_template_directory_uri() . '/css/layouts/full-width.css' );
 	}
+
 }
 add_action( 'wp_enqueue_scripts', 'whimsy_scripts' );
 
@@ -173,11 +195,6 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
-
-/**
  * Whimsical Widgets
  */
 require get_template_directory() . '/inc/widgets.php';
@@ -187,18 +204,12 @@ require get_template_directory() . '/inc/widgets.php';
  */
 require get_template_directory() . '/inc/plugins.php';
 
-/*
- * WooCommerce Integration
+/**
+ * Load Jetpack compatibility file.
  */
-if (class_exists('woocommerce')) {
-	add_action('woocommerce_before_main_content', 'whimsy_woo_wrapper_start', 10);
-	add_action('woocommerce_after_main_content', 'whimsy_woo_wrapper_end', 10);
+require get_template_directory() . '/inc/plugins/jetpack.php';
 
-	function whimsy_woo_wrapper_start() {
-	  echo '<div id="whimsy-commerce" class="c9">';
-	}
-
-	function whimsy_woo_wrapper_end() {
-	  echo '</div>';
-	}
-} 
+/**
+ * Load WooCommerce compatibility file.
+ */
+require get_template_directory() . '/inc/plugins/woocommerce.php';
