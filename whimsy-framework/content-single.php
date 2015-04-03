@@ -19,8 +19,8 @@
 		<div class="entry-img"><?php if ( has_post_thumbnail() ) { the_post_thumbnail('full'); } ?></div>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<div class="entry-meta entry-grid clear">
-			<div class="entry-posted-on c6"><?php whimsy_posted_on(); ?></div>
-			<div class="entry-comment-meta c6 end"><a rel="nofollow" class="entry-comment" href="<?php the_permalink(); ?>#comments"><?php comments_number('0', '1', '%' );?> <i class="fa fa-comments"></i></a></div>
+			<div class="entry-posted-on"><?php whimsy_posted_on(); ?></div>
+			<div class="entry-comment-meta"><a rel="nofollow" class="entry-comment" href="<?php the_permalink(); ?>#comments"><?php comments_number('0', '1', '%' );?> <i class="fa fa-comments"></i></a></div>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 	<section class="entry-content">
