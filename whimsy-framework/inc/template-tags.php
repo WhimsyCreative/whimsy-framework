@@ -139,27 +139,13 @@ add_action( 'save_post',     'whimsy_category_transient_flusher' );
  */
 function whimsy_head() {
     echo '<style type="text/css">';
-	$whimsy_logo_position = get_theme_mod( 'logo_placement' );
-    if( $whimsy_logo_position != '' ) {
-        switch ( $whimsy_logo_position ) {
-            case 'left':
-                // Do nothing. The theme already aligns the logo to the left
-                break;
-            case 'right':
-                echo '#header #logo{ float: right; }';
-                break;
-            case 'center':
-                echo '#header{ text-align: center; }';
-                echo '#header #logo{ float: none; margin-left: auto; margin-right: auto; }';
-                break;
-        }
-    }
+	
 	$whimsy_link_color = get_theme_mod( 'whimsy_link_color' );
 	echo 'a, a:visited, ul.whimsy-nav li a:hover, ul.whimsy-nav li a:focus, .entry-title a { color: ' . esc_html($whimsy_link_color) . ' }';
 	echo 'a.btn-shortcode, button, input[type="button"], input[type="reset"], input[type="submit"], #infinite-handle span { border-color: ' . $whimsy_link_color . '; color:' . esc_html($whimsy_link_color) . ' }';
 
 	if( get_theme_mod( 'whimsy_framework_logo_center' ) == false ) { 
-		echo '.site-branding > .site-logo img {  max-width: 20%;  text-align: left;  float: left;  margin-bottom: 1.2em; }';
+		echo '.site-branding > .site-logo img {  max-width: 25%;  text-align: left;  float: left;  margin-bottom: 1.2em; }';
 	}
 
 	if ( class_exists( 'woocommerce' ) ) {
@@ -167,7 +153,7 @@ function whimsy_head() {
 	} 
 
 	$whimsy_alt_color = get_theme_mod( 'whimsy_alt_color' );
-	echo 'a:hover, a:focus, a:active, .collapse-button, ul.whimsy-nav li a, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, #infinite-handle span:hover { color: ' . esc_html($whimsy_alt_color) . ' }';
+	echo 'a:hover, a:focus, a:active, .collapse-button, #site-navigation ul.sub-menu a:hover, ul.whimsy-nav li a, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, #infinite-handle span:hover { color: ' . esc_html($whimsy_alt_color) . ' }';
 	echo '::selection { background: ' . esc_html($whimsy_link_color) . ' }';
 	echo '::-moz-selection { background: ' . esc_html($whimsy_link_color) . ' }';
 	echo '.collapse-button:hover, .collapse-button:focus { background-color: ' . esc_html($whimsy_alt_color) . '; }';
