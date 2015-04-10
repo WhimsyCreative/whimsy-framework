@@ -1,0 +1,150 @@
+
+/*--------------------------------------------------------------
+14.1 WooCommerce 
+--------------------------------------------------------------*/
+
+body.woocommerce-demo-store p.demo_store {
+	position: absolute;
+	font-size: 70%;
+	overflow: hidden;
+	line-height: 1em;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 1px;
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) inset;
+}
+body.woocommerce-demo-store #page {
+	top: 23px;
+}
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button, 
+.woocommerce #respond input#submit, 
+.woocommerce #content input.button, 
+.woocommerce-page a.button, 
+.woocommerce-page button.button, 
+.woocommerce-page input.button, 
+.woocommerce-page #respond input#submit, 
+.woocommerce-page #content input.button {
+
+	font-size: 100%;
+	padding: 8px 10px;
+	font-weight: bold;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+
+	text-shadow: 0 1px 0 #ffffff;
+	color: inherit;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+
+	border: 1px solid ;
+	border: 1px solid ;
+
+	background: transparent;
+
+	-webkit-box-shadow: 0 0;
+	-moz-box-shadow: 0 0;
+	box-shadow:  0 0;
+
+}
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover, 
+.woocommerce #respond input#submit:hover, 
+.woocommerce #content input.button:hover, 
+.woocommerce-page a.button:hover, 
+.woocommerce-page button.button:hover, 
+.woocommerce-page input.button:hover, 
+.woocommerce-page #respond input#submit:hover, 
+.woocommerce-page #content input.button:hover {
+	background: transparent;
+	color: #000;
+}
+.woocommerce ul.products li.product h3, .woocommerce-page ul.products li.product h3 {
+	font-size: 1em;
+	text-transform: uppercase;
+}
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+	text-align: center;
+}
+.woocommerce .products .star-rating, .woocommerce-page .products .star-rating {
+	margin: 0 auto;
+}
+.woocommerce table.shop_table th, .woocommerce-page table.shop_table th {
+	font-weight: bold;
+	line-height: 18px;
+	padding: 9px;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 1px;
+	background: rgba(215,215,215,0.1);
+}
+.woocommerce .woocommerce-message, 
+.woocommerce .woocommerce-error, 
+.woocommerce .woocommerce-info, 
+.woocommerce-page .woocommerce-message, 
+.woocommerce-page .woocommerce-error, 
+.woocommerce-page .woocommerce-info {
+	background: transparent;
+	border-left: 1px solid rgba(215,215,215,0.4);
+	border-right: 1px solid rgba(215,215,215,0.4);
+	border-bottom: 1px solid rgba(215,215,215,0.4);
+	box-shadow: 0 0;
+}
+
+.woocommerce .addresses .title h3, 
+.woocommerce-page .addresses .title h3, 
+.woocommerce-page .addresses .title,
+.woocommerce-billing-fields h3,
+.woocommerce-shipping-fields h3,
+.woocommerce .related h2,
+.woocommerce div.product .woocommerce-tabs ul.tabs, 
+.woocommerce #content div.product .woocommerce-tabs ul.tabs, 
+.woocommerce-page div.product .woocommerce-tabs ul.tabs, 
+.woocommerce-page #content div.product .woocommerce-tabs ul.tabs,
+.woocommerce .product_meta,
+.woocommerce .cross-sells h2,
+.woocommerce .cart_totals th,
+.woocommerce .cart_totals h2 {
+	font-size: 80%;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+.woocommerce .cart_totals h2 {
+	text-align: left;
+	border-bottom: 1px solid #f7f6f7;
+	border-bottom: 1px solid rgba(215,215,215,0.4);
+	padding: 0 0 14px 0;
+ }
+.woocommerce table.shop_table td, 
+.woocommerce-page table.shop_table td {
+	padding: 18px 10px;
+}
+.woocommerce .cart-collaterals .cart_totals table th, 
+.woocommerce-page .cart-collaterals .cart_totals table th {
+	padding: 10px 12px 16px 0;
+	width: 50%;
+	font-size: 12px;
+	line-height: 1.4em;
+}
+.woocommerce .cart-collaterals .shipping_calculator, 
+.woocommerce-page .cart-collaterals .shipping_calculator {
+	margin:1em 0; 
+}
+.woocommerce #payment, .woocommerce-page #payment {
+	background: transparent;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid rgba(215,215,215,0.5);
+}
+.woocommerce-page .addresses .title {
+	border-bottom: 1px solid rgba(215,215,215,0.4);
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li, 
+.woocommerce #content div.product .woocommerce-tabs ul.tabs li, 
+.woocommerce-page div.product .woocommerce-tabs ul.tabs li, 
+.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li {
+	background: rgba(215,215,215,0.4);
+	box-shadow: 0 0;
+}

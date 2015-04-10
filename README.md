@@ -1,4 +1,4 @@
-=== Whimsy Framework ===
+# Whimsy Framework
 <h1>Details</h1>
 <ul>
 	<li>Contributors: thefanciful</li>
@@ -14,13 +14,13 @@
 	<li>Donate link: http://bit.ly/whimsywp</li>
 </ul>
 
-<p>The Whimsy Framework is a minimal theme ready for customization with lots of extras baked in.</p>
+The Whimsy Framework is a minimal theme ready for customization with lots of extras baked in.
 
-<h1>Description</h1>
+## Description</h1>
 The Whimsy Framework was built as an easy to customize foundation for child themes.
 
-<h1>Installation</h1>
-<h2>Uploading through the WordPress Dashboard</h2>
+## Installation
+*Uploading through the WordPress Dashboard*
 
 The WordPress dashboard offers the  easiest way to install any WordPress theme including the Whimsy Framework.
 
@@ -30,32 +30,51 @@ The WordPress dashboard offers the  easiest way to install any WordPress theme i
 * Select Browse, and install the whimsy.zip file.
 * Activate the Whimsy Framework, or upload a child theme. 
 
-<h2>Uploading via FTP</h2>
-
-* Download the Whimsy Framework, and extract the file to your desktop.
-* Log in to your hosting server via FTP.
-* Navigate via FTP to /wp-content/themes.
-* Upload the /whimsy folder under /themes.
-* On your WordPress site go to Dashboard > Appearance.
-* Activate the Whimsy Framework, or upload a child theme.
-
-<h2>Using the Customizer</h2>
+### Using the Customizer
 For detailed instructions on using the built-in WordPress Customizer with the Whimsy Framework please visit The Fanciful. http://docs.thefanciful.com/whimsy-framework/using-customizer/
 
-<h2>Full Documentation</h2>
+### Full Documentation
 http://docs.thefanciful.com/whimsy-framework/
 
-<h1>Frequently Asked Questions</h1>
+## Frequently Asked Questions
 
-<h2>Will this theme work on mobile devices?</h2>
+### Will this theme work on mobile devices?
 Yes, the Whimsy Framework is fully responsive and made to work great on every device.
 
-<h1>Changelog</h1>
+## Changelog
 
-= 1.0.6 =
+### 1.1
+* header.php -
+	* Reconfigured the way Custom Header is utilized.
+	* Added desktop logo support
+	* Added mobile logo support
+* template-full.php - removed div#whimsy-full container
+* single.php - Defined styles for post meta sections, removed grid references.
+* style.css - 
+	* Moved main menu styles to /css/navigation.css
+	* navigation.css - Added #site-navigation selector to sub-menus
+	* 10.1 Header Styles
+	* 10.2 Posts and pages
+	* 10.3 Asides
+	* 10.4 Comments
+	* 10.5 Footer styles
+	* Moved woo commerce styles to /css/woocommerce.css
+* footer.php - Changed theme credit format
+* Customizer -
+	* NEW SECTION: Logo
+	* NEW SECTION: Menu Display
+* widget-about-me.php - Added image upload support to widget
+* Plugin Integrations - 
+	* Moved WC integration out of functions.php to /inc/plugins/woocommerce.php
+	* Added styles for Infinite Scroll via Jetpack
+* Added Gallery Post Type support
+* Added Title Tag support for WP 4.1+
+
+### 1.0.6
 * Official WordPress Release.
 * NOTE: So many changes were made over the course of releasing this theme on the WordPress Repository. Development changes will be detailed in future releases.
-= 1.0.1 =
+
+### 1.0.1
 * 404.php - Added .container to #content div.
 * archive.php - Added .container to #content div.
 * footer.php - Moved footer menu below footer widgets, added .container to #colophon.
@@ -67,5 +86,5 @@ Yes, the Whimsy Framework is fully responsive and made to work great on every de
 * screenshot.png - Updated for WordPress repository.
 * style.css - Added styles for .container, removed width declarations from #content, #footer.
 
-= 1.0 =
+### 1.0
 * Initial release.

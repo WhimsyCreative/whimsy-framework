@@ -4,7 +4,7 @@ Theme URI: http://thefanciful.com/whimsy
 Author: thefanciful
 Author URI: http://thefanciful.com
 Description: Whimsy Framework is a minimalist theme ready to be customized; with plenty of extras baked in.
-Version: 1.0.6
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whimsy-framework
@@ -53,21 +53,26 @@ Tags: responsive-layout, custom-background, custom-colors, custom-header, custom
 4.0 - Forms
 5.0 - Navigation
 	5.1 - Links
-	5.2 - Menus
+	5.2 - Menus - NOTE: Menu styles can now be found in /css/navigation.css
+	5.3 Previous/Next Links
 6.0 - Accessibility
 7.0 - Alignments
 8.0 - Clearings
 9.0 - Widgets
 10.0 - Content
-	10.1 - Posts and pages
-	10.2 - Asides
-	10.3 - Comments
+	10.1 Header 
+	10.2 Posts and pages
+	10.3 Asides
+	10.4 Comments
+	10.5 Footer 
 11.0 - Infinite scroll
 12.0 - Media
 	12.1 - Captions
 	12.2 - Galleries
 13.0 - Template Page Styles
 14.0 - Plugin Integrations
+	14.1 WooCommerce 
+	14.2 Jetpack 
 15.0 - Media Queries
 
 --------------------------------------------------------------*/
@@ -75,6 +80,7 @@ Tags: responsive-layout, custom-background, custom-colors, custom-header, custom
 /*--------------------------------------------------------------
 1.0 - Reset
 --------------------------------------------------------------*/
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -163,6 +169,11 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
+	-webkit-transition: color 200ms ease;
+  -moz-transition: color 200ms ease;
+  -ms-transition: color 200ms ease;
+  -o-transition: color 200ms ease;
+  transition: color 200ms ease;
 }
 a img {
 	border: 0;
@@ -171,6 +182,7 @@ a img {
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
+
 body,
 button,
 input,
@@ -205,6 +217,7 @@ cite {
 }
 address {
 	margin: 0 0 1.5em;
+	padding: 1em 0;
 }
 pre {
 	background: #eee;
@@ -248,9 +261,11 @@ small {
 big {
 	font-size: 125%;
 }
+
 /*--------------------------------------------------------------
 3.0 Elements
 --------------------------------------------------------------*/
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -291,7 +306,9 @@ table {
 th {
 	font-weight: bold;
 }
+
 /* Headers */
+
 h1, h2, h3, h4, h5, h6 {
 	line-height:1.4em;
 	margin-bottom: 0.8em;
@@ -314,6 +331,9 @@ h5 {
 h6 {
 	font-size:0.8em;
 	}
+
+/* Highlight selection colors */
+
 ::selection {
   background: #1fb4ca;
   color: #fff;
@@ -322,9 +342,11 @@ h6 {
   background: #1fb4ca;
   color: #fff;
 }
+
 /*--------------------------------------------------------------
 4.0 Forms
 --------------------------------------------------------------*/
+
 button,
 input,
 select,
@@ -353,7 +375,6 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 button:focus,
 input[type="button"]:focus,
@@ -365,7 +386,6 @@ input[type="reset"]:active,
 input[type="submit"]:active {
 	border-color: #aaa #bbb #bbb;
 	color:#ccc;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -421,9 +441,11 @@ textarea {
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
+
 a, a:visited {
 	color:#1fb4ca;
 	text-decoration: none;
@@ -444,97 +466,18 @@ a:active {
 	font-weight: 700;
 }
 
+
+
 /*--------------------------------------------------------------
-5.2 Menus
+5.2 NOTE: Main menu styles are found in /css/navigation.css
 --------------------------------------------------------------*/
-#site-navigation {
-	background: rgba(255,255,255,0.9);
-	-webkit-box-shadow: 0px 1px 3px 0px rgba(16, 21, 22, 0.15);
-	box-shadow: 0px 1px 3px 0px rgba(16, 21, 22, 0.15);
-	font-weight: 300;
-	text-transform: uppercase;
-	letter-spacing: 0.9px;
-	width: 100%;
-	display: inline-block;
-}
-.whimsy-nav {
-	clear: both;
-	display: block;
-	width: 100%;
-}
-ul.whimsy-nav  {
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-	text-align: center;
-}
-.whimsy-nav li {
-	position: relative;
-	display: inline-block;
-}
-.whimsy-nav a {
-	display: block;
-	text-decoration: none;
-	font-weight: 100;
-}
-.whimsy-nav ul ul {
-    left: -999em;
-    position: absolute;
-    top: 2.9em;
-	background: rgba(255,255,255,0.9);
-	letter-spacing: 0;
-    float: left;
-	z-index: 99999;
-	border-radius: 0 0 3px 3px;
-}
-ul.whimsy-nav.collapsed {
-	background: rgba(255,255,255,0.9);
-}
-.whimsy-nav ul ul ul {
-	left: -999em;
-	top: 0;
-}
-.whimsy-nav ul ul a {
-	width: 200px;
-	font-weight: 500;
-	text-align: left;
-	text-transform: none;
-	padding: 2% 4%;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.whimsy-nav ul ul li {
-}
-.whimsy-nav li:hover > a {
-}
-.whimsy-nav ul ul :hover > a {
-	font-weight: 500;
-}
-.whimsy-nav ul ul a:hover {
-}
-.whimsy-nav ul li:hover > ul {
-	left: auto;
-}
-.whimsy-nav ul ul li:hover > ul {
-	left: 100%;
-}
-.whimsy-nav .current_page_item a,
-.whimsy-nav .current-menu-item a {
-	font-weight: 500;
-}
-/* Sub-menu */
-ul.sub-menu li {
-	display: inline-block;
-	float: none;
-	padding: 0;
-	background: rgba(255,255,255,0.95);
-	font-size: 90%;
-	font-weight: 500;
-	border-bottom: 1px solid rgba(216,216,216,0.3);
-}
+
+
+
+/*--------------------------------------------------------------
+5.3 Previous/Next Links
+--------------------------------------------------------------*/
+
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -558,7 +501,9 @@ ul.sub-menu li {
 /*--------------------------------------------------------------
 6.0 Accessibility
 --------------------------------------------------------------*/
+
 /* Text meant only for screen readers */
+
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -566,6 +511,7 @@ ul.sub-menu li {
 	width: 1px;
 	overflow: hidden;
 }
+
 .screen-reader-text:hover,
 .screen-reader-text:active,
 .screen-reader-text:focus {
@@ -586,9 +532,11 @@ ul.sub-menu li {
 	width: auto;
 	z-index: 100000; /* Above WP toolbar */
 }
+
 /*--------------------------------------------------------------
 7.0 Alignments
 --------------------------------------------------------------*/
+
 .alignleft {
 	display: inline;
 	float: left;
@@ -604,9 +552,11 @@ ul.sub-menu li {
 	display: block;
 	margin: 0 auto;
 }
+
 /*--------------------------------------------------------------
 8.0 Clearings
 --------------------------------------------------------------*/
+
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -630,66 +580,77 @@ ul.sub-menu li {
 .site-footer:after {
 	clear: both;
 }
+
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
-.widget {
-	margin: 0 0 1.5em;
-}
+
+.widget { margin: 0 0 1.5em; }
+
 /* Make sure select elements fit in widgets */
+
 .widget select {
 	width: 98%;
 	max-width: 100%;
 }
+
 /* Special Widget Styles */
+
 h1.widget-title {
 	font-size:1em;
 	text-transform:uppercase;
 	letter-spacing:0.9px;
     width: 100%;
 }
-.widget li {
-	list-style: none;
-}
+
+.widget li { list-style: none; }
+
 .widget li:before {
 	content: '\f105';
 	font-family: 'FontAwesome';
 	float: left;
 	margin-left: -1.5em;
 }
+
 /* Whimsy About Me Widget */
+
 .whimsy-img img{
 	border-radius: 6px;
     margin-bottom: 1em;
 }
+
 .whimsy-more {
 	text-align: right;
 	text-transform: uppercase;
 	font-weight: 300;
 	letter-spacing: 0.9px;
 }
+
 /* Whimsy Social Networks Widget */
+
 #widget-whimsy-social ul {
     text-align: center;
     margin-left: 0;
     margin-bottom: 0;
 }
+
 #widget-whimsy-social li {
 	display:inline-block;
 	padding:1%;
 	margin:0 2%;
 	font-size:2em;
-	}
-#widget-whimsy-social li:before {
-	content: ''; 
-	}
+}
+
+#widget-whimsy-social li:before { content: ''; }
+
 /* Search widget */
-.widget_search .search-submit {
-	display: none;
-}
+
+.widget_search .search-submit {	display: none; }
+
 /* Calendar widget */
-#wp-calendar {
-}
+
+#wp-calendar {}
+
 #wp-calendar caption{
 	letter-spacing: 2px;
 	text-align: left;
@@ -699,146 +660,168 @@ h1.widget-title {
 	padding: 0 0 1% 0;
 	border-bottom: 1px solid rgba(216,216,216,0.3);
 	margin: 0 0 3% 0;
-	}
+}
+
 #wp-calendar th, #wp-calendar tr, #wp-calendar td{
 	text-align:center;
 	font-size: 100%;
-	}
+}
+
 #wp-calendar a{
 	border:1px solid rgba(0,0,0,0.1);
 	border-radius:6px;
 	display:block;
-	}
+	background: rgba(255,255,255,0.3);
+}
+#wp-calendar a:hover{
+	background: rgba(255,255,255,0.4);
+}
+
 /* Tag Cloud */
-.widget_tag_cloud a {
-	font-weight: 100;
-	}
+
+.widget_tag_cloud a { font-weight: 100; }
+
 /* RSS */
-.rsswidget img { 
-	float: right;
-	}
+
+.rsswidget img { float: right; }
+
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
+
 #header, #masthead, #special-container, .container, #footer-menu, #footer-widgets {
 	margin: 0 auto;
 	max-width: 1180px;
 	clear: both;
 }
-/* HEADER STYLES */
+
+/*--------------------------------------------------------------
+10.1 Header Styles
+--------------------------------------------------------------*/
+
 #header-container {
 	position: relative;
 	z-index: 90;
 }
+
 #masthead {
 	text-align: center;
 	padding: 1em 0 1.4em 0;
 }
-.site-branding > h1.site-title {
+
+.site-branding > hgroup > h1.site-title {
 	font-size:4em;
 	line-height: 1.4em;
 	margin-bottom: 0;
 }
-.site-branding > h1.site-title a{
+
+.site-branding > hgroup > h1.site-title a{
 	font-weight: 100;
 }
-.site-branding > h2.site-description {
+
+.site-branding > hgroup > h2.site-description {
 	font-size: 1.2em;
 	line-height: 2em;
 	font-weight: 100;
 	margin-bottom: 0;
 	font-style: italic;
 }
-/* FOOTER STYLES */
-#colophon {
-	margin: 1em auto;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
+.site-branding, .custom-header {
+	margin-bottom: 1.4em;
 }
-#footer-menu ul {
-	border-top: 1px solid rgba(0,0,0,0.1);
-	margin:0;
-	clear: both;
-}
-#footer-menu li {
-	display: inline-block;
-	list-style: none;
-	text-align: center;
-	padding: 1em 1em 1em 0;
-}
-.site-info {
-	font-size: 80%;
-	text-transform: uppercase;
-	padding: 1em 0;
-	text-align: left;
+.site-branding > hgroup > .site-logo img {
+	width: 20%;
 }
 /*--------------------------------------------------------------
-10.1 Posts and pages
+10.2 Posts and pages
 --------------------------------------------------------------*/
+
 .entry-header {
 	padding-bottom: 2%;
 }
+
 .entry-header > h1.entry-title {
 	font-size: 3em;
 	font-weight: 100;
 	line-height: 1.2em;
 	margin-bottom: 0;
 }
+
 .entry-header img {
 	width:100%;
 }
+
 body.single .entry-meta {
 	margin:1em 0; 	
 }
+
 .entry-content {
 	font-size: 120%;
+}
+.entry-posted-on,
+.entry-comment-meta {
+	width: 50%;
+	float: left;
+	display: inline-block;
 }
 .entry-comment-meta {
 	font-size: 190%;
 	text-align: right;
 }
+
 .entry-category {
 	font-size: 80%;
 	text-transform: uppercase;
 }
+
 .entry-footer {
 	font-size: 80%;
 }
+
 .posted-on {
 	display: block;
 	font-size: 1em;
 	font-weight: 100;
 	line-height: 1.4em;
 }
+
 .sticky {
 	border-radius: 6px;
 	border: 1px solid rgba(0,0,0,0.1);
 	padding:3%;
 }
+
 .hentry {
 	margin: 0 0 1.5em;
 }
+
 .byline,
 .updated {
 	display: none;
 }
+
 .single .byline,
 .group-blog .byline {
 	display: inline;
 	font-size: 1em;
 	font-style: italic;
 }
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 	text-transform: uppercase;
 }
-.entry-img {
-}
+
+.entry-img {}
+
 .entry-img img {
 	border-radius: 6px;
 	padding-bottom: 2%;
 }
+
 /* Social Sharing */
+
 article #social-sharing {
 	font-size: 0.8em;
 	text-transform: uppercase;
@@ -858,28 +841,34 @@ article #social-sharing {
 #social-sharing > span{
 	display: inline-block;
 }
+
 /*--------------------------------------------------------------
-10.2 Asides
+10.3 Asides
 --------------------------------------------------------------*/
+
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
 }
 
 /*--------------------------------------------------------------
-10.3 Comments
+10.4 Comments
 --------------------------------------------------------------*/
-#comments {
-}
+
+#comments {}
+
 .comment-list, .children {list-style: none; margin: 0;}
+
 .comments-title {
 	margin-bottom: 1em;
 }
+
 .comment { 
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 3px;
 	margin-bottom: 1em;
 }
+
 .children > .comment { 
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 	border-left: 1px solid rgba(0, 0, 0, 0.1);
@@ -888,11 +877,17 @@ article #social-sharing {
 	border-radius: 3px 0 0 3px;
 	margin: 1em 0 1em 1em;
 }
+
 .comment-meta, .comment-content { padding: 1em}
-.comment-metadata {font-size: 80%;}
-.comment-metadata a {font-weight: 300;}
-.comment-author b {font-size: 130%;}
+
+.comment-metadata { font-size: 80%; }
+
+.comment-metadata a { font-weight: 300; }
+
+.comment-author b { font-size: 130%; }
+
 .alt { background: rgba(215, 215, 215, 0.2); }
+
 .avatar { 
 	float: right;
 	margin-left: 1em;
@@ -900,11 +895,13 @@ article #social-sharing {
 	border-radius: 70px;
 	border: 1px solid rgba(0, 0, 0, 0.1); 
 }
+
 .comment-content a {
 	word-wrap: break-word;
 }
-.bypostauthor {
-}
+
+.bypostauthor {}
+
 .reply a {
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	text-align: right;
@@ -915,13 +912,48 @@ article #social-sharing {
 }
 
 /*--------------------------------------------------------------
+10.5 Footer styles
+--------------------------------------------------------------*/
+
+#colophon {
+	margin: 1em auto;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+#footer-menu ul {
+	border-top: 1px solid rgba(0,0,0,0.1);
+	margin:0;
+	clear: both;
+}
+
+#footer-menu li {
+	display: inline-block;
+	list-style: none;
+	text-align: center;
+	padding: 1em 1em 1em 0;
+}
+
+.site-info {
+	font-size: 80%;
+	text-transform: uppercase;
+	padding: 1em 0;
+	text-align: left;
+}
+
+.site-info a {
+	letter-spacing: 0.7px
+}
+
+/*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
+
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
 	display: none;
 }
+
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
@@ -930,6 +962,7 @@ article #social-sharing {
 /*--------------------------------------------------------------
 12.0 Media
 --------------------------------------------------------------*/
+
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
@@ -948,6 +981,7 @@ object {
 /*--------------------------------------------------------------
 12.1 Captions
 --------------------------------------------------------------*/
+
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -969,6 +1003,7 @@ object {
 /*--------------------------------------------------------------
 12.2 Galleries
 --------------------------------------------------------------*/
+
 .gallery {
 	margin-bottom: 1.5em;
 }
@@ -977,8 +1012,9 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
-	padding-bottom: 1.5em;
+	padding: 1em;
 }
+.gallery-item img { border-radius: 6px; }
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
@@ -1003,16 +1039,24 @@ object {
 .gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
 }
-.gallery-caption {}
-
+.gallery-caption {
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: 700;
+	padding: 1em;
+}
+.gallery-item img :hover { box-shadow: 0 0 2px rgba(215,215,215,0.9); }
 /*--------------------------------------------------------------
 13.0 Template Page Styles
 --------------------------------------------------------------*/
+
 .full-width {
     width: 1180px; 
     margin:0 auto;
 }
+
 /* 13.1 Mosaic */
+
 #mosaic {
     margin:0 auto;
 }
@@ -1051,52 +1095,85 @@ object {
 #mosaic header.entry-header {
     display: block;
 }
+
 /*--------------------------------------------------------------
 14.0 Plugin Integrations 
 --------------------------------------------------------------*/
-/* WooCommerce */
-body.woocommerce-demo-store p.demo_store {
-	position: absolute;
-	font-size: 70%;
-	overflow: hidden;
-	line-height: 1em;
-	text-transform: uppercase;
-	font-weight: 500;
-	letter-spacing: 1px;
-	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) inset;
+
+/*--------------------------------------------------------------
+14.1 WooCommerce - NOTE: WooCommerce styles are found in /css/plugins/woocommmerce.css
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+14.2 Jetpack - NOTE: Jetpack styles are found in /css/plugins/jetpack.css
+--------------------------------------------------------------*/
+div#infinite-handle {
+	text-align: center;
+	background: transparent;
+	padding: 1em;
+	margin: 1em 0;
 }
-body.woocommerce-demo-store #page {
-	top: 23px;
+#infinite-handle span { 
+	background: transparent!important;
+	font-size: 1em!important;
+	font-weight: 700!important;
+	text-transform: uppercase!important;
+	border: 1px solid!important;
+	border-radius: 6px!important;
+	padding: 2% 5%!important;
 }
+.infinite-loader .spinner { margin: 1em auto!important; }
+
 /*--------------------------------------------------------------
 15.0 Media Queries 
 --------------------------------------------------------------*/
+
 /* Globals */
+
 #page {
 	width: 100%;
 	position: relative;
 }
+
 #header, #masthead, #content-container, #special-container, .full-width, #colophon {
 	margin: 0 auto;
 	max-width: 90%;
 }
+
 #secondary.c3.end { padding-right: 0; float: right; }
+
+.mobile-site-branding { display: none; }
+
 .whimsy-nav li { text-align: center; }
+
 .brick {
     width: 31%;
 	border-radius: 6px;
 	border: 1px solid rgba(0,0,0,0.1);
 	overflow: hidden;
 }
+
 #colophon, #infinite-footer .container {
 	border: none;
 }
-@media screen and (max-width: 980px) {	
+
+@media screen and (max-width: 980px) {
+
 	#header, #masthead, #special-container, #content-container, .full-width, #colophon {
 	  margin: 0 auto;
 	  max-width: 90%;
 	}
+
 	#secondary.c3.end { padding-right: 0; float: none!important; clear: both; }
+	
+	.mobile-site-branding { display: inline-block; }
+
+	.site-branding { display: none; }
+
+	#site-navigation { 
+		z-index: 210;
+  		position: relative;
+	}
+	
 	.whimsy-nav ul {
 	    left: auto;
 	    position: relative;
@@ -1108,19 +1185,19 @@ body.woocommerce-demo-store #page {
 		border-radius: 0;
 		display: block;
 	}
+
 	.whimsy-nav li > ul {
 		box-shadow: none;
 	}
+
 	.whimsy-nav ul ul a {
 		width: 100%;
 	}
+
 	.whimsy-nav li .sub-collapser > i {
 		font-size: 2em;
 	}
-	#site-navigation { 
-		padding: 1%; 
-		height: 60px;
-	}
+
 	.whimsy-nav li {
 		float: none;
 		text-align: left;
@@ -1136,6 +1213,7 @@ body.woocommerce-demo-store #page {
 		border: 0;
 	}
 	#masthead { padding-top: 0;}
+
 	.site-branding {
 		top: 0;
 		left: 0;
@@ -1153,7 +1231,31 @@ body.woocommerce-demo-store #page {
 		display: none;
 	}
 	.site-branding img{
-		max-width: 170px;
+		max-width: 125px;
+		padding: 4px;
+	}
+
+	/* 	Mobile site branding */
+
+	.mobile-site-branding {
+		top: 0;
+		left: 0;
+		margin: 0;
+		z-index: 1000;
+		max-width: 85%;
+		position: absolute;
+	}
+	.mobile-site-branding > h1.site-title  {
+		font-size: 1.6em;
+		line-height: 1em;
+		padding: 17px 20px;
+	}
+	.mobile-site-branding > h2.site-description {
+		display: none;
+	}
+	.mobile-site-branding img{
+		max-width: 125px;
+		padding: 4px;
 	}
 	#content, #whimsy-full {
 		margin-top: 2%;
@@ -1168,9 +1270,7 @@ body.woocommerce-demo-store #page {
 }
 @media screen and (max-width: 768px) {
 /* 360 =================================================== */
-	#site-navigation { 
-		padding: 1%; 
-	}
+
 	#masthead {
     	padding-top: 7px;
 	}
@@ -1180,9 +1280,7 @@ body.woocommerce-demo-store #page {
 }
 @media screen and (max-width: 360px) {
 /* 360 =================================================== */
-	#site-navigation { 
-		padding: 2%; 
-	}
+
 	ul.sub-menu li {
 		background: rgba(255,255,255,0);
 		padding-left: 2em;

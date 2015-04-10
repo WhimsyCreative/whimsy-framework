@@ -6,7 +6,6 @@ Template Name: Full-width Template
 get_header(); ?>
 
 <div id="content" class="container row">
-	<div id="whimsy-full" class="12 end">
 		<main id="main" class="site-main" role="main">
             
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -26,6 +25,5 @@ get_header(); ?>
 
 
 		</main><!-- #main -->
-	</div><!-- #whimsy-full -->
 </div><!-- #content -->
 <?php get_footer(); ?>
