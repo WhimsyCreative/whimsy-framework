@@ -709,27 +709,27 @@ h1.widget-title {
 	padding: 1em 0 1.4em 0;
 }
 
-.site-branding > h1.site-title {
+.site-branding > hgroup > h1.site-title {
 	font-size:4em;
 	line-height: 1.4em;
 	margin-bottom: 0;
 }
 
-.site-branding > h1.site-title a{
+.site-branding > hgroup > h1.site-title a{
 	font-weight: 100;
 }
 
-.site-branding > h2.site-description {
+.site-branding > hgroup > h2.site-description {
 	font-size: 1.2em;
 	line-height: 2em;
 	font-weight: 100;
 	margin-bottom: 0;
 	font-style: italic;
 }
-.site-branding > .site-logo {
-	margin-bottom: 1.2em;
+.site-branding, .custom-header {
+	margin-bottom: 1.4em;
 }
-.site-branding > .site-logo img {
+.site-branding > hgroup > .site-logo img {
 	width: 20%;
 }
 /*--------------------------------------------------------------
@@ -938,6 +938,10 @@ article #social-sharing {
 	text-transform: uppercase;
 	padding: 1em 0;
 	text-align: left;
+}
+
+.site-info a {
+	letter-spacing: 0.7px
 }
 
 /*--------------------------------------------------------------
