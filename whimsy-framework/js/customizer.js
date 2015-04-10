@@ -106,4 +106,58 @@
 		} );
 	} );
 
+	// Menu link color
+	wp.customize( 'whimsy_menu_link_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#site-navigation a, .sub-collapser" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#site-navigation a, .sub-collapser" ).css( {
+					'clip': 'auto',
+					'background': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+
+	// Menu sub-menu bg color
+	wp.customize( 'whimsy_submenu_background_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#site-navigation ul.sub-menu, #site-navigation ul.sub-menu li" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#site-navigation ul.sub-menu, #site-navigation ul.sub-menu li" ).css( {
+					'clip': 'auto',
+					'background': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+
+	// Menu sub-menu link color
+	wp.customize( 'whimsy_submenu_link_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#site-navigation ul.sub-menu a" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#site-navigation ul.sub-menu a" ).css( {
+					'clip': 'auto',
+					'background': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+
 } )( jQuery );

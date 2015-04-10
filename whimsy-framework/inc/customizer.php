@@ -22,17 +22,6 @@ function whimsy_customize_register_section( $wp_customize ) {
         )
     );
 
-	/* Add Menu Settings Section */
-    $wp_customize->add_section(
-        'whimsy_framework_section_menu',
-        array(
-            'title' 		=> __( 'Navigation', 'whimsy-framework' ),
-            'description' 	=> __( 'Adjust the way your navigation menu looks.', 'whimsy-framework' ),
-            'priority' 		=> 36,
-
-        )
-    );
-
     /* Add Skin Settings */
     $wp_customize->add_section(
         'whimsy_framework_section_display',
@@ -208,8 +197,8 @@ function whimsy_customize_register( $wp_customize ) {
             $wp_customize,
             'whimsy_menu_background_color',
             array(
-                'label'     => __( 'Background Color', 'whimsy-framework' ),
-                'section'   => 'whimsy_framework_section_menu',
+                'label'     => __( 'Menu Background Color', 'whimsy-framework' ),
+                'section'   => 'colors',
                 'settings'  => 'whimsy_menu_background_color',
             )
         )
@@ -229,7 +218,7 @@ function whimsy_customize_register( $wp_customize ) {
             'whimsy_menu_link_color',
             array(
                 'label'     => __( 'Menu Link Color', 'whimsy-framework' ),
-                'section'   => 'whimsy_framework_section_menu',
+                'section'   => 'colors',
                 'settings'  => 'whimsy_menu_link_color',
             )
         )
@@ -249,7 +238,7 @@ function whimsy_customize_register( $wp_customize ) {
             'whimsy_submenu_background_color',
             array(
                 'label'     => __( 'Sub-Menu Background Color', 'whimsy-framework' ),
-                'section'   => 'whimsy_framework_section_menu',
+                'section'   => 'colors',
                 'settings'  => 'whimsy_submenu_background_color',
             )
         )
@@ -269,7 +258,7 @@ function whimsy_customize_register( $wp_customize ) {
             'whimsy_submenu_link_color',
             array(
                 'label'     => __( 'Sub-Menu Link Color', 'whimsy-framework' ),
-                'section'   => 'whimsy_framework_section_menu',
+                'section'   => 'colors',
                 'settings'  => 'whimsy_submenu_link_color',
             )
         )
