@@ -25,8 +25,7 @@ body.woocommerce-demo-store #page {
 .woocommerce-page button.button, 
 .woocommerce-page input.button, 
 .woocommerce-page #respond input#submit, 
-.woocommerce-page #content input.button, 
-.woocommerce-page .shipping-calculator-button {
+.woocommerce-page #content input.button {
 
 	font-size: 100%;
 	padding: 8px 10px;
