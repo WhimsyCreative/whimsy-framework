@@ -206,6 +206,7 @@ ul.whimsy-nav.collapsed {
     text-align: left;
     -webkit-box-shadow: 0px 3px 3px 0px rgba(2, 2, 2, 0.15);
     box-shadow: 0px 3px 3px 0px rgba(2, 2, 2, 0.15);
+    background: #fff;
 }
 .whimsy-nav li > ul > li ul {
     display: none;
