@@ -180,13 +180,6 @@ function whimsy_head() {
 add_action('wp_head', 'whimsy_head');
 
 /**
- * Whimsy After Post Hook
- */
-function whimsy_after_post_meta() {
-	do_action('after_post_meta');
-}
-
-/**
  * Whimsy Responsive Nav
  */
 function whimsy_responsive_nav() {
