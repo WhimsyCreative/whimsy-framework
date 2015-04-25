@@ -87,4 +87,3 @@ function whimsy_setup_author() {
 	}
 }
 add_action( 'wp', 'whimsy_setup_author' );
-add_action( 'wp', 'whimsy_setup_author' );
