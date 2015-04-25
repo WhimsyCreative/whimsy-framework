@@ -42,6 +42,12 @@ function whimsy_register_required_plugins() {
             'required'  => false,
         ),
 
+        array(
+            'name'      => 'Responsive WordPress Slider - Soliloquy Lite',
+            'slug'      => 'soliloquy-lite',
+            'required'  => false,
+        ),
+
     );
 
     /**
