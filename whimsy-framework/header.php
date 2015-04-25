@@ -29,12 +29,20 @@
 
 <body <?php body_class(); ?>>
 
+<?php whimsy_body_start(); ?>
+
 <div id="page" class="hfeed site grid">
+
+<?php whimsy_header_before(); ?>
 
 	<div id="header-container">
 
+	<?php whimsy_header_inside(); ?>
+
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'whimsy-framework' ); ?></a>		
 		
+		<?php whimsy_nav_before(); ?>
+
 		<nav id="site-navigation">
 
 			<div class="mobile-site-branding"><!-- Does not display on screens larger than 980px -->
@@ -53,10 +61,14 @@
 
 			</div><!-- /.mobile-site-branding -->
 
+			<?php whimsy_nav_inside(); ?>
+
 			<?php whimsy_responsive_nav(); ?>
 
 		</nav><!-- /#site-navigation -->
-		
+
+		<?php whimsy_nav_after(); ?>
+
 		<header id="masthead" class="site-header" role="banner">
 
 			<div class="site-branding"><!-- Does not display on screens smaller than 980px -->
@@ -93,5 +105,7 @@
 		</header><!-- /#masthead -->
 
 	</div><!-- /#header-container -->
+
+	<?php whimsy_header_after(); ?>
 
 	<div id="content-container">

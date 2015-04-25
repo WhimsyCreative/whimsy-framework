@@ -12,10 +12,19 @@
  */
 
 get_header(); ?>
-<div id="content" class="container row">
-	<div id="primary" class="c9">
-		<main id="main" class="site-main" role="main">
 
+<?php whimsy_content_before(); ?>
+
+<div id="content" class="container row">
+
+	<div id="primary" class="c9">
+
+		<?php whimsy_main_before(); ?>
+
+		<main id="main" class="site-main" role="main">
+		
+		<?php whimsy_post_before(); ?>
+	
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -39,7 +48,12 @@ get_header(); ?>
 
 		<?php endif; ?>
 
+		<?php whimsy_post_after(); ?>
+
 		</main><!-- #main -->
+
+		<?php whimsy_main_after(); ?>
+
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

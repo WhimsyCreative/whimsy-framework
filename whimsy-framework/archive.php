@@ -9,9 +9,18 @@
 
 get_header(); ?>
 
+
+<?php whimsy_content_before(); ?>
+
 <div id="content" class="container row">
-	<section id="primary" class="c9">
+
+	<div id="primary" class="c9">
+
+		<?php whimsy_main_before(); ?>
+
 		<main id="main" class="site-main" role="main">
+		
+		<?php whimsy_post_before(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -99,7 +108,13 @@ get_header(); ?>
 
 		<?php endif; ?>
 
+
+		<?php whimsy_post_after(); ?>
+
 		</main><!-- #main -->
+
+		<?php whimsy_main_after(); ?>
+
 	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
