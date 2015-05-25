@@ -227,12 +227,3 @@ require get_template_directory() . '/inc/plugins/jetpack.php';
  * Load WooCommerce compatibility file.
  */
 require get_template_directory() . '/inc/plugins/woocommerce.php';
-
-
-
-
-/**
- * Load test for filters and actions.
- */
-require get_template_directory() . '/inc/hook-test.php';
-

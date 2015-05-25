@@ -1161,6 +1161,20 @@ div#infinite-handle {
 	border: none;
 }
 
+.whimsy-highlight-box,
+.whimsy-hook-test { 
+	font-weight: 700; 
+	font-style: italic; 
+	font-size: 11px;
+	margin: 3px 0 0 0;
+	padding: 3px 22px;
+	display: block;
+	background-color: rgba(215,215,215,0.4);
+	border-radius: 3px;
+	text-transform: lowercase;
+	letter-spacing: normal;
+}
+
 @media screen and (max-width: 980px) {
 
 	#header, #masthead, #special-container, #content-container, .full-width, #colophon, #whimsy-full {
@@ -1249,18 +1263,3 @@ div#infinite-handle {
 		padding: 20px 7px;
 	}
 }
-
-
-/*
-Hook test
- */
-
-.whimsy-hook-test { font-weight: 700; font-style: italic; font-size: 13px; 
-  font-size: 11px;
-  margin: 3px 0 0 0;
-  padding: 3px 22px;
-  display: block;
-  background-color: rgba(215,215,215,0.4);
-  border-radius: 3px;
-  text-transform: lowercase;
-  letter-spacing: normal;}
