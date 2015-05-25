@@ -1,38 +1,40 @@
 <?php
 /**
- * @package whimsy
+ * @package whimsy-framework
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 	<header class="entry-header"> 
-		<div class="entry-category">
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'whimsy-framework' ) );
-			
-			printf(
-				$category_list
-			);
-		?>
-		</div>
-		<div class="entry-img"><?php if ( has_post_thumbnail() ) { the_post_thumbnail('full'); } ?></div>
+	
+	<?php whimsy_post_meta_before(); ?>
+
+	<div class="entry-meta">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<div class="entry-meta entry-grid clear">
-			<div class="entry-posted-on"><?php whimsy_posted_on(); ?></div>
-			<div class="entry-comment-meta"><a rel="nofollow" class="entry-comment" href="<?php the_permalink(); ?>#comments"><?php comments_number('0', '1', '%' );?> <i class="fa fa-comments"></i></a></div>
-		</div><!-- .entry-meta -->
+	</div>
+	
+	<?php whimsy_post_meta_after(); ?>
+
 	</header><!-- .entry-header -->
+
 	<section class="entry-content">
+
 			<?php the_content(); ?>
+
 			<?php
 				wp_link_pages( array(
 					'before' => '<div class="page-links">' . __( 'Pages:', 'whimsy-framework' ),
 					'after'  => '</div>',
 				) );
 			?>
+
 	</section><!-- .entry-content -->
+	
 	<footer class="entry-footer">
+
+		<?php whimsy_post_footer_before(); ?>
+
 		<?php
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( __( ', ', 'whimsy-framework' ) );
@@ -67,5 +69,8 @@
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'whimsy-framework' ), '<span class="edit-link">', '</span>' ); ?>
+	
+		<?php whimsy_post_footer_after(); ?>
+
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
