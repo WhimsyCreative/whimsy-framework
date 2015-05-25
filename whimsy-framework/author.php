@@ -18,7 +18,7 @@ get_header(); ?>
 		
 			<div class="author-meta">
 
-				<h3>About <?php echo $curauth->nickname; ?></h3>
+				<h3><?php printf( __( 'About %1$s', 'whimsy-framework' ), $curauth->nickname ); ?></h3>
 
 				<div class="author-meta-avatar">
 
@@ -35,15 +35,15 @@ get_header(); ?>
 				</div><!-- .author-meta-gravatar -->
 
 				<dl>
-				    <dt>About the Author</dt>
+				    <dt><?php _e( 'More Info', 'whimsy-framework' ); ?></dt>
 				    <dd><?php echo $curauth->user_description; ?></dd>
 					
-					<dt>Website</dt>
+					<dt><?php _e( 'Website', 'whimsy-framework' ); ?></dt>
 				    <dd><a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a></dd>
 				</dl>
 			</div> <!-- .author-meta -->
 
-		<h2>Posts by <?php echo $curauth->nickname; ?>:</h2>
+		<h2><?php printf( __( 'Posts by %1$s:', 'whimsy-framework' ), $curauth->nickname ); ?></h2>
 
 		<ul>
 		<!-- The Loop -->
@@ -51,12 +51,11 @@ get_header(); ?>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		    <li>
 		        <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>">
-		        <?php the_title(); ?></a>,
-		        <?php the_time('d M Y'); ?> in <?php the_category(' / ');?>
+		        <?php the_title(); ?></a>, posted on <em><?php the_time( get_option( 'date_format' ) ); ?></em> in <?php the_category(' / ');?>
 		    </li>
 
 		<?php endwhile; else: ?>
-		    <p><?php _e('No posts by this author.'); ?></p>
+		    <p><?php _e('No posts by this author.', 'whimsy-framework'); ?></p>
 
 		<?php endif; ?>
 
