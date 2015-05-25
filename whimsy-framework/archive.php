@@ -20,9 +20,10 @@ get_header(); ?>
 
 		<main id="main" class="site-main" role="main">
 		
-		<?php whimsy_post_before(); ?>
+		<?php whimsy_main_inside_before(); ?>
 
 		<?php if ( have_posts() ) : ?>
+
 
 			<header class="page-header">
 				<h1 class="page-title">
@@ -87,8 +88,11 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
+			<?php /* Start the Loop */ ?>		
+
 			<?php while ( have_posts() ) : the_post(); ?>
+			
+			<?php whimsy_post_before(); ?>
 
 				<?php
 					/* Include the Post-Format-specific template for the content.
@@ -97,6 +101,8 @@ get_header(); ?>
 					 */
 					get_template_part( 'content', get_post_format() );
 				?>
+			
+			<?php whimsy_post_after(); ?>
 
 			<?php endwhile; ?>
 
@@ -108,14 +114,13 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-
-		<?php whimsy_post_after(); ?>
+		<?php whimsy_main_inside_after(); ?>
 
 		</main><!-- #main -->
 
 		<?php whimsy_main_after(); ?>
 
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

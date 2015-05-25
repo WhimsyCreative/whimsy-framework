@@ -37,8 +37,6 @@
 
 	<div id="header-container">
 
-	<?php whimsy_header_inside(); ?>
-
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'whimsy-framework' ); ?></a>		
 		
 		<?php whimsy_nav_before(); ?>
@@ -61,15 +59,19 @@
 
 			</div><!-- /.mobile-site-branding -->
 
-			<?php whimsy_nav_inside(); ?>
+			<?php whimsy_nav_inside_before(); ?>
 
 			<?php whimsy_responsive_nav(); ?>
+
+			<?php whimsy_nav_inside_after(); ?>
 
 		</nav><!-- /#site-navigation -->
 
 		<?php whimsy_nav_after(); ?>
 
 		<header id="masthead" class="site-header" role="banner">
+		
+		<?php whimsy_header_inside_before(); ?>
 
 			<div class="site-branding"><!-- Does not display on screens smaller than 980px -->
 				
@@ -101,6 +103,8 @@
 			</div><!-- /.custom-header -->
 
 		<?php endif; // End header image check. ?>
+		
+		<?php whimsy_header_inside_after(); ?>
 
 		</header><!-- /#masthead -->
 

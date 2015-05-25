@@ -17,6 +17,9 @@
 	<?php whimsy_footer_before(); ?>
 
 	<footer id="colophon" class="site-footer container grid" role="contentinfo">
+
+		<?php whimsy_footer_inside_before(); ?>
+
 		<div id="footer-widgets" class="row">
 			<div class="c4"><?php dynamic_sidebar( 'footer-widgets-1' ); ?></div>
 			<div class="c4"><?php dynamic_sidebar( 'footer-widgets-2' ); ?></div>
@@ -33,11 +36,12 @@
 			}?>
 		</div>
 
-		<?php whimsy_footer_inside(); ?>
+		<?php whimsy_footer_inside_after(); ?>
 
 		<div class="site-info">
 			<?php printf( __( '%2$s + %1$s', 'whimsy-framework' ), '<a href="http://wordpress.org">WordPress</a>', '<a href="http://thefanciful.com/whimsy" rel="designer">Whimsy</a>' ); ?>
 		</div><!-- .site-info -->
+
 	</footer><!-- #colophon -->
 
 	<?php whimsy_footer_after(); ?>

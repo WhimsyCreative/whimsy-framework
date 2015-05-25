@@ -7,13 +7,18 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package whimsy
+ * @package whimsy-framework
  */
 
 get_header(); ?>
+
 <div id="content" class="container row">
+
 	<div id="primary" class="c9">
+
 		<main id="main" class="site-main" role="main">
+
+			<?php whimsy_page_before(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -27,8 +32,15 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; // end of the loop. ?>
+			
+			<?php whimsy_page_after(); ?>
+
+			<?php whimsy_main_inside_after(); ?>
 
 		</main><!-- #main -->
+
+		<?php whimsy_main_after(); ?>
+
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
