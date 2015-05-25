@@ -51,52 +51,52 @@ class Widget_Whimsy_Social extends WP_Widget {
                 <ul id="widget-whimsy-social">
                 <?php 
                     if ($whimsy_social_twitter) {
-                    echo '<li><a href="' . esc_url_raw( $whimsy_social_twitter ) . ' "><i class="fa fa-twitter"></i></a></li>'; };
+                    echo '<li><a href="' . esc_url_raw( $whimsy_social_twitter ) . ' " title="Twitter"><i class="fa fa-twitter"></i></a></li>'; };
 				    
                     if ($whimsy_social_pinterest) {
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_pinterest ) . ' "><i class="fa fa-pinterest-p"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_pinterest ) . ' " title="Pinterest"><i class="fa fa-pinterest-p"></i></a></li>'; };
 				    
                     if ($whimsy_social_facebook) {					
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_facebook ) . ' "><i class="fa fa-facebook"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_facebook ) . ' " title="Facebook"><i class="fa fa-facebook"></i></a></li>'; };
 				    
                     if ($whimsy_social_instagram) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_instagram ) . ' "><i class="fa fa-instagram"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_instagram ) . ' " title="Instagram"><i class="fa fa-instagram"></i></a></li>'; };
                     
                     if ($whimsy_social_google_plus) {                   
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_google_plus ) . ' "><i class="fa fa-google-plus"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_google_plus ) . ' " title="Google+"><i class="fa fa-google-plus"></i></a></li>'; };
                     
                     if ($whimsy_social_vine) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_vine ) . ' "><i class="fa fa-vine"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_vine ) . ' " title="Vine"><i class="fa fa-vine"></i></a></li>'; };
                     
                     if ($whimsy_social_tumblr) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_tumblr ) . ' "><i class="fa fa-tumblr"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_tumblr ) . ' " title="Tumblr"><i class="fa fa-tumblr"></i></a></li>'; };
                     
                     if ($whimsy_social_linkedin) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_linkedin ) . ' "><i class="fa fa-linkedin"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_linkedin ) . ' " title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>'; };
                     
                     if ($whimsy_social_deviantart) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_deviantart ) . ' "><i class="fa fa-deviantart"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_deviantart ) . ' " title="DeviantArt"><i class="fa fa-deviantart"></i></a></li>'; };
                     
                     if ($whimsy_social_behance) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_behance ) . ' "><i class="fa fa-behance"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_behance ) . ' " title="Behance"><i class="fa fa-behance"></i></a></li>'; };
                     
                     if ($whimsy_social_youtube) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_youtube ) . ' "><i class="fa fa-youtube-play"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_youtube ) . ' " title="YouTube"><i class="fa fa-youtube-play"></i></a></li>'; };
                     
                     if ($whimsy_social_twitch) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_twitch ) . ' "><i class="fa fa-twitch"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_twitch ) . ' " title="Twitch"><i class="fa fa-twitch"></i></a></li>'; };
                     
                     if ($whimsy_social_reddit) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_reddit ) . ' "><i class="fa fa-reddit"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_reddit ) . ' " title="Reddit"><i class="fa fa-reddit"></i></a></li>'; };
                     
                     if ($whimsy_social_flickr) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_flickr ) . ' "><i class="fa fa-flickr"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_flickr ) . ' " title="Flickr"><i class="fa fa-flickr"></i></a></li>'; };
                     
                     if ($whimsy_social_medium) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_medium ) . ' "><i class="fa fa-medium"></i></a></li>'; };
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_medium ) . ' " title="Medium"><i class="fa fa-medium"></i></a></li>'; };
                     
                     if ($whimsy_social_wordpress) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_wordpress ) . ' "><i class="fa fa-wordpress"></i></a></li>'; 
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_wordpress ) . ' " title="WordPress"><i class="fa fa-wordpress"></i></a></li>'; 
                     
                     } ?>
                 </ul>
