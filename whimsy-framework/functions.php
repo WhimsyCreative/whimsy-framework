@@ -1,10 +1,16 @@
 <?php
 /**
- * whimsy functions and definitions
+ * Whimsy Framework functions and definitions
  *
- * @package whimsy
+ * @package whimsy-framework
  */
 
+if ( ! isset( $content_width ) ) {
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+	$content_width = 850; /* pixels */
+}
 
 if ( ! function_exists( 'whimsy_setup' ) ) :
 /**
@@ -16,12 +22,6 @@ if ( ! function_exists( 'whimsy_setup' ) ) :
  */
 function whimsy_setup() {
 
-	/**
-	 * Set the content width based on the theme's design and stylesheet.
-	 */
-	if ( ! isset( $content_width ) ) {
-		$content_width = 850; /* pixels */
-	}
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -97,6 +97,7 @@ endif; // whimsy_setup
 
 add_action( 'after_setup_theme', 'whimsy_setup' );
 
+
 /**
  * Register widget area.
  *
@@ -142,6 +143,7 @@ function whimsy_widgets_init() {
 }
 add_action( 'widgets_init', 'whimsy_widgets_init' );
 
+
 /**
  * Enqueue scripts and styles.
  */
@@ -167,7 +169,7 @@ function whimsy_scripts() {
 		wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/js/mosaic.js', array('jquery-masonry'), '1.0', true );
 	}
 	
-	wp_enqueue_style( 'whimsy-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.2.0', false );
+	wp_enqueue_style( 'whimsy-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.3.0', false );
 	
 	$whimsy_framework_layout = get_theme_mod( 'whimsy_framework_layout' );
 	if ( $whimsy_framework_layout  == 'sidebar-content' ) {
@@ -182,7 +184,7 @@ function whimsy_scripts() {
 add_action( 'wp_enqueue_scripts', 'whimsy_scripts' );
 
 /**
- * Define action hooks for the framework.
+ * Define action hooks for the theme.
  */
 require get_template_directory() . '/inc/hooks.php';
 
@@ -225,3 +227,12 @@ require get_template_directory() . '/inc/plugins/jetpack.php';
  * Load WooCommerce compatibility file.
  */
 require get_template_directory() . '/inc/plugins/woocommerce.php';
+
+
+
+
+/**
+ * Load test for filters and actions.
+ */
+require get_template_directory() . '/inc/hook-test.php';
+
