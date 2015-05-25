@@ -2,14 +2,22 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package whimsy
+ * @package whimsy-framework
  */
 
 get_header(); ?>
 
+<?php whimsy_content_before(); ?>
+
 <div id="content" class="container row">
-	<div id="primary" class="content-area">
+
+	<div id="primary" class="c9">
+
+		<?php whimsy_main_before(); ?>
+
 		<main id="main" class="site-main" role="main">
+		
+			<?php whimsy_main_inside_before(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
@@ -17,6 +25,9 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
+
+					<?php whimsy_page_before(); ?>
+
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'whimsy-framework' ); ?></p>
 
 					<?php get_search_form(); ?>
@@ -47,11 +58,19 @@ get_header(); ?>
 					?>
 
 					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+					
+					<?php whimsy_page_after(); ?>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
+			<?php whimsy_main_inside_after(); ?>
+
 		</main><!-- #main -->
+
+		<?php whimsy_main_after(); ?>
+
 	</div><!-- #primary -->
-</div><!-- #content -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
