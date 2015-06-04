@@ -154,6 +154,10 @@ if ( ! function_exists( 'whimsy_get_context' ) ) {
 function whimsy_get_context() {
 
 	global $whimsy;
+
+	if (!is_object($whimsy)) {
+		$whimsy = new stdClass;
+	}
 	
 	/* If $whimsy->context has been set, don't run through the conditionals again. Just return the variable. */
 	if ( isset( $whimsy->context ) )
