@@ -216,13 +216,13 @@ endif;
 
 if ( ! function_exists( 'whimsy_display_post_meta' ) ) :
 /**
- * Whimsy display gravatar on author pages
+ * Whimsy display avatar in posts
  */
 function whimsy_author_gravatar() {
 	if ( 'post' == get_post_type() ) : 
 ?>
 	<div class="author-gravatar">
-		<?php echo get_avatar( get_the_author_email(), '80' ); ?>
+		<?php echo get_avatar( get_the_author_meta('email'), '80' ); ?>
 	</div>
 <?php 
 	endif;
