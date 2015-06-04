@@ -1,7 +1,16 @@
 ================
-CHANGELOG
+README
 Whimsy Framework
 ================
+
+- CHANGELOG -
+
+= 1.2.2 =
+* Fixed issue with hooks.php 
+
+= 1.2.1 =
+* Removed terrible, no good, very bad reference to inc/hooks-test.php
+
 = 1.2 =
 * Moved stragglers from style.css to css/navigation.css
 * Added 32 action hooks

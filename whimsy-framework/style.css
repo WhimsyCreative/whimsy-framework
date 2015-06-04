@@ -4,7 +4,7 @@ Theme URI: http://thefanciful.com/whimsy
 Author: thefanciful
 Author URI: http://thefanciful.com
 Description: Whimsy Framework is a chic, robust theme ready to be customized; with plenty of extras baked in.
-Version: 1.2
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whimsy-framework
@@ -1161,10 +1161,10 @@ div#infinite-handle {
 	border: none;
 }
 
-.whimsy-highlight-box,
+.whimsy-highligh-box,
 .whimsy-hook-test { 
 	font-weight: 700; 
-	font-style: italic; 
+	font-style: italic;
 	font-size: 11px;
 	margin: 3px 0 0 0;
 	padding: 3px 22px;
@@ -1174,6 +1174,7 @@ div#infinite-handle {
 	text-transform: lowercase;
 	letter-spacing: normal;
 }
+
 
 @media screen and (max-width: 980px) {
 
