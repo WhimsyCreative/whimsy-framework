@@ -155,7 +155,7 @@ function whimsy_get_context() {
 
 	global $whimsy;
 
-	if (!is_object($whimsy)) {
+	if ( ! is_object( $whimsy ) ) {
 		$whimsy = new stdClass;
 	}
 	
