@@ -26,7 +26,7 @@ function whimsy_customize_register_section( $wp_customize ) {
     $wp_customize->add_section(
         'whimsy_framework_section_display',
         array(
-            'title'         => __( 'Layout', 'whimsy-framework' ),
+            'title'         => __( 'Display', 'whimsy-framework' ),
             'description'   => __( 'Choose where the content and sidebar should be displayed.', 'whimsy-framework' ),
             'priority'      => 37,
 
@@ -302,3 +302,9 @@ function whimsy_customize_preview_js() {
     wp_enqueue_script( 'whimsy_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0', true );
 }
 add_action( 'customize_preview_init', 'whimsy_customize_preview_js' );
+
+/*
+ * Load Customizer styles
+ */
+function whimsy_customize_style_output() { include( get_template_directory() . '/inc/customizer-styles.php'); }
+add_action('init', 'whimsy_customize_style_output', 5);

@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up to <div id="content">
  *
- * @package whimsy
+ * @package whimsy-framework
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -13,12 +13,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php
 	if ( ! function_exists( '_wp_render_title_tag' ) ) {
-		function theme_slug_render_title() {
+		function whimsy_render_title() {
 	?>
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<?php
 		}
-		add_action( 'wp_head', 'theme_slug_render_title' );
+		add_action( 'wp_head', 'whimsy_render_title' );
 	}
 ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -29,12 +29,18 @@
 
 <body <?php body_class(); ?>>
 
+<?php whimsy_body_start(); ?>
+
 <div id="page" class="hfeed site grid">
+
+<?php whimsy_header_before(); ?>
 
 	<div id="header-container">
 
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'whimsy-framework' ); ?></a>		
 		
+		<?php whimsy_nav_before(); ?>
+
 		<nav id="site-navigation">
 
 			<div class="mobile-site-branding"><!-- Does not display on screens larger than 980px -->
@@ -53,11 +59,19 @@
 
 			</div><!-- /.mobile-site-branding -->
 
+			<?php whimsy_nav_inside_before(); ?>
+
 			<?php whimsy_responsive_nav(); ?>
 
+			<?php whimsy_nav_inside_after(); ?>
+
 		</nav><!-- /#site-navigation -->
-		
+
+		<?php whimsy_nav_after(); ?>
+
 		<header id="masthead" class="site-header" role="banner">
+		
+		<?php whimsy_header_inside_before(); ?>
 
 			<div class="site-branding"><!-- Does not display on screens smaller than 980px -->
 				
@@ -89,9 +103,13 @@
 			</div><!-- /.custom-header -->
 
 		<?php endif; // End header image check. ?>
+		
+		<?php whimsy_header_inside_after(); ?>
 
 		</header><!-- /#masthead -->
 
 	</div><!-- /#header-container -->
+
+	<?php whimsy_header_after(); ?>
 
 	<div id="content-container">

@@ -1,7 +1,25 @@
 ================
-CHANGELOG
+README
 Whimsy Framework
 ================
+
+- CHANGELOG -
+
+= 1.2.2 =
+* Fixed issue with hooks.php 
+
+= 1.2.1 =
+* Removed terrible, no good, very bad reference to inc/hooks-test.php
+
+= 1.2 =
+* Moved stragglers from style.css to css/navigation.css
+* Added 32 action hooks
+* Added author page template
+* Added content templates for links and galleries
+* Moved the function that adds the Customizer styles to inc/customizer-styles.php
+* Added special formatting for link Post Formats 
+* Updated FontAwesome version to 4.3.0
+* Added new options for the Social Media widget: Instagram, DeviantArt, Skype, Twitch, Vine, Behance, WordPress, YouTube, Tumblr, Reddit, Flickr, Medium
 
 = 1.1 =
 * header.php -

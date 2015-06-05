@@ -6,6 +6,7 @@ Template Name: Mosaic Template
 get_header(); ?>
 
 	<div id="mosaic" class="container">
+
 		<?php
 
 		$mosaic_query = new WP_Query( 'posts_per_page=-1' . '&paged=' . absint ( $paged) );

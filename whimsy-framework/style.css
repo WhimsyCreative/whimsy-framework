@@ -3,8 +3,8 @@ Theme Name: Whimsy Framework
 Theme URI: http://thefanciful.com/whimsy
 Author: thefanciful
 Author URI: http://thefanciful.com
-Description: Whimsy Framework is a minimalist theme ready to be customized; with plenty of extras baked in.
-Version: 1.1
+Description: Whimsy Framework is a chic, robust theme ready to be customized; with plenty of extras baked in.
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whimsy-framework
@@ -27,7 +27,7 @@ Tags: responsive-layout, custom-background, custom-colors, custom-header, custom
  * @licence    Licensed under the MIT license.
 
  * @package    Font Awesome 
- * @version    4.2.0 
+ * @version    4.3.0 
  * @author     @davegandy - http://fontawesome.io - @fontawesome
  * @license    http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  
@@ -446,7 +446,8 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 
-a, a:visited {
+a, 
+a:visited {
 	color:#1fb4ca;
 	text-decoration: none;
 	-webkit-transition: color 200ms ease;
@@ -467,11 +468,9 @@ a:active {
 }
 
 
-
 /*--------------------------------------------------------------
 5.2 NOTE: Main menu styles are found in /css/navigation.css
 --------------------------------------------------------------*/
-
 
 
 /*--------------------------------------------------------------
@@ -628,17 +627,17 @@ h1.widget-title {
 
 /* Whimsy Social Networks Widget */
 
-#widget-whimsy-social ul {
+ul#widget-whimsy-social {
     text-align: center;
-    margin-left: 0;
-    margin-bottom: 0;
+    margin: 0 !important;
 }
 
-#widget-whimsy-social li {
-	display:inline-block;
-	padding:1%;
-	margin:0 2%;
-	font-size:2em;
+#widget-whimsy-social > li {
+	display: inline-block;
+	padding: 3px;
+	margin: 0 2px 0 0;
+	font-size: 2em;
+	min-width: 50px;
 }
 
 #widget-whimsy-social li:before { content: ''; }
@@ -648,8 +647,6 @@ h1.widget-title {
 .widget_search .search-submit {	display: none; }
 
 /* Calendar widget */
-
-#wp-calendar {}
 
 #wp-calendar caption{
 	letter-spacing: 2px;
@@ -662,7 +659,9 @@ h1.widget-title {
 	margin: 0 0 3% 0;
 }
 
-#wp-calendar th, #wp-calendar tr, #wp-calendar td{
+#wp-calendar th, 
+#wp-calendar tr, 
+#wp-calendar td{
 	text-align:center;
 	font-size: 100%;
 }
@@ -673,6 +672,7 @@ h1.widget-title {
 	display:block;
 	background: rgba(255,255,255,0.3);
 }
+
 #wp-calendar a:hover{
 	background: rgba(255,255,255,0.4);
 }
@@ -758,12 +758,14 @@ body.single .entry-meta {
 .entry-content {
 	font-size: 120%;
 }
+
 .entry-posted-on,
 .entry-comment-meta {
 	width: 50%;
 	float: left;
 	display: inline-block;
 }
+
 .entry-comment-meta {
 	font-size: 190%;
 	text-align: right;
@@ -813,33 +815,9 @@ body.single .entry-meta {
 	text-transform: uppercase;
 }
 
-.entry-img {}
-
 .entry-img img {
 	border-radius: 6px;
 	padding-bottom: 2%;
-}
-
-/* Social Sharing */
-
-article #social-sharing {
-	font-size: 0.8em;
-	text-transform: uppercase;
-	letter-spacing: .8px;
-    margin: 1em 0;
-}
- 
-#social-sharing > .sharing-icon{
-    font-size:1.1em;
-    text-align: center;
-    background: rgba(0,0,0,0.1);
-    padding: 0.2%;
-    margin: 0;
-    min-width: 30px; 
-}
- 
-#social-sharing > span{
-	display: inline-block;
 }
 
 /*--------------------------------------------------------------
@@ -855,9 +833,11 @@ article #social-sharing {
 10.4 Comments
 --------------------------------------------------------------*/
 
-#comments {}
-
-.comment-list, .children {list-style: none; margin: 0;}
+.comment-list, 
+.children {
+	list-style: none; 
+	margin: 0;
+}
 
 .comments-title {
 	margin-bottom: 1em;
@@ -878,15 +858,26 @@ article #social-sharing {
 	margin: 1em 0 1em 1em;
 }
 
-.comment-meta, .comment-content { padding: 1em}
+.comment-meta, 
+.comment-content { 
+	padding: 1em
+}
 
-.comment-metadata { font-size: 80%; }
+.comment-metadata { 
+	font-size: 80%; 
+}
 
-.comment-metadata a { font-weight: 300; }
+.comment-metadata a { 
+	font-weight: 300; 
+}
 
-.comment-author b { font-size: 130%; }
+.comment-author b { 
+	font-size: 130%; 
+}
 
-.alt { background: rgba(215, 215, 215, 0.2); }
+.alt { 
+	background: rgba(215, 215, 215, 0.2); 
+}
 
 .avatar { 
 	float: right;
@@ -1063,7 +1054,9 @@ object {
 #mosaic .sticky.brick {
 	background: rgba(0,0,0,0.1);
 }
-#mosaic .entry-header, #mosaic .entry-content, #mosaic .entry-footer {
+#mosaic .entry-header, 
+#mosaic .entry-content, 
+#mosaic .entry-footer {
 	padding:4%;
 	margin: 0;
 }
@@ -1077,7 +1070,11 @@ object {
 #mosaic .sticky {
 	padding:0;
 }
-#mosaic p { margin-bottom: 0; padding-bottom: 0; font-size: 85%;}
+#mosaic p { 
+	margin-bottom: 0; 
+	padding-bottom: 0; 
+	font-size: 85%;
+}
 #mosaic .entry-header > h1.entry-title {
     font-size: 1.8em;
     font-weight: 500;
@@ -1091,7 +1088,11 @@ object {
     line-height: 1em;
     text-align: left;
 }
-#mosaic .format-image > .entry-footer, #mosaic .format-image > .entry-content {display: none;}
+#mosaic .format-image > .entry-footer, 
+#mosaic .format-image > .entry-content 
+{
+	display: none;
+}
 #mosaic header.entry-header {
     display: block;
 }
@@ -1103,15 +1104,18 @@ object {
 /*--------------------------------------------------------------
 14.1 WooCommerce - NOTE: WooCommerce styles are found in /css/plugins/woocommmerce.css
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 14.2 Jetpack - NOTE: Jetpack styles are found in /css/plugins/jetpack.css
 --------------------------------------------------------------*/
+
 div#infinite-handle {
 	text-align: center;
 	background: transparent;
 	padding: 1em;
 	margin: 1em 0;
 }
+
 #infinite-handle span { 
 	background: transparent!important;
 	font-size: 1em!important;
@@ -1121,6 +1125,7 @@ div#infinite-handle {
 	border-radius: 6px!important;
 	padding: 2% 5%!important;
 }
+
 .infinite-loader .spinner { margin: 1em auto!important; }
 
 /*--------------------------------------------------------------
@@ -1134,7 +1139,7 @@ div#infinite-handle {
 	position: relative;
 }
 
-#header, #masthead, #content-container, #special-container, .full-width, #colophon {
+#header, #masthead, #content-container, #special-container, .full-width, #colophon, #whimsy-full {
 	margin: 0 auto;
 	max-width: 90%;
 }
@@ -1156,9 +1161,24 @@ div#infinite-handle {
 	border: none;
 }
 
+.whimsy-highligh-box,
+.whimsy-hook-test { 
+	font-weight: 700; 
+	font-style: italic;
+	font-size: 11px;
+	margin: 3px 0 0 0;
+	padding: 3px 22px;
+	display: block;
+	background-color: rgba(215,215,215,0.4);
+	border-radius: 3px;
+	text-transform: lowercase;
+	letter-spacing: normal;
+}
+
+
 @media screen and (max-width: 980px) {
 
-	#header, #masthead, #special-container, #content-container, .full-width, #colophon {
+	#header, #masthead, #special-container, #content-container, .full-width, #colophon, #whimsy-full {
 	  margin: 0 auto;
 	  max-width: 90%;
 	}
@@ -1168,50 +1188,6 @@ div#infinite-handle {
 	.mobile-site-branding { display: inline-block; }
 
 	.site-branding { display: none; }
-
-	#site-navigation { 
-		z-index: 210;
-  		position: relative;
-	}
-	
-	.whimsy-nav ul {
-	    left: auto;
-	    position: relative;
-	    top: auto;
-		background: rgba(255,255,255,0.9);
-		letter-spacing: 0;
-	    float: none;
-		z-index: 90;
-		border-radius: 0;
-		display: block;
-	}
-
-	.whimsy-nav li > ul {
-		box-shadow: none;
-	}
-
-	.whimsy-nav ul ul a {
-		width: 100%;
-	}
-
-	.whimsy-nav li .sub-collapser > i {
-		font-size: 2em;
-	}
-
-	.whimsy-nav li {
-		float: none;
-		text-align: left;
-		width: 100%;
-		font-size: 1.2em;
-		display: block;
-		line-height: 1.3em;
-	}
-	.menu-toggle,
-	.whimsy-nav.toggled .nav-menu {
-		display: block;
-		font-size: 1em;
-		border: 0;
-	}
 	#masthead { padding-top: 0;}
 
 	.site-branding {
@@ -1269,8 +1245,7 @@ div#infinite-handle {
 	}
 }
 @media screen and (max-width: 768px) {
-/* 360 =================================================== */
-
+/* 768 =================================================== */
 	#masthead {
     	padding-top: 7px;
 	}
@@ -1281,10 +1256,6 @@ div#infinite-handle {
 @media screen and (max-width: 360px) {
 /* 360 =================================================== */
 
-	ul.sub-menu li {
-		background: rgba(255,255,255,0);
-		padding-left: 2em;
-	}
 	.site-branding {
 	}
 	.site-branding > h1.site-title  {

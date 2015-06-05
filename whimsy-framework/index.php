@@ -8,18 +8,29 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package whimsy
+ * @package whimsy-framework
  */
 
 get_header(); ?>
-<div id="content" class="container row">
-	<div id="primary" class="c9">
-		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+<?php whimsy_content_before(); ?>
+
+<div id="content" class="container row">
+
+	<div id="primary" class="c9">
+
+		<?php whimsy_main_before(); ?>
+
+		<main id="main" class="site-main" role="main">
+		
+			<?php whimsy_main_inside_before(); ?>
+
+			<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
+			
+			<?php whimsy_post_before(); ?>
 
 				<?php
 					/* Include the Post-Format-specific template for the content.
@@ -27,7 +38,9 @@ get_header(); ?>
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
 					get_template_part( 'content', get_post_format() );
-				?>
+				?>		
+
+			<?php whimsy_post_after(); ?>
 
 			<?php endwhile; ?>
 
@@ -39,7 +52,12 @@ get_header(); ?>
 
 		<?php endif; ?>
 
+			<?php whimsy_main_inside_after(); ?>
+
 		</main><!-- #main -->
+
+		<?php whimsy_main_after(); ?>
+
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

@@ -1,10 +1,16 @@
 <?php
 /**
- * whimsy functions and definitions
+ * Whimsy Framework functions and definitions
  *
- * @package whimsy
+ * @package whimsy-framework
  */
 
+if ( ! isset( $content_width ) ) {
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+	$content_width = 850; /* pixels */
+}
 
 if ( ! function_exists( 'whimsy_setup' ) ) :
 /**
@@ -16,12 +22,6 @@ if ( ! function_exists( 'whimsy_setup' ) ) :
  */
 function whimsy_setup() {
 
-	/**
-	 * Set the content width based on the theme's design and stylesheet.
-	 */
-	if ( ! isset( $content_width ) ) {
-		$content_width = 850; /* pixels */
-	}
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -30,7 +30,9 @@ function whimsy_setup() {
 	 */
 	load_theme_textdomain( 'whimsy-framework', get_template_directory() . '/languages' );
 
-	// Add default posts and comments RSS feed links to head.
+	/**
+	 * Add default posts and comments RSS feed links to head.
+	 */
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
@@ -40,7 +42,7 @@ function whimsy_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
-	
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -48,7 +50,9 @@ function whimsy_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	 // Set custom thumbnail dimensions
+	/**
+	 * Set custom thumbnail dimensions
+	 */
 	set_post_thumbnail_size( 1200, 9999, true );
 	add_image_size( 'whimsy-single-background', 1200, 9999 ); //300 pixels wide (and unlimited height)
 
@@ -57,7 +61,9 @@ function whimsy_setup() {
 	 */
 	add_theme_support( 'woocommerce' ); 
 
-	// This theme uses wp_nav_menu() in two locations.
+	/**
+	 * This theme uses wp_nav_menu() in two locations.
+	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'whimsy-framework' ),
 		'footer' => __( 'Footer Menu', 'whimsy-framework' ),
@@ -79,7 +85,9 @@ function whimsy_setup() {
 		'aside', 'image', 'video', 'quote', 'link', 'gallery'
 	) );
 
-	// Setup the WordPress core custom background feature.
+	/**
+	 * Setup the WordPress core custom background feature.
+	 */
 	add_theme_support( 'custom-background', apply_filters( 'whimsy_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
@@ -88,6 +96,7 @@ function whimsy_setup() {
 endif; // whimsy_setup
 
 add_action( 'after_setup_theme', 'whimsy_setup' );
+
 
 /**
  * Register widget area.
@@ -134,6 +143,7 @@ function whimsy_widgets_init() {
 }
 add_action( 'widgets_init', 'whimsy_widgets_init' );
 
+
 /**
  * Enqueue scripts and styles.
  */
@@ -159,9 +169,8 @@ function whimsy_scripts() {
 		wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/js/mosaic.js', array('jquery-masonry'), '1.0', true );
 	}
 	
-	wp_enqueue_style( 'whimsy-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.2.0', false );
+	wp_enqueue_style( 'whimsy-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.3.0', false );
 	
-	/* Enqueue the appropriate CSS based on which layout is selected via Theme Customizer */
 	$whimsy_framework_layout = get_theme_mod( 'whimsy_framework_layout' );
 	if ( $whimsy_framework_layout  == 'sidebar-content' ) {
 	    wp_enqueue_style( 'whimsy-layout-sidebar-content', get_template_directory_uri() . '/css/layouts/sidebar-content.css' );
@@ -173,6 +182,11 @@ function whimsy_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'whimsy_scripts' );
+
+/**
+ * Define action hooks for the theme.
+ */
+require get_template_directory() . '/inc/hooks.php';
 
 /**
  * Implement the Custom Header feature.
