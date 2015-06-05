@@ -30,5 +30,3 @@
 	</footer><!-- .entry-footer -->
 	
 </article><!-- #post-## -->
-
-
