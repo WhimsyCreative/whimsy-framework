@@ -8,8 +8,8 @@
 	<li>License: GNU General Public License v2 or later</li>
 	<li>License URI: http://www.gnu.org/licenses/gpl-2.0.html</li>
 	<li>Requires at least: 3.9</li>
-	<li>Tested up to: 4.3</li>
-	<li>Stable tag: 1.2.4</li>
+	<li>Tested up to: 4.4.1</li>
+	<li>Stable tag: 1.3</li>
 	<li>Text Domain: whimsy-framework</li>
 	<li>Donate link: http://bit.ly/whimsywp</li>
 </ul>
@@ -44,11 +44,16 @@ Yes, the Whimsy Framework is fully responsive and made to work great on every de
 ## Changelog
 
 ### 1.3
-* Added typography options to customizer
 * Fixed issue with featured image display
 * Fixed issue with site width on large displays
 * Updated FontAwesome to version 4.5.0
 * Updated TGM Plugin Activation to version 2.5.1
+
+### 1.2.2
+* Fixed issue with hooks.php 
+
+### 1.2.1
+* Removed terrible, no good, very bad reference to inc/hooks-test.php
 
 ### 1.2
 * Moved stragglers from style.css to css/navigation.css
