@@ -227,3 +227,8 @@ require get_template_directory() . '/inc/plugins/jetpack.php';
  * Load WooCommerce compatibility file.
  */
 require get_template_directory() . '/inc/plugins/woocommerce.php';
+
+/**
+ * Load Easy Digital Downloads compatibility file.
+ */
+require get_template_directory() . '/inc/plugins/edd.php';
