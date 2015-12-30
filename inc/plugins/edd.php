@@ -6,9 +6,6 @@
  * @package whimsy-framework
  */
 
-/*
- * Easy Digital Downloads Integration
- */
 if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 
 	function whimsy_edd_styles() {

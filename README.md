@@ -49,6 +49,7 @@ Yes, the Whimsy Framework is fully responsive and made to work great on every de
 + Updated FontAwesome to version 4.5.0
 + Updated TGM Plugin Activation to version 2.5.1
 + Added support for Easy Digital Downloads.
++ Added GitHub and PayPal to social widget.
 
 ### 1.2.3
 + Swapped the_content for the_excerpt on archive pages.

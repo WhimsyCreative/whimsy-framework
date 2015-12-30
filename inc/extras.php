@@ -55,39 +55,3 @@ function whimsy_setup_author() {
 	}
 }
 add_action( 'wp', 'whimsy_setup_author' );
-
-
-/**
- * Load theme-specific extensions.
- *
- * @since  1.0.0
- * @access public
- * @return void
- */
-
-function whimsy_load_extensions() {
-    
-    require_if_theme_supports( 'whimsy-hooks', get_template_directory_uri() . '/inc/hooks.php' );
-    
-    require_if_theme_supports( 'whimsy-custom-header', get_template_directory_uri() . '/inc/custom-header.php' );
-    
-    require_if_theme_supports( 'whimsy-template-tags', get_template_directory_uri() . '/inc/template-tags.php' );
-    
-    require_if_theme_supports( 'whimsy-extras', get_template_directory_uri() . '/inc/extras.php' );
-    
-    require_if_theme_supports( 'whimsy-customizer', get_template_directory_uri() . '/inc/customizer.php' );
-    
-    require_if_theme_supports( 'whimsy-widgets', get_template_directory_uri() . '/inc/widgets.php' );
-    
-    require_if_theme_supports( 'whimsy-plugins', get_template_directory_uri() . '/inc/plugins.php' );
-    
-    require_if_theme_supports( 'whimsy-jetpack', get_template_directory_uri() . '/inc/plugins/jetpack.php' );
-    
-    require_if_theme_supports( 'whimsy-woocommerce', get_template_directory_uri() . '/inc/plugins/woocommerce.php' );
-    
-    require_if_theme_supports( 'whimsy-edd', get_template_directory_uri() . '/inc/plugins/edd.php' );
-
-}
-
-/* Include custom Whimsy extensions. */
-add_action( 'after_setup_theme', 'whimsy_load_extensions', 15 );

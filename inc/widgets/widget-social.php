@@ -18,11 +18,12 @@ class Widget_Whimsy_Social extends WP_Widget {
         echo $args['before_widget'];
     
         /**
-         * Included social networks: 
+         * Social networks supported: 
          * 
          * Twitter, Pinterest, Facebook, Google+, LinkedIn, 
          * Instagram, DeviantArt, Twitch, Vine, Behance, 
-         * WordPress, YouTube, Tumblr, Reddit, Flickr, Medium
+         * WordPress, YouTube, Tumblr, Reddit, Flickr, Medium,
+         * GitHub, and PayPal
          * 
          */
         
@@ -43,6 +44,8 @@ class Widget_Whimsy_Social extends WP_Widget {
         $whimsy_social_reddit       = empty( $instance[ 'whimsy_social_reddit' ]) ? '' : $instance[ 'whimsy_social_reddit' ];
         $whimsy_social_flickr       = empty( $instance[ 'whimsy_social_flickr' ]) ? '' : $instance[ 'whimsy_social_flickr' ];
         $whimsy_social_medium       = empty( $instance[ 'whimsy_social_medium' ]) ? '' : $instance[ 'whimsy_social_medium' ];
+        $whimsy_social_github       = empty( $instance[ 'whimsy_social_github' ]) ? '' : $instance[ 'whimsy_social_github' ];
+        $whimsy_social_paypal       = empty( $instance[ 'whimsy_social_paypal' ]) ? '' : $instance[ 'whimsy_social_paypal' ];
 
         if ( ! empty( $instance['whimsy_social_title'] ) ) {
             echo $args['before_title'] . apply_filters( 'widget_title', $instance['whimsy_social_title'] ). $args['after_title'];
@@ -96,9 +99,15 @@ class Widget_Whimsy_Social extends WP_Widget {
                     echo '<li><a href="'. esc_url_raw( $whimsy_social_medium ) . ' " title="Medium"><i class="fa fa-medium"></i></a></li>'; };
                     
                     if ($whimsy_social_wordpress) {                  
-                    echo '<li><a href="'. esc_url_raw( $whimsy_social_wordpress ) . ' " title="WordPress"><i class="fa fa-wordpress"></i></a></li>'; 
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_wordpress ) . ' " title="WordPress"><i class="fa fa-wordpress"></i></a></li>'; };
                     
-                    } ?>
+                    if ($whimsy_social_github) {                  
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_github ) . ' " title="GitHub"><i class="fa fa-github"></i></a></li>'; };
+                    
+                    if ($whimsy_social_paypal) {                  
+                    echo '<li><a href="'. esc_url_raw( $whimsy_social_paypal ) . ' " title="Paypal"><i class="fa fa-paypal"></i></a></li>'; };
+                    
+                    ?>
                 </ul>
 
         <?php
@@ -125,6 +134,8 @@ class Widget_Whimsy_Social extends WP_Widget {
         $whimsy_social_reddit           = ! empty( $instance[ 'whimsy_social_reddit' ] ) ?      $instance[ 'whimsy_social_reddit' ] : __( 'Reddit:', 'whimsy-framework' );
         $whimsy_social_flickr           = ! empty( $instance[ 'whimsy_social_flickr' ] ) ?      $instance[ 'whimsy_social_flickr' ] : __( 'Flickr:', 'whimsy-framework' );
         $whimsy_social_medium           = ! empty( $instance[ 'whimsy_social_medium' ] ) ?      $instance[ 'whimsy_social_medium' ] : __( 'Medium:', 'whimsy-framework' );
+        $whimsy_social_github           = ! empty( $instance[ 'whimsy_social_github' ] ) ?      $instance[ 'whimsy_social_github' ] : __( 'GitHub:', 'whimsy-framework' );
+        $whimsy_social_paypal           = ! empty( $instance[ 'whimsy_social_paypal' ] ) ?      $instance[ 'whimsy_social_paypal' ] : __( 'PayPal:', 'whimsy-framework' );
 
         ?>
             <p>
@@ -195,6 +206,14 @@ class Widget_Whimsy_Social extends WP_Widget {
                 <label for="<?php echo esc_attr( $this->get_field_id('whimsy_social_wordpress') ); ?>"><?php esc_html_e( 'WordPress:', 'whimsy-framework' ); ?></label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('whimsy_social_wordpress') ); ?>" name="<?php echo esc_attr( $this->get_field_name('whimsy_social_wordpress') ); ?>" type="text" value="<?php echo esc_url_raw($whimsy_social_wordpress); ?>" />
             </p>
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('whimsy_social_github') ); ?>"><?php esc_html_e( 'GitHub:', 'whimsy-framework' ); ?></label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('whimsy_social_github') ); ?>" name="<?php echo esc_attr( $this->get_field_name('whimsy_social_github') ); ?>" type="text" value="<?php echo esc_url_raw($whimsy_social_github); ?>" />
+            </p>
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('whimsy_social_paypal') ); ?>"><?php esc_html_e( 'PayPal:', 'whimsy-framework' ); ?></label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('whimsy_social_paypal') ); ?>" name="<?php echo esc_attr( $this->get_field_name('whimsy_social_paypal') ); ?>" type="text" value="<?php echo esc_url_raw($whimsy_social_paypal); ?>" />
+            </p>
 
         <?php       
     }
@@ -219,6 +238,8 @@ class Widget_Whimsy_Social extends WP_Widget {
         $instance[ 'whimsy_social_reddit' ]         = ( ! empty( $new_instance[ 'whimsy_social_reddit' ] ) ) ?      esc_url_raw( $new_instance[ 'whimsy_social_reddit' ] ) : '';
         $instance[ 'whimsy_social_flickr' ]         = ( ! empty( $new_instance[ 'whimsy_social_flickr' ] ) ) ?      esc_url_raw( $new_instance[ 'whimsy_social_flickr' ] ) : '';
         $instance[ 'whimsy_social_medium' ]         = ( ! empty( $new_instance[ 'whimsy_social_medium' ] ) ) ?      esc_url_raw( $new_instance[ 'whimsy_social_medium' ] ) : '';
+        $instance[ 'whimsy_social_github' ]         = ( ! empty( $new_instance[ 'whimsy_social_github' ] ) ) ?      esc_url_raw( $new_instance[ 'whimsy_social_github' ] ) : '';
+        $instance[ 'whimsy_social_paypal' ]         = ( ! empty( $new_instance[ 'whimsy_social_paypal' ] ) ) ?      esc_url_raw( $new_instance[ 'whimsy_social_paypal' ] ) : '';
 
         return $instance;
     }
