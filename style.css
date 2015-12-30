@@ -4,7 +4,7 @@ Theme URI: http://thefanciful.com/whimsy
 Author: thefanciful
 Author URI: http://thefanciful.com
 Description: Whimsy Framework is a chic, robust theme ready to be customized; with plenty of extras baked in.
-Version: 1.2.3
+Version: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whimsy-framework
@@ -27,7 +27,7 @@ Tags: responsive-layout, custom-background, custom-colors, custom-header, custom
  * @licence    Licensed under the MIT license.
 
  * @package    Font Awesome 
- * @version    4.3.0 
+ * @version    4.5.0 
  * @author     @davegandy - http://fontawesome.io - @fontawesome
  * @license    http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  
@@ -35,13 +35,12 @@ Tags: responsive-layout, custom-background, custom-colors, custom-header, custom
  * @author     http://gridiculo.us by c.bavota - http://bavotasan.com/about
  * @license    GPL v2
 
- * @package    TGM-Plugin-Activation
- * @version    2.4.0
- * @author     Thomas Griffin <thomasgriffinmedia.com>
- * @author     Gary Jones <gamajo.com>
- * @copyright  Copyright (c) 2014, Thomas Griffin
- * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
- * @link       https://github.com/thomasgriffin/TGM-Plugin-Activation
+ * @package   TGM-Plugin-Activation
+ * @version   2.5.1
+ * @link      http://tgmpluginactivation.com/
+ * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
+ * @copyright Copyright (c) 2011, Thomas Griffin
+ * @license   GPL-2.0+
  */
 
 /*--------------------------------------------------------------
@@ -273,7 +272,7 @@ hr {
 	margin-bottom: 1.5em;
 }
 ul, ol {
-	margin: 0 0 1.5em 3em;
+/*	margin: 0 0 1.5em 3em;*/
 }
 ul {
 	list-style: disc;
@@ -691,7 +690,6 @@ ul#widget-whimsy-social {
 
 #header, #masthead, #special-container, .container, #footer-menu, #footer-widgets {
 	margin: 0 auto;
-	max-width: 1180px;
 	clear: both;
 }
 
@@ -1102,11 +1100,15 @@ object {
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-14.1 WooCommerce - NOTE: WooCommerce styles are found in /css/plugins/woocommmerce.css
+14.1 WooCommerce styles are found in /css/plugins/woocommmerce.css
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-14.2 Jetpack - NOTE: Jetpack styles are found in /css/plugins/jetpack.css
+14.2 Jetpack styles are found in /css/plugins/jetpack.css
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+14.3 Easy Digital Downloads styles are found in /css/plugins/edd.css
 --------------------------------------------------------------*/
 
 div#infinite-handle {

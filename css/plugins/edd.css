@@ -1,0 +1,60 @@
+/*--------------------------------------------------------------
+14.3 Easy Digital Downloads - NOTE: EDD styles are found in /css/plugins/edd.css
+--------------------------------------------------------------*/
+
+body.single-download .entry-meta {
+    display:none;
+}
+
+.edd-submit.plain {
+	display: block;
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	font-size: 0.8em;
+	line-height: 1;
+	padding: 0.6em;
+	margin: 0 0.6em 0.6em 0;
+	font-weight: 700;
+	transition: all 0.238s ease 0s;
+    border-width: 2px;
+    border-color: rgb(82, 107, 146);
+    border-style: solid;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(33, 189, 213);
+    border-radius: 12px;
+    background-color: rgb(31, 180, 202);
+    background-image: url(../../img/fanciful-glitter-bg.png);
+    float: left;
+    width: 100%;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+a.edd-submit.plain:hover {
+	border-color: #000;
+}
+a.edd-submit.plain:focus,
+a.edd-submit.plain:active{
+}
+
+.edd-meta {
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+.edd-download-info-features-widget  {
+    -moz-column-count: 3;
+    -moz-column-gap: 1em;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 1em;
+    column-count: 3;
+    column-gap: 1em;
+}
+
+.edd-download-info-features-widget li {
+    padding-bottom: 1em;
+}
+
+.edd-download-info-features-widget li:before {
+    content: '';
+}
