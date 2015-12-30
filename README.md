@@ -44,10 +44,11 @@ Yes, the Whimsy Framework is fully responsive and made to work great on every de
 ## Changelog
 
 ### 1.2.4
-* Fixed issue with featured image display.
-* Fixed issue with site width on large displays.
-* Updated FontAwesome to version 4.5.0
-* Updated TGM Plugin Activation to version 2.5.1
++ Fixed issue with featured image display.
++ Fixed issue with site width on large displays.
++ Updated FontAwesome to version 4.5.0
++ Updated TGM Plugin Activation to version 2.5.1
++ Added support for Easy Digital Downloads.
 
 ### 1.2.3
 * Swapped the_content for the_excerpt on archive pages.
