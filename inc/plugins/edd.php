@@ -8,10 +8,14 @@
 
 if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 
-	function whimsy_edd_styles() {
-    	wp_enqueue_style( 'whimsy-edd-styles', get_template_directory_uri() . '/css/plugins/edd.css' );
-	}
-	
-	add_action( 'wp_enqueue_scripts', 'whimsy_edd_styles' );
+    if ( ! function_exists( 'whimsy_edd_styles' ) ) :
+
+        function whimsy_edd_styles() {
+            wp_enqueue_style( 'whimsy-edd-styles', get_template_directory_uri() . '/css/plugins/edd.css' );
+        }
+
+        add_action( 'wp_enqueue_scripts', 'whimsy_edd_styles' );
+    
+    endif;
 
 }

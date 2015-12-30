@@ -6,35 +6,23 @@ body.single-download .entry-meta {
     display:none;
 }
 
-.edd-submit.plain {
-	display: block;
-	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	font-size: 0.8em;
-	line-height: 1;
-	padding: 0.6em;
-	margin: 0 0.6em 0.6em 0;
-	font-weight: 700;
-	transition: all 0.238s ease 0s;
-    border-width: 2px;
-    border-color: rgb(82, 107, 146);
-    border-style: solid;
-    border-style: solid;
-    border-width: 3px;
-    border-color: rgb(33, 189, 213);
-    border-radius: 12px;
-    background-color: rgb(31, 180, 202);
-    background-image: url(../../img/fanciful-glitter-bg.png);
-    float: left;
-    width: 100%;
+.edd-submit {
     display: inline-block;
     text-transform: uppercase;
+    background: #fff;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000;
+    border-radius: 6px;
+    padding: 0.4em;
+    margin: 10px 0;
 }
 
-a.edd-submit.plain:hover {
+a.edd-submit:hover {
 	border-color: #000;
 }
-a.edd-submit.plain:focus,
-a.edd-submit.plain:active{
+a.edd-submit:focus,
+a.edd-submit:active{
 }
 
 .edd-meta {
@@ -57,4 +45,84 @@ a.edd-submit.plain:active{
 
 .edd-download-info-features-widget li:before {
     content: '';
+}
+
+.edd_price_options ul {
+    list-style: none;
+}
+
+.edd_price_options ul li {
+    padding: 2px 0;
+    font-size: 0.8em;
+}
+
+/* Checkout */
+
+.edd-checkout table {
+    border: 1px solid rgba(0,0,0,.1);
+    margin: 0 -1px 24px 0;
+    text-align: left;
+    width: 100%;
+    border-collapse: separate;
+    border-radius: 5px;    
+}
+
+.edd-checkout .edd_cart_header_row th {
+    font-weight: bold;
+    line-height: 18px;
+    padding: 9px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+    background: rgba(215,215,215,0.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.edd-checkout table td {
+    padding: 18px 10px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.edd_cart_total {
+    padding: 18px 40px;
+    text-align: right;
+}
+
+.edd_cart_item_price, .edd_cart_actions {
+    text-align: center;
+}
+#edd_purchase_form fieldset {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding: 1em 0;
+    margin: 1em 0;
+} 
+
+#edd_purchase_form #edd_checkout_user_info legend, 
+#edd_purchase_form #edd_cc_address legend, 
+#edd_purchase_form #edd_cc_fields legend {
+    text-align: left;
+    padding: 0 0 14px 0;
+    font-size: 80%;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#edd_purchase_form #edd_checkout_user_info .edd-description,
+#edd_purchase_form #edd_cc_address .edd-description,
+#edd_purchase_form #edd_cc_fields .edd-description {
+    text-align: left;
+    padding: 0 0 14px 0;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: block;
+}
+
+#edd_purchase_form #edd_checkout_user_info input,
+#edd_purchase_form #edd_cc_address input,
+#edd_purchase_form #edd_cc_fields input {
+    width: 100%;
 }
