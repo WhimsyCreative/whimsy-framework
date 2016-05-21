@@ -3,8 +3,8 @@ Theme Name: Whimsy Framework
 Theme URI: http://thefanciful.com/whimsy
 Author: thefanciful
 Author URI: http://thefanciful.com
-Description: Whimsy Framework is a chic, robust theme ready to be customized; with plenty of extras baked in.
-Version: 1.2.4
+Description: Whimsy Framework is a chic, robust theme ready to be customized with plenty of extras baked in.
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whimsy-framework
@@ -27,7 +27,7 @@ Tags: responsive-layout, custom-background, custom-colors, custom-header, custom
  * @licence    Licensed under the MIT license.
 
  * @package    Font Awesome 
- * @version    4.5.0 
+ * @version    4.6.3 
  * @author     @davegandy - http://fontawesome.io - @fontawesome
  * @license    http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  
@@ -36,7 +36,7 @@ Tags: responsive-layout, custom-background, custom-colors, custom-header, custom
  * @license    GPL v2
 
  * @package   TGM-Plugin-Activation
- * @version   2.5.1
+ * @version   2.6.0 for parent theme Whimsy Framework for publication on WordPress.org
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin

@@ -23,18 +23,22 @@ ul.whimsy-nav  {
     padding-left: 0;
     text-align: center;
 }
-.whimsy-nav li {
-    position: relative;
-    display: inline-block;
-}
 ul.whimsy-nav li.bordered {
     /* Use .bordered in your WordPress Menu to add a separator. */
     border-left: 1px solid rgba(215,215,215,0.6);
 }
+ul.whimsy-nav.collapsed {
+    background: rgba(255,255,255,0.9);
+}
+
 .whimsy-nav a {
-    display: block;
     text-decoration: none;
     font-weight: 100;
+}
+.whimsy-nav li {
+    position: relative;
+    display: inline-block;
+    padding: 10px 26px 10px 10px;
 }
 .whimsy-nav ul ul {
     left: -999em;
@@ -46,16 +50,11 @@ ul.whimsy-nav li.bordered {
     z-index: 99999;
     border-radius: 0 0 3px 3px;
 }
-ul.whimsy-nav.collapsed {
-    background: rgba(255,255,255,0.9);
-}
-.whimsy-nav ul ul ul {
-    left: -999em;
-    top: 0;
-}
+
+.whimsy-nav ul ul li { }
+
 .whimsy-nav ul ul a {
-    width: 200px;
-    font-weight: 500;
+    min-width: 200px;
     text-align: left;
     text-transform: none;
     padding: 2% 4%;
@@ -65,41 +64,44 @@ ul.whimsy-nav.collapsed {
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
 }
-.whimsy-nav ul ul li { }
-.whimsy-nav li:hover > a {
-}
-.whimsy-nav ul ul :hover > a {
-    font-weight: 500;
+.whimsy-nav ul ul a:hover {}
 
-}
-.whimsy-nav ul ul a:hover {
-}
-.whimsy-nav ul li:hover > ul {
-    left: auto;
-}
-.whimsy-nav ul ul li:hover > ul {
-    left: 100%;
-}
+.whimsy-nav ul ul ul {}
+
+.whimsy-nav li:hover > a {}
+
+.whimsy-nav ul ul :hover > a { font-weight: 500; }
+
 .whimsy-nav .current_page_item a,
 .whimsy-nav .current-menu-item a {
-    font-weight: 600;
+    font-weight: 500;
 }
+
 /* Sub-menu */
 #site-navigation ul.sub-menu {
     background:rgba(255,255,255,1);
 }
 #site-navigation ul.sub-menu li {
-    display: inline-block;
+    display: block;
     float: none;
     padding: 0;
     background: rgba(255,255,255,0.95);
-    font-size: 90%;
-    font-weight: 500;
     border-bottom: 1px solid rgba(216,216,216,0.3);
+    min-width: 200px;
+    text-align: left;
+    padding:0.6em;
 }
 
 #site-navigation ul.sub-menu li:hover, .whimsy-nav.collapsed li:hover {
     background:rgba(255,255,255,0.1);
+}
+
+.whimsy-nav ul li:hover > ul {
+    left: auto;
+}
+.whimsy-nav ul ul li:hover > ul {
+    left: 100%;
+    top: 0;
 }
 
 .menu-collapser {
@@ -168,7 +170,6 @@ ul.whimsy-nav.collapsed {
 .whimsy-nav > li:last-child { margin-right: 0 }
 .whimsy-nav li a {
     display: block;
-    padding: 10px 26px 10px 10px;
     transition: background-color 0.5s ease-out;
     -o-transition: background-color 0.5s ease-out;
     -moz-transition: background-color 0.5s ease-out;
@@ -248,8 +249,8 @@ ul.whimsy-nav.collapsed {
     content: '\f106';
 }
 
-@media screen and (max-width: 980px) {
-/* 980 =================================================== */
+@media screen and (max-width: 960px) {
+/* 960 =================================================== */
 
     #site-navigation { 
         z-index: 210;
