@@ -8,6 +8,9 @@
 
 if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 
+    /**
+     * Include styles for Easy Digital Downloads.
+     */
     if ( ! function_exists( 'whimsy_edd_styles' ) ) :
 
         function whimsy_edd_styles() {

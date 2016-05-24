@@ -123,7 +123,7 @@ body.woocommerce-demo-store #page {
 }
 .woocommerce .cart-collaterals .cart_totals table th, 
 .woocommerce-page .cart-collaterals .cart_totals table th {
-	padding: 10px 12px 16px 0;
+	padding: 10px 12px 16px 8px;
 	width: 50%;
 	font-size: 12px;
 	line-height: 1.4em;
@@ -147,4 +147,15 @@ body.woocommerce-demo-store #page {
 .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li {
 	background: rgba(215,215,215,0.4);
 	box-shadow: 0 0;
+}
+.woocommerce form .form-row label.inline {
+    display: inline;
+    font-size: 80%;
+    padding: 0.7em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.woocommerce p.lost_password {
+    font-style: italic;
+    line-height: 2;
 }
