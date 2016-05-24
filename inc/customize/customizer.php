@@ -144,7 +144,7 @@ function whimsy_customize_register( $wp_customize ) {
     		array(
     		'label'    => __( 'Desktop Logo', 'whimsy-framework' ),
             'description'   => __( 'Displayed on most screens.', 'whimsy-framework' ),    		
-            'section'  => 'whimsy_framework_section_logo',
+            'section'  => 'title_tagline',
     		'settings' => 'whimsy_framework_logo_desktop',
     ) ) );
 
@@ -162,7 +162,7 @@ function whimsy_customize_register( $wp_customize ) {
             array(
             'label'    => __( 'Mobile Logo', 'whimsy-framework' ),
             'description'   => __( 'Displayed on screens less than 980px.', 'whimsy-framework' ),
-            'section'  => 'whimsy_framework_section_logo',
+            'section'  => 'title_tagline',
             'settings' => 'whimsy_framework_logo_mobile',
     ) ) );
 
@@ -179,7 +179,7 @@ function whimsy_customize_register( $wp_customize ) {
         array(
             'type' => 'checkbox',
             'label' => __( 'Center desktop logo on the page.', 'whimsy-framework' ),
-            'section' => 'whimsy_framework_section_logo',
+            'section' => 'title_tagline',
         )
     );
 // Add Menu Display Settings
@@ -306,5 +306,5 @@ add_action( 'customize_preview_init', 'whimsy_customize_preview_js' );
 /*
  * Load Customizer styles
  */
-function whimsy_customize_style_output() { include( get_template_directory() . '/inc/customizer-styles.php'); }
+function whimsy_customize_style_output() { include( get_template_directory() . '/inc/customize/customizer-styles.php'); }
 add_action('init', 'whimsy_customize_style_output', 5);

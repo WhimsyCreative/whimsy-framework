@@ -20,7 +20,7 @@ function whimsy_customizer_styles() {
 	}
 
 	if ( class_exists( 'woocommerce' ) ) {
-		echo '.woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #content input.button, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button, .woocommerce-page #respond input#submit, .woocommerce-page #content input.button, .woocommerce-page .shipping-calculator-button, #infinite-handle span { color: ' . esc_html($whimsy_link_color) . ' }';
+		echo '.woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #content input.button, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button, .woocommerce-page #respond input#submit, .woocommerce-page #content input.button, .woocommerce-page .shipping-calculator-button, #infinite-handle span, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-cart .wc-proceed-to-checkout { color: ' . esc_html($whimsy_link_color) . '; border-color: 1px solid ' . esc_html($whimsy_link_color) . ' }';
 	} 
 
 	$whimsy_alt_color = get_theme_mod( 'whimsy_alt_color' );
@@ -48,4 +48,4 @@ function whimsy_customizer_styles() {
 
 	echo '</style>';
 }
-add_action('wp_head', 'whimsy_customizer_styles');
+add_action('wp_head', 'whimsy_customizer_styles', 100);
