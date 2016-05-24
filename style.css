@@ -1111,24 +1111,14 @@ object {
 14.3 Easy Digital Downloads styles are found in /css/plugins/edd.css
 --------------------------------------------------------------*/
 
-div#infinite-handle {
-	text-align: center;
-	background: transparent;
-	padding: 1em;
-	margin: 1em 0;
+/*--------------------------------------------------------------
+14.4 Subtitles
+--------------------------------------------------------------*/
+span.entry-subtitle {
+    font-style: italic;
+    font-weight: 100;
+    line-height: 1em;
 }
-
-#infinite-handle span { 
-	background: transparent!important;
-	font-size: 1em!important;
-	font-weight: 700!important;
-	text-transform: uppercase!important;
-	border: 1px solid!important;
-	border-radius: 6px!important;
-	padding: 2% 5%!important;
-}
-
-.infinite-loader .spinner { margin: 1em auto!important; }
 
 /*--------------------------------------------------------------
 15.0 Media Queries 
