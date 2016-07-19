@@ -1,0 +1,98 @@
+/*
+.customize-control-radio-image input[type=radio] {
+    display:    none; 
+}
+.customize-control-radio-image .ui-button {
+    margin:        0;
+    border-radius: 0;
+    border:        none;
+    background:    transparent;
+}
+
+.customize-control-radio-image .ui-button-text { padding: 0; }
+
+.customize-control-radio-image img {
+    box-sizing: border-box;
+    width:      30%;
+    height:     auto;
+    padding:    1px;
+    border:     4px solid transparent;
+    float:      left;
+}
+
+    .customize-control-radio-image img:hover,
+    .customize-control-radio-image img:focus {
+        border-color: #ddd;
+    }
+
+    .customize-control-radio-image .ui-state-active img {
+        border-color: #00a0d2;
+    }*/
+#customize-control-whimsy_framework_layout > div > div.radios > label:nth-child(1)
+
+.customize-control-layout .radios > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+.customize-control-layout .radios .layout label > input + div{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+.customize-control-layout .radios .layout label > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+.customize-control-layout .radios .layout input {
+	visibility: hidden;
+}
+.customize-control-layout .radios .layout {
+	display: inline-block;
+	width: 30%;
+	box-sizing: border-box;
+}
+.customize-control-layout .radios .layout .icon {
+	position: relative;
+	width: 100%;
+	height: 80px;
+	box-sizing: border-box;
+	cursor: pointer;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 7em;
+    font-size: xx-small;
+    text-transform: uppercase;
+    text-align: center;
+}
+.customize-control-layout .radios .layout[data-value="disabled"] .icon:after {
+	position: absolute;
+	display: block;
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: url(../img/disabled.png) center center no-repeat;
+}
+.customize-control-layout .radios .layout[data-value="content-sidebar"] .icon, .customize-control-layout .selection .layout[data-value="disabled"] .icon {
+	background-image: url(../img/content-sidebar.png);
+}
+.customize-control-layout .radios .layout[data-value="full-width"] .icon {
+	background-image: url(../img/full-width.png);
+}
+
+.customize-control-layout .radios .layout[data-value="sidebar-content"] .icon {
+	background-image: url(../img/sidebar-content.png);
+}
+.customize-control-layout .radios .layout[data-value="footer-1"] .icon {
+	background-image: url(../img/footer-1.png);
+}
+.customize-control-layout .radios .layout[data-value="footer-2"] .icon {
+	background-image: url(../img/footer-2.png);
+}
+
+.customize-control-layout .radios .layout[data-value="footer-3"] .icon {
+	background-image: url(../img/footer-3.png);
+}
+.customize-control-layout .radios .layout.selected .icon {
+	cursor: not-allowed;
+}

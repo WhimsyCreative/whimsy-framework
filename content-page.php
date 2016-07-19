@@ -12,7 +12,20 @@
 
 	<div class="entry-meta">
         
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php 
+
+            $whimsy_framework_hide_page_title_link = get_theme_mod( 'whimsy_framework_hide_page_title_link' );
+
+            if ( $whimsy_framework_hide_page_title_link == 1 ) :
+                
+                the_title( '<h1 class="entry-title">', '</h1>' ); 
+                
+            else :
+                
+                the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
+            
+            endif;
+        ?>
         
 	</div>
 	

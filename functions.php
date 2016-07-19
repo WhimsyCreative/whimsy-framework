@@ -1,4 +1,7 @@
 <?php
+
+add_action( 'after_setup_theme', 'whimsy_setup' );
+
 /**
  * Whimsy Framework functions and definitions
  *
@@ -95,140 +98,7 @@ function whimsy_setup() {
 }
 endif; // whimsy_setup
 
-add_action( 'after_setup_theme', 'whimsy_setup' );
-
-
 /**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_'whimsy-framework'
+ * Include Whimsy Framework Library files.
  */
-function whimsy_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'whimsy-framework' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Footer Widgets (1)', 'whimsy-framework' ),
-		'id'            => 'footer-widgets-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Footer Widgets (2)', 'whimsy-framework' ),
-		'id'            => 'footer-widgets-2',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Footer Widgets (3)', 'whimsy-framework' ),
-		'id'            => 'footer-widgets-3',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-}
-add_action( 'widgets_init', 'whimsy_widgets_init' );
-
-
-/**
- * Enqueue scripts and styles.
- */
-function whimsy_scripts() {
-	
-	wp_enqueue_style( 'whimsy-grid', get_template_directory_uri() . '/css/grid.css', '1.0', false, false );
-	
-	wp_enqueue_style( 'whimsy-menu', get_template_directory_uri() . '/css/navigation.css', '1.0', false, false );
-	
-	wp_enqueue_style( 'whimsy-style', get_stylesheet_uri() );
-	
-	wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/js/jquery.slimmenu.js', array('jquery'), '1.0', true );
-	
-	wp_enqueue_script( 'whimsy-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true );
-	
-	wp_enqueue_script( 'whimsy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0', true );
-	
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-	
-	if ( is_page_template('template-mosaic.php') ) {
-		wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/js/mosaic.js', array('jquery-masonry'), '1.0', true );
-	}
-	
-	wp_enqueue_style( 'whimsy-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.3.0', false );
-	
-	$whimsy_framework_layout = get_theme_mod( 'whimsy_framework_layout' );
-	if ( $whimsy_framework_layout  == 'sidebar-content' ) {
-	    wp_enqueue_style( 'whimsy-layout-sidebar-content', get_template_directory_uri() . '/css/layouts/sidebar-content.css' );
-	}
-
-	if ( $whimsy_framework_layout  == 'full-width' ) {
-	    wp_enqueue_style( 'whimsy-layout-full-width', get_template_directory_uri() . '/css/layouts/full-width.css' );
-	}
-
-}
-add_action( 'wp_enqueue_scripts', 'whimsy_scripts' );
-
-/**
- * Define action hooks for the theme.
- */
-require get_template_directory() . '/inc/hooks.php';
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/customize/custom-header.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customize/customizer.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Whimsical Widgets
- */
-require get_template_directory() . '/inc/widgets.php';
-
-/**
- * Plugin Recommendations
- */
-require get_template_directory() . '/inc/plugins.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/plugins/jetpack.php';
-
-/**
- * Load WooCommerce compatibility file.
- */
-require get_template_directory() . '/inc/plugins/woocommerce.php';
-
-/**
- * Load Easy Digital Downloads compatibility file.
- */
-require get_template_directory() . '/inc/plugins/edd.php';
+require_once get_template_directory() . '/library/library.php';
