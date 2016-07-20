@@ -13,7 +13,7 @@
 /**
  * Include the TGM_Plugin_Activation class.
  */
-require_once dirname( __FILE__ ) . '/plugins/class-tgm-plugin-activation.php';
+require_once dirname( __FILE__ ) . '/plugins/plugin-activation.php';
 
 add_action( 'tgmpa_register', 'whimsy_register_required_plugins' );
 /**

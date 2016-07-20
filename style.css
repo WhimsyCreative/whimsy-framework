@@ -317,18 +317,23 @@ h1 {
 	}
 h2 {
 	font-size:1.8em;
+	margin-top: 0.8em;
 	}
 h3 {
 	font-size:1.6em;
+	margin-top: 0.8em;
 	}
 h4 {
 	font-size:1.4em;
+	margin-top: 0.8em;
 	}
 h5 {
 	font-size:1.2em;
+	margin-top: 0.8em;
 	}
 h6 {
 	font-size:0.8em;
+	margin-top: 0.8em;
 	}
 
 /* Highlight selection colors */
@@ -764,7 +769,7 @@ body.single .entry-meta {
 .entry-content ul {
 	list-style: none;
     margin: 0 0 0 0.7em;
-    line-height: 2;
+    line-height: 1.5;
 }
 
 .entry-content ul li:before {

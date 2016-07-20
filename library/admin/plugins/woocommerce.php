@@ -55,5 +55,4 @@ if ( class_exists( 'woocommerce' ) ) {
     
     endif;
 
-
 }

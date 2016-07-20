@@ -1,29 +1,30 @@
 <?php
-
-if ( ! function_exists( 'whimsy_display_post_thumbnail' ) ) :
 /**
  * Whimsy Display Post thumbnail
  */
-function whimsy_display_post_thumbnail() {
 
-	if( get_post_format() == 'link' ) : ?>
+if ( ! function_exists( 'whimsy_display_post_thumbnail' ) ) :
 
-	<!-- Don't show post thumbnil for links -->
+    function whimsy_display_post_thumbnail() {
 
-	<?php elseif( get_post_format() == 'gallery' ) : ?>
+        if( get_post_format() == 'link' ) : ?>
 
-	<!-- Don't show post thumbnil galleries -->
+        <!-- Don't show post thumbnil for links -->
 
-	<?php else : ?>
+        <?php elseif( get_post_format() == 'gallery' ) : ?>
 
-		<div class="entry-img">
+        <!-- Don't show post thumbnil galleries -->
 
-			<?php if ( has_post_thumbnail() ) { the_post_thumbnail('full'); } ?>
-		
-		</div>
+        <?php else : ?>
 
-	<?php endif;
+            <div class="entry-img">
 
-}
+                <?php if ( has_post_thumbnail() ) { the_post_thumbnail('full'); } ?>
+
+            </div>
+
+        <?php endif;
+
+    }
 
 endif;
