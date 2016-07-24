@@ -86,9 +86,11 @@ class Whimsy_Welcome {
 		?>
 		<style type="text/css" media="screen">
 			/*<![CDATA[*/
+			.whimsy-about-wrap { max-width: 1200px; }
 			.whimsy-about-wrap .whimsy-badge { float: right; margin: 0 0 15px 15px; max-width: 200px; }
 			.whimsy-about-wrap #whimsy-header { margin-bottom: 25px; }
 			.whimsy-about-wrap #whimsy-header h1 { margin-bottom: 15px !important; }
+			.whimsy-about-wrap .about-text { margin: 0 0 15px; max-width: 870px; }
 			.whimsy-about-wrap .about-text { margin: 0 0 15px; max-width: 870px; }
 			.whimsy-about-wrap .feature-section { margin-top: 20px; }
 			.whimsy-about-wrap .feature-section-content,

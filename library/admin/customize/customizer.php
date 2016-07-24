@@ -5,6 +5,11 @@
  * @package whimsy
  */
 
+add_action( 'customize_register', 'whimsy_customize_register_section', 10 );
+add_action( 'customize_register', 'whimsy_customize_register', 15 );
+add_action( 'customize_preview_init', 'whimsy_customize_preview_js', 10 );
+add_action( 'init', 'whimsy_customize_style_output', 5 );
+
 /**
  * Adds the individual sections, settings, and controls to the theme customizer
  */
@@ -22,7 +27,7 @@ function whimsy_customize_register_section( $wp_customize ) {
         )
     );
 
-    /* Add Skin Settings */
+    /* Add Display Settings */
     $wp_customize->add_section(
         'whimsy_framework_section_display',
         array(
@@ -34,7 +39,7 @@ function whimsy_customize_register_section( $wp_customize ) {
     );
 
 }
-add_action( 'customize_register', 'whimsy_customize_register_section' );
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -419,7 +424,6 @@ function whimsy_customize_register( $wp_customize ) {
 
 // End menu settings
 }
-add_action( 'customize_register', 'whimsy_customize_register' );
 
 // Sanitize layout setting
 function whimsy_framework_sanitize_select( $input, $setting ) {
@@ -466,10 +470,8 @@ function sanitize_whimsy_framework_checkbox( $input ) {
 function whimsy_customize_preview_js() {
     wp_enqueue_script( 'whimsy_customizer', get_template_directory_uri() . '/library/js/customizer.js', array( 'customize-preview' ), '1.0', true );
 }
-add_action( 'customize_preview_init', 'whimsy_customize_preview_js' );
 
 /*
  * Load Customizer styles
  */
 function whimsy_customize_style_output() { include( get_template_directory() . '/library/admin/customize/customizer-styles.php'); }
-add_action('init', 'whimsy_customize_style_output', 5);
