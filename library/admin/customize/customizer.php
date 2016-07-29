@@ -2,18 +2,16 @@
 /**
  * Whimsy Framework Theme Customizer
  *
- * @package whimsy
+ * @package whimsy-framework
  */
-
 add_action( 'customize_register', 'whimsy_customize_register_section', 10 );
 add_action( 'customize_register', 'whimsy_customize_register', 15 );
 add_action( 'customize_preview_init', 'whimsy_customize_preview_js', 10 );
 add_action( 'init', 'whimsy_customize_style_output', 5 );
 
 /**
- * Adds the individual sections, settings, and controls to the theme customizer
+ * Add the individual sections to the Customizer.
  */
-
 function whimsy_customize_register_section( $wp_customize ) {	
 
 	/* Add Logo Settings Section */
@@ -29,11 +27,22 @@ function whimsy_customize_register_section( $wp_customize ) {
 
     /* Add Display Settings */
     $wp_customize->add_section(
+        'whimsy_framework_section_layout',
+        array(
+            'title'         => __( 'Layouts', 'whimsy-framework' ),
+            'description'   => __( 'Choose how the content, sidebar, and footer should be displayed.', 'whimsy-framework' ),
+            'priority'      => 37,
+
+        )
+    );
+
+    /* Add Display Settings */
+    $wp_customize->add_section(
         'whimsy_framework_section_display',
         array(
             'title'         => __( 'Display', 'whimsy-framework' ),
-            'description'   => __( 'Choose where the content and sidebar should be displayed.', 'whimsy-framework' ),
-            'priority'      => 37,
+            'description'   => __( 'Fine-tune the way your website looks and functions.', 'whimsy-framework' ),
+            'priority'      => 38,
 
         )
     );
@@ -41,17 +50,20 @@ function whimsy_customize_register_section( $wp_customize ) {
 }
 
 /**
- * Add postMessage support for site title and description for the Theme Customizer.
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ * Add the individual settings and controls to the Customizer.
  */
 function whimsy_customize_register( $wp_customize ) {
+    
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor')->transport  = 'postMessage';
+    
+    // Load custom control classes.
+    require_once( trailingslashit( get_template_directory() ) . 'library/admin/customize/controls/control-alpha-color-picker.php' );
+    require_once( trailingslashit( get_template_directory() ) . 'library/admin/customize/controls/control-custom-layout.php' );
 
-// Add Color Support
-
+    
+    // Link Color
 	$wp_customize->add_setting(
 	    'whimsy_link_color',
 	    array(
@@ -70,7 +82,8 @@ function whimsy_customize_register( $wp_customize ) {
 	        )
 	    )
 	);
-
+    
+    // Highlight color
 	$wp_customize->add_setting(
 	    'whimsy_alt_color',
 	    array(
@@ -89,7 +102,8 @@ function whimsy_customize_register( $wp_customize ) {
 	        )
 	    )
 	);
-
+    
+    // Body text color
 	$wp_customize->add_setting(
 	    'whimsy_body_color',
 	    array(
@@ -108,94 +122,16 @@ function whimsy_customize_register( $wp_customize ) {
 	        )
 	    )
 	);
-
-/**     
- * Display Settings
- */
-    // Choose layout style.
     
-     // Add A Layout Picker
-    
-    
-    // Load the radio image control class.
-    require_once( trailingslashit( get_template_directory() ) . 'library/admin/customize/custom-radio.php' );
-
-//
-//    // Register the radio image control class as a JS control type.
-//    $wp_customize->register_control_type( 'Whimsy_Customize_Control_Radio_Image' );
-//
-//    
-//    // Add the layout setting.
-//    $wp_customize->add_setting(
-//        'whimsy_framework_layout',
-//        array(
-//            'default'           => 'content-sidebar',
-//            'transport'         => 'refresh',
-//            'sanitize_callback' => 'sanitize_key'
-//        )
-//    );
-//
-//    // Add the layout control.
-//    $wp_customize->add_control(
-//        new Whimsy_Customize_Control_Radio_Image(
-//            $wp_customize,
-//            'whimsy_framework_layout',
-//            array(
-//                'label'    => esc_html__( 'Layout', 'whimsy-framework' ),
-//                'section'  => 'whimsy_framework_section_display',
-//                'choices'  => array(
-//                    'content-sidebar' => array(
-//                        'label' => esc_html__( 'Content/Sidebar', 'whimsy-framework' ),
-//                        'url'   => '%s/library/img/content-sidebar.png'
-//                    ),
-//                    'full-width' => array(
-//                        'label' => esc_html__( 'Full-Width', 'whimsy-framework' ),
-//                        'url'   => '%s/library/img/full-width.png'
-//                    ),
-//                    'sidebar-content' => array(
-//                        'label' => esc_html__( 'Sidebar/Content', 'whimsy-framework' ),
-//                        'url'   => '%s/library/img/sidebar-content.png'
-//                    )
-//                )
-//            )
-//        )
-//    );
-//    
-//    $wp_customize->add_setting(
-//        'whimsy_framework_layout',
-//        array(
-//            'default'           => 'content-sidebar',
-//            'transport'         => 'refresh',
-//            'sanitize_callback' => 'sanitize_key',
-//        )
-//    );
-//     
-//    $wp_customize->add_control(
-//        'whimsy_framework_layout',
-//        array(
-//            'type' 		=> 'select',
-//            'label' 	=> __( 'Layout', 'whimsy-framework' ),
-//            'section' 	=> 'whimsy_framework_section_display',
-//            'choices' 	=> array(
-//                'content-sidebar' 	=> __( 'Content/Sidebar', 'whimsy-framework' ),
-//                'sidebar-content' 	=> __( 'Sidebar/Content', 'whimsy-framework' ),
-//                'full-width' 		=> __( 'Full-Width', 'whimsy-framework' ),
-//            ),
-//        )
-//    );
-//    
-    
-    
-    // Load the layout control class.
-    require_once( trailingslashit( get_template_directory() ) . 'library/admin/customize/custom-layout.php' );
-    
+    // Global layout style
 	$wp_customize->add_setting( 'whimsy_framework_layout', array(
 		'default' => 'content-sidebar',
-		'transport' => 'refresh'
+		'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_key'
 	) );
 	$wp_customize->add_control( new Whimsy_Layout_Control( $wp_customize, 'whimsy_framework_layout', array(
 		'label' => __( 'Global Layout', 'whimsy-framework' ),
-		'section' => 'whimsy_framework_section_display',
+		'section' => 'whimsy_framework_section_layout',
 		'layouts' => array(
 			'sidebar-content' => array(
 				'label' => __( 'Sidebar/Content', 'whimsy-framework' )
@@ -210,13 +146,15 @@ function whimsy_customize_register( $wp_customize ) {
 		'priority' => 1
 	) ) );
     
+    // Footer layout style
 	$wp_customize->add_setting( 'whimsy_framework_layout_footer', array(
 		'default' => 'footer-3',
-		'transport' => 'refresh'
+		'transport' => 'refresh',
+        'sanitize_callback' => 'whimsy_framework_sanitize_select'
 	) );
 	$wp_customize->add_control( new Whimsy_Layout_Control( $wp_customize, 'whimsy_framework_layout_footer', array(
 		'label' => __( 'Footer Layout', 'whimsy-framework' ),
-		'section' => 'whimsy_framework_section_display',
+		'section' => 'whimsy_framework_section_layout',
 		'layouts' => array(
 			'footer-1' => array(
 				'label' => __( '1 Widget Area', 'whimsy-framework' )
@@ -237,7 +175,7 @@ function whimsy_customize_register( $wp_customize ) {
         array(
             'default'           => false,
             'transport'         => 'refresh',
-            'sanitize_callback' => 'sanitize_whimsy_framework_checkbox',
+            'sanitize_callback' => 'whimsy_framework_sanitize_checkbox',
         )
     );
     $wp_customize->add_control(
@@ -255,7 +193,7 @@ function whimsy_customize_register( $wp_customize ) {
         array(
             'default' => false,
             'transport'         => 'refresh',
-            'sanitize_callback' => 'sanitize_whimsy_framework_checkbox',
+            'sanitize_callback' => 'whimsy_framework_sanitize_checkbox',
         )
     );
     $wp_customize->add_control(
@@ -273,7 +211,7 @@ function whimsy_customize_register( $wp_customize ) {
         array(
             'default' => false,
             'transport'         => 'refresh',
-            'sanitize_callback' => 'sanitize_whimsy_framework_checkbox',
+            'sanitize_callback' => 'whimsy_framework_sanitize_checkbox',
         )
     );
     $wp_customize->add_control(
@@ -284,9 +222,6 @@ function whimsy_customize_register( $wp_customize ) {
             'section' => 'whimsy_framework_section_display',
         )
     );
-/** 
- * Logo Settings 
- */
 
     // Desktop logo
     $wp_customize->add_setting(
@@ -329,7 +264,7 @@ function whimsy_customize_register( $wp_customize ) {
         'whimsy_framework_logo_center',
         array(
             'default' => true,
-            'sanitize_callback' => 'sanitize_whimsy_framework_checkbox',
+            'sanitize_callback' => 'whimsy_framework_sanitize_checkbox',
         )
     );
     $wp_customize->add_control(
@@ -340,7 +275,6 @@ function whimsy_customize_register( $wp_customize ) {
             'section' => 'title_tagline',
         )
     );
-// Add Menu Display Settings
 
     // Menu bg color
     $wp_customize->add_setting(
@@ -421,11 +355,9 @@ function whimsy_customize_register( $wp_customize ) {
             )
         )
     ); 
-
-// End menu settings
 }
 
-// Sanitize layout setting
+// Sanitize select settings
 function whimsy_framework_sanitize_select( $input, $setting ) {
 	
 	// Ensure input is a slug.
@@ -436,32 +368,33 @@ function whimsy_framework_sanitize_select( $input, $setting ) {
 	
 	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-}
-
-
-function sanitize_whimsy_framework_layout( $input ) {
-    $valid = array(
-        'content-sidebar' 	=> 'Content/Sidebar',
-        'full-width'		=> 'Full-Width',
-        'sidebar-content' 	=> 'Sidebar/Content',
-    );
- 
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
-    } 
-
-    else {
-        return '';
-    }
+    
 }
 
 // Sanitize checkboxes
-function sanitize_whimsy_framework_checkbox( $input ) {
+function whimsy_framework_sanitize_checkbox( $input ) {
+    
     if ( $input == 1 ) {
         return 1;
-    } else {
+    } 
+    else {
         return '';
     }
+    
+}
+
+// Sanitize CSS 
+function whimsy_framework_sanitize_rgba( $value ) {
+    
+    // If empty or an array return transparent
+    if ( empty( $value ) || is_array( $value ) ) {
+        return 'rgba(0,0,0,0)';
+    }
+    
+    // By now we know the string is formatted as an rgba color so we need to further sanitize it.
+    $value = str_replace( ' ', '', $value );
+    sscanf( $value, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+    return 'rgba('.$red.','.$green.','.$blue.','.$alpha.')';
 }
 
 /**

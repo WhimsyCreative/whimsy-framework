@@ -84,19 +84,23 @@ ul.whimsy-nav li.bordered {
 }
 .whimsy-nav .current_page_item a,
 .whimsy-nav .current-menu-item a {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* Sub-menu */
 #site-navigation ul.sub-menu {
     background:rgba(255,255,255,1);
 }
+#site-navigation ul.sub-menu li a { 
+    padding:0.6em;
+    display: block;
+}
 #site-navigation ul.sub-menu li {
     background: rgba(255,255,255,0.95);
     border-bottom: 1px solid rgba(216,216,216,0.3);
     min-width: 200px;
     text-align: left;
-    padding:0.6em;
+    padding: 0;
 }
 #site-navigation ul.sub-menu li:hover, 
 .whimsy-nav.collapsed li:hover {

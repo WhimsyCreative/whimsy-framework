@@ -1,52 +1,24 @@
-/*
-.customize-control-radio-image input[type=radio] {
-    display:    none; 
-}
-.customize-control-radio-image .ui-button {
-    margin:        0;
-    border-radius: 0;
-    border:        none;
-    background:    transparent;
-}
+/* Custom Control Styles */
 
-.customize-control-radio-image .ui-button-text { padding: 0; }
-
-.customize-control-radio-image img {
-    box-sizing: border-box;
-    width:      30%;
-    height:     auto;
-    padding:    1px;
-    border:     4px solid transparent;
-    float:      left;
+.customize-control-layout input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
 }
-
-    .customize-control-radio-image img:hover,
-    .customize-control-radio-image img:focus {
-        border-color: #ddd;
-    }
-
-    .customize-control-radio-image .ui-state-active img {
-        border-color: #00a0d2;
-    }*/
-#customize-control-whimsy_framework_layout > div > div.radios > label:nth-child(1)
-
-.customize-control-layout .radios > input{ /* HIDE RADIO */
-  visibility: hidden; /* Makes input not-clickable */
-  position: absolute; /* Remove input from document flow */
+.customize-control-layout input + div{ /* IMAGE STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+    border-radius: 3px;
 }
-.customize-control-layout .radios .layout label > input + div{ /* IMAGE STYLES */
-  cursor:pointer;
-  border:2px solid transparent;
-}
-.customize-control-layout .radios .layout label > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
-  border:2px solid #f00;
-}
-.customize-control-layout .radios .layout input {
-	visibility: hidden;
+.customize-control-layout input[type=radio]:hover + div, 
+.customize-control-layout input[type=radio]:active + div, 
+.customize-control-layout input[type=radio]:checked + div  {
+    background-color:rgba(255,255,255,0.8);
+    border:2px solid rgba(255,255,255,0.8);
+    transition: all 400ms ease;
 }
 .customize-control-layout .radios .layout {
 	display: inline-block;
-	width: 30%;
+	width: 32%;
 	box-sizing: border-box;
 }
 .customize-control-layout .radios .layout .icon {

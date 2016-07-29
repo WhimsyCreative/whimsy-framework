@@ -19,16 +19,6 @@ class Whimsy_Layout_Control extends WP_Customize_Control {
 	public $layouts;
     
 	/**
-	 * Enqueue control related scripts/styles.
-	 *
-	 * @since 1.0
-	 */
-	public function enqueue() {
-        wp_enqueue_script( 'whimsy-customizer-controls', get_template_directory_uri() . '/library/js/customizer-controls.js' );
-        wp_enqueue_style(  'whimsy-customizer-controls', get_template_directory_uri() . '/library/css/customizer-controls.css'                  );
-	}
-
-	/**
 	 * Constructor.
 	 *
 	 * @since 1.0
@@ -42,6 +32,17 @@ class Whimsy_Layout_Control extends WP_Customize_Control {
 		$this->layouts = $args[ 'layouts' ];
 		parent::__construct( $manager, $id, $args );
 	}
+    
+	/**
+	 * Enqueue control related scripts/styles.
+	 *
+	 * @since 1.0
+	 */
+	public function enqueue() {
+        wp_enqueue_script( 'whimsy-customizer-controls', get_template_directory_uri() . '/library/js/customizer-controls.js', array( 'customize-preview' ) );
+        wp_enqueue_style(  'whimsy-customizer-controls', get_template_directory_uri() . '/library/css/customizer-controls.css'                  );
+	}
+
 
 	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
