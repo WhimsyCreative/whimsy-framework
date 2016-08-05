@@ -383,20 +383,6 @@ function whimsy_framework_sanitize_checkbox( $input ) {
     
 }
 
-// Sanitize CSS 
-function whimsy_framework_sanitize_rgba( $value ) {
-    
-    // If empty or an array return transparent
-    if ( empty( $value ) || is_array( $value ) ) {
-        return 'rgba(0,0,0,0)';
-    }
-    
-    // By now we know the string is formatted as an rgba color so we need to further sanitize it.
-    $value = str_replace( ' ', '', $value );
-    sscanf( $value, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
-    return 'rgba('.$red.','.$green.','.$blue.','.$alpha.')';
-}
-
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */

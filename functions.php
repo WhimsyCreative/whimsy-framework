@@ -8,12 +8,10 @@
 add_action( 'after_setup_theme', 'whimsy_setup' );
 
 /**
- * Include Whimsy Framework Library files.
+ * Include the Whimsy Framework Library files.
  */
 require_once get_template_directory() . '/library/library.php';
-
-    // Start the framework magic.
-    new WHIMSY_FRAMEWORK();
+new WHIMSY();
 
 /**
  * Set content_width for WordPress.

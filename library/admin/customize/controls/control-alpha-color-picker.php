@@ -48,8 +48,8 @@ if ( !class_exists( 'Whimsy_Alpha_Color_Control' ) ) {
          * stand alone class we'll register and enqueue them here.
          */
         public function enqueue() {
-            wp_enqueue_script(  'alpha-color-picker', get_template_directory_uri() . '/library/js/alpha-color-picker.js', array( 'jquery', 'wp-color-picker' ), '1.0.0', true );
-            wp_enqueue_style(   'alpha-color-picker', get_template_directory_uri() . '/library/css/alpha-color-picker.css', array( 'wp-color-picker' ), '1.0.0' );
+            wp_enqueue_script(  'alpha-color-picker', WHIMSY_JS . 'alpha-color-picker.js', array( 'jquery', 'wp-color-picker' ), '1.0.0', true );
+            wp_enqueue_style(   'alpha-color-picker', WHIMSY_CSS . 'alpha-color-picker.css', array( 'wp-color-picker' ), '1.0.0' );
         }
 
         /**

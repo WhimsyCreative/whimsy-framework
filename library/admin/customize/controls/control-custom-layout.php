@@ -78,7 +78,7 @@ class Whimsy_Layout_Control extends WP_Customize_Control {
 				?>
 				<label class="layout" data-value="<?php echo $value; ?>">
 					<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> />
-                    <div class="icon" title="<?php echo esc_html( $layout[ 'label' ] ); ?>"><?php echo esc_html( $layout[ 'label' ] ); ?></div>
+                    <div class="icon" title="<?php echo esc_html( $layout[ 'label' ] ); ?>"><span class="icon-text"><?php echo esc_html( $layout[ 'label' ] ); ?></span></div>
 				</label>
 				<?php
 			endforeach;

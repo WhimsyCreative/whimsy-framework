@@ -10,23 +10,30 @@
  * @link       https://github.com/thomasgriffin/TGM-Plugin-Activation
  */
 
+add_action( 'tgmpa_register', 'whimsy_register_required_plugins' );
 /**
  * Include the TGM_Plugin_Activation class.
  */
 require_once dirname( __FILE__ ) . '/plugins/plugin-activation.php';
 
-add_action( 'tgmpa_register', 'whimsy_register_required_plugins' );
+/**
+ * Load Jetpack compatibility file.
+ */
+require_once get_template_directory() . '/library/admin/plugins/jetpack.php';
+
+/**
+ * Load WooCommerce compatibility file.
+ */
+require_once get_template_directory() . '/library/admin/plugins/woocommerce.php';
+
+/**
+ * Load Easy Digital Downloads compatibility file.
+ */
+require_once get_template_directory() . '/library/admin/plugins/edd.php';
+
+
 /**
  * Register the required plugins for this theme.
- *
- * In this example, we register two plugins - one included with the whimsy library
- * and one from the .org repo.
- *
- * The variable passed to whimsy_register_plugins() should be an array of plugin
- * arrays.
- *
- * This function is hooked into whimsy_init, which is fired within the
- * TGM_Plugin_Activation class constructor.
  */
 function whimsy_register_required_plugins() {
 
