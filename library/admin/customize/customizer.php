@@ -59,9 +59,7 @@ function whimsy_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor')->transport  = 'postMessage';
     
     // Load custom control classes.
-    require_once( trailingslashit( get_template_directory() ) . 'library/admin/customize/controls/control-alpha-color-picker.php' );
     require_once( trailingslashit( get_template_directory() ) . 'library/admin/customize/controls/control-custom-layout.php' );
-
     
     // Link Color
 	$wp_customize->add_setting(
@@ -71,6 +69,7 @@ function whimsy_customize_register( $wp_customize ) {
 	        'sanitize_callback' => 'sanitize_hex_color',
 	    )
 	);
+    
 	$wp_customize->add_control(
 	    new WP_Customize_Color_Control(
 	        $wp_customize,
@@ -387,7 +386,7 @@ function whimsy_framework_sanitize_checkbox( $input ) {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function whimsy_customize_preview_js() {
-    wp_enqueue_script( 'whimsy_customizer', get_template_directory_uri() . '/library/js/customizer.js', array( 'customize-preview' ), '1.0', true );
+    wp_enqueue_script( 'whimsy_customizer', get_template_directory_uri() . '/library/js/customizer.js', array( 'customize-preview' ), '2.0', true );
 }
 
 /*

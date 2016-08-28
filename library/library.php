@@ -87,7 +87,6 @@ if ( !class_exists( 'Whimsy' ) ) {
              * Custom functions that act independently of the theme templates.
              */
             
-            require_once WHIMSY_ADMIN . 'colors.php';
             require_once WHIMSY_ADMIN . 'plugins.php';
             require_once WHIMSY_ADMIN . 'welcome-screen.php';
             require_once WHIMSY_ADMIN . 'widgets.php';

@@ -2,8 +2,7 @@
 /**
  * Customize Layout Control Class
  *
- * @package Slicejack
- * @since 1.0
+ * @since 2.0.0
  */
 class Whimsy_Layout_Control extends WP_Customize_Control {
 	/**
@@ -21,7 +20,7 @@ class Whimsy_Layout_Control extends WP_Customize_Control {
 	/**
 	 * Constructor.
 	 *
-	 * @since 1.0
+	 * @since 2.0.0
 	 * @uses WP_Customize_Control::__construct()
 	 *
 	 * @param WP_Customize_Manager $manager
@@ -36,10 +35,9 @@ class Whimsy_Layout_Control extends WP_Customize_Control {
 	/**
 	 * Enqueue control related scripts/styles.
 	 *
-	 * @since 1.0
+	 * @since 2.0.0
 	 */
 	public function enqueue() {
-        wp_enqueue_script( 'whimsy-customizer-controls', get_template_directory_uri() . '/library/js/customizer-controls.js', array( 'customize-preview' ) );
         wp_enqueue_style(  'whimsy-customizer-controls', get_template_directory_uri() . '/library/css/customizer-controls.css'                  );
 	}
 
@@ -47,7 +45,7 @@ class Whimsy_Layout_Control extends WP_Customize_Control {
 	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
-	 * @since 1.0
+	 * @since 2.0.0
 	 * @uses WP_Customize_Control::to_json()
 	 */
 	public function to_json() {
@@ -61,7 +59,7 @@ class Whimsy_Layout_Control extends WP_Customize_Control {
 	/**
 	 * Render the control's content.
 	 *
-	 * @since 1.0
+	 * @since 2.0.0
 	 */
 	public function render_content() {
 		if ( empty( $this->layouts ) )
