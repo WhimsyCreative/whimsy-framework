@@ -19,15 +19,5 @@
 	<?php whimsy_post_meta_after(); ?>
 
 	</header><!-- .entry-header -->
-
-	<footer class="entry-footer">
-
-	<?php whimsy_post_footer_before(); ?>
-
-	<?php edit_post_link( __( 'Edit', 'whimsy-framework' ), '<span class="edit-link">', '</span>' ); ?>
-	
-	<?php whimsy_post_footer_after(); ?>
-
-	</footer><!-- .entry-footer -->
 	
 </article><!-- #post-## -->

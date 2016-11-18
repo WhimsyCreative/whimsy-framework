@@ -67,13 +67,18 @@ if ( !class_exists( 'Whimsy' ) ) {
 			define( 'WHIMSY_CHILD_URI', get_stylesheet_directory_uri() );
             
             // Sets the paths to the Whimsy library.
-			define( 'WHIMSY_LIB_PATH',       trailingslashit( WHIMSY_DIR .   '/library'   ) );
+			define( 'WHIMSY_LIB_PATH',       trailingslashit( WHIMSY_DIR  .   '/library'   ) );
 			define( 'WHIMSY_LIB_URI',        trailingslashit( WHIMSY_URI  .   '/library'   ) );
             
 			// Core framework directory paths.
-			define( 'WHIMSY_ADMIN',     trailingslashit( WHIMSY_LIB_PATH . 'admin'            ) );
-			define( 'WHIMSY_CUSTOMIZE', trailingslashit( WHIMSY_LIB_PATH . 'admin/customize'  ) );
-			define( 'WHIMSY_INC',       trailingslashit( WHIMSY_LIB_PATH . 'inc'              ) );
+			define( 'WHIMSY_ADMIN',     trailingslashit( WHIMSY_LIB_PATH . 'admin'                            ) );
+			define( 'WHIMSY_CUSTOMIZE', trailingslashit( WHIMSY_LIB_PATH . 'admin/customize'                  ) );
+			define( 'WHIMSY_INC',       trailingslashit( WHIMSY_LIB_PATH . 'inc'                              ) );
+            
+			define( 'WHIMSY_EXT',       trailingslashit( WHIMSY_LIB_PATH . 'extensions'                       ) );
+			define( 'WHIMSY_BG',        trailingslashit( WHIMSY_LIB_PATH . 'extensions/whimsy-bg'             ) );
+			define( 'WHIMSY_COLORS',    trailingslashit( WHIMSY_LIB_PATH . 'extensions/whimsy-colors'         ) );
+			define( 'WHIMSY_SHARING',   trailingslashit( WHIMSY_LIB_PATH . 'extensions/whimsy-sharing'        ) );
             
 			// Core framework directory URIs.
 			define( 'WHIMSY_CSS', trailingslashit( WHIMSY_LIB_URI . 'css' ) );
@@ -96,8 +101,15 @@ if ( !class_exists( 'Whimsy' ) ) {
             
             require_once WHIMSY_INC . 'enqueue.php';
             require_once WHIMSY_INC . 'extras.php';
+            require_once WHIMSY_INC . 'fonts.php';
             require_once WHIMSY_INC . 'hooks.php';
             require_once WHIMSY_INC . 'template-tags.php';
+            
+            require_once WHIMSY_BG      . 'whimsy-bg.php';
+            require_once WHIMSY_COLORS  . 'whimsy-colors.php';
+            //require_once WHIMSY_SHARING . 'whimsy-sharing.php';
+            
+            
 
         }
     }

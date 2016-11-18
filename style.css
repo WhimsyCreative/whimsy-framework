@@ -112,7 +112,7 @@ html {
 	box-sizing:         border-box;
 }
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
+	background: #f7f7f7; /* Fallback for when there is no custom background color defined. */
 	-webkit-font-smoothing: antialiased;
 }
 article,
@@ -492,6 +492,7 @@ a:active {
 .post-navigation .nav-previous {
 	float: left;
 	width: 50%;
+    padding: 1em 0;
 }
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
@@ -499,6 +500,23 @@ a:active {
 	float: right;
 	text-align: right;
 	width: 50%;
+    padding: 1em 0;
+}
+.comment-navigation .nav-previous a,
+.paging-navigation .nav-previous a,
+.post-navigation .nav-previous a {
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 3px;
+    background: rgba(0,0,0,0.01);
+    padding: 1em;
+}
+.comment-navigation .nav-next a,
+.paging-navigation .nav-next a,
+.post-navigation .nav-next a {
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 3px;
+    background: rgba(0,0,0,0.01);
+    padding: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -743,8 +761,13 @@ ul#widget-whimsy-social {
 10.2 Posts and pages
 --------------------------------------------------------------*/
 
+.post {
+    margin-bottom: 1.2em;
+}
+
 .entry-header {
 	padding-bottom: 2%;
+    text-align: center;
 }
 
 .entry-header > h1.entry-title {
@@ -760,10 +783,6 @@ ul#widget-whimsy-social {
 
 body.single .entry-meta {
 	margin:1em 0; 	
-}
-
-.entry-content {
-	font-size: 120%;
 }
 
 .entry-content ul {
@@ -820,7 +839,8 @@ body.single .entry-meta {
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 4.5em;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .byline,
