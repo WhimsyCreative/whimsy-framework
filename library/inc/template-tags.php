@@ -5,9 +5,11 @@
  * @package whimsy-framework
  */
 
-add_action( 'whimsy_post_meta_before', 'whimsy_display_post_categories', 10 );
-add_action( 'whimsy_post_meta_before', 'whimsy_display_post_thumbnail', 10);
-add_action( 'whimsy_post_meta_after', 'whimsy_display_post_meta', 20 );
+add_action( 'whimsy_post_meta_before',  'whimsy_display_post_categories', 10 );
+add_action( 'whimsy_post_meta_before',  'whimsy_display_post_thumbnail', 10);
+add_action( 'whimsy_post_meta_after',   'whimsy_display_post_meta', 20 );
+add_action( 'whimsy_nav_inside_before', 'whimsy_responsive_nav', 40 );
+
 //add_action( 'whimsy_post_meta_after', 'whimsy_author_gravatar', 15 );
 
 /**

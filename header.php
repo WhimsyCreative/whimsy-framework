@@ -61,8 +61,6 @@
 
 			<?php whimsy_nav_inside_before(); ?>
 
-			<?php whimsy_responsive_nav(); ?>
-
 			<?php whimsy_nav_inside_after(); ?>
 
 		</nav><!-- /#site-navigation -->

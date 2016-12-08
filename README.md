@@ -3,15 +3,14 @@
 <ul>
 	<li>Contributors: thefanciful</li>
 	<li>Theme URI: http://thefanciful.com/whimsy/</li>
-	<li>Author: thefanciful</li>
-	<li>Author URI: http://thefanciful.com</li>
+	<li>Author: Whimsy Creative Co.</li>
+	<li>Author URI: http://whimsycreative.co</li>
 	<li>License: GNU General Public License v2 or later</li>
 	<li>License URI: http://www.gnu.org/licenses/gpl-2.0.html</li>
 	<li>Requires at least: 3.9</li>
 	<li>Tested up to: 4.4.1</li>
-	<li>Stable tag: 1.2.4</li>
+	<li>Stable tag: 2.0.0</li>
 	<li>Text Domain: whimsy-framework</li>
-	<li>Donate link: http://bit.ly/whimsywp</li>
 </ul>
 
 The Whimsy Framework is a minimal theme ready for customization with lots of extras baked in.
@@ -42,6 +41,9 @@ http://docs.thefanciful.com/whimsy-framework/
 Yes, the Whimsy Framework is fully responsive and made to work great on every device.
 
 ## Changelog
+
+### 2.0.0
++ Fixed issue with featured image display.
 
 ### 1.2.4
 + Fixed issue with featured image display.

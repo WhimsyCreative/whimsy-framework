@@ -160,7 +160,6 @@ blockquote > p, q > p {
 	margin-bottom: 1em;
 	margin-top: -1.2em;
 	position: relative;
-	text-shadow: 1px 2px 1px rgba(216,216,216,0.6);
 }
 a:focus {
 	outline: thin dotted;
@@ -190,7 +189,7 @@ textarea {
 	color: #4b4b4b;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
-	font-size: 1.6em;
+	font-size: 1.7em;
 	font-weight: 400;
 	line-height: 1.7;
 }
@@ -873,6 +872,12 @@ body.single .entry-meta {
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
+}
+
+
+.blog .format-aside,
+.archive .format-aside {
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
