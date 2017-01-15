@@ -130,7 +130,7 @@ function whimsy_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control( new Whimsy_Layout_Control( $wp_customize, 'whimsy_framework_layout', array(
 		'label' => __( 'Global Layout', 'whimsy-framework' ),
-		'section' => 'whimsy_framework_section_layout',
+		'section' => 'whimsy_framework_section_display',
 		'layouts' => array(
 			'sidebar-content' => array(
 				'label' => __( 'Sidebar/Content', 'whimsy-framework' )
@@ -153,7 +153,7 @@ function whimsy_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control( new Whimsy_Layout_Control( $wp_customize, 'whimsy_framework_layout_footer', array(
 		'label' => __( 'Footer Layout', 'whimsy-framework' ),
-		'section' => 'whimsy_framework_section_layout',
+		'section' => 'whimsy_framework_section_display',
 		'layouts' => array(
 			'footer-1' => array(
 				'label' => __( '1 Widget Area', 'whimsy-framework' )

@@ -1,12 +1,4 @@
 <?php
-/**
- * Sample implementation of the Custom Header feature
- * http://codex.wordpress.org/Custom_Headers
- *
- * You can add an optional custom header image to header.php like so ...
- *
- * @package whimsy
- */
 
 /**
  * Setup the WordPress core custom header feature.
