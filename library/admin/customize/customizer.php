@@ -48,9 +48,7 @@ function whimsy_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor')->transport  = 'postMessage';
     
     // Load custom control classes.
-    require_once( trailingslashit( get_template_directory() ) . 'library/admin/customize/controls/control-custom-layout.php' );
-    require_once( trailingslashit( get_template_directory() ) . 'library/admin/customize/controls/control-google-fonts.php' );
-    
+    require_once( trailingslashit( get_template_directory() ) . 'library/admin/customize/controls/control-custom-layout.php' );    
     
     // Link Color
 	$wp_customize->add_setting(
@@ -156,18 +154,6 @@ function whimsy_customize_register( $wp_customize ) {
 				'label' => __( '3 Widget Areas', 'whimsy-framework' )
 			)
 		),
-		'priority' => 2
-	) ) );
-    
-    // Google Fonts
-	$wp_customize->add_setting( 'whimsy_google_font_setting', array(
-		'default' => 'open sans',
-		'transport' => 'refresh',
-        'sanitize_callback' => 'whimsy_framework_sanitize_select'
-	) );
-	$wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'whimsy_google_font_setting', array(
-		'label' => __( 'Body Font', 'whimsy-framework' ),
-		'section' => 'whimsy_framework_section_display',
 		'priority' => 2
 	) ) );
     

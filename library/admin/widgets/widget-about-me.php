@@ -21,11 +21,10 @@ class Widget_Whimsy_About extends WP_Widget {
      */
     public function upload_scripts()
     {
-        wp_enqueue_script( 'media-upload' );
-        wp_enqueue_script( 'thickbox' );
+        
+        wp_enqueue_media();
         wp_enqueue_script( 'whimsy-upload-media', get_template_directory_uri() . '/library/js/upload-media.js', array( 'jquery' ) );
         
-        wp_enqueue_style( 'thickbox' );
     }
     
     // Widget Content
@@ -88,9 +87,11 @@ class Widget_Whimsy_About extends WP_Widget {
             $whimsy_text        = ! empty( $instance[ 'whimsy_text' ] ) ? $instance[ 'whimsy_text' ] : '';
 
             $whimsy_image = '';
-            if(isset($instance['whimsy_image']))
-            {
+            
+            if(isset($instance['whimsy_image'])) {
+                
                 $whimsy_image = $instance['whimsy_image'];
+                
             }
         ?>
 
@@ -102,6 +103,7 @@ class Widget_Whimsy_About extends WP_Widget {
                 <label for="<?php echo esc_attr( $this->get_field_name( 'whimsy_image' ) ); ?>"><?php esc_html_e( 'Image:', 'whimsy-framework' ); ?></label>
                 <input name="<?php echo esc_attr( $this->get_field_name( 'whimsy_image' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'whimsy_image' ) ); ?>" class="widefat" type="text" size="36"  value="<?php echo esc_url( $whimsy_image ); ?>" />
                 <input class="upload_image_button" type="button" value="Upload Image" />
+                
             </p>
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'whimsy_text' ) ); ?>"><?php esc_html_e( 'Bio Blurb:', 'whimsy-framework' ); ?></label> 

@@ -1,24 +1,4 @@
 <?php
-/**
- * Whimsy Framework - A WordPress theme development framework.
- *
- * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
- * General Public License as published by the Free Software Foundation; either version 2 of the License, 
- * or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
- * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- * You should have received a copy of the GNU General Public License along with this program; if not, write 
- * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
- *
- * @package   whimsy-framework
- * @version   2.0.0
- * @author    Natasha K. Cross <natasha@thefanciful.com>
- * @copyright Copyright (c) 2014-2016, Justin Tadlock
- * @link      http://thefanciful.com/whimsy/framework
- * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- */
 
 if ( !class_exists( 'Whimsy' ) ) {
 
@@ -47,7 +27,11 @@ if ( !class_exists( 'Whimsy' ) ) {
 			add_action( 'after_setup_theme', array( $this, 'includes' ), 2 );
         
 			/* Load the scripts and styles defined by the framework. */
+<<<<<<< Updated upstream
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ), 0 );
+=======
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ), 1 );
+>>>>>>> Stashed changes
 
         }
    
@@ -96,7 +80,6 @@ if ( !class_exists( 'Whimsy' ) ) {
              */
             
             require_once WHIMSY_ADMIN . 'plugins.php';
-            require_once WHIMSY_ADMIN . 'welcome-screen.php';
             require_once WHIMSY_ADMIN . 'widgets.php';
             
             require_once WHIMSY_CUSTOMIZE . 'customizer.php';
@@ -107,11 +90,43 @@ if ( !class_exists( 'Whimsy' ) ) {
             require_once WHIMSY_INC . 'hooks.php';
             require_once WHIMSY_INC . 'template-tags.php';
             
-            require_once WHIMSY_BG      . 'whimsy-bg.php';
-            require_once WHIMSY_COLORS  . 'whimsy-colors.php';
-            //require_once WHIMSY_SHARING . 'whimsy-sharing.php';
+        }
+        
+        /**
+         * Enqueue scripts and styles.
+         */
+        function enqueue() {
             
+            wp_enqueue_style( 'whimsy-style', get_stylesheet_uri() );
+
+            wp_enqueue_style( 'whimsy-grid', get_template_directory_uri() . '/library/css/grid.css', '1.0', false, false );
+
+            wp_enqueue_style( 'whimsy-menu', get_template_directory_uri() . '/library/css/navigation.css', '1.0', false, false );
+
+            wp_enqueue_style( 'whimsy-font-awesome', get_template_directory_uri() . '/library/css/font-awesome.min.css', array(), '4.3.0', false );
+
+            $whimsy_framework_layout = get_theme_mod( 'whimsy_framework_layout' );
+            if ( $whimsy_framework_layout  == 'sidebar-content' ) {
+                wp_enqueue_style( 'whimsy-layout-sidebar-content', get_template_directory_uri() . '/library/css/layouts/sidebar-content.css' );
+            }
+
+            if ( $whimsy_framework_layout  == 'full-width' ) {
+                wp_enqueue_style( 'whimsy-layout-full-width', get_template_directory_uri() . '/library/css/layouts/full-width.css' );
+            }
             
+            wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/library/js/jquery.slimmenu.js', array('jquery'), '1.0', true );
+
+            wp_enqueue_script( 'whimsy-scripts', get_template_directory_uri() . '/library/js/scripts.js', array(), '1.0', true );
+
+            wp_enqueue_script( 'whimsy-skip-link-focus-fix', get_template_directory_uri() . '/library/js/skip-link-focus-fix.js', array(), '1.0', true );
+
+            if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+                wp_enqueue_script( 'comment-reply' );
+            }
+
+            if ( is_page_template('template-mosaic.php') ) {
+                wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/library/js/mosaic.js', array('jquery-masonry'), '1.0', true );
+            }
 
         }
         
