@@ -166,14 +166,18 @@ ul.whimsy-nav li.bordered {
     z-index: 999;
     cursor: pointer;
 }
-.whimsy-nav li .sub-collapser :hover, .whimsy-nav li .sub-collapser :focus { color:rgba(0,0,0,0.6); }
+.whimsy-nav li .sub-collapser :hover, 
+.whimsy-nav li .sub-collapser :focus { 
+    color:rgba(0,0,0,0.6); 
+}
 .whimsy-nav li .sub-collapser:before {
     font-family: 'FontAwesome';
     content: '\f107';
     display: block;
     height: 100%;
     vertical-align: middle;
-    padding-top: 25%;
+    padding-top: 1em;
+    font-size: 0.75em;
 }
 .whimsy-nav li .sub-collapser > i {
     display: none;
@@ -209,7 +213,7 @@ ul.whimsy-nav.collapsed {
     content: '\f106';
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 768px) {
 /* 960 =================================================== */
 
     #site-navigation { 

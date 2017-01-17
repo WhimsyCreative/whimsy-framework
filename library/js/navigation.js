@@ -12,8 +12,8 @@
         {
             resizeWidth: '768',
             collapserTitle: 'Main Menu',
-            animSpeed: 'medium',
-            easingEffect: null,
+            animSpeed: 'fast',
+            easingEffect: 'easeInSine',
             indentChildren: false,
             childrenIndenter: '&nbsp;&nbsp;'
         };

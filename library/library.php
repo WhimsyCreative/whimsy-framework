@@ -27,11 +27,7 @@ if ( !class_exists( 'Whimsy' ) ) {
 			add_action( 'after_setup_theme', array( $this, 'includes' ), 2 );
         
 			/* Load the scripts and styles defined by the framework. */
-<<<<<<< Updated upstream
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ), 0 );
-=======
-			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ), 1 );
->>>>>>> Stashed changes
 
         }
    
@@ -43,7 +39,7 @@ if ( !class_exists( 'Whimsy' ) ) {
 		function constants() {
 
 			/* Sets the framework version number. */
-			define( 'WHIMSY_VERSION', '2.0.0' );
+			define( 'WHIMSY_VERSION', '2.0.1' );
 
 			/* Sets the paths to the parent theme directory. */
 			define( 'WHIMSY_DIR', get_template_directory() );
@@ -58,14 +54,10 @@ if ( !class_exists( 'Whimsy' ) ) {
 			define( 'WHIMSY_LIB_URI',        trailingslashit( WHIMSY_URI  .   '/library'   ) );
             
 			// Core framework directory paths.
-			define( 'WHIMSY_ADMIN',     trailingslashit( WHIMSY_LIB_PATH . 'admin'                            ) );
-			define( 'WHIMSY_CUSTOMIZE', trailingslashit( WHIMSY_LIB_PATH . 'admin/customize'                  ) );
-			define( 'WHIMSY_INC',       trailingslashit( WHIMSY_LIB_PATH . 'inc'                              ) );
-            
-			define( 'WHIMSY_EXT',       trailingslashit( WHIMSY_LIB_PATH . 'extensions'                       ) );
-			define( 'WHIMSY_BG',        trailingslashit( WHIMSY_LIB_PATH . 'extensions/whimsy-bg'             ) );
-			define( 'WHIMSY_COLORS',    trailingslashit( WHIMSY_LIB_PATH . 'extensions/whimsy-colors'         ) );
-			define( 'WHIMSY_SHARING',   trailingslashit( WHIMSY_LIB_PATH . 'extensions/whimsy-sharing'        ) );
+			define( 'WHIMSY_ADMIN',      trailingslashit( WHIMSY_LIB_PATH . 'admin'                            ) );
+			define( 'WHIMSY_CUSTOMIZE',  trailingslashit( WHIMSY_LIB_PATH . 'admin/customize'                  ) );
+			define( 'WHIMSY_INC',        trailingslashit( WHIMSY_LIB_PATH . 'inc'                              ) );
+			define( 'WHIMSY_FUNC',       trailingslashit( WHIMSY_LIB_PATH . 'inc/functions'                    ) );
             
 			// Core framework directory URIs.
 			define( 'WHIMSY_CSS', trailingslashit( WHIMSY_LIB_URI . 'css' ) );
@@ -99,22 +91,22 @@ if ( !class_exists( 'Whimsy' ) ) {
             
             wp_enqueue_style( 'whimsy-style', get_stylesheet_uri() );
 
-            wp_enqueue_style( 'whimsy-grid', get_template_directory_uri() . '/library/css/grid.css', '1.0', false, false );
+            wp_enqueue_style( 'whimsy-grid', WHIMSY_CSS . 'grid.css', '1.0', false, false );
 
-            wp_enqueue_style( 'whimsy-menu', get_template_directory_uri() . '/library/css/navigation.css', '1.0', false, false );
+            wp_enqueue_style( 'whimsy-menu', WHIMSY_CSS . 'navigation.css', '1.0', false, false );
 
-            wp_enqueue_style( 'whimsy-font-awesome', get_template_directory_uri() . '/library/css/font-awesome.min.css', array(), '4.3.0', false );
+            wp_enqueue_style( 'whimsy-font-awesome', WHIMSY_CSS . 'font-awesome.min.css', array(), '4.7.0', false );
 
             $whimsy_framework_layout = get_theme_mod( 'whimsy_framework_layout' );
-            if ( $whimsy_framework_layout  == 'sidebar-content' ) {
-                wp_enqueue_style( 'whimsy-layout-sidebar-content', get_template_directory_uri() . '/library/css/layouts/sidebar-content.css' );
-            }
-
-            if ( $whimsy_framework_layout  == 'full-width' ) {
-                wp_enqueue_style( 'whimsy-layout-full-width', get_template_directory_uri() . '/library/css/layouts/full-width.css' );
-            }
             
-            wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/library/js/jquery.slimmenu.js', array('jquery'), '1.0', true );
+                if ( $whimsy_framework_layout  == 'sidebar-content' ) {
+                    wp_enqueue_style( 'whimsy-layout-sidebar-content', WHIMSY_CSS . '/layouts/sidebar-content.css' );
+                }
+                if ( $whimsy_framework_layout  == 'full-width' ) {
+                    wp_enqueue_style( 'whimsy-layout-full-width', WHIMSY_CSS . '/layouts/full-width.css' );
+                }
+            
+            wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/library/js/navigation.js', array('jquery'), '2.0.1', true );
 
             wp_enqueue_script( 'whimsy-scripts', get_template_directory_uri() . '/library/js/scripts.js', array(), '1.0', true );
 
@@ -125,50 +117,10 @@ if ( !class_exists( 'Whimsy' ) ) {
             }
 
             if ( is_page_template('template-mosaic.php') ) {
-                wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/library/js/mosaic.js', array('jquery-masonry'), '1.0', true );
+                wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/library/js/mosaic.js', array('jquery-masonry'), '2.0.1', true );
             }
 
         }
         
-        function enqueue() {
-
-            /**
-             * Enqueue scripts and styles.
-             */
-            
-            wp_enqueue_style( 'whimsy-style', get_stylesheet_uri() );
-
-            wp_enqueue_style( 'whimsy-grid', get_template_directory_uri() . '/library/css/grid.css', '1.0', false, false );
-
-            wp_enqueue_style( 'whimsy-menu', get_template_directory_uri() . '/library/css/navigation.css', '1.0', false, false );
-
-            wp_enqueue_style( 'whimsy-fonts', whimsy_framework_fonts_url(), array(), null );
-            
-            wp_enqueue_script( 'whimsy-navigation', get_template_directory_uri() . '/library/js/jquery.slimmenu.js', array('jquery'), '1.0', true );
-
-            wp_enqueue_script( 'whimsy-scripts', get_template_directory_uri() . '/library/js/scripts.js', array(), '1.0', true );
-
-            wp_enqueue_script( 'whimsy-skip-link-focus-fix', get_template_directory_uri() . '/library/js/skip-link-focus-fix.js', array(), '1.0', true );
-
-            if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-                wp_enqueue_script( 'comment-reply' );
-            }
-
-            if ( is_page_template('template-mosaic.php') ) {
-                wp_enqueue_script( 'whimsy-mosaic', get_template_directory_uri() . '/library/js/mosaic.js', array('jquery-masonry'), '1.0', true );
-            }
-
-            wp_enqueue_style( 'whimsy-font-awesome', get_template_directory_uri() . '/library/css/font-awesome.min.css', '4.3.0', false );
-
-            $whimsy_framework_layout = get_theme_mod( 'whimsy_framework_layout' );
-            if ( $whimsy_framework_layout  == 'sidebar-content' ) {
-                wp_enqueue_style( 'whimsy-layout-sidebar-content', get_template_directory_uri() . '/library/css/layouts/sidebar-content.css' );
-            }
-
-            if ( $whimsy_framework_layout  == 'full-width' ) {
-                wp_enqueue_style( 'whimsy-layout-full-width', get_template_directory_uri() . '/library/css/layouts/full-width.css' );
-            }
-
-        }
     }
 }

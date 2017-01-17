@@ -24,7 +24,8 @@ function whimsy_customizer_styles() {
 	} 
 
 	$whimsy_alt_color = get_theme_mod( 'whimsy_alt_color' );
-	echo 'a:hover, a:focus, a:active, .collapse-button, #site-navigation ul.sub-menu a:hover, ul.whimsy-nav li a, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, #infinite-handle span:hover { color: ' . esc_html($whimsy_alt_color) . ' }';
+	echo 'a:hover, a:focus, a:active, .collapse-button, #site-navigation ul.sub-menu a:hover, ul.whimsy-nav li a, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, #infinite-handle span:hover,
+.entry-posted-on a:hover,.entry-posted-on a:focus,.entry-posted-on a:active { color: ' . esc_html($whimsy_alt_color) . ' }';
 	echo '::selection { background: ' . esc_html($whimsy_link_color) . ' }';
 	echo '::-moz-selection { background: ' . esc_html($whimsy_link_color) . ' }';
 	echo '.collapse-button:hover, .collapse-button:focus { background-color: ' . esc_html($whimsy_alt_color) . '; }';

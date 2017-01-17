@@ -95,7 +95,7 @@ function whimsy_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 	    'whimsy_body_color',
 	    array(
-	        'default' => '#1e1d1f',
+	        'default' => '#252c38',
 	        'sanitize_callback' => 'sanitize_hex_color',
 	    )
 	);

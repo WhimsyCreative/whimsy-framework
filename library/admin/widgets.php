@@ -49,6 +49,5 @@ function whimsy_widgets_init() {
  * Include custom widgets for the Whimsy Framework.
  */
  
-require_once get_template_directory() . '/library/admin/widgets/widget-about-me.php';
-
-require_once get_template_directory() . '/library/admin/widgets/widget-social.php';
+    require_once WHIMSY_ADMIN . '/widgets/about-me.php';
+    require_once WHIMSY_ADMIN . '/widgets/social.php';
