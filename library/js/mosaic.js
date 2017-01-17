@@ -10,10 +10,11 @@ jQuery(document).ready(function($){
         $container.masonry({
             
             itemSelector: ".brick",
-            gutter:30,
+            gutter:60,
             percentPosition: true,
             transitionDuration: '0.1s',
             columnWidth: '.brick'
+            
         });
         
     });

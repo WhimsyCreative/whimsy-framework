@@ -1087,7 +1087,9 @@ object {
 --------------------------------------------------------------*/
 
 /* 13.1 Mosaic */
-
+body.page-template-template-mosaic #content-container {
+    padding-left: 60px;
+}
 #mosaic {
     margin:0 auto;
 }
@@ -1096,11 +1098,10 @@ object {
 }
 #mosaic .entry-header, 
 #mosaic .entry-footer {
-	padding:1.5em;
+	padding-bottom:1.5em;
 	margin: 0;
 }
 #mosaic .entry-content {
-	padding:0 1.5em;
 	margin: 0;
 }
 #mosaic .entry-img img {
@@ -1108,10 +1109,13 @@ object {
 	width: 100%;
 }
 #mosaic .entry-img  {
-	padding-bottom: 0;
+	padding-bottom: 1.5em;
 }
 #mosaic .sticky {
 	padding:0;
+}
+#mosaic .hentry {
+	padding-bottom:2.5em;
 }
 #mosaic p { 
 	margin-bottom: 0; 
@@ -1132,7 +1136,13 @@ object {
     text-align: left;
 }
 #mosaic .format-image > .entry-footer, 
-#mosaic .format-image > .entry-content 
+#mosaic .format-image > .entry-content,
+#mosaic .format-quote > .entry-footer, 
+#mosaic .format-quote > .entry-content,
+#mosaic .format-aside > .entry-footer, 
+#mosaic .format-aside > .entry-content,
+#mosaic .format-link > .entry-footer, 
+#mosaic .format-link > .entry-content    
 {
 	display: none;
 }
@@ -1140,12 +1150,9 @@ object {
     display: block;
 }
 .brick {
-    width: calc(33% - 30px);
-	border-radius: 6px;
-	border: 1px solid rgba(0,0,0,0.1);
+    width: calc(33% - 60px);
 	overflow: hidden;
-    transition: width 0.4s ease, height 0.4s ease;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 /*--------------------------------------------------------------
@@ -1245,7 +1252,7 @@ span.entry-subtitle {
 		position: relative;
 	}
 	.brick { 
-	    width: calc(50% - 30px);
+	    width: calc(50% - 60px);
 	}
 }
 @media screen and (max-width: 768px) {
