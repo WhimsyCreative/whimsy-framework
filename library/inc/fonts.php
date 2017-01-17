@@ -6,8 +6,6 @@
  * https://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
  */
 
-wp_enqueue_style( 'whimsy-fonts', whimsy_framework_fonts_url(), array(), null );
-
 function whimsy_framework_fonts_url() {
     
     $fonts_url = '';
