@@ -20,3 +20,17 @@ div#infinite-handle {
 }
 
 .infinite-loader .spinner { margin: 1em auto!important; }
+
+div.sharedaddy h3.sd-title {
+    margin: 0 0 1em 0;
+    display: inline-block;
+    line-height: 1.2;
+    font-size: 0.75em;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.sharedaddy ul li:before {
+    content: '';
+    float: none;
+    padding-right: 0;
+}
