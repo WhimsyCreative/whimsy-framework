@@ -760,11 +760,12 @@ ul#widget-whimsy-social {
 	font-weight: 100;
 }
 .site-branding > hgroup > h2.site-description {
-	font-size: 1.2em;
-	line-height: 2em;
+	font-size: 1em;
+	line-height: 1;
 	font-weight: 100;
 	margin-bottom: 0;
 	font-style: italic;
+    letter-spacing: 0.9px;
 }
 .site-branding, .custom-header {
 	margin-bottom: 1.4em;
@@ -1254,6 +1255,7 @@ span.entry-subtitle {
 	.brick { 
 	    width: calc(50% - 60px);
 	}
+    
 }
 @media screen and (max-width: 768px) {
 /* 768 =================================================== */
@@ -1263,6 +1265,9 @@ span.entry-subtitle {
 	.brick {
 	    width: 100%;
 	}
+    body.page-template-template-mosaic #content-container {
+        padding-left: 0;
+    }
 }
 @media screen and (max-width: 360px) {
 /* 360 =================================================== */

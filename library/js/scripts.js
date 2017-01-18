@@ -4,10 +4,10 @@ jQuery(document).ready(function($){
 
 	jQuery('.whimsy-nav').slimmenu(
 	{
-	    resizeWidth: '768',
+	    resizeWidth: '980',
 	    collapserTitle: '',
 	    animSpeed: 'fast',
-	    easingEffect: 'easeInSine',
+	    easingEffect: null,
 	    indentChildren: false,
 	    childrenIndenter: '&nbsp;',
         initiallyVisible: true

@@ -13,6 +13,7 @@
     display: block;
     z-index: 99999;
     position: relative;
+    text-align: center;
 }
 .whimsy-nav {
     clear: both;
@@ -28,7 +29,6 @@ ul.whimsy-nav  {
     list-style: none;
     margin: 0;
     padding-left: 0;
-    text-align: center;
     min-height: 47px;
 }
 .whimsy-nav li {
@@ -213,8 +213,8 @@ ul.whimsy-nav.collapsed {
     content: '\f106';
 }
 
-@media screen and (max-width: 768px) {
-/* 960 =================================================== */
+@media screen and (max-width: 980px) {
+/* 980 =================================================== */
 
     #site-navigation { 
         z-index: 99999;
