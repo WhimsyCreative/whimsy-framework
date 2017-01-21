@@ -137,18 +137,17 @@ q:before {
 	content: '\f10d';
 	font-family: 'FontAwesome';
 	display: block;
-	font-size: 200%;
-	margin-left: -50px;
+	font-size: 2em;
 	position: relative;
-	color:rgba(216,216,216,0.4);
+	color:rgba(216,216,216,0.2);
 }
 blockquote, q {
 	quotes: "" "";
-	padding:0 5%;
+	padding:0;
 	display:block;
-	margin:0 2%;
+	margin:0;
 	position: relative;
-	font-size: 120%;
+	font-size: 1.4em;
 }
 blockquote > p, q > p {
 	margin-bottom: 1em;
@@ -200,7 +199,7 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
-	margin: 0 1.5em;
+	margin: 0;
 }
 cite { 
 	font-size: 75%;
@@ -357,7 +356,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 2px solid #000;
-	border-radius: 6px;
+	border-radius: 3px;
 	background: transparent;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
@@ -410,8 +409,8 @@ input[type="password"],
 input[type="search"],
 textarea {
 	color: #666;
-	border: 1px solid rgba(0,0,0,0.1);
-	border-radius: 6px;
+	border: 1px solid rgba(0,0,0,0.04);
+	border-radius: 3px;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -492,16 +491,29 @@ a:active {
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
 	float: left;
-	width: 50%;
-    padding: 1em 0;
+    padding: 1.5em 0;
 }
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
 .post-navigation .nav-next {
 	float: right;
 	text-align: right;
-	width: 50%;
-    padding: 1em 0;
+    padding: 1.5em 0;
+}
+@media screen and (max-width: 980px) {
+    .comment-navigation .nav-previous,
+    .paging-navigation .nav-previous,
+    .post-navigation .nav-previous {
+        float: none;
+        padding: 1.5em 0;
+    }
+    .comment-navigation .nav-next,
+    .paging-navigation .nav-next,
+    .post-navigation .nav-next {
+        text-align: left;
+        float: none;
+        padding: 1.5em 0;
+    }
 }
 .comment-navigation .nav-previous a,
 .paging-navigation .nav-previous a,
@@ -509,7 +521,8 @@ a:active {
     border: 1px solid rgba(0,0,0,0.04);
     border-radius: 3px;
     background: rgba(0,0,0,0.01);
-    padding: 1em;
+    padding: 1.5em;
+    display: block;
 }
 .comment-navigation .nav-next a,
 .paging-navigation .nav-next a,
@@ -517,7 +530,8 @@ a:active {
     border: 1px solid rgba(0,0,0,0.04);
     border-radius: 3px;
     background: rgba(0,0,0,0.01);
-    padding: 1em;
+    padding: 1.5em;
+    display: block;
 }
 
 /*--------------------------------------------------------------
@@ -640,7 +654,7 @@ h3.widget-title {
 /* Whimsy About Me Widget */
 
 .whimsy-img img{
-	border-radius: 6px;
+	border-radius: 3px;
     margin-bottom: 1em;
 }
 
@@ -690,8 +704,8 @@ ul#widget-whimsy-social {
 	font-size: 100%;
 }
 #wp-calendar a{
-	border:1px solid rgba(0,0,0,0.1);
-	border-radius:6px;
+	border:1px solid rgba(0,0,0,0.04);
+	border-radius:3px;
 	display:block;
 	background: rgba(255,255,255,0.3);
 }
@@ -783,7 +797,6 @@ ul#widget-whimsy-social {
     margin-bottom: 1.2em;
 }
 .entry-header {
-	padding-bottom: 1em;
     text-align: center;
 }
 h1.entry-title {
@@ -797,6 +810,9 @@ h1.entry-title {
 }
 body.single .entry-meta {
 	margin:1em 0; 	
+}
+body.single .entry-content {
+    padding: 1.5em 0;
 }
 .entry-content ul {
 	list-style: none;
@@ -818,16 +834,23 @@ body.single .entry-meta {
     color: rgba(102, 102, 102, 0.8);
     font-size: 0.75em;
 }
-.entry-comment-meta {
-	font-size: 120%;
-	text-align: center;
+.entry-comment-meta {    
+    font-size: 1em;
+    text-align: right;
+    float: right;
 }
 .entry-category {
 	font-size: 80%;
 	text-transform: uppercase;
 }
 .entry-footer {
-	font-size: 80%;
+    font-size: 0.75em;
+    letter-spacing: 0.9px;
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 3px;
+    background: rgba(0,0,0,0.01);
+    padding: 1.5em;
+    display: block;
 }
 .posted-on {
 	display: inline-block;
@@ -835,13 +858,14 @@ body.single .entry-meta {
     text-transform: uppercase;
 }
 .sticky {
-	border-radius: 6px;
-	border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,0.04);
 	padding:3%;
 }
 .hentry {
-	margin: 0 0 4.5em;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin: 0;
+    padding: 1.5em 0;
+	border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 .byline,
 .updated {
@@ -859,23 +883,32 @@ body.single .entry-meta {
 	text-transform: uppercase;
 }
 .entry-img img {
-	border-radius: 6px;
+	border-radius: 3px;
 	padding-bottom: 2%;
 }
 
 /*--------------------------------------------------------------
-10.3 Asides
+10.3 Post Formats
 --------------------------------------------------------------*/
 
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
+.format-aside .entry-header,
+.format-quote .entry-header,
+.format-image .entry-meta,
+.format-image .entry-category,
+.format-image .entry-content {
 	display: none;
 }
-.blog .format-aside,
-.archive .format-aside {
-	text-align: center;
+.format-aside .entry-content,
+.format-link .entry-title {
+	font-size: 1.4em;
+    text-align: left;
 }
-
+.format-link .entry-header {
+    padding: 0;
+}
+.format-aside p {
+	margin-bottom: 0;
+}
 /*--------------------------------------------------------------
 10.4 Comments
 --------------------------------------------------------------*/
@@ -891,15 +924,15 @@ body.single .entry-meta {
 }
 
 .comment { 
-	border: 1px solid rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(0, 0, 0, 0.04);
 	border-radius: 3px;
 	margin-bottom: 1em;
 }
 
 .children > .comment { 
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	border-left: 1px solid rgba(0, 0, 0, 0.1);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	border-top: 1px solid rgba(0, 0, 0, 0.04);
+	border-left: 1px solid rgba(0, 0, 0, 0.04);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 	border-right: none;
 	border-radius: 3px 0 0 3px;
 	margin: 1em 0 1em 1em;
@@ -931,7 +964,7 @@ body.single .entry-meta {
 	margin-left: 1em;
 	padding: 2px;
 	border-radius: 70px;
-	border: 1px solid rgba(0, 0, 0, 0.1); 
+	border: 1px solid rgba(0, 0, 0, 0.04); 
 }
 
 .comment-content a {
@@ -941,11 +974,11 @@ body.single .entry-meta {
 .bypostauthor {}
 
 .reply a {
-	border: 1px solid rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(0, 0, 0, 0.04);
 	text-align: right;
 	margin: 1em;
 	padding: 1em; 
-	border-radius: 6px;
+	border-radius: 3px;
 	display: inline-block;
 }
 
@@ -955,13 +988,13 @@ body.single .entry-meta {
 
 #colophon {
 	margin: 1em auto;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 #colophon, #infinite-footer .container {
 	border: none;
 }
 #footer-menu ul {
-	border-top: 1px solid rgba(0,0,0,0.1);
+	border-top: 1px solid rgba(0,0,0,0.04);
 	margin:0;
 	clear: both;
 }
@@ -1051,7 +1084,7 @@ object {
 	width: 100%;
 	padding: 1em;
 }
-.gallery-item img { border-radius: 6px; }
+.gallery-item img { border-radius: 3px; }
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
@@ -1095,7 +1128,7 @@ body.page-template-template-mosaic #content-container {
     margin:0 auto;
 }
 #mosaic .sticky.brick {
-	background: rgba(0,0,0,0.1);
+	background: rgba(0,0,0,0.04);
 }
 #mosaic .entry-header, 
 #mosaic .entry-footer {
