@@ -5,8 +5,6 @@ Whimsy Framework
 
 The Whimsy Framework is a minimal theme ready for customization with lots of extras baked in.
 
-The Whimsy Framework is a minimal theme ready for customization with lots of extras baked in.
-
 ## Description
 The Whimsy Framework was built as an easy to customize foundation for child themes.
 
@@ -22,10 +20,10 @@ The WordPress dashboard offers the  easiest way to install any WordPress theme i
 + Activate the Whimsy Framework, or upload a child theme. 
 
 ### Using the Customizer
-For detailed instructions on using the built-in WordPress Customizer with the Whimsy Framework please visit The Fanciful. http://docs.thefanciful.com/whimsy-framework/using-customizer/
+For detailed instructions on using the built-in WordPress Customizer with the Whimsy Framework please visit The Fanciful. http://whimsycreative.co/docs/using-wordpress-customizer/
 
 ### Full Documentation
-http://docs.thefanciful.com/whimsy-framework/
+http://whimsycreative.co/docs
 
 ## Frequently Asked Questions
 
@@ -34,12 +32,35 @@ Yes, the Whimsy Framework is fully responsive and made to work great on every de
 
 ## Changelog
 
+### 2.0.1
++ Improved typography and updated design.
++ New folder structure - framework files have all been moved to the /library folder.
++ Moved widget initialization from functions.php to library/admin/widgets.php.
++ Moved script and style enqueue function from functions.php to Whimsy library class.
++ library/css/navigation.css - A legion of bugs were felled. 
++ library/inc/custom-header.php - Remove code for the admin that is now included in WP core.
++ library/inc/extras.php - Remove functions that are handled by WP core.
++ library/inc/plugins/jetpack.php - Add theme support for responsive videos
++ Customizer updates:
+	+ Moved Logo into Site Identity where it belongs.
+	+ Display: Global layout, updated, uses images instead of select dropdown
+	+ Display: Footer layout, new, choose from 1-3 widget areas in the footer
+	+ Display: Hide date on pages
+	+ Display: Hide comments on pages
+	+ Display: Hide link on page titles
++ Updated dependencies:
+	+ FontAwesome to 4.7.0
+
+### 2.0.0
++ Fixed issue with featured image display.
+
 ### 1.2.4
 + Fixed issue with featured image display.
 + Fixed issue with site width on large displays.
 + Updated FontAwesome to version 4.5.0
 + Updated TGM Plugin Activation to version 2.5.1
 + Added support for Easy Digital Downloads.
++ Added GitHub and PayPal to social widget.
 
 ### 1.2.3
 + Swapped the_content for the_excerpt on archive pages.

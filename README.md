@@ -2,14 +2,14 @@
 <h1>Details</h1>
 <ul>
 	<li>Contributors: thefanciful</li>
-	<li>Theme URI: http://thefanciful.com/whimsy/</li>
+	<li>Theme URI: http://whimsycreative.co/framework</li>
 	<li>Author: Whimsy Creative Co.</li>
 	<li>Author URI: http://whimsycreative.co</li>
 	<li>License: GNU General Public License v2 or later</li>
 	<li>License URI: http://www.gnu.org/licenses/gpl-2.0.html</li>
 	<li>Requires at least: 3.9</li>
-	<li>Tested up to: 4.4.1</li>
-	<li>Stable tag: 2.0.0</li>
+	<li>Tested up to: 4.7.1</li>
+	<li>Stable tag: 2.0.1</li>
 	<li>Text Domain: whimsy-framework</li>
 </ul>
 
@@ -30,10 +30,10 @@ The WordPress dashboard offers the  easiest way to install any WordPress theme i
 + Activate the Whimsy Framework, or upload a child theme. 
 
 ### Using the Customizer
-For detailed instructions on using the built-in WordPress Customizer with the Whimsy Framework please visit The Fanciful. http://docs.thefanciful.com/whimsy-framework/using-customizer/
+For detailed instructions on using the built-in WordPress Customizer with the Whimsy Framework please visit The Fanciful. http://whimsycreative.co/docs/using-wordpress-customizer/
 
 ### Full Documentation
-http://docs.thefanciful.com/whimsy-framework/
+http://whimsycreative.co/docs
 
 ## Frequently Asked Questions
 
@@ -41,6 +41,25 @@ http://docs.thefanciful.com/whimsy-framework/
 Yes, the Whimsy Framework is fully responsive and made to work great on every device.
 
 ## Changelog
+
+### 2.0.1
++ Improved typography and updated design.
++ New folder structure - framework files have all been moved to the /library folder.
++ Moved widget initialization from functions.php to library/admin/widgets.php.
++ Moved script and style enqueue function from functions.php to Whimsy library class.
++ library/css/navigation.css - A legion of bugs were felled. 
++ library/inc/custom-header.php - Remove code for the admin that is now included in WP core.
++ library/inc/extras.php - Remove functions that are handled by WP core.
++ library/inc/plugins/jetpack.php - Add theme support for responsive videos
++ Customizer updates:
+	+ Moved Logo into Site Identity where it belongs.
+	+ Display: Global layout, updated, uses images instead of select dropdown
+	+ Display: Footer layout, new, choose from 1-3 widget areas in the footer
+	+ Display: Hide date on pages
+	+ Display: Hide comments on pages
+	+ Display: Hide link on page titles
++ Updated dependencies:
+	+ FontAwesome to 4.7.0
 
 ### 2.0.0
 + Fixed issue with featured image display.
