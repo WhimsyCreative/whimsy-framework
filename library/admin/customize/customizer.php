@@ -54,7 +54,7 @@ function whimsy_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 	    'whimsy_link_color',
 	    array(
-	        'default' => '#667399',
+	        'default' => '#52b0c1',
 	        'sanitize_callback' => 'sanitize_hex_color',
 	    )
 	);
@@ -288,7 +288,7 @@ function whimsy_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'whimsy_menu_link_color',
         array(
-            'default' => '#667399',
+            'default' => '#52b0c1',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -328,7 +328,7 @@ function whimsy_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'whimsy_submenu_link_color',
         array(
-            'default' => '#667399',
+            'default' => '#52b0c1',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );

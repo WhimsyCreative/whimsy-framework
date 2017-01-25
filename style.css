@@ -106,7 +106,7 @@ html {
 	box-sizing:         border-box;
 }
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
+	background: #fafafa; /* Fallback for when there is no custom background color defined. */
 	-webkit-font-smoothing: antialiased;
 }
 article,
@@ -331,11 +331,11 @@ h6 {
 /* Highlight selection colors */
 
 ::selection {
-  background: #667399;
+  background: #52b0c1;
   color: #fff;
 }
 ::-moz-selection {
-  background: #667399;
+  background: #52b0c1;
   color: #fff;
 }
 
@@ -444,7 +444,7 @@ textarea {
 
 a, 
 a:visited {
-	color:#667399;
+	color:#52b0c1;
 	text-decoration: none;
 	-webkit-transition: color 200ms ease;
 	-moz-transition: color 200ms ease;
@@ -465,7 +465,7 @@ a:active {
 .entry-posted-on a:hover,
 .entry-posted-on a:focus,
 .entry-posted-on a:active {
-	color: #667399;
+	color: #52b0c1;
 }
 .entry-content a, .entry-footer a, #comments a, .widget a {
 	font-weight: 700;
