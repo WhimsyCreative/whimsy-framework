@@ -661,7 +661,8 @@ h3.widget-title {
 .whimsy-more {
 	text-align: center;
 	text-transform: uppercase;
-    font-size: 0.75em;
+    font-size: 0.75em;    
+    padding-top: 1.5em;
 }
 
 /* Whimsy Social Networks Widget */
@@ -782,7 +783,7 @@ ul#widget-whimsy-social {
     letter-spacing: 0.9px;
 }
 .site-branding, .custom-header {
-	margin-bottom: 1.4em;
+	margin: 1.4em auto;
 }
 .site-branding > hgroup > .site-logo img {
 	width: 20%;
@@ -816,7 +817,9 @@ body.single .entry-content {
     padding: 1.5em 0;
 }
 body.blog .entry-img img,
-body.single .entry-img img {
+body.single .entry-img img,
+body.archive .entry-img img,
+body.page .entry-img img {
     margin: 1.5em 0;
 }
 .entry-content ul {
@@ -1131,10 +1134,13 @@ body.page-template-template-mosaic #content-container {
 #mosaic .sticky.brick {
 	background: rgba(0,0,0,0.04);
 }
-#mosaic .entry-header, 
-#mosaic .entry-footer {
+#mosaic .entry-header {
 	padding-bottom:1.5em;
 	margin: 0;
+}
+#mosaic .entry-footer,
+#mosaic .sharedaddy {
+    display: none;
 }
 #mosaic .entry-content {
 	margin: 0;
