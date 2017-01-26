@@ -12,7 +12,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php
-	if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	if ( ! function_exists( 'whimsy_render_title_tag' ) ) {
 		function whimsy_render_title() {
 	?>
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -60,8 +60,6 @@
 			</div><!-- /.mobile-site-branding -->
 
 			<?php whimsy_nav_inside_before(); ?>
-
-			<?php whimsy_responsive_nav(); ?>
 
 			<?php whimsy_nav_inside_after(); ?>
 

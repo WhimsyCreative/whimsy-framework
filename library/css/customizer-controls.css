@@ -1,0 +1,71 @@
+/* Custom Control Styles */
+
+.customize-control-layout input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+.customize-control-layout input + div{ /* IMAGE STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+    border-radius: 3px;
+}
+.customize-control-layout input[type=radio]:hover + div, 
+.customize-control-layout input[type=radio]:active + div, 
+.customize-control-layout input[type=radio]:checked + div  {
+    background-color:rgba(255,255,255,0.8);
+    border:2px solid rgba(255,255,255,0.8);
+    border-radius: 3px;
+    transition: all 400ms ease;
+}
+.customize-control-layout .radios .layout {
+	display: inline-block;
+	width: 32%;
+	box-sizing: border-box;
+}
+.customize-control-layout .radios .layout .icon {
+	position: relative;
+	width: 100%;
+	height: 80px;
+	box-sizing: border-box;
+	cursor: pointer;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 7em;
+    font-size: xx-small;
+    text-transform: uppercase;
+    text-align: center;
+}
+.customize-control-layout .radios .layout[data-value="disabled"] .icon:after {
+	position: absolute;
+	display: block;
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: url(../img/disabled.png) center center no-repeat;
+}
+.customize-control-layout .radios .layout[data-value="content-sidebar"] .icon, .customize-control-layout .selection .layout[data-value="disabled"] .icon {
+	background-image: url(../img/content-sidebar.png);
+}
+.customize-control-layout .radios .layout[data-value="full-width"] .icon {
+	background-image: url(../img/full-width.png);
+}
+
+.customize-control-layout .radios .layout[data-value="sidebar-content"] .icon {
+	background-image: url(../img/sidebar-content.png);
+}
+.customize-control-layout .radios .layout[data-value="footer-1"] .icon {
+	background-image: url(../img/footer-1.png);
+}
+.customize-control-layout .radios .layout[data-value="footer-2"] .icon {
+	background-image: url(../img/footer-2.png);
+}
+
+.customize-control-layout .radios .layout[data-value="footer-3"] .icon {
+	background-image: url(../img/footer-3.png);
+}
+.customize-control-layout .radios .layout.selected .icon {
+	cursor: not-allowed;
+}

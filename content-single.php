@@ -66,6 +66,13 @@
 				$tag_list,
 				get_permalink()
 			);
+        
+
+                $whimsy_framework_hide_page_comments = get_theme_mod( 'whimsy_framework_hide_page_comments' );
+                if ( $whimsy_framework_hide_page_comments == 0 ) { ?>
+            
+			     <div class="entry-comment-meta"><a rel="nofollow" class="entry-comment" href="<?php the_permalink(); ?>#comments"><?php comments_number('0', '1', '%' );?> <i class="fa fa-comments"></i></a></div>
+                <?php }
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'whimsy-framework' ), '<span class="edit-link">', '</span>' ); ?>
