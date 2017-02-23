@@ -36,6 +36,17 @@ function whimsy_customize_register_section( $wp_customize ) {
         )
     );
 
+    /* Add Support for Whimsy+ */
+    $wp_customize->add_panel(
+        'whimsy_framework_whimsy_plus_panel',
+        array(
+            'title'         => __( 'Whimsy+', 'whimsy-framework' ),
+            'description'   => __( 'Premium Customizer extension for Whimsy Framework.', 'whimsy-framework' ),
+            'priority'      => 60,
+
+        )
+    );
+
 }
 
 /**

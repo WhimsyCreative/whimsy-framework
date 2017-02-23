@@ -42,6 +42,9 @@ Yes, the Whimsy Framework is fully responsive and made to work great on every de
 
 ## Changelog
 
+### 2.1
++ Header and menus are called dynamically instead of built into the header.
+
 ### 2.0.1
 + Improved typography and updated design.
 + New folder structure - framework files have all been moved to the /library folder.
