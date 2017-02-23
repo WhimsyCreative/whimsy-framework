@@ -39,7 +39,7 @@ if ( !class_exists( 'Whimsy' ) ) {
 		function constants() {
 
 			/* Sets the framework version number. */
-			define( 'WHIMSY_VERSION', '2.0.1' );
+			define( 'WHIMSY_VERSION', '2.1' );
 
 			/* Sets the paths to the parent theme directory. */
 			define( 'WHIMSY_DIR', get_template_directory() );

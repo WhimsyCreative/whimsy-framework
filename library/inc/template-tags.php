@@ -5,6 +5,8 @@
  * @package whimsy-framework
  */
 
+add_action( 'whimsy_header', 'whimsy_get_header', 10 );
+
 add_action( 'whimsy_nav_inside_before', 'whimsy_mobile_branding', 10 );
 add_action( 'whimsy_nav_inside_before', 'whimsy_responsive_nav', 40 );
 

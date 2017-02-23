@@ -55,7 +55,7 @@
 		
 		<?php whimsy_header_inside_before(); ?>
             
-		<?php whimsy_get_header(); ?>
+		<?php whimsy_header(); ?>
 
 		<?php whimsy_header_inside_after(); ?>
 

@@ -11,7 +11,6 @@ if ( ! function_exists( 'whimsy_get_header' ) ) :
 function whimsy_get_header() { 
 
 ?>
-			
 				
         <?php whimsy_desktop_branding(); ?>
 
