@@ -16,7 +16,7 @@ add_action( 'whimsy_post_meta_before',  'whimsy_display_post_categories', 10 );
 add_action( 'whimsy_post_meta_after',   'whimsy_display_post_meta', 10 );
 add_action( 'whimsy_post_meta_after',   'whimsy_display_post_thumbnail', 30);
 
-
+add_action( 'whimsy_footer', 'whimsy_get_footer_credits', 20 );
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -37,6 +37,8 @@ add_action( 'whimsy_post_meta_after',   'whimsy_display_post_thumbnail', 30);
 
     require_once WHIMSY_FUNC . 'posted-on.php';
 
+    require_once WHIMSY_FUNC . 'primary-menu.php';
+
     require_once WHIMSY_FUNC . 'whimsy-header.php';
 
-    require_once WHIMSY_FUNC . 'primary-menu.php';
+    require_once WHIMSY_FUNC . 'whimsy-footer.php';

@@ -88,6 +88,7 @@ function whimsy_footer_before() 				{ whimsy_do_atomic( 'whimsy_footer_before' )
 function whimsy_footer_after() 					{ whimsy_do_atomic( 'whimsy_footer_after' ); }
 function whimsy_footer_inside_before() 			{ whimsy_do_atomic( 'whimsy_footer_inside_before' ); }
 function whimsy_footer_inside_after() 			{ whimsy_do_atomic( 'whimsy_footer_inside_after' ); }
+function whimsy_footer() 				        { whimsy_do_atomic( 'whimsy_footer' ); }
 function whimsy_body_end() 						{ whimsy_do_atomic( 'whimsy_body_end' ); }
 
 if ( ! function_exists( 'whimsy_do_atomic' ) ) {
