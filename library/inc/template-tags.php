@@ -5,7 +5,8 @@
  * @package whimsy-framework
  */
 
-add_action( 'whimsy_header', 'whimsy_get_header', 10 );
+add_action( 'whimsy_header', 'whimsy_primary_menu', 10 );
+add_action( 'whimsy_header', 'whimsy_get_header', 20 );
 
 add_action( 'whimsy_nav_inside_before', 'whimsy_mobile_branding', 10 );
 add_action( 'whimsy_nav_inside_before', 'whimsy_responsive_nav', 40 );
@@ -36,4 +37,6 @@ add_action( 'whimsy_post_meta_after',   'whimsy_display_post_thumbnail', 30);
 
     require_once WHIMSY_FUNC . 'posted-on.php';
 
-    require_once WHIMSY_FUNC . 'whimsy-get-header.php';
+    require_once WHIMSY_FUNC . 'whimsy-header.php';
+
+    require_once WHIMSY_FUNC . 'primary-menu.php';

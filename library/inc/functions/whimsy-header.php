@@ -9,9 +9,12 @@
  */
 if ( ! function_exists( 'whimsy_get_header' ) ) :
 function whimsy_get_header() { 
-
 ?>
 				
+<header id="masthead" class="site-header" role="banner">
+		
+    <?php whimsy_header_inside_before(); ?>
+            
         <?php whimsy_desktop_branding(); ?>
 
 		<?php if ( get_header_image() ) : ?>
@@ -24,11 +27,15 @@ function whimsy_get_header() {
 			
 			</div><!-- /.custom-header -->
 
-		<?php endif; // End header image check.
-		
+    <?php endif; // End header image check.
+    
+    whimsy_header_inside_after(); ?>
+
+</header><!-- /#masthead -->
+
+    <?php 
 }
 endif; // End function_exists whimsy_get_header check 
-
 
 /**
  * HTML output for mobile site branding.

@@ -38,28 +38,8 @@
 	<div id="header-container">
 
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'whimsy-framework' ); ?></a>		
-		
-		<?php whimsy_nav_before(); ?>
-
-		<nav id="site-navigation">
-            
-			<?php whimsy_nav_inside_before(); ?>
-
-			<?php whimsy_nav_inside_after(); ?>
-
-		</nav><!-- /#site-navigation -->
-
-		<?php whimsy_nav_after(); ?>
-
-		<header id="masthead" class="site-header" role="banner">
-		
-		<?php whimsy_header_inside_before(); ?>
             
 		<?php whimsy_header(); ?>
-
-		<?php whimsy_header_inside_after(); ?>
-
-		</header><!-- /#masthead -->
 
 	</div><!-- /#header-container -->
 
