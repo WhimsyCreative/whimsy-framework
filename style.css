@@ -440,10 +440,21 @@ textarea {
 .sticky-menu {
     position: fixed!important;
     top: 0;
-    padding: 1em;
+}
+#site-navigation.sticky-menu a {
+    padding: 20px 26px 20px 10px;
+}
+#site-navigation.sticky-menu .whimsy-nav li .sub-collapser:before {
+    padding-top: 24px;
+    transition: all 0.4s ease;
 }
 body.admin-bar .sticky-menu {
     top: 32px;
+}
+@media screen and (max-width: 980px) {
+    body.admin-bar .sticky-menu {
+        top: 46px;
+    }
 }
 /*--------------------------------------------------------------
 5.1 Links
@@ -482,8 +493,6 @@ a:active {
 /*--------------------------------------------------------------
 5.2 NOTE: Main menu styles are found in /css/navigation.css
 --------------------------------------------------------------*/
-
-
 /*--------------------------------------------------------------
 5.3 Previous/Next Links
 --------------------------------------------------------------*/
@@ -732,7 +741,6 @@ ul#widget-whimsy-social {
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
-
 #page {
 	width: 100%;
 	position: relative;
@@ -760,11 +768,9 @@ ul#widget-whimsy-social {
 	max-width: 90%;
 }
 #secondary.c3.end { padding-right: 0; float: right; }
-
 /*--------------------------------------------------------------
 10.1 Header Styles
 --------------------------------------------------------------*/
-
 #header-container {
 	position: relative;
 	z-index: 1100;
@@ -796,7 +802,6 @@ ul#widget-whimsy-social {
 	width: 20%;
 }
 .mobile-site-branding { display: none; }
-
 /*--------------------------------------------------------------
 10.2 Posts and pages
 --------------------------------------------------------------*/
@@ -1275,15 +1280,18 @@ span.entry-subtitle {
 		left: 0;
 		margin: 0;
 		z-index: 100000;
-		max-width: 85%;
 		position: absolute;
 	}
     .mobile-site-branding > h1.site-title a {
         cursor: pointer;
     }
+	
+    #site-navigation .mobile-site-branding > h1.site-title a{
+        padding: 0;
+    }
 	.mobile-site-branding > h1.site-title  {
-		font-size: 1.6em;
-		line-height: 1em;
+		font-size: 1em;
+		line-height: 1;
 		padding: 17px 20px;
 	}
 	.mobile-site-branding > h2.site-description {
@@ -1307,7 +1315,7 @@ span.entry-subtitle {
 @media screen and (max-width: 768px) {
 /* 768 =================================================== */
 	#masthead {
-    	padding-top: 7px;
+        padding: 0;
 	}
 	.brick {
 	    width: 100%;
