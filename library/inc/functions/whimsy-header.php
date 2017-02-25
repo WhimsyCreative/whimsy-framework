@@ -78,21 +78,19 @@ if ( ! function_exists( 'whimsy_desktop_branding' ) ) :
 function whimsy_desktop_branding() { 
 ?>
 
-    <div class="site-branding"><!-- Does not display on screens smaller than 980px -->
+    <div id="desktop-site-branding" class="site-branding"><!-- Does not display on screens smaller than 980px -->
 
         <?php if ( get_theme_mod( 'whimsy_framework_logo_desktop' ) ) : ?>
 
-            <div class="site-logo">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'whimsy_framework_logo_desktop' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+            <div id="desktop-site-logo">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'whimsy_framework_logo_desktop' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="site-logo"></a>
             </div><!-- /.site-logo -->
 
         <?php else : // If no logo is set, display title and description text. ?>
 
-            <hgroup>
-                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-            </hgroup>
-
+            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+        
         <?php endif; // End desktop logo check. ?>
 
     </div><!-- /.site-branding -->

@@ -773,15 +773,15 @@ ul#widget-whimsy-social {
 	text-align: center;
 	padding: 1em 0 1.4em 0;
 }
-.site-branding > hgroup > h1.site-title {
+.site-branding > h1.site-title {
 	font-size:4em;
 	line-height: 1.4em;
 	margin-bottom: 0;
 }
-.site-branding > hgroup > h1.site-title a{
+.site-branding > h1.site-title a{
 	font-weight: 100;
 }
-.site-branding > hgroup > h2.site-description {
+.site-branding > h2.site-description {
 	font-size: 1em;
 	line-height: 1;
 	font-weight: 100;
@@ -792,7 +792,7 @@ ul#widget-whimsy-social {
 .site-branding, .custom-header {
 	margin: 1.4em auto;
 }
-.site-branding > hgroup > .site-logo img {
+.site-branding > .site-logo img {
 	width: 20%;
 }
 .mobile-site-branding { display: none; }
