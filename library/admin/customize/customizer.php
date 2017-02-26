@@ -237,6 +237,7 @@ function whimsy_customize_register( $wp_customize ) {
     		'label'    => __( 'Desktop Logo', 'whimsy-framework' ),
             'description'   => __( 'Displayed on most screens.', 'whimsy-framework' ),    		
             'section'  => 'title_tagline',
+            'priority'  => 10,
     		'settings' => 'whimsy_framework_logo_desktop',
     ) ) );
 
@@ -255,6 +256,7 @@ function whimsy_customize_register( $wp_customize ) {
             'label'    => __( 'Mobile Logo', 'whimsy-framework' ),
             'description'   => __( 'Displayed on screens less than 980px.', 'whimsy-framework' ),
             'section'  => 'title_tagline',
+            'priority'  => 20,
             'settings' => 'whimsy_framework_logo_mobile',
     ) ) );
 
