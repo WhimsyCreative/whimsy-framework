@@ -792,7 +792,6 @@ ul#widget-whimsy-social {
 	line-height: 1;
 	font-weight: 100;
 	margin-bottom: 0;
-	font-style: italic;
     letter-spacing: 0.9px;
 }
 .site-branding, .custom-header {
@@ -1168,7 +1167,7 @@ body.page-template-template-mosaic #content-container {
 	padding:0;
 }
 #mosaic .hentry {
-	padding-bottom:2.5em;
+	margin-bottom:2.5em;
 }
 #mosaic p { 
 	margin-bottom: 0; 

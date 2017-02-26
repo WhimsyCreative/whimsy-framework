@@ -52,7 +52,7 @@ function whimsy_mobile_branding() {
 
         <?php if ( get_theme_mod( 'whimsy_framework_logo_mobile' ) ) : ?>
 
-            <div class="site-logo">
+            <div id="mobile-site-logo" class="site-logo">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'whimsy_framework_logo_mobile' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
             </div>
 
