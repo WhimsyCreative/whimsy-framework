@@ -60,6 +60,7 @@ if ( !class_exists( 'Whimsy' ) ) {
 			define( 'WHIMSY_FUNC',       trailingslashit( WHIMSY_LIB_PATH . 'inc/functions'                    ) );
             
 			// Core framework directory URIs.
+			define( 'WHIMSY_IMG', trailingslashit( WHIMSY_LIB_URI . 'img' ) );
 			define( 'WHIMSY_CSS', trailingslashit( WHIMSY_LIB_URI . 'css' ) );
 			define( 'WHIMSY_JS',  trailingslashit( WHIMSY_LIB_URI . 'js'  ) );
             
@@ -81,6 +82,11 @@ if ( !class_exists( 'Whimsy' ) ) {
             require_once WHIMSY_INC . 'fonts.php';
             require_once WHIMSY_INC . 'hooks.php';
             require_once WHIMSY_INC . 'template-tags.php';
+            
+			// Include admin functions
+            if ( is_admin() ) {
+                include_once WHIMSY_ADMIN . 'options.php';
+            } 
             
         }
         
