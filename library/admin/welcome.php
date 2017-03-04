@@ -85,7 +85,7 @@ class Whimsy_Framework_Welcome {
 		?>
 		<style type="text/css" media="screen">
 			/*<![CDATA[*/
-			.whimsy-framework-wrap .whimsy-badge { float: right; border-radius: 4px; margin: 0 0 15px 15px; max-width: 180px; }
+			.whimsy-framework-wrap .whimsy-badge { float: right; border-radius: 4px; margin: 0 0 15px 15px; max-width: 200px; }
 			.whimsy-framework-wrap #whimsy-header { margin-bottom: 15px; }
 			.whimsy-framework-wrap #whimsy-header h1 { margin-bottom: 15px !important; }
 			.whimsy-framework-wrap .about-text { margin: 0 0 15px; max-width: 670px; }
@@ -95,7 +95,7 @@ class Whimsy_Framework_Welcome {
 			.whimsy-framework-wrap .feature-section-content { float: left; padding-right: 50px; }
 			.whimsy-framework-wrap .feature-section-content h4 { margin: 0 0 1em; }
 			.whimsy-framework-wrap .feature-section-media { float: right; text-align: right; margin-bottom: 20px; }
-			.whimsy-framework-wrap .feature-section-media img { border: 1px solid #ddd; }
+			.whimsy-framework-wrap .feature-section-media img { border: 1px solid #ddd; max-width: 200px; }
 			.whimsy-framework-wrap .feature-section:not(.under-the-hood) .col { margin-top: 0; }
 			/* responsive */
 			@media all and ( max-width: 782px ) {
@@ -144,6 +144,9 @@ class Whimsy_Framework_Welcome {
 			</a>
 			<a class="nav-tab <?php echo $selected == 'whimsy-getting-started' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'whimsy-getting-started' ), 'themes.php' ) ) ); ?>">
 				<?php _e( 'Getting Started', 'whimsy-framework' ); ?>
+			</a>
+			<a class="nav-tab <?php echo $selected == 'whimsy-changelog' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'whimsy-changelog' ), 'themes.php' ) ) ); ?>">
+				<?php _e( 'Changelog', 'whimsy-framework' ); ?>
 			</a>
 		</h1>
 		<?php
@@ -225,7 +228,7 @@ class Whimsy_Framework_Welcome {
 					</div>
 					<div class="col">
 						<h4><?php _e( 'Prices on oEmbed', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'When embedding a download product on another site, using WordPress core’s oEmbed feature, the product prices are now shown.', 'whimsy-framework' );?></p>
+						<p><?php _e( 'When embWhimsy Frameworking a download product on another site, using WordPress core’s oEmbed feature, the product prices are now shown.', 'whimsy-framework' );?></p>
 					</div>
 					<div class="col">
 						<h4><?php _e( 'Customer Meta', 'whimsy-framework' );?></h4>
@@ -297,16 +300,16 @@ class Whimsy_Framework_Welcome {
 			<p class="about-description"><?php _e( 'Use the tips below to get started using Whimsy Framework. You will be up and running in no time!', 'whimsy-framework' ); ?></p>
 
 			<div class="changelog">
-				<h3><?php _e( 'Creating Your First Download Product', 'whimsy-framework' );?></h3>
+				<h3><?php _e( 'Responsive Logo', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
 					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_IMG . 'edit-download.png'; ?>" class="whimsy-welcome-screenshots"/>
+						<img src="<?php echo WHIMSY_IMG . 'whimsy-customizer-site-identity.png'; ?>" class="whimsy-welcome-screenshots"/>
 					</div>
 					<div class="feature-section-content">
-
-
-						<h4><?php _e( 'Download Files', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'Uploading the downloadable files is simple. Click <em>Upload File</em> in the Download Files section and choose your download file. To add more than one file, simply click the <em>Add New</em> button.', 'whimsy-framework' );?></p>
+						<h4><?php _e( 'Mobile Logo', 'whimsy-framework' );?></h4>
+						<p><?php _e( 'Whimsy Framework is responsive. There are two different ways to display your logo — desktop, and mobile. Around the size of the portrait view on an iPad (980px), the menu collapses into a mobile menu. The desktop logo is changed to a compact mobile logo, or if left empty, your site title.', 'whimsy-framework' );?></p>
+						<h4><?php _e( 'Desktop Logo', 'whimsy-framework' );?></h4>
+						<p><?php _e( 'Your desktop logo is the full-size logo that can be center-aligned or aligned to the left.', 'whimsy-framework' );?></p>
 					</div>
 				</div>
 			</div>
@@ -352,11 +355,11 @@ class Whimsy_Framework_Welcome {
 				<div class="feature-section two-col">
 					<div class="col">
 						<h4><?php _e( 'Phenomenal Support','whimsy-framework' );?></h4>
-						<p><?php _e( 'We do our best to provide the best support we can. If you encounter a problem or have a question, simply open a ticket using our <a href="https://easydigitaldownloads.com/support/?utm_source=plugin-welcome-page&utm_medium=support-link&utm_term=support&utm_campaign=EDDWelcomeSupport">support form</a>.', 'whimsy-framework' );?></p>
+						<p><?php _e( 'We do our best to provide the best support we can. If you encounter a problem or have a question, simply open a ticket using our <a href="https://easydigitaldownloads.com/support/?utm_source=plugin-welcome-page&utm_medium=support-link&utm_term=support&utm_campaign=Whimsy FrameworkWelcomeSupport">support form</a>.', 'whimsy-framework' );?></p>
 					</div>
 					<div class="col">
 						<h4><?php _e( 'Need Even Faster Support?', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'Our <a href="https://easydigitaldownloads.com/support/pricing/?utm_source=plugin-welcome-page&utm_medium=support-link&utm_term=priority-support&utm_campaign=EDDWelcomeSupport">Priority Support</a> system is there for customers that need faster and/or more in-depth assistance.', 'whimsy-framework' );?></p>
+						<p><?php _e( 'Our <a href="https://easydigitaldownloads.com/support/pricing/?utm_source=plugin-welcome-page&utm_medium=support-link&utm_term=priority-support&utm_campaign=Whimsy FrameworkWelcomeSupport">Priority Support</a> system is there for customers that need faster and/or more in-depth assistance.', 'whimsy-framework' );?></p>
 					</div>
 				</div>
 			</div>
@@ -384,7 +387,7 @@ class Whimsy_Framework_Welcome {
 					</div>
 					<div class="col">
 						<h4><?php _e( 'Visit the Extension Store', 'whimsy-framework' );?></h4>
-						<p><?php _e( '<a href="https://easydigitaldownloads.com/downloads/?utm_source=plugin-welcome-page&utm_medium=extensions-link&utm_term=extensions&utm_campaign=EDDWelcomeExtensions" target="_blank">The Extensions store</a> has a list of all available extensions, including convenient category filters so you can find exactly what you are looking for.', 'whimsy-framework' );?></p>
+						<p><?php _e( '<a href="https://easydigitaldownloads.com/downloads/?utm_source=plugin-welcome-page&utm_medium=extensions-link&utm_term=extensions&utm_campaign=Whimsy FrameworkWelcomeExtensions" target="_blank">The Extensions store</a> has a list of all available extensions, including convenient category filters so you can find exactly what you are looking for.', 'whimsy-framework' );?></p>
 					</div>
 				</div>
 			</div>
@@ -393,18 +396,44 @@ class Whimsy_Framework_Welcome {
 	}
 
 	/**
-	 * Parse the EDD readme.txt file
+	 * Parse the Whimsy Framework readme.txt file
 	 *
 	 * @since 2.0.3
 	 * @return string $readme HTML formatted readme file
 	 */
-	public function parse_readme() {
-		$file = file_exists( WHIMSY_DIR . 'readme.txt' ) ? WHIMSY_DIR . 'readme.txt' : null;
+	public function parse_readme() {         
+        
+        $access_type = get_filesystem_method();
+        if($access_type === 'direct')
+        {
+        /* you can safely run request_filesystem_credentials() without any issues and don't need to worry about passing in a URL */
+        $creds = request_filesystem_credentials(site_url() . '/wp-admin/', '', false, false, array());
 
-		if ( ! $file ) {
-			$readme = '<p>' . __( 'No valid changelog was found.', 'whimsy-framework' ) . '</p>';
-		} else {
-			$readme = WP_Filesystem( $file );
+        /* initialize the API */
+        if ( ! WP_Filesystem($creds) ) {
+        /* any problems and we exit */
+        return false;
+        }	
+
+        global $wp_filesystem;
+        /* do our file manipulations below */
+
+          $readme = '';
+
+          $method = ''; //leave this empty to perform test for 'direct' writing
+          $context = get_template_directory(); //target folder  
+          /*
+           * now $wp_filesystem could be used
+           * get correct target file first
+           **/
+          $target_dir = $wp_filesystem->find_folder($context);
+          $target_file = trailingslashit($target_dir).'readme.txt';
+
+          /* read the file */
+          if($wp_filesystem->exists($target_file)){ //check for existence
+
+            $readme = $wp_filesystem->get_contents($target_file);
+              
 			$readme = nl2br( esc_html( $readme ) );
 			$readme = explode( '== Changelog ==', $readme );
 			$readme = end( $readme );
@@ -413,15 +442,25 @@ class Whimsy_Framework_Welcome {
 			$readme = preg_replace( '/[\040]\*\*(.*?)\*\*/', ' <strong>\\1</strong>', $readme );
 			$readme = preg_replace( '/[\040]\*(.*?)\*/', ' <em>\\1</em>', $readme );
 			$readme = preg_replace( '/= (.*?) =/', '<h4>\\1</h4>', $readme );
-			$readme = preg_replace( '/\[(.*?)\]\((.*?)\)/', '<a href="\\2">\\1</a>', $readme );
-		}
+			$readme = preg_replace( '/\[(.*?)\]\((.*?)\)/', '<a href="\\2">\\1</a>', $readme );    
 
-		return $readme;
-	}
+          }  
+
+          return $readme;
+        }	
+        else
+        {
+        /* don't have direct write access. Prompt user with our notice */
+        add_action('admin_notices', 'you_admin_notice_function'); 	
+        }
+
+        
+         
+    }    
 
 	/**
-	 * Sends user to the Welcome page on first activation of EDD as well as each
-	 * time EDD is upgraded to a new version
+	 * Sends user to the Welcome page on first activation of Whimsy Framework as well as each
+	 * time Whimsy Framework is upgraded to a new version
 	 *
 	 * @access public
 	 * @since 1.4

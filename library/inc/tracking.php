@@ -1,24 +1,24 @@
 <?php
+
 // Create a helper function for easy SDK access.
-function whimsy_freemius_sdk() {
-    global $whimsy_freemius_sdk;
+function whimsy_framework() {
+    global $whimsy_framework;
 
-    if ( ! isset( $whimsy_freemius_sdk ) ) {
+    if ( ! isset( $whimsy_framework ) ) {
         // Include Freemius SDK.
-        require_once get_template_directory() . '/library/inc/tracking/start.php';
+        require_once dirname(__FILE__) . '/tracking/start.php';
 
-        $whimsy_freemius_sdk = fs_dynamic_init( array(
+        $whimsy_framework = fs_dynamic_init( array(
             'id'                  => '818',
             'slug'                => 'whimsy-framework',
             'type'                => 'theme',
             'public_key'          => 'pk_34b9d048febd4f348c687313cf262',
             'is_premium'          => false,
             'has_premium_version' => false,
-            'has_addons'          => true,
+            'has_addons'          => false,
             'has_paid_plans'      => false,
             'menu'                => array(
                 'slug'           => 'whimsy-framework',
-                'account'        => false,
                 'contact'        => false,
                 'support'        => false,
                 'parent'         => array(
@@ -28,8 +28,8 @@ function whimsy_freemius_sdk() {
         ) );
     }
 
-    return $whimsy_freemius_sdk;
+    return $whimsy_framework;
 }
 
 // Init Freemius.
-whimsy_freemius_sdk();
+whimsy_framework();
