@@ -15,7 +15,7 @@ function whimsy_framework() {
             'public_key'          => 'pk_34b9d048febd4f348c687313cf262',
             'is_premium'          => false,
             'has_premium_version' => false,
-            'has_addons'          => false,
+            'has_addons'          => true,
             'has_paid_plans'      => false,
             'menu'                => array(
                 'slug'           => 'whimsy-framework',
