@@ -85,7 +85,7 @@ class Whimsy_Framework_Welcome {
 		?>
 		<style type="text/css" media="screen">
 			/*<![CDATA[*/
-			.whimsy-framework-wrap .whimsy-badge { float: right; border-radius: 4px; margin: 0 0 15px 15px; max-width: 200px; }
+			.whimsy-framework-wrap .whimsy-badge { float: right; margin: 15px 0 15px 15px; max-width: 300px; border:0; }
 			.whimsy-framework-wrap #whimsy-header { margin-bottom: 15px; }
 			.whimsy-framework-wrap #whimsy-header h1 { margin-bottom: 15px !important; }
 			.whimsy-framework-wrap .about-text { margin: 0 0 15px; max-width: 670px; }
@@ -95,7 +95,7 @@ class Whimsy_Framework_Welcome {
 			.whimsy-framework-wrap .feature-section-content { float: left; padding-right: 50px; }
 			.whimsy-framework-wrap .feature-section-content h4 { margin: 0 0 1em; }
 			.whimsy-framework-wrap .feature-section-media { float: right; text-align: right; margin-bottom: 20px; }
-			.whimsy-framework-wrap .feature-section-media img { border: 1px solid #ddd; max-width: 200px; }
+			.whimsy-framework-wrap .feature-section-media img { border: 1px solid #ddd; max-width: 400px; }
 			.whimsy-framework-wrap .feature-section:not(.under-the-hood) .col { margin-top: 0; }
 			/* responsive */
 			@media all and ( max-width: 782px ) {
@@ -168,90 +168,60 @@ class Whimsy_Framework_Welcome {
 				$this->tabs();
 			?>
 			<div class="changelog">
-				<h3><?php _e( 'Additional Customer Emails', 'whimsy-framework' );?></h3>
+				<h3><?php _e( 'The Framework Library', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
 					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_URI . 'assets/images/screenshots/26-customer.png'; ?>"/>
+						<img src="<?php echo WHIMSY_IMG . '-.png'; ?>"/>
 					</div>
 					<div class="feature-section-content">
-						<p><?php _e( 'To help keep track of customers that have multiple email addresses, Whimsy Framework now supports storing additional emails on customers. During checkout, customers can use any email address assigned to their account to complete their purchase.', 'whimsy-framework' );?></p>
+						<p><?php _e( 'The functions powering the framework are now more in line with Object-Oriented Programming. OOP is one of the driving WordPress standards for development which means enhanced compatibility with plugins developed to the same standards.', 'whimsy-framework' );?></p>
 
-						<p><?php _e( 'Email addresses can be easily added by site administrators at anytime and will also be automatically registered when a customer makes a purchase with an additional email address.', 'whimsy-framework' );?></p>
-
-						<h4><?php _e( 'Improved Help Text', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'While we strive to make Whimsy Framework live up to its name, there are always times when certain things are not quite clear. To help alleviate any uncertainty, we have introduced improved descriptions and help texts throughout the plugin. Along with the improved descriptions, we have also added tooltips in many places that offer verbose definitions of options.', 'whimsy-framework' );?></p>
-
-						<h4><?php _e( 'Better Mobile Checkout', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'When purchasing with a debit or credit card from a mobile phone, the card number input field will now properly set the phone’s keyboard to a numerical keyboard.', 'whimsy-framework' );?></p>
+						<h4><?php _e( 'New folder structure ', 'whimsy-framework' );?></h4>
+						<p><?php _e( 'Whimsy Framework files have all been moved to their own class in the /library folder.', 'whimsy-framework' );?></p>
 					</div>
 				</div>
 			</div>
 
 			<div class="changelog">
-				<h3><?php _e( 'Native Import Options', 'whimsy-framework' );?></h3>
+				<h3><?php _e( 'Improved typography and updated design', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
 					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_URI . 'assets/images/screenshots/26-import.png'; ?>"/>
+						<img src="<?php echo WHIMSY_IMG . '-.png'; ?>"/>
 					</div>
 					<div class="feature-section-content">
-						<p><?php _e( 'We believe you should own your data. We also believe that it should be easy to get data out of <em>and</em> into Whimsy Framework. 2.6 introduces native import options for payments and download products.', 'whimsy-framework' );?></p>
-
-						<h4><?php _e( 'Product Import', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'With the new import options, Whimsy Framework now makes it easy to import products from a CSV file into your store. Whether you wish to import five products or 50,000, Whimsy Framework can now effortlessly handle the import for you.', 'whimsy-framework' );?></p>
-
-						<h4><?php _e( 'Payment Import', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'Sometimes it is necessary to move purchase records from one location to another. Perhaps you are transitioning from another eCommerce system, or from a separate Whimsy Framework store; whatever the reason, Whimsy Framework now allows you to easily import purchase records from a CSV file.', 'whimsy-framework' );?></p>
+						<p><?php _e( 'Drop shadows were removed for a flat look, fonts and spacing were tweaked, and we made some updates to the menu.', 'whimsy-framework' );?></p>
 					</div>
 				</div>
 			</div>
 
 			<div class="changelog">
-				<h3><?php _e( 'Better Refunds', 'whimsy-framework' );?></h3>
+				<h3><?php _e( 'More options in the Customizer', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
 					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_URI . 'assets/images/screenshots/26-refund.png'; ?>" class="whimsy-welcome-screenshots alignleft"/>
+						<img src="<?php echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots alignleft"/>
 					</div>
 					<div class="feature-section-content">
-						<h4><?php _e( 'Refund Processing for PayPal Standard', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'While not usually something store administrators take great pleasure in handling, refunds are a very real part of running an eCommerce store. As much as we would love to, we can’t make the actual refund more enjoyable, but we can make refunds easier to process.', 'whimsy-framework' );?></p>
-						<p><?php _e( 'In Whimsy Framework 2.6, we have added support for processing refunds directly from the View Order Details screen for purchases made through PayPal Standard.', 'whimsy-framework' );?></p>
+						<p><?php _e( 'The Whimsy Framework Customizer was updated to included display options like layout, widget areas, and the option to hide meta options like dates and titles on pages.', 'whimsy-framework' );?></p>
 					</div>
 				</div>
 			</div>
 
 			<div class="changelog">
 				<h3><?php _e( 'Additional Updates', 'whimsy-framework' );?></h3>
-				<div class="feature-section three-col">
+				<div class="feature-section two-col">
 					<div class="col">
-						<h4><?php _e( 'REST API Version 2', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'Version 2 of the REST API offers several improved endpoint options and better data standardization.', 'whimsy-framework' );?></p>
+						<h4><?php _e( 'New stuff for developers', 'whimsy-framework' );?></h4>
+						<p><?php _e( 'New action hooks were added, and the header and footer are now built dynamically to make Whimsy Framework easier to extend by developers.', 'whimsy-framework' );?></p>
 					</div>
 					<div class="col">
-						<h4><?php _e( 'Prices on oEmbed', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'When embWhimsy Frameworking a download product on another site, using WordPress core’s oEmbed feature, the product prices are now shown.', 'whimsy-framework' );?></p>
+						<h4><?php _e( 'Updated Dependancies', 'whimsy-framework' );?></h4>
+						<p><?php _e( 'FontAwesome was updated to 4.7.0.', 'whimsy-framework' );?></p>
 					</div>
-					<div class="col">
-						<h4><?php _e( 'Customer Meta', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'The customer database now includes a complete metadata API for storing additional information on customer records.' ,'whimsy-framework' );?></p>
-					</div>
-					<div class="clear">
-						<div class="col">
-							<h4><?php _e( 'Improved Accessibility', 'whimsy-framework' );?></h4>
-							<p><?php _e( 'Whimsy Framework is now more accessible to more users thanks to a member of the WordPress accessibility team who helped resolve accessibility issues throughout the administrative interfaces.', 'whimsy-framework' );?></p>
-						</div>
-						<div class="col">
-							<h4><?php _e( 'Resolved Schema Problems', 'whimsy-framework' );?></h4>
-							<p><?php _e( 'Invalid and missing schema microdata has been resolved.', 'whimsy-framework' );?></p>
-						</div>
-						<div class="col">
-							<h4><?php _e( 'More Actions and Filters', 'whimsy-framework' );?></h4>
-							<p><?php _e( 'Numerous new actions and filters have been added to help make Whimsy Framework more extensible for developers.' ,'whimsy-framework' );?></p>
-						</div>
+					<div class="clear"></div>
 					</div>
 				</div>
 			</div>
 
-		</div>
 		<?php
 	}
 
@@ -303,7 +273,7 @@ class Whimsy_Framework_Welcome {
 				<h3><?php _e( 'Responsive Logo', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
 					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_IMG . 'whimsy-customizer-site-identity.png'; ?>" class="whimsy-welcome-screenshots"/>
+						<img src="<?php echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots"/>
 					</div>
 					<div class="feature-section-content">
 						<h4><?php _e( 'Mobile Logo', 'whimsy-framework' );?></h4>
@@ -315,79 +285,33 @@ class Whimsy_Framework_Welcome {
 			</div>
 
 			<div class="changelog">
-				<h3><?php _e( 'Display a Product Grid', 'whimsy-framework' );?></h3>
+				<h3><?php _e( 'Easily Customizable', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
 					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_URI . 'assets/images/screenshots/grid.png'; ?>"/>
+						<img src="<?php echo WHIMSY_URI . '-.png'; ?>"/>
 					</div>
 					<div class="feature-section-content">
-						<h4><?php _e( 'Flexible Product Grids','whimsy-framework' );?></h4>
-						<p><?php _e( 'The [downloads] shortcode will display a product grid that works with any theme, no matter the size. It is even responsive!', 'whimsy-framework' );?></p>
+						<h4><?php _e( 'Tweak the display options','whimsy-framework' );?></h4>
+						<p><?php _e( 'There are options for which side your sidebar should be on and how many widget columns in your footer. As well as tweaks to pages and layouts.', 'whimsy-framework' );?></p>
 
-						<h4><?php _e( 'Change the Number of Columns', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'You can easily change the number of columns by adding the columns="x" parameter:', 'whimsy-framework' );?></p>
-						<p><pre>[downloads columns="4"]</pre></p>
+						<h4><?php _e( 'Change your colors', 'whimsy-framework' );?></h4>
+						<p><?php _e( 'You can customize the colors for your backgrounds, links, menu, and text from the Colors panel in the Customizer.', 'whimsy-framework' );?></p>
 
-						<h4><?php _e( 'Additional Display Options', 'whimsy-framework' ); ?></h4>
-						<p><?php printf( __( 'The product grids can be customized in any way you wish and there is <a href="%s">extensive documentation</a> to assist you.', 'whimsy-framework' ), 'http://docs.easydigitaldownloads.com/' ); ?></p>
-					</div>
-				</div>
-			</div>
+						<h4><?php _e( 'Setup your menus', 'whimsy-framework' );?></h4>
+						<p><?php _e( 'The Whimsy Framework has two menu areas — Primary, and Footer. The Primary menu is at the top of the page. It is mobile friendly, and you can add secondary pages that drop down. The Footer menu is a list of pages located near the bottom of the page, above the footer widget area.', 'whimsy-framework' );?></p>
 
-			<div class="changelog">
-				<h3><?php _e( 'Purchase Buttons Anywhere', 'whimsy-framework' );?></h3>
-				<div class="feature-section">
-					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_URI . 'assets/images/screenshots/purchase-link.png'; ?>"/>
-					</div>
-					<div class="feature-section-content">
-						<h4><?php _e( 'The <em>[purchase_link]</em> Shortcode','whimsy-framework' );?></h4>
-						<p><?php _e( 'With easily accessible shortcodes to display purchase buttons, you can add a Buy Now or Add to Cart button for any product anywhere on your site in seconds.', 'whimsy-framework' );?></p>
-
-						<h4><?php _e( 'Buy Now Buttons', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'Purchase buttons can behave as either Add to Cart or Buy Now buttons. With Buy Now buttons customers are taken straight to PayPal, giving them the most frictionless purchasing experience possible.', 'whimsy-framework' );?></p>
-					</div>
-				</div>
-			</div>
-
-			<div class="changelog">
-				<h3><?php _e( 'Need Help?', 'whimsy-framework' );?></h3>
-				<div class="feature-section two-col">
-					<div class="col">
-						<h4><?php _e( 'Phenomenal Support','whimsy-framework' );?></h4>
-						<p><?php _e( 'We do our best to provide the best support we can. If you encounter a problem or have a question, simply open a ticket using our <a href="https://easydigitaldownloads.com/support/?utm_source=plugin-welcome-page&utm_medium=support-link&utm_term=support&utm_campaign=Whimsy FrameworkWelcomeSupport">support form</a>.', 'whimsy-framework' );?></p>
-					</div>
-					<div class="col">
-						<h4><?php _e( 'Need Even Faster Support?', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'Our <a href="https://easydigitaldownloads.com/support/pricing/?utm_source=plugin-welcome-page&utm_medium=support-link&utm_term=priority-support&utm_campaign=Whimsy FrameworkWelcomeSupport">Priority Support</a> system is there for customers that need faster and/or more in-depth assistance.', 'whimsy-framework' );?></p>
-					</div>
-				</div>
-			</div>
-
-			<div class="changelog">
-				<h3><?php _e( 'Stay Up to Date', 'whimsy-framework' );?></h3>
-				<div class="feature-section two-col">
-					<div class="col">
-						<h4><?php _e( 'Get Notified of Extension Releases','whimsy-framework' );?></h4>
-						<p><?php _e( 'New extensions that make Whimsy Framework even more powerful are released nearly every single week. Subscribe to the newsletter to stay up to date with our latest releases. <a href="https://easydigitaldownloads.com/subscribe" target="_blank">Sign up now</a> to ensure you do not miss a release!', 'whimsy-framework' );?></p>
-					</div>
-					<div class="col">
-						<h4><?php _e( 'Get Alerted About New Tutorials', 'whimsy-framework' );?></h4>
-						<p><?php _e( '<a href="https://easydigitaldownloads.com/subscribe" target="_blank">Sign up now</a> to hear about the latest tutorial releases that explain how to take Whimsy Framework further.', 'whimsy-framework' );?></p>
-					</div>
-				</div>
-			</div>
-
-			<div class="changelog">
-				<h3><?php _e( 'Extensions for Everything', 'whimsy-framework' );?></h3>
-				<div class="feature-section two-col">
-					<div class="col">
-						<h4><?php _e( 'Over 250 Extensions','whimsy-framework' );?></h4>
-						<p><?php _e( 'Add-on plugins are available that greatly extend the default functionality of Whimsy Framework. There are extensions for payment processors, such as Stripe and PayPal, extensions for newsletter integrations, and many, many more.', 'whimsy-framework' );?></p>
-					</div>
-					<div class="col">
-						<h4><?php _e( 'Visit the Extension Store', 'whimsy-framework' );?></h4>
-						<p><?php _e( '<a href="https://easydigitaldownloads.com/downloads/?utm_source=plugin-welcome-page&utm_medium=extensions-link&utm_term=extensions&utm_campaign=Whimsy FrameworkWelcomeExtensions" target="_blank">The Extensions store</a> has a list of all available extensions, including convenient category filters so you can find exactly what you are looking for.', 'whimsy-framework' );?></p>
+						<h4><?php _e( 'Choose your widgets', 'whimsy-framework' );?></h4>
+						<p><?php _e( 'Whimsy Framework includes two widgets made with bloggers in mind. An About Me widget, and a Social Network widget. You can see them in action in my sidebar here.', 'whimsy-framework' );?></p>
+                        <div class="two-col">
+                            <div class="col">
+                                <h4><?php _e( 'About Me','whimsy-framework' );?></h4>
+                                <p><?php _e( 'This widget features an image, a paragraph to introduce yourself and your website, and a link with customized text to read more.', 'whimsy-framework' );?></p>
+                            </div>
+                            <div class="col">
+                                <h4><?php _e( 'Social Networks', 'whimsy-framework' );?></h4>
+                                <p><?php _e( 'The Social Media widget features icons for many social networks, big and small. ', 'whimsy-framework' );?></p>
+                            </div>
+                        </div>
 					</div>
 				</div>
 			</div>
@@ -453,9 +377,6 @@ class Whimsy_Framework_Welcome {
         /* don't have direct write access. Prompt user with our notice */
         add_action('admin_notices', 'you_admin_notice_function'); 	
         }
-
-        
-         
     }    
 
 	/**
