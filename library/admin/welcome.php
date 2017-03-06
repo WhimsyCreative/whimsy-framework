@@ -122,7 +122,7 @@ class Whimsy_Framework_Welcome {
 			<img class="whimsy-badge" src="<?php echo WHIMSY_IMG . 'whimsy-framework-logo.svg'; ?>" alt="<?php _e( 'Whimsy Framework', 'whimsy-framework' ); ?>" / >
 			<h1><?php printf( __( 'Welcome to Whimsy Framework %s', 'whimsy-framework' ), $display_version ); ?></h1>
 			<p class="about-text">
-				<?php printf( __( 'Thank you for updating to the latest version! Whimsy Framework %s is ready to make your online store faster, safer, and better!', 'whimsy-framework' ), $display_version ); ?>
+				<?php printf( __( 'Thank you for updating to Whimsy Framework 2.1! Whimsy Framework is a stylish, customizable, seo-friendly, lightweight theme ready to help you build something beautiful.', 'whimsy-framework' ), $display_version ); ?>
 			</p>
 		</div>
 		<?php
@@ -171,7 +171,7 @@ class Whimsy_Framework_Welcome {
 				<h3><?php _e( 'The Framework Library', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
 					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_IMG . '-.png'; ?>"/>
+<!--						<img src="<?php //echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots alignleft"/>-->
 					</div>
 					<div class="feature-section-content">
 						<p><?php _e( 'The functions powering the framework are now more in line with Object-Oriented Programming. OOP is one of the driving WordPress standards for development which means enhanced compatibility with plugins developed to the same standards.', 'whimsy-framework' );?></p>
@@ -198,7 +198,7 @@ class Whimsy_Framework_Welcome {
 				<h3><?php _e( 'More options in the Customizer', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
 					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots alignleft"/>
+<!--						<img src="<?php //echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots alignleft"/>-->
 					</div>
 					<div class="feature-section-content">
 						<p><?php _e( 'The Whimsy Framework Customizer was updated to included display options like layout, widget areas, and the option to hide meta options like dates and titles on pages.', 'whimsy-framework' );?></p>
@@ -273,7 +273,7 @@ class Whimsy_Framework_Welcome {
 				<h3><?php _e( 'Responsive Logo', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
 					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots"/>
+<!--						<img src="<?php //echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots alignleft"/>-->
 					</div>
 					<div class="feature-section-content">
 						<h4><?php _e( 'Mobile Logo', 'whimsy-framework' );?></h4>
@@ -288,7 +288,7 @@ class Whimsy_Framework_Welcome {
 				<h3><?php _e( 'Easily Customizable', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
 					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_URI . '-.png'; ?>"/>
+<!--						<img src="<?php //echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots alignleft"/>-->
 					</div>
 					<div class="feature-section-content">
 						<h4><?php _e( 'Tweak the display options','whimsy-framework' );?></h4>
