@@ -288,9 +288,9 @@
 		 * @author Vova Feldman (@svovaf)
 		 * @since  1.0.0
 		 *
-		 * @param number $module_id
-		 * @param string $slug
-		 * @param bool   $is_init Since 1.2.1 Is initiation sequence.
+		 * @param number      $module_id
+		 * @param string|bool $slug
+		 * @param bool        $is_init Since 1.2.1 Is initiation sequence.
 		 */
 		private function __construct( $module_id, $slug = false, $is_init = false ) {
 			if ( ! is_numeric( $module_id ) ) {
@@ -496,7 +496,7 @@
 		 *    The only fallback of this mechanism is if an admin updates a plugin based on use-case #2,
 		 *    and then, the next immediate PageView is the plugin's main settings page, it will not
 		 *    show the opt-in right away. The reason it will happen is because Freemius execution
-		 *    will be turned off till the plugin is fully loaded at least once
+		 *    will be turned off util the plugin is fully loaded at least once
 		 *    (till $this->_storage->was_plugin_loaded is TRUE).
 		 *
 		 * @author Vova Feldman (@svovaf)
@@ -507,7 +507,18 @@
 			// Update flag that plugin was loaded with Freemius at least once.
 			$this->_storage->was_plugin_loaded = true;
 
-			if ( ! isset( $this->_storage->is_plugin_new_install ) ) {
+			/**
+			 * Bug fix - only set to false when it's a plugin, due to the
+			 * execution sequence of the theme hooks and our methods, if
+			 * this will be set for themes, Freemius will always assume
+			 * it's a theme update.
+			 *
+			 * @author Vova Feldman (@svovaf)
+			 * @since 1.2.2.2
+			 */
+			if ( $this->is_plugin() &&
+			     ! isset( $this->_storage->is_plugin_new_install )
+			) {
 				$this->_storage->is_plugin_new_install = false;
 			}
 		}
@@ -549,7 +560,10 @@
 				 * @since  1.1.9
 				 */
 				if ( empty( $this->_storage->was_plugin_loaded ) ) {
-					if ( $this->is_plugin() && $this->is_activation_mode( false ) ) {
+					if ( $this->is_plugin() &&
+					     $this->is_activation_mode( false ) &&
+					     0 == did_action( 'plugins_loaded' )
+					) {
 						add_action( 'plugins_loaded', array( &$this, '_plugins_loaded' ) );
 					} else {
 						// If was activated before, then it was already loaded before.
@@ -665,10 +679,12 @@
 				array( &$this, '_submit_uninstall_reason_action' )
 			);
 
-            global $pagenow;
-            if ( in_array( $pagenow, array( 'plugins.php', 'themes.php' ) ) ) {
-                add_action( 'admin_footer', array( &$this, '_add_deactivation_feedback_dialog_box' ) );
-            }
+			global $pagenow;
+			if ( ( 'plugins.php' === $pagenow && $this->is_plugin() ) ||
+			     ( 'themes.php' === $pagenow && $this->is_theme() )
+			) {
+				add_action( 'admin_footer', array( &$this, '_add_deactivation_feedback_dialog_box' ) );
+			}
 
 			if ( ! $this->is_addon() ) {
 				if ( $this->is_registered() ) {
@@ -777,6 +793,9 @@
 		 *
 		 * @author Leo Fajardo (@leorw)
 		 * @since  1.2.2
+		 *
+		 * @author Vova Feldman (@svovaf)
+		 * @since 1.2.2.3 Find the earliest module in the call stack that calls to the SDK. This fix is for cases when add-ons are relying on loading the SDK from the parent module, and also allows themes including the SDK an internal file instead of directly from functions.php.
 		 */
 		private function get_caller_main_file_and_type() {
 			self::require_plugin_essentials();
@@ -789,7 +808,11 @@
 				$all_plugins_paths[] = fs_normalize_path( realpath( WP_PLUGIN_DIR . '/' . $relative_path ) );
 			}
 
-			$current_theme_path = fs_normalize_path( get_stylesheet_directory() );
+			$caller_file_candidate = false;
+			$module_type           = WP_FS__MODULE_TYPE_PLUGIN;
+
+			$plugins_dir = fs_normalize_path( WP_PLUGIN_DIR );
+			$themes_dir  = fs_normalize_path( get_theme_root() );
 
 			for ( $i = 1, $bt = debug_backtrace(), $len = count( $bt ); $i < $len; $i ++ ) {
 				if ( ! isset( $bt[ $i ]['file'] ) ) {
@@ -798,20 +821,28 @@
 
 				$caller_file_path = fs_normalize_path( $bt[ $i ]['file'] );
 
-				if ( dirname( $caller_file_path ) === $current_theme_path ) {
-					$module_type = WP_FS__MODULE_TYPE_THEME;
-					break;
+				if ( false !== strpos( $caller_file_path, $themes_dir ) ) {
+					$module_type           = WP_FS__MODULE_TYPE_THEME;
+					$caller_file_candidate = $caller_file_path;
+					continue;
 				}
 
-				if ( in_array( $caller_file_path, $all_plugins_paths ) ) {
-					$module_type = WP_FS__MODULE_TYPE_PLUGIN;
-					break;
+				if ( false !== strpos( $caller_file_path, $plugins_dir ) ) {
+					foreach ( $all_plugins_paths as $plugin_path ) {
+						if ( false !== strpos( $caller_file_path, realpath( dirname( $plugin_path ) ) ) ) {
+							$module_type           = WP_FS__MODULE_TYPE_PLUGIN;
+							$caller_file_candidate = $plugin_path;
+							break;
+						}
+					}
+
+					continue;
 				}
 			}
 
 			return (object) array(
 				'module_type' => $module_type,
-				'path'        => $caller_file_path
+				'path'        => $caller_file_candidate
 			);
 		}
 
@@ -1213,7 +1244,35 @@
 		 * @return bool
 		 */
 		function is_parent_plugin_installed() {
-			return self::has_instance( $this->_plugin->parent_plugin_id );
+			$is_active = self::has_instance( $this->_plugin->parent_plugin_id );
+
+			if ( $is_active ) {
+				return true;
+			}
+
+			/**
+			 * Parent module might be a theme. If that's the case, the add-on's FS
+			 * instance will be loaded prior to the theme's FS instance, therefore,
+			 * we need to check if it's active with a "look ahead".
+			 *
+			 * @author Vova Feldman
+			 * @since  1.2.2.3
+			 */
+			global $fs_active_plugins;
+			if ( is_object( $fs_active_plugins ) && is_array( $fs_active_plugins->plugins ) ) {
+				$active_theme = wp_get_theme();
+
+				foreach ( $fs_active_plugins->plugins as $sdk => $module ) {
+					if ( WP_FS__MODULE_TYPE_THEME === $module->type ) {
+						if ( $module->plugin_path == $active_theme->get_stylesheet() ) {
+							// Parent module is a theme and it's currently active.
+							return true;
+						}
+					}
+				}
+			}
+
+			return false;
 		}
 
 		/**
@@ -1388,7 +1447,9 @@
 
 			add_action( "wp_ajax_fs_toggle_debug_mode", array( 'Freemius', '_toggle_debug_mode' ) );
 
-			add_action( 'plugins_loaded', array( 'Freemius', '_load_textdomain' ), 1 );
+			if ( 0 == did_action( 'plugins_loaded' ) ) {
+				add_action( 'plugins_loaded', array( 'Freemius', '_load_textdomain' ), 1 );
+			}
 
 			self::$_statics_loaded = true;
 		}
@@ -1817,7 +1878,7 @@
 			}
 
 			if ( ! function_exists( 'wp_nonce_url' ) ) {
-				require_once( ABSPATH . 'wp-includes/functions.php' );
+				require_once ABSPATH . 'wp-includes/functions.php';
 			}
 
 			$current_user = self::_get_current_wp_user();
@@ -2418,7 +2479,7 @@
 			}
 
 			if ( $this->is_user_in_admin() ) {
-				if ( $this->is_plugins_page() ) {
+				if ( $this->is_plugins_page() && $this->is_plugin() ) {
 					$this->hook_plugin_action_links();
 				}
 
@@ -2458,8 +2519,6 @@
 						$this->deactivate_premium_only_addon_without_license();
 					}
 				} else {
-					add_action( 'admin_init', array( &$this, '_admin_init_action' ) );
-
 					if ( $this->has_addons() &&
 					     'plugin-information' === fs_request_get( 'tab', false ) &&
 					     $this->get_id() == fs_request_get( 'parent_plugin_id', false )
@@ -2469,6 +2528,8 @@
 						new FS_Plugin_Info_Dialog( $this );
 					}
 				}
+
+				add_action( 'admin_init', array( &$this, '_admin_init_action' ) );
 
 //				if ( $this->is_registered() ||
 //				     $this->is_anonymous() ||
@@ -4099,7 +4160,7 @@
 					deactivate_plugins( $other_version_basename );
 				}
 
-				// If activating the premium module version, add an admin noitce to congratulate for an upgrade completion.
+				// If activating the premium module version, add an admin notice to congratulate for an upgrade completion.
 				if ( $is_premium_version_activation ) {
 					$this->_admin_notices->add(
 						sprintf( __fs( 'successful-version-upgrade-message', $this->_slug ), sprintf( '<b>%s</b>', $this->_plugin->title ) ),
@@ -4874,13 +4935,15 @@
 				$params['reason_info'] = $uninstall_reason->info;
 			}
 
-			if ( ! $this->is_registered() && isset( $uninstall_reason ) ) {
+			if ( ! $this->is_registered() ) {
 				// Send anonymous uninstall event only if user submitted a feedback.
-				if ( isset( $uninstall_reason->is_anonymous ) && ! $uninstall_reason->is_anonymous ) {
-					$this->opt_in( false, false, false, false, true );
-				} else {
-					$params['uid'] = $this->get_anonymous_id();
-					$this->get_api_plugin_scope()->call( 'uninstall.json', 'put', $params );
+				if ( isset( $uninstall_reason ) ) {
+					if ( isset( $uninstall_reason->is_anonymous ) && ! $uninstall_reason->is_anonymous ) {
+						$this->opt_in( false, false, false, false, true );
+					} else {
+						$params['uid'] = $this->get_anonymous_id();
+						$this->get_api_plugin_scope()->call( 'uninstall.json', 'put', $params );
+					}
 				}
 			} else {
 				// Send uninstall event.
@@ -4956,7 +5019,7 @@
 			if ( ! function_exists( 'get_plugins' ) ) {
 				self::$_static_logger->log( 'Including wp-admin/includes/plugin.php...' );
 
-				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+				require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
 		}
 
@@ -4968,7 +5031,7 @@
 		 */
 		private static function require_pluggable_essentials() {
 			if ( ! function_exists( 'wp_get_current_user' ) ) {
-				require_once( ABSPATH . 'wp-includes/pluggable.php' );
+				require_once ABSPATH . 'wp-includes/pluggable.php';
 			}
 		}
 
@@ -4998,9 +5061,13 @@
 					);
 				} else {
 					$theme_data  = wp_get_theme();
+
 					$plugin_data = array(
-						'Name'    => $theme_data->get( 'Name' ),
-						'Version' => $theme_data->get( 'Version' )
+						'Name'        => $theme_data->get( 'Name' ),
+						'Version'     => $theme_data->get( 'Version' ),
+						'Author'      => $theme_data->get( 'Author' ),
+						'Description' => $theme_data->get( 'Description' ),
+						'PluginURI'   => $theme_data->get( 'ThemeURI' ),
 					);
 				}
 
@@ -9080,7 +9147,7 @@
 				$plugin_id = $this->_plugin->id;
 			}
 
-			$result = $api->get( "/plugins/{$plugin_id}/payments.json", true );
+			$result = $api->get( "/plugins/{$plugin_id}/payments.json?include_addons=true", true );
 
 			if ( ! isset( $result->error ) ) {
 				for ( $i = 0, $len = count( $result->payments ); $i < $len; $i ++ ) {
@@ -10907,12 +10974,21 @@
 		function _account_page_render() {
 			$this->_logger->entrance();
 
-			$vars = array( 'id' => $this->_module_id );
+			$template = 'account.php';
 			if ( 'billing' === fs_request_get( 'tab' ) ) {
-				fs_require_once_template( 'billing.php', $vars );
-			} else {
-				fs_require_once_template( 'account.php', $vars );
+				$template = 'billing.php';
 			}
+
+			$vars = array( 'id' => $this->_module_id );
+
+			/**
+			 * Added filter to the template to allow developers wrapping the template
+			 * in custom HTML (e.g. within a wizard/tabs).
+			 *
+			 * @author Vova Feldman (@svovaf)
+			 * @since  1.2.1.6
+			 */
+			echo $this->apply_filters( "templates/{$template}", fs_get_template( $template, $vars ) );
 		}
 
 		/**
@@ -10969,7 +11045,15 @@
 			$this->_logger->entrance();
 
 			$vars = array( 'id' => $this->_module_id );
-			fs_require_once_template( 'add-ons.php', $vars );
+
+			/**
+			 * Added filter to the template to allow developers wrapping the template
+			 * in custom HTML (e.g. within a wizard/tabs).
+			 *
+			 * @author Vova Feldman (@svovaf)
+			 * @since  1.2.1.6
+			 */
+			echo $this->apply_filters( 'templates/add-ons.php', fs_get_template( 'add-ons.php', $vars ) );
 		}
 
 		/* Pricing & Upgrade

@@ -15,7 +15,7 @@
 	 *
 	 * @var string
 	 */
-	$this_sdk_version = '1.2.2.1';
+	$this_sdk_version = '1.2.2.3';
 
 	#region SDK Selection Logic --------------------------------------------------------------------
 
@@ -108,7 +108,7 @@
 		}
 	} else {
 		if ( ! function_exists( 'get_plugins' ) ) {
-			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 
         $fs_newest_sdk = $fs_active_plugins->newest;
