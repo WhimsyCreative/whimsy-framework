@@ -6,7 +6,7 @@ function whimsy_framework() {
 
     if ( ! isset( $whimsy_framework ) ) {
         // Include Freemius SDK.
-        require_once dirname(__FILE__) . '/tracking/start.php';
+        require_once dirname(dirname(dirname(__FILE__))) . '/freemius/start.php';
 
         $whimsy_framework = fs_dynamic_init( array(
             'id'                  => '818',
@@ -18,12 +18,8 @@ function whimsy_framework() {
             'has_addons'          => true,
             'has_paid_plans'      => false,
             'menu'                => array(
-                'slug'           => 'whimsy-framework',
                 'contact'        => false,
                 'support'        => false,
-                'parent'         => array(
-                    'slug' => 'themes.php',
-                ),
             ),
         ) );
     }
