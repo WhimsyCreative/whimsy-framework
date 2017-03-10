@@ -75,7 +75,9 @@ class Whimsy_Framework_Welcome {
 		remove_submenu_page( 'themes.php', 'whimsy-getting-started' );
 
 		whimsy_framework()->add_filter( 'templates/add-ons.php', array( &$this, 'addons_screen' ) );
-		whimsy_framework()->add_filter( 'templates/account.php', array( &$this, 'account_screen' ) );
+		if ( whimsy_framework()->is_registered() ) {
+			whimsy_framework()->add_filter( 'templates/account.php', array( &$this, 'account_screen' ) );
+		}
 	}
 
 	/**
