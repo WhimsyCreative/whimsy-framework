@@ -56,10 +56,11 @@ function whimsy_customize_register( $wp_customize ) {
     
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->remove_setting( 'header_textcolor');
+    $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
+	$wp_customize->remove_setting( 'header_textcolor' );
     
     // Load custom control classes.
-    require_once( trailingslashit( get_template_directory() ) . 'library/admin/customize/controls/control-custom-layout.php' );    
+    require_once( WHIMSY_CUSTOMIZE . 'controls/control-custom-layout.php' );    
     
     // Link Color
 	$wp_customize->add_setting(
@@ -69,7 +70,6 @@ function whimsy_customize_register( $wp_customize ) {
 	        'sanitize_callback' => 'sanitize_hex_color',
 	    )
 	);
-    
 	$wp_customize->add_control(
 	    new WP_Customize_Color_Control(
 	        $wp_customize,
@@ -106,7 +106,7 @@ function whimsy_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 	    'whimsy_body_color',
 	    array(
-	        'default' => '#252c38',
+	        'default' => '#4b4b4b',
 	        'sanitize_callback' => 'sanitize_hex_color',
 	    )
 	);
@@ -167,7 +167,23 @@ function whimsy_customize_register( $wp_customize ) {
 		),
 		'priority' => 2
 	) ) );
-    
+    // Hide the sidebar
+    $wp_customize->add_setting(
+        'whimsy_framework_hide_sidebar',
+        array(
+            'default' => false,
+            'transport'         => 'refresh',
+            'sanitize_callback' => 'whimsy_framework_sanitize_checkbox',
+        )
+    );    
+    $wp_customize->add_control(
+        'whimsy_framework_hide_sidebar',
+        array(
+            'type' => 'checkbox',
+            'label' => __( 'Hide the sidebar?', 'whimsy-framework' ),
+            'section' => 'whimsy_framework_section_display',
+        )
+    );
     // Hide date on pages
     $wp_customize->add_setting(
         'whimsy_framework_hide_page_date',
@@ -202,8 +218,7 @@ function whimsy_customize_register( $wp_customize ) {
             'label' => __( 'Hide comments on pages?', 'whimsy-framework' ),
             'section' => 'whimsy_framework_section_display',
         )
-    );
-    
+    );    
     // Hide link on page titles
     $wp_customize->add_setting(
         'whimsy_framework_hide_page_title_link',

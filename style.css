@@ -4,7 +4,7 @@ Theme URI: http://whimsycreative.co/framework
 Author: Whimsy Creative Co.
 Author URI: http://whimsycreative.co
 Description: Whimsy Framework is a chic, robust theme ready to be customized with plenty of extras baked in.
-Version: 2.1.0-beta
+Version: 2.1.0_beta-1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whimsy-framework
@@ -36,11 +36,10 @@ Tags: custom-background, custom-colors, custom-header, custom-menu, featured-ima
  * @license    GPL v2
 
  */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-1.0 - Reset
+1.0 - Normalize
 2.0 - Typography
 3.0 - Elements
 4.0 - Forms
@@ -67,48 +66,20 @@ Tags: custom-background, custom-colors, custom-header, custom-menu, featured-ima
 	14.1 WooCommerce 
 	14.2 Jetpack 
 15.0 - Media Queries
-
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
-1.0 - Reset
+1.0 - Normalize
 --------------------------------------------------------------*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	border: 0;
-	font-family: inherit;
-	font-size: 100%;
-	font-style: inherit;
-	font-weight: inherit;
-	margin: 0;
-	outline: 0;
-	padding: 0;
-	vertical-align: baseline;
-}
 html {
-	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
-	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
 }
-*,
-*:before,
-*:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-	-webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
-	-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
-	box-sizing:         border-box;
-}
+
 body {
-	background: #fafafa; /* Fallback for when there is no custom background color defined. */
-	-webkit-font-smoothing: antialiased;
+	margin: 0;
 }
+
 article,
 aside,
 details,
@@ -117,63 +88,202 @@ figure,
 footer,
 header,
 main,
+menu,
 nav,
-section {
+section,
+summary {
 	display: block;
 }
-ol, ul {
-	list-style: none;
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
 }
-table { /* tables still need 'cellspacing="0"' in the markup */
-	border-collapse: separate;
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden],
+template {
+	display: none;
+}
+
+a {
+	background-color: transparent;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 1em 40px;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+pre {
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+button {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+}
+
+optgroup {
+	font-weight: bold;
+}
+
+table {
+	border-collapse: collapse;
 	border-spacing: 0;
 }
-caption, th, td {
-	font-weight: normal;
-	text-align: left;
-}
-blockquote:before,
-q:before {
-	content: '\f10d';
-	font-family: 'FontAwesome';
-	display: block;
-	font-size: 2em;
-	position: relative;
-	color:rgba(216,216,216,0.2);
-}
-blockquote, q {
-	quotes: "" "";
-	padding:0;
-	display:block;
-	margin:0;
-	position: relative;
-	font-size: 1.4em;
-}
-blockquote > p, q > p {
-	margin-bottom: 1em;
-	margin-top: -1.2em;
-	position: relative;
-}
-a:focus {
-	outline: thin dotted;
-}
-a:hover,
-a:active {
-	outline: 0;
-	-webkit-transition: color 200ms ease;
-  -moz-transition: color 200ms ease;
-  -ms-transition: color 200ms ease;
-  -o-transition: color 200ms ease;
-  transition: color 200ms ease;
-}
-a img {
-	border: 0;
+
+td,
+th {
+	padding: 0;
 }
 
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
-
 body,
 button,
 input,
@@ -181,35 +291,38 @@ select,
 textarea {
 	color: #4b4b4b;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
-	font-size: 1.7em;
-	font-weight: 400;
+	font-size: 18px;
+	font-weight: normal;
 	line-height: 1.7;
 }
+
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
+
 p {
 	margin-bottom: 1.5em;
 }
+
 b, strong {
 	font-weight: bold;
 }
+
 dfn, cite, em, i {
 	font-style: italic;
 }
-blockquote {
-	margin: 0;
-}
+
 cite { 
 	font-size: 75%;
 	display: block;
 	font-weight: 300;
 }
+
 address {
 	margin: 0 0 1.5em;
 	padding: 1em 0;
 }
+
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
@@ -221,17 +334,21 @@ pre {
 	overflow: auto;
 	padding: 1.6em;
 }
+
 code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
+
 abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
+
 mark, ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
+
 sup,
 sub {
 	font-size: 75%;
@@ -240,23 +357,54 @@ sub {
 	position: relative;
 	vertical-align: baseline;
 }
+
 sup {
 	bottom: 1ex;
 }
+
 sub {
 	top: .5ex;
 }
+
 small {
 	font-size: 75%;
 }
+
 big {
 	font-size: 125%;
+}
+
+blockquote, q {
+	quotes: "" "";
+	padding:0;
+	display:block;
+	margin:0;
+	position: relative;
+	font-size: 1.4em;
+}
+
+blockquote:before,
+q:before {
+	content: '\f10d';
+	font-family: 'FontAwesome';
+	display: block;
+	font-size: 2em;
+	position: relative;
+	color:rgba(216,216,216,0.2);
+}
+
+blockquote > p, q > p {
+	margin-bottom: 1em;
+	margin-top: -1.2em;
+	position: relative;
 }
 
 /*--------------------------------------------------------------
 3.0 Elements
 --------------------------------------------------------------*/
-
+body {
+    background: #f8f8f8;
+}
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -264,7 +412,8 @@ hr {
 	margin-bottom: 1.5em;
 }
 ul, ol {
-/*	margin: 0 0 1.5em 3em;*/
+	margin-left: 0;
+	padding-left: 0;
 }
 ul {
 	list-style: disc;
@@ -275,7 +424,8 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 0;
+	padding-left: 0;
 }
 dt {
 	font-weight: bold;
@@ -285,7 +435,6 @@ dd {
 }
 img {
 	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
 }
 figure {
 	margin: 0;
@@ -362,15 +511,15 @@ input[type="submit"] {
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	font-size: 1em;
 	line-height: 1;
-	padding: 1% 2%;
+	padding: 1em 1.2em;
 	font-weight: 700;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	text-shadow: 0 0;
 }
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	border-color: #aaa;
 }
 button:focus,
 input[type="button"]:focus,
@@ -380,8 +529,8 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb;
-	color:#ccc;
+	border-color: #bbb;
+	color:#bbb;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -459,7 +608,6 @@ body.admin-bar .sticky-menu {
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
-
 a, 
 a:visited {
 	color:#52b0c1;
@@ -477,26 +625,36 @@ a:active {
 	color: #252c38;
 }
 
+a img {
+	border: 0;
+}
+
 .entry-posted-on a { 
     color: rgba(102, 102, 102, 0.8);
 }
+
 .entry-posted-on a:hover,
 .entry-posted-on a:focus,
 .entry-posted-on a:active {
 	color: #52b0c1;
 }
+
 .entry-content a, .entry-footer a, #comments a, .widget a {
 	font-weight: 700;
 }
-
-
 /*--------------------------------------------------------------
 5.2 NOTE: Main menu styles are found in /css/navigation.css
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 5.3 Previous/Next Links
 --------------------------------------------------------------*/
-
+.comment-navigation .nav-links,
+.paging-navigation .nav-links,
+.post-navigation .nav-links {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -648,10 +806,11 @@ a:active {
 /* Special Widget Styles */
 
 h1.widget-title,
-h3.widget-title {
+h3.widget-title,
+#wp-calendar caption {
 	font-size:1em;
 	text-transform:uppercase;
-	letter-spacing:0.9px;
+	letter-spacing: 1px;
     width: 100%;
 }
 
@@ -705,14 +864,11 @@ ul#widget-whimsy-social {
 /* Calendar widget */
 
 #wp-calendar caption{
-	letter-spacing: 2px;
 	text-align: left;
-	text-transform: uppercase;
-	font-size: 90%;
 	font-weight: 700;
-	padding: 0 0 1% 0;
+	padding: 0 0 1em 0;
 	border-bottom: 1px solid rgba(216,216,216,0.3);
-	margin: 0 0 3% 0;
+	margin: 0 0 1em 0;
 }
 #wp-calendar th, 
 #wp-calendar tr, 
@@ -792,7 +948,7 @@ ul#widget-whimsy-social {
 	line-height: 1;
 	font-weight: 100;
 	margin-bottom: 0;
-    letter-spacing: 0.9px;
+    letter-spacing: 1px;
 }
 .site-branding, .custom-header {
 	margin: 1.4em auto;
@@ -854,7 +1010,7 @@ body.page .entry-img img {
     font-size: 0.75em;
 }
 .entry-comment-meta {    
-    font-size: 1em;
+    font-size: 2em;
     text-align: right;
     float: right;
 }
@@ -863,8 +1019,7 @@ body.page .entry-img img {
 	text-transform: uppercase;
 }
 .entry-footer {
-    font-size: 0.75em;
-    letter-spacing: 0.9px;
+    font-size: 0.8em;
     border: 1px solid rgba(0,0,0,0.04);
     border-radius: 3px;
     background: rgba(0,0,0,0.01);
@@ -1011,6 +1166,7 @@ body.page .entry-img img {
 #footer-menu ul {
 	border-top: 1px solid rgba(0,0,0,0.04);
 	margin:0;
+    padding: 0;
 	clear: both;
 }
 #footer-menu li {

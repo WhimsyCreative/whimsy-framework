@@ -11,7 +11,7 @@ function whimsy_display_post_meta() {
 	<!-- Don't show post meta for links -->
 	<?php else : ?>
 
-		<div class="entry-meta clear">
+		<div class="entry-posted-on clear">
 			<?php 
             
                 whimsy_posted_on();  ?>

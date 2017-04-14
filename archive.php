@@ -16,15 +16,6 @@ get_header(); ?>
 
 	<div id="primary" class="c9">
 
-		<?php whimsy_main_before(); ?>
-
-		<main id="main" class="site-main" role="main">
-		
-		<?php whimsy_main_inside_before(); ?>
-
-		<?php if ( have_posts() ) : ?>
-
-
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
@@ -87,6 +78,13 @@ get_header(); ?>
 					endif;
 				?>
 			</header><!-- .page-header -->
+		<?php whimsy_main_before(); ?>
+
+		<main id="main" class="site-main" role="main">
+		
+		<?php whimsy_main_inside_before(); ?>
+
+		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>		
 

@@ -29,7 +29,7 @@ if ( class_exists( 'woocommerce' ) ) {
             wp_enqueue_style( 'whimsy-woocommerce-styles', get_template_directory_uri() . '/library/css/plugins/woocommerce.css' );
         }
 	
-	   add_action( 'wp_enqueue_scripts', 'whimsy_woocommerce_styles' );
+	   add_action( 'wp_enqueue_scripts', 'whimsy_woocommerce_styles', 10 );
     
     endif;
     

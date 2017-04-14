@@ -94,6 +94,7 @@ class Whimsy_Framework_Welcome {
 			.whimsy-framework-wrap .whimsy-badge { float: right; margin: 15px 0 15px 15px; max-width: 300px; border:0; }
 			.whimsy-framework-wrap #whimsy-header { margin-bottom: 15px; }
 			.whimsy-framework-wrap #whimsy-header h1 { margin-bottom: 15px !important; }
+			.whimsy-framework-wrap h2.nav-tab-wrapper { display: none; }
 			.whimsy-framework-wrap .about-text { margin: 0 0 15px; max-width: 670px; }
 			.whimsy-framework-wrap .feature-section { margin-top: 20px; }
 			.whimsy-framework-wrap .feature-section-content,

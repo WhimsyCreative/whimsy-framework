@@ -8,7 +8,7 @@ if ( ! function_exists( 'whimsy_posted_on' ) ) :
     function whimsy_posted_on() {
 
         $whimsy_framework_hide_page_date = get_theme_mod( 'whimsy_framework_hide_page_date' );
-        if ( $whimsy_framework_hide_page_date  == 0 ) {
+        if ( $whimsy_framework_hide_page_date == 0 ) {
 
             echo '<div class="entry-posted-on">';
 

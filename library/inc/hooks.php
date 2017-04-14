@@ -29,6 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * whimsy_post_after
  * whimsy_post_meta_before
  * whimsy_post_meta_after
+ * whimsy_post_meta_inside
  * whimsy_post_footer_before
  * whimsy_post_footer_after
  *
@@ -72,6 +73,7 @@ function whimsy_post_before() 					{ whimsy_do_atomic( 'whimsy_post_before' ); }
 function whimsy_post_after() 					{ whimsy_do_atomic( 'whimsy_post_after' ); }
 function whimsy_post_meta_before() 				{ whimsy_do_atomic( 'whimsy_post_meta_before' ); }
 function whimsy_post_meta_after() 				{ whimsy_do_atomic( 'whimsy_post_meta_after' ); }
+function whimsy_post_meta_inside() 		        { whimsy_do_atomic( 'whimsy_post_meta_inside' ); }
 function whimsy_post_footer_before() 			{ whimsy_do_atomic( 'whimsy_post_footer_before' ); }
 function whimsy_post_footer_after() 			{ whimsy_do_atomic( 'whimsy_post_footer_after' ); }
 

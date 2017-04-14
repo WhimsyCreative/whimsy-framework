@@ -43,7 +43,11 @@ Yes, the Whimsy Framework is fully responsive and made to work great on every de
 ## Changelog
 
 ### 2.1
++ archive.php - Moved .page-title outside of .site-main.
++ content.php - the_excerpt replaced the_content. 
++ style.css - Updated normalize styles for reset. 
 + Header and menus are called dynamically instead of built into the header.
++ Added new hooks.
 
 ### 2.0.1
 + Improved typography and updated design.

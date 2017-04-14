@@ -11,6 +11,7 @@
 	<?php whimsy_post_meta_before(); ?>
 
 	<div class="entry-meta">
+        <?php whimsy_post_meta_inside(); ?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</div>
 	
