@@ -1,10 +1,20 @@
 <?php
 /**
+ * Extended features for handling media displays.
+ */
+require_once WHIMSY_INC . 'functions/media-grabber.php';
+
+function whimsy_video_attachment() {
+	return hybrid_media_grabber( array( 'type' => 'video' ) );
+}
+
+/**
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
  * @return array
  */
+
 
 if ( ! function_exists( 'whimsy_body_classes' ) ) :
     add_filter( 'body_class', 'whimsy_body_classes' );

@@ -85,7 +85,7 @@ if ( !class_exists( 'Whimsy' ) ) {
             
 			// Include admin functions
             if ( is_admin() ) {
-                include_once WHIMSY_ADMIN . 'welcome.php';
+                include_once WHIMSY_ADMIN . 'admin.php';
             } 
             
         }
