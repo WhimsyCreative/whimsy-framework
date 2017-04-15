@@ -135,11 +135,6 @@ dfn {
 	font-style: italic;
 }
 
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
-
 mark {
 	background: #ff0;
 	color: #000;
@@ -298,6 +293,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+    margin: 0;
 }
 
 p {
@@ -659,7 +655,6 @@ a img {
 .site-main .paging-navigation,
 .site-main .post-navigation {
 	margin: 0 0 1.5em;
-	overflow: hidden;
 }
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
@@ -697,6 +692,10 @@ a img {
     background: rgba(0,0,0,0.01);
     padding: 1.5em;
     display: block;
+    max-width: 30em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .comment-navigation .nav-next a,
 .paging-navigation .nav-next a,
@@ -706,6 +705,11 @@ a img {
     background: rgba(0,0,0,0.01);
     padding: 1.5em;
     display: block;
+    max-width: 30em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	float: right;
 }
 
 /*--------------------------------------------------------------
@@ -1007,7 +1011,7 @@ body.page .entry-img img {
 .entry-posted-on {
 	display: block;
     color: rgba(102, 102, 102, 0.8);
-    font-size: 0.75em;
+    font-size: 0.8em;
 }
 .entry-comment-meta {    
     font-size: 2em;
@@ -1015,7 +1019,7 @@ body.page .entry-img img {
     float: right;
 }
 .entry-category {
-	font-size: 80%;
+	font-size: 0.8em;
 	text-transform: uppercase;
 }
 .entry-footer {
@@ -1028,7 +1032,6 @@ body.page .entry-img img {
 }
 .posted-on {
 	display: inline-block;
-	font-weight: 100;
     text-transform: uppercase;
 }
 .sticky {
@@ -1218,7 +1221,37 @@ iframe,
 object {
 	max-width: 100%;
 }
-
+.wp-video, video.wp-video-shortcode, .mejs-container, .mejs-overlay.load {
+	width: 100% !important;
+	height: 100% !important;
+}
+.mejs-container {
+	padding-top: 56.25%;
+}
+.wp-video, video.wp-video-shortcode {
+	max-width: 100% !important;
+}
+video.wp-video-shortcode {
+	position: relative;
+}
+.mejs-mediaelement {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.mejs-controls {
+	display: none;
+}
+.mejs-overlay-play {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: auto !important;
+	height: auto !important;
+}
 /*--------------------------------------------------------------
 12.1 Captions
 --------------------------------------------------------------*/

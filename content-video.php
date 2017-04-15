@@ -6,19 +6,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header"> 
-	
-	<?php whimsy_post_meta_before(); ?>
-
-	<div class="entry-meta">
-        <?php whimsy_post_meta_inside(); ?>
-        <?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-	</div>
-	
-	<?php whimsy_post_meta_after(); ?>
-
-	</header><!-- .entry-header -->
-	
 	<div class="entry-content">
         <?php echo ( $video = hybrid_media_grabber( array( 'type' => 'video', 'split_media' => true ) ) ); ?>
 
