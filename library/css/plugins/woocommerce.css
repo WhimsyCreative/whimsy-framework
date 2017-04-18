@@ -60,19 +60,31 @@ body.woocommerce-demo-store #page {
 	background: transparent;
 	color: #000;
 }
-.woocommerce ul.products li.product h3, .woocommerce-page ul.products li.product h3 {
+.woocommerce ul.products li.product h3, 
+.woocommerce-page ul.products li.product h3 {
 	font-size: 1em;
 	text-transform: uppercase;
 }
-.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+.woocommerce ul.products li.product, 
+.woocommerce-page ul.products li.product {
 	text-align: center;
 }
-.woocommerce .products .star-rating, .woocommerce-page .products .star-rating {
+.woocommerce .products .star-rating, 
+.woocommerce-page .products .star-rating {
 	margin: 0 auto;
 }
-.woocommerce table.shop_table th, .woocommerce-page table.shop_table th {
+.woocommerce-MyAccount-navigation {
 	font-weight: bold;
-	line-height: 18px;
+	line-height: 1;
+	padding: 9px;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+.woocommerce table.shop_table th, 
+.woocommerce-page table.shop_table th {
+	font-weight: bold;
+	line-height: 1;
 	padding: 9px;
 	text-transform: uppercase;
 	font-size: 12px;

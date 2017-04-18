@@ -4,7 +4,7 @@ Theme URI: http://whimsycreative.co/framework
 Author: Whimsy Creative Co.
 Author URI: http://whimsycreative.co
 Description: Whimsy Framework is a chic, robust theme ready to be customized with plenty of extras baked in.
-Version: 2.1.0_beta-1.1.1
+Version: 2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whimsy-framework
@@ -496,6 +496,7 @@ textarea {
 	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
 	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
 }
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -511,12 +512,14 @@ input[type="submit"] {
 	font-weight: 700;
 	text-shadow: 0 0;
 }
+
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	border-color: #aaa;
 }
+
 button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
@@ -528,10 +531,12 @@ input[type="submit"]:active {
 	border-color: #bbb;
 	color:#bbb;
 }
+
 input[type="checkbox"],
 input[type="radio"] {
 	padding: 0; /* Addresses excess padding in IE8/9 */
 }
+
 input[type="search"] {
 	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
 	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
@@ -539,14 +544,17 @@ input[type="search"] {
 	box-sizing:         content-box;
 	width: 98%;
 }
+
 input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 	-webkit-appearance: none;
 }
+
 button::-moz-focus-inner,
 input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
 	border: 0;
 	padding: 0;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -557,6 +565,7 @@ textarea {
 	border: 1px solid rgba(0,0,0,0.04);
 	border-radius: 3px;
 }
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -565,6 +574,7 @@ input[type="search"]:focus,
 textarea:focus {
 	color: #111;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -572,6 +582,7 @@ input[type="password"],
 input[type="search"] {
 	padding: 3px;
 }
+
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 	padding-left: 3px;
@@ -582,20 +593,25 @@ textarea {
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
+
 .sticky-menu {
     position: fixed!important;
     top: 0;
 }
+
 #site-navigation.sticky-menu a {
     padding: 20px 26px 20px 10px;
 }
+
 #site-navigation.sticky-menu .whimsy-nav li .sub-collapser:before {
     padding-top: 24px;
     transition: all 0.4s ease;
 }
+
 body.admin-bar .sticky-menu {
     top: 32px;
 }
+
 @media screen and (max-width: 980px) {
     body.admin-bar .sticky-menu {
         top: 46px;
@@ -604,6 +620,7 @@ body.admin-bar .sticky-menu {
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
+
 a, 
 a:visited {
 	color:#52b0c1;
@@ -638,12 +655,14 @@ a img {
 .entry-content a, .entry-footer a, #comments a, .widget a {
 	font-weight: 700;
 }
+
 /*--------------------------------------------------------------
 5.2 NOTE: Main menu styles are found in /css/navigation.css
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 5.3 Previous/Next Links
 --------------------------------------------------------------*/
+
 .comment-navigation .nav-links,
 .paging-navigation .nav-links,
 .post-navigation .nav-links {
@@ -651,17 +670,20 @@ a img {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
 	margin: 0 0 1.5em;
 }
+
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
 	float: left;
     padding: 1.5em 0;
 }
+
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
 .post-navigation .nav-next {
@@ -669,6 +691,7 @@ a img {
 	text-align: right;
     padding: 1.5em 0;
 }
+
 @media screen and (max-width: 980px) {
     .comment-navigation .nav-previous,
     .paging-navigation .nav-previous,
@@ -710,6 +733,7 @@ a img {
     overflow: hidden;
     text-overflow: ellipsis;
 	float: right;
+    text-align: right;
 }
 
 /*--------------------------------------------------------------
