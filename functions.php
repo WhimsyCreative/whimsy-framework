@@ -61,7 +61,7 @@ if ( ! function_exists( 'whimsy_setup' ) ) :
          * Set custom thumbnail dimensions
          */
         set_post_thumbnail_size( 1200, 9999, true );
-        add_image_size( 'whimsy-single-background', 1200, 9999 ); //300 pixels wide (and unlimited height)
+        add_image_size( 'whimsy-featured-image', 1200, 9999 ); //1200 pixels wide (and unlimited height)
 
         /*
          * WooCommerce Support

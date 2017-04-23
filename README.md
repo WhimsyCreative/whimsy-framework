@@ -20,7 +20,7 @@ http://whimsycreative.co/docs
 
 == Changelog ==
 
-= 2.1.0, February 22, 2017 =
+= 2.1, April 23, 2017 =
 * Style tweaks to navigation.
 * New action hooks.
 * Added menu id's for better control.

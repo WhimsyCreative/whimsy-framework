@@ -3,7 +3,6 @@
  * Welcome Page Class
  * @copyright   Copyright (c) 2015, Pippin Williamson
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       1.4
  */
 
 // Exit if accessed directly
@@ -91,7 +90,7 @@ class Whimsy_Framework_Welcome {
 		?>
 		<style type="text/css" media="screen">
 			/*<![CDATA[*/
-			.whimsy-framework-wrap .whimsy-badge { float: right; margin: 15px 0 15px 15px; max-width: 300px; border:0; }
+			.whimsy-framework-wrap .whimsy-badge { float: right; margin: 15px 0 15px 15px; max-width: 250px; border:0; padding: 2em; border-radius: 4px; border: 3px solid #203266; }
 			.whimsy-framework-wrap #whimsy-header { margin-bottom: 15px; }
 			.whimsy-framework-wrap #whimsy-header h1 { margin-bottom: 15px !important; }
 			.whimsy-framework-wrap h2.nav-tab-wrapper { display: none; }
@@ -102,7 +101,7 @@ class Whimsy_Framework_Welcome {
 			.whimsy-framework-wrap .feature-section-content { float: left; padding-right: 50px; }
 			.whimsy-framework-wrap .feature-section-content h4 { margin: 0 0 1em; }
 			.whimsy-framework-wrap .feature-section-media { float: right; text-align: right; margin-bottom: 20px; }
-			.whimsy-framework-wrap .feature-section-media img { border: 1px solid #ddd; max-width: 400px; }
+			.whimsy-framework-wrap .feature-section-media img { border: 0; }
 			.whimsy-framework-wrap .feature-section:not(.under-the-hood) .col { margin-top: 0; }
 			/* responsive */
 			@media all and ( max-width: 782px ) {
@@ -126,7 +125,7 @@ class Whimsy_Framework_Welcome {
 		list( $display_version ) = explode( '-', WHIMSY_VERSION );
 		?>
 		<div id="whimsy-header">
-			<img class="whimsy-badge" src="<?php echo WHIMSY_IMG . 'whimsy-framework-logo.svg'; ?>" alt="<?php _e( 'Whimsy Framework', 'whimsy-framework' ); ?>" / >
+			<img class="whimsy-badge" src="<?php echo WHIMSY_IMG . 'whimsy-framework-logo.png'; ?>" alt="<?php _e( 'Whimsy Framework', 'whimsy-framework' ); ?>" / >
 			<h1><?php printf( __( 'Welcome to Whimsy Framework %s', 'whimsy-framework' ), $display_version ); ?></h1>
 			<p class="about-text">
 				<?php printf( __( 'Thank you for updating to Whimsy Framework 2.1! Whimsy Framework is a stylish, customizable, seo-friendly, lightweight theme ready to help you build something beautiful.', 'whimsy-framework' ), $display_version ); ?>
@@ -155,7 +154,6 @@ class Whimsy_Framework_Welcome {
 			<a class="nav-tab <?php echo $selected == 'whimsy-changelog' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'whimsy-changelog' ), 'themes.php' ) ) ); ?>">
 				<?php _e( 'Changelog', 'whimsy-framework' ); ?>
 			</a>
-
 			<?php if ( whimsy_framework()->is_registered() ) : ?>
 			<a class="nav-tab <?php echo $selected == 'whimsy-framework-theme-account' ? 'nav-tab-active' : ''; ?>" href="<?php echo whimsy_framework()->get_account_url(); ?>">
 				<?php _e( 'Account', 'whimsy-framework' ); ?>
@@ -184,38 +182,15 @@ class Whimsy_Framework_Welcome {
 				$this->tabs();
 			?>
 			<div class="changelog">
-				<h3><?php _e( 'The Framework Library', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
+				    <h3><?php _e( 'Improved typography and updated design', 'whimsy-framework' );?></h3>
 					<div class="feature-section-media">
-<!--						<img src="<?php //echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots alignleft"/>-->
-					</div>
-					<div class="feature-section-content">
-						<p><?php _e( 'The functions powering the framework are now more in line with Object-Oriented Programming. OOP is one of the driving WordPress standards for development which means enhanced compatibility with plugins developed to the same standards.', 'whimsy-framework' );?></p>
-
-						<h4><?php _e( 'New folder structure ', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'Whimsy Framework files have all been moved to their own class in the /library folder.', 'whimsy-framework' );?></p>
-					</div>
-				</div>
-			</div>
-
-			<div class="changelog">
-				<h3><?php _e( 'Improved typography and updated design', 'whimsy-framework' );?></h3>
-				<div class="feature-section">
-					<div class="feature-section-media">
-						<img src="<?php echo WHIMSY_IMG . '-.png'; ?>"/>
+						<img src="<?php echo WHIMSY_IMG . 'whimsy-framework-display.png'; ?>" class="whimsy-welcome-screenshots alignleft" />
 					</div>
 					<div class="feature-section-content">
 						<p><?php _e( 'Drop shadows were removed for a flat look, fonts and spacing were tweaked, and we made some updates to the menu.', 'whimsy-framework' );?></p>
 					</div>
-				</div>
-			</div>
-
-			<div class="changelog">
-				<h3><?php _e( 'More options in the Customizer', 'whimsy-framework' );?></h3>
-				<div class="feature-section">
-					<div class="feature-section-media">
-<!--						<img src="<?php //echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots alignleft"/>-->
-					</div>
+				    <h3><?php _e( 'More options in the Customizer', 'whimsy-framework' );?></h3>
 					<div class="feature-section-content">
 						<p><?php _e( 'The Whimsy Framework Customizer was updated to included display options like layout, widget areas, and the option to hide meta options like dates and titles on pages.', 'whimsy-framework' );?></p>
 					</div>
@@ -232,6 +207,14 @@ class Whimsy_Framework_Welcome {
 					<div class="col">
 						<h4><?php _e( 'Updated Dependancies', 'whimsy-framework' );?></h4>
 						<p><?php _e( 'FontAwesome was updated to 4.7.0.', 'whimsy-framework' );?></p>
+					</div>
+					<div class="col">
+				        <h4><?php _e( 'The Framework Library', 'whimsy-framework' );?></h4>
+						<p><?php _e( 'The functions powering the framework are now more in line with Object-Oriented Programming. OOP is one of the driving WordPress standards for development which means enhanced compatibility with plugins developed to the same standards.', 'whimsy-framework' );?></p>
+					</div>
+					<div class="col">
+						<h4><?php _e( 'New folder structure ', 'whimsy-framework' );?></h4>
+						<p><?php _e( 'Whimsy Framework files have all been moved to their own class in the /library folder.', 'whimsy-framework' );?></p>
 					</div>
 					<div class="clear"></div>
 					</div>
@@ -283,17 +266,14 @@ class Whimsy_Framework_Welcome {
 				$this->welcome_message();
 				$this->tabs();
 			?>
-			<p class="about-description"><?php _e( 'Use the tips below to get started using Whimsy Framework. You will be up and running in no time!', 'whimsy-framework' ); ?></p>
+			<p class="about-description"><?php _e( 'Need help getting started with Whimsy Framework? These tips should help!', 'whimsy-framework' ); ?></p>
 
 			<div class="changelog">
 				<h3><?php _e( 'Responsive Logo', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
-					<div class="feature-section-media">
-<!--						<img src="<?php //echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots alignleft"/>-->
-					</div>
 					<div class="feature-section-content">
 						<h4><?php _e( 'Mobile Logo', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'Whimsy Framework is responsive. There are two different ways to display your logo — desktop, and mobile. Around the size of the portrait view on an iPad (980px), the menu collapses into a mobile menu. The desktop logo is changed to a compact mobile logo, or if left empty, your site title.', 'whimsy-framework' );?></p>
+						<p><?php _e( 'Whimsy Framework is responsive. There are two different ways to display your logo: desktop, and mobile. Around the size of the portrait view on an iPad (980px), the menu collapses into a mobile menu. The desktop logo is changed to a compact mobile logo, or if left empty, your site title.', 'whimsy-framework' );?></p>
 						<h4><?php _e( 'Desktop Logo', 'whimsy-framework' );?></h4>
 						<p><?php _e( 'Your desktop logo is the full-size logo that can be center-aligned or aligned to the left.', 'whimsy-framework' );?></p>
 					</div>
@@ -303,9 +283,6 @@ class Whimsy_Framework_Welcome {
 			<div class="changelog">
 				<h3><?php _e( 'Easily Customizable', 'whimsy-framework' );?></h3>
 				<div class="feature-section">
-					<div class="feature-section-media">
-<!--						<img src="<?php //echo WHIMSY_IMG . '-.png'; ?>" class="whimsy-welcome-screenshots alignleft"/>-->
-					</div>
 					<div class="feature-section-content">
 						<h4><?php _e( 'Tweak the display options','whimsy-framework' );?></h4>
 						<p><?php _e( 'There are options for which side your sidebar should be on and how many widget columns in your footer. As well as tweaks to pages and layouts.', 'whimsy-framework' );?></p>
@@ -314,7 +291,7 @@ class Whimsy_Framework_Welcome {
 						<p><?php _e( 'You can customize the colors for your backgrounds, links, menu, and text from the Colors panel in the Customizer.', 'whimsy-framework' );?></p>
 
 						<h4><?php _e( 'Setup your menus', 'whimsy-framework' );?></h4>
-						<p><?php _e( 'The Whimsy Framework has two menu areas — Primary, and Footer. The Primary menu is at the top of the page. It is mobile friendly, and you can add secondary pages that drop down. The Footer menu is a list of pages located near the bottom of the page, above the footer widget area.', 'whimsy-framework' );?></p>
+						<p><?php _e( 'The Whimsy Framework has two menu areas: Primary, and Footer. The Primary menu is at the top of the page. It is mobile friendly, and you can add secondary pages that drop down. The Footer menu is a list of pages located near the bottom of the page, above the footer widget area.', 'whimsy-framework' );?></p>
 
 						<h4><?php _e( 'Choose your widgets', 'whimsy-framework' );?></h4>
 						<p><?php _e( 'Whimsy Framework includes two widgets made with bloggers in mind. An About Me widget, and a Social Network widget. You can see them in action in my sidebar here.', 'whimsy-framework' );?></p>
@@ -345,13 +322,7 @@ class Whimsy_Framework_Welcome {
 				$this->welcome_message();
 				$this->tabs();
 			?>
-			<!--			<div class="changelog">-->
-			<!--				<h3>--><?php //_e( 'Full Changelog', 'whimsy-framework' );?><!--</h3>-->
-
-			<!--				<div class="feature-section">-->
 			<?php echo $content; ?>
-			<!--				</div>-->
-			<!--			</div>-->
 
 		</div>
 		<?php
@@ -432,7 +403,7 @@ class Whimsy_Framework_Welcome {
         else
         {
         /* don't have direct write access. Prompt user with our notice */
-        add_action('admin_notices', 'you_admin_notice_function'); 	
+        add_action('admin_notices', 'whimsy_admin_notice_permission'); 	
         }
     }    
 
@@ -444,7 +415,9 @@ class Whimsy_Framework_Welcome {
 	 * @since 1.4
 	 * @return void
 	 */
+
 	public function welcome() {
+        
 		// Bail if no activation redirect
 		if ( ! get_transient( '_whimsy_activation_redirect' ) )
 			return;

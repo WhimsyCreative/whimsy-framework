@@ -1,0 +1,943 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-04-18 19:55-0500\n"
+"PO-Revision-Date: 2017-04-18 19:55-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: language\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: 404.php:24
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:31
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:39
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:56
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:29
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:32
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:35
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:38
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:41
+msgid "Asides"
+msgstr ""
+
+#: archive.php:44
+msgid "Galleries"
+msgstr ""
+
+#: archive.php:47
+msgid "Images"
+msgstr ""
+
+#: archive.php:50
+msgid "Videos"
+msgstr ""
+
+#: archive.php:53
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:56
+msgid "Links"
+msgstr ""
+
+#: archive.php:59
+msgid "Statuses"
+msgstr ""
+
+#: archive.php:62
+msgid "Audios"
+msgstr ""
+
+#: archive.php:65
+msgid "Chats"
+msgstr ""
+
+#: archive.php:68
+msgid "Archives"
+msgstr ""
+
+#: author.php:21
+#, php-format
+msgid "About %1$s"
+msgstr ""
+
+#: author.php:38
+msgid "More Info"
+msgstr ""
+
+#: author.php:41
+msgid "Website"
+msgstr ""
+
+#: author.php:46
+#, php-format
+msgid "Posts by %1$s:"
+msgstr ""
+
+#: author.php:58
+msgid "No posts by this author."
+msgstr ""
+
+#: comments.php:35 comments.php:53
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:36 comments.php:54
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:37 comments.php:55
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:65
+msgid "Comments are closed."
+msgstr ""
+
+#: content-mosaic.php:32 content-page.php:48 content-search.php:23
+#: content-video.php:11 content.php:23
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content-mosaic.php:36 content-page.php:52 content-quote.php:15
+#: content-search.php:26 content-single.php:28 content-video.php:14
+#: content.php:26
+msgid "Pages:"
+msgstr ""
+
+#: content-mosaic.php:49 content-mosaic.php:61 content-search.php:39
+#: content-search.php:49 content-single.php:41 content-single.php:44
+msgid ", "
+msgstr ""
+
+#: content-mosaic.php:54 content-search.php:43
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: content-mosaic.php:67 content-search.php:53
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: content-mosaic.php:77 content-search.php:59
+msgid "Leave a comment"
+msgstr ""
+
+#: content-mosaic.php:77 content-search.php:59
+msgid "1 Comment"
+msgstr ""
+
+#: content-mosaic.php:77 content-search.php:59
+msgid "% Comments"
+msgstr ""
+
+#: content-mosaic.php:81 content-search.php:62 content-single.php:79
+msgid "Edit"
+msgstr ""
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content-single.php:49
+#, php-format
+msgid ""
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+
+#: content-single.php:51
+#, php-format
+msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: content-single.php:57
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: content-single.php:59
+#, php-format
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+
+#: functions.php:75
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:76
+msgid "Footer Menu"
+msgstr ""
+
+#: header.php:40
+msgid "Skip to content"
+msgstr ""
+
+#: library/admin/admin.php:47 library/admin/admin.php:48
+#: library/admin/admin.php:128
+msgid "Whimsy Framework"
+msgstr ""
+
+#: library/admin/admin.php:56 library/admin/admin.php:57
+msgid "Whimsy Framework Changelog"
+msgstr ""
+
+#: library/admin/admin.php:65 library/admin/admin.php:66
+msgid "Getting started with Whimsy Framework"
+msgstr ""
+
+#: library/admin/admin.php:129
+#, php-format
+msgid "Welcome to Whimsy Framework %s"
+msgstr ""
+
+#: library/admin/admin.php:131
+msgid ""
+"Thank you for updating to Whimsy Framework 2.1! Whimsy Framework is a "
+"stylish, customizable, seo-friendly, lightweight theme ready to help you "
+"build something beautiful."
+msgstr ""
+
+#: library/admin/admin.php:149
+msgid "What's New"
+msgstr ""
+
+#: library/admin/admin.php:152
+msgid "Getting Started"
+msgstr ""
+
+#: library/admin/admin.php:155
+msgid "Changelog"
+msgstr ""
+
+#: library/admin/admin.php:159
+msgid "Account"
+msgstr ""
+
+#: library/admin/admin.php:163
+msgid "Add Ons"
+msgstr ""
+
+#: library/admin/admin.php:186
+msgid "Improved typography and updated design"
+msgstr ""
+
+#: library/admin/admin.php:191
+msgid ""
+"Drop shadows were removed for a flat look, fonts and spacing were tweaked, "
+"and we made some updates to the menu."
+msgstr ""
+
+#: library/admin/admin.php:193
+msgid "More options in the Customizer"
+msgstr ""
+
+#: library/admin/admin.php:195
+msgid ""
+"The Whimsy Framework Customizer was updated to included display options like "
+"layout, widget areas, and the option to hide meta options like dates and "
+"titles on pages."
+msgstr ""
+
+#: library/admin/admin.php:201
+msgid "Additional Updates"
+msgstr ""
+
+#: library/admin/admin.php:204
+msgid "New stuff for developers"
+msgstr ""
+
+#: library/admin/admin.php:205
+msgid ""
+"New action hooks were added, and the header and footer are now built "
+"dynamically to make Whimsy Framework easier to extend by developers."
+msgstr ""
+
+#: library/admin/admin.php:208
+msgid "Updated Dependancies"
+msgstr ""
+
+#: library/admin/admin.php:209
+msgid "FontAwesome was updated to 4.7.0."
+msgstr ""
+
+#: library/admin/admin.php:212
+msgid "The Framework Library"
+msgstr ""
+
+#: library/admin/admin.php:213
+msgid ""
+"The functions powering the framework are now more in line with Object-"
+"Oriented Programming. OOP is one of the driving WordPress standards for "
+"development which means enhanced compatibility with plugins developed to the "
+"same standards."
+msgstr ""
+
+#: library/admin/admin.php:216
+msgid "New folder structure "
+msgstr ""
+
+#: library/admin/admin.php:217
+msgid ""
+"Whimsy Framework files have all been moved to their own class in the /"
+"library folder."
+msgstr ""
+
+#: library/admin/admin.php:243
+msgid "Full Changelog"
+msgstr ""
+
+#: library/admin/admin.php:269
+msgid ""
+"Use the tips below to get started using Whimsy Framework. You will be up and "
+"running in no time!"
+msgstr ""
+
+#: library/admin/admin.php:272
+msgid "Responsive Logo"
+msgstr ""
+
+#: library/admin/admin.php:278 library/admin/customize/customizer.php:271
+msgid "Mobile Logo"
+msgstr ""
+
+#: library/admin/admin.php:279
+msgid ""
+"Whimsy Framework is responsive. There are two different ways to display your "
+"logo — desktop, and mobile. Around the size of the portrait view on an iPad "
+"(980px), the menu collapses into a mobile menu. The desktop logo is changed "
+"to a compact mobile logo, or if left empty, your site title."
+msgstr ""
+
+#: library/admin/admin.php:280 library/admin/customize/customizer.php:252
+msgid "Desktop Logo"
+msgstr ""
+
+#: library/admin/admin.php:281
+msgid ""
+"Your desktop logo is the full-size logo that can be center-aligned or "
+"aligned to the left."
+msgstr ""
+
+#: library/admin/admin.php:287
+msgid "Easily Customizable"
+msgstr ""
+
+#: library/admin/admin.php:293
+msgid "Tweak the display options"
+msgstr ""
+
+#: library/admin/admin.php:294
+msgid ""
+"There are options for which side your sidebar should be on and how many "
+"widget columns in your footer. As well as tweaks to pages and layouts."
+msgstr ""
+
+#: library/admin/admin.php:296
+msgid "Change your colors"
+msgstr ""
+
+#: library/admin/admin.php:297
+msgid ""
+"You can customize the colors for your backgrounds, links, menu, and text "
+"from the Colors panel in the Customizer."
+msgstr ""
+
+#: library/admin/admin.php:299
+msgid "Setup your menus"
+msgstr ""
+
+#: library/admin/admin.php:300
+msgid ""
+"The Whimsy Framework has two menu areas — Primary, and Footer. The Primary "
+"menu is at the top of the page. It is mobile friendly, and you can add "
+"secondary pages that drop down. The Footer menu is a list of pages located "
+"near the bottom of the page, above the footer widget area."
+msgstr ""
+
+#: library/admin/admin.php:302
+msgid "Choose your widgets"
+msgstr ""
+
+#: library/admin/admin.php:303
+msgid ""
+"Whimsy Framework includes two widgets made with bloggers in mind. An About "
+"Me widget, and a Social Network widget. You can see them in action in my "
+"sidebar here."
+msgstr ""
+
+#: library/admin/admin.php:306
+msgid "About Me"
+msgstr ""
+
+#: library/admin/admin.php:307
+msgid ""
+"This widget features an image, a paragraph to introduce yourself and your "
+"website, and a link with customized text to read more."
+msgstr ""
+
+#: library/admin/admin.php:310
+msgid "Social Networks"
+msgstr ""
+
+#: library/admin/admin.php:311
+msgid ""
+"The Social Media widget features icons for many social networks, big and "
+"small. "
+msgstr ""
+
+#: library/admin/customize/customizer.php:21
+msgid "Logo"
+msgstr ""
+
+#: library/admin/customize/customizer.php:22
+msgid "Add a logo for desktop and mobile screens."
+msgstr ""
+
+#: library/admin/customize/customizer.php:32
+msgid "Display"
+msgstr ""
+
+#: library/admin/customize/customizer.php:33
+msgid "Fine-tune the way your website looks and functions."
+msgstr ""
+
+#: library/admin/customize/customizer.php:43
+msgid "Whimsy+"
+msgstr ""
+
+#: library/admin/customize/customizer.php:44
+msgid "Premium Customizer extension for Whimsy Framework."
+msgstr ""
+
+#: library/admin/customize/customizer.php:78
+msgid "Link Color"
+msgstr ""
+
+#: library/admin/customize/customizer.php:98
+msgid "Highlight Color"
+msgstr ""
+
+#: library/admin/customize/customizer.php:118
+msgid "Body Text Color"
+msgstr ""
+
+#: library/admin/customize/customizer.php:132
+msgid "Global Layout"
+msgstr ""
+
+#: library/admin/customize/customizer.php:136
+msgid "Sidebar/Content"
+msgstr ""
+
+#: library/admin/customize/customizer.php:139
+msgid "Content/Sidebar"
+msgstr ""
+
+#: library/admin/customize/customizer.php:142
+msgid "Full-Width"
+msgstr ""
+
+#: library/admin/customize/customizer.php:155
+msgid "Footer Layout"
+msgstr ""
+
+#: library/admin/customize/customizer.php:159
+msgid "1 Widget Area"
+msgstr ""
+
+#: library/admin/customize/customizer.php:162
+msgid "2 Widget Areas"
+msgstr ""
+
+#: library/admin/customize/customizer.php:165
+msgid "3 Widget Areas"
+msgstr ""
+
+#: library/admin/customize/customizer.php:183
+msgid "Hide the sidebar?"
+msgstr ""
+
+#: library/admin/customize/customizer.php:200
+msgid "Hide date on pages?"
+msgstr ""
+
+#: library/admin/customize/customizer.php:218
+msgid "Hide comments on pages?"
+msgstr ""
+
+#: library/admin/customize/customizer.php:235
+msgid "Hide link on page titles?"
+msgstr ""
+
+#: library/admin/customize/customizer.php:253
+msgid "Displayed on most screens."
+msgstr ""
+
+#: library/admin/customize/customizer.php:272
+msgid "Displayed on screens less than 980px."
+msgstr ""
+
+#: library/admin/customize/customizer.php:290
+msgid "Center desktop logo on the page."
+msgstr ""
+
+#: library/admin/customize/customizer.php:308
+msgid "Menu Background Color"
+msgstr ""
+
+#: library/admin/customize/customizer.php:328
+msgid "Menu Link Color"
+msgstr ""
+
+#: library/admin/customize/customizer.php:348
+msgid "Sub-Menu Background Color"
+msgstr ""
+
+#: library/admin/customize/customizer.php:368
+msgid "Sub-Menu Link Color"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:386
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:387
+#: library/admin/plugins/plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:388
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#: library/admin/plugins/plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: library/admin/widgets.php:22
+msgid "Sidebar"
+msgstr ""
+
+#: library/admin/widgets.php:31
+msgid "Footer Widgets (1)"
+msgstr ""
+
+#: library/admin/widgets.php:40
+msgid "Footer Widgets (2)"
+msgstr ""
+
+#: library/admin/widgets.php:49
+msgid "Footer Widgets (3)"
+msgstr ""
+
+#: library/admin/widgets/about-me.php:12
+msgid "(Whimsy) About Me"
+msgstr ""
+
+#: library/admin/widgets/about-me.php:13
+msgid "Your photo, a blurb about yourself, and a link for more info."
+msgstr ""
+
+#: library/admin/widgets/social.php:11
+msgid "(Whimsy) Social Networks"
+msgstr ""
+
+#: library/admin/widgets/social.php:12
+msgid "Display links to your social network profiles."
+msgstr ""
+
+#: library/admin/widgets/social.php:121
+msgid "Twitter:"
+msgstr ""
+
+#: library/admin/widgets/social.php:122
+msgid "Pinterest:"
+msgstr ""
+
+#: library/admin/widgets/social.php:123
+msgid "Facebook:"
+msgstr ""
+
+#: library/admin/widgets/social.php:124
+msgid "Google+:"
+msgstr ""
+
+#: library/admin/widgets/social.php:125
+msgid "LinkedIn:"
+msgstr ""
+
+#: library/admin/widgets/social.php:126
+msgid "Instagram:"
+msgstr ""
+
+#: library/admin/widgets/social.php:127
+msgid "DeviantArt:"
+msgstr ""
+
+#: library/admin/widgets/social.php:128
+msgid "Twitch:"
+msgstr ""
+
+#: library/admin/widgets/social.php:129
+msgid "Vine:"
+msgstr ""
+
+#: library/admin/widgets/social.php:130
+msgid "Behance:"
+msgstr ""
+
+#: library/admin/widgets/social.php:131
+msgid "WordPress:"
+msgstr ""
+
+#: library/admin/widgets/social.php:132
+msgid "YouTube:"
+msgstr ""
+
+#: library/admin/widgets/social.php:133
+msgid "Tumblr:"
+msgstr ""
+
+#: library/admin/widgets/social.php:134
+msgid "Reddit:"
+msgstr ""
+
+#: library/admin/widgets/social.php:135
+msgid "Flickr:"
+msgstr ""
+
+#: library/admin/widgets/social.php:136
+msgid "Medium:"
+msgstr ""
+
+#: library/admin/widgets/social.php:137
+msgid "GitHub:"
+msgstr ""
+
+#: library/admin/widgets/social.php:138
+msgid "PayPal:"
+msgstr ""
+
+#: library/inc/functions/display-post-categories.php:15
+msgid " / "
+msgstr ""
+
+#: library/inc/functions/paging-nav.php:15
+msgid "Posts navigation"
+msgstr ""
+
+#: library/inc/functions/paging-nav.php:19
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: library/inc/functions/paging-nav.php:23
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: library/inc/functions/post-nav.php:18
+msgid "Post navigation"
+msgstr ""
+
+#: library/inc/functions/whimsy-footer.php:14
+#, php-format
+msgid "%2$s + %1$s"
+msgstr ""
+
+#: search.php:25
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""

@@ -39,7 +39,7 @@ if ( class_exists( 'woocommerce' ) ) {
     if ( ! function_exists( 'whimsy_woo_wrapper_start' ) ) :
 
         function whimsy_woo_wrapper_start() {
-            echo '<section id="primary" class="c9">';
+            echo '<div id="content" class="container row"><div id="primary" class="c9">';
         }
     
     endif;
@@ -50,7 +50,7 @@ if ( class_exists( 'woocommerce' ) ) {
     if ( ! function_exists( 'whimsy_woo_wrapper_end' ) ) :
     
         function whimsy_woo_wrapper_end() {
-            echo '</section>';
+            echo '</div>';
         }
     
     endif;

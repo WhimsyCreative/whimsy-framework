@@ -167,23 +167,6 @@ function whimsy_customize_register( $wp_customize ) {
 		),
 		'priority' => 2
 	) ) );
-    // Hide the sidebar
-    $wp_customize->add_setting(
-        'whimsy_framework_hide_sidebar',
-        array(
-            'default' => false,
-            'transport'         => 'refresh',
-            'sanitize_callback' => 'whimsy_framework_sanitize_checkbox',
-        )
-    );    
-    $wp_customize->add_control(
-        'whimsy_framework_hide_sidebar',
-        array(
-            'type' => 'checkbox',
-            'label' => __( 'Hide the sidebar?', 'whimsy-framework' ),
-            'section' => 'whimsy_framework_section_display',
-        )
-    );
     // Hide date on pages
     $wp_customize->add_setting(
         'whimsy_framework_hide_page_date',
