@@ -1,8 +1,5 @@
 <?php
 
-// Include Freemius tracking data
-require_once get_template_directory() . '/library/inc/tracking.php';
-
 //Whimsy Framework functions and definitions
 
 add_action( 'after_setup_theme', 'whimsy_setup' );

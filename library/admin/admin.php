@@ -73,10 +73,6 @@ class Whimsy_Framework_Welcome {
 		remove_submenu_page( 'themes.php', 'whimsy-changelog' );
 		remove_submenu_page( 'themes.php', 'whimsy-getting-started' );
 
-		whimsy_framework()->add_filter( 'templates/add-ons.php', array( &$this, 'addons_screen' ) );
-		if ( whimsy_framework()->is_registered() ) {
-			whimsy_framework()->add_filter( 'templates/account.php', array( &$this, 'account_screen' ) );
-		}
 	}
 
 	/**
@@ -153,14 +149,6 @@ class Whimsy_Framework_Welcome {
 			</a>
 			<a class="nav-tab <?php echo $selected == 'whimsy-changelog' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'whimsy-changelog' ), 'themes.php' ) ) ); ?>">
 				<?php _e( 'Changelog', 'whimsy-framework' ); ?>
-			</a>
-			<?php if ( whimsy_framework()->is_registered() ) : ?>
-			<a class="nav-tab <?php echo $selected == 'whimsy-framework-theme-account' ? 'nav-tab-active' : ''; ?>" href="<?php echo whimsy_framework()->get_account_url(); ?>">
-				<?php _e( 'Account', 'whimsy-framework' ); ?>
-			</a>
-			<?php endif ?>
-			<a class="nav-tab <?php echo $selected == 'whimsy-framework-theme-addons' ? 'nav-tab-active' : ''; ?>" href="<?php echo whimsy_framework()->_get_admin_page_url('addons'); ?>">
-				<?php _e( 'Add Ons', 'whimsy-framework' ); ?>
 			</a>
 		</h1>
 		<?php
