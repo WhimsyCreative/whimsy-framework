@@ -36,6 +36,17 @@ function whimsy_customize_register_section( $wp_customize ) {
         )
     );
 
+    /* Add Support for Whimsy+ */
+    $wp_customize->add_panel(
+        'whimsy_framework_whimsy_plus_panel',
+        array(
+            'title'         => __( 'Whimsy+', 'whimsy-framework' ),
+            'description'   => __( 'Premium Customizer extension for Whimsy Framework.', 'whimsy-framework' ),
+            'priority'      => 60,
+
+        )
+    );
+
 }
 
 /**
@@ -45,10 +56,11 @@ function whimsy_customize_register( $wp_customize ) {
     
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor')->transport  = 'postMessage';
+    $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
+	$wp_customize->remove_setting( 'header_textcolor' );
     
     // Load custom control classes.
-    require_once( trailingslashit( get_template_directory() ) . 'library/admin/customize/controls/control-custom-layout.php' );    
+    require_once( WHIMSY_CUSTOMIZE . 'controls/control-custom-layout.php' );    
     
     // Link Color
 	$wp_customize->add_setting(
@@ -58,7 +70,6 @@ function whimsy_customize_register( $wp_customize ) {
 	        'sanitize_callback' => 'sanitize_hex_color',
 	    )
 	);
-    
 	$wp_customize->add_control(
 	    new WP_Customize_Color_Control(
 	        $wp_customize,
@@ -95,7 +106,7 @@ function whimsy_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 	    'whimsy_body_color',
 	    array(
-	        'default' => '#252c38',
+	        'default' => '#4b4b4b',
 	        'sanitize_callback' => 'sanitize_hex_color',
 	    )
 	);
@@ -138,7 +149,7 @@ function whimsy_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'whimsy_framework_layout_footer', array(
 		'default' => 'footer-3',
 		'transport' => 'refresh',
-        'sanitize_callback' => 'whimsy_framework_sanitize_select'
+        'sanitize_callback' => 'sanitize_key'
 	) );
 	$wp_customize->add_control( new Whimsy_Layout_Control( $wp_customize, 'whimsy_framework_layout_footer', array(
 		'label' => __( 'Footer Layout', 'whimsy-framework' ),
@@ -156,7 +167,23 @@ function whimsy_customize_register( $wp_customize ) {
 		),
 		'priority' => 2
 	) ) );
-    
+    // Hide the sidebar
+    $wp_customize->add_setting(
+        'whimsy_framework_hide_sidebar',
+        array(
+            'default' => false,
+            'transport'         => 'refresh',
+            'sanitize_callback' => 'whimsy_framework_sanitize_checkbox',
+        )
+    );    
+    $wp_customize->add_control(
+        'whimsy_framework_hide_sidebar',
+        array(
+            'type' => 'checkbox',
+            'label' => __( 'Hide the sidebar?', 'whimsy-framework' ),
+            'section' => 'whimsy_framework_section_display',
+        )
+    );
     // Hide date on pages
     $wp_customize->add_setting(
         'whimsy_framework_hide_page_date',
@@ -191,8 +218,7 @@ function whimsy_customize_register( $wp_customize ) {
             'label' => __( 'Hide comments on pages?', 'whimsy-framework' ),
             'section' => 'whimsy_framework_section_display',
         )
-    );
-    
+    );    
     // Hide link on page titles
     $wp_customize->add_setting(
         'whimsy_framework_hide_page_title_link',
@@ -226,6 +252,7 @@ function whimsy_customize_register( $wp_customize ) {
     		'label'    => __( 'Desktop Logo', 'whimsy-framework' ),
             'description'   => __( 'Displayed on most screens.', 'whimsy-framework' ),    		
             'section'  => 'title_tagline',
+            'priority'  => 10,
     		'settings' => 'whimsy_framework_logo_desktop',
     ) ) );
 
@@ -244,6 +271,7 @@ function whimsy_customize_register( $wp_customize ) {
             'label'    => __( 'Mobile Logo', 'whimsy-framework' ),
             'description'   => __( 'Displayed on screens less than 980px.', 'whimsy-framework' ),
             'section'  => 'title_tagline',
+            'priority'  => 20,
             'settings' => 'whimsy_framework_logo_mobile',
     ) ) );
 
@@ -376,7 +404,7 @@ function whimsy_framework_sanitize_checkbox( $input ) {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function whimsy_customize_preview_js() {
-    wp_enqueue_script( 'whimsy_customizer', get_template_directory_uri() . '/library/js/customizer.js', array( 'customize-preview' ), '2.0', true );
+    wp_enqueue_script( 'whimsy_customizer', get_template_directory_uri() . '/library/js/customizer.js', array( 'customize-preview' ), '2.1', true );
 }
 
 /*

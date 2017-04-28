@@ -7,6 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Defines all hooks available in the Whimsy Framework.
  *
  * whimsy_body_start
+ * whimsy_header
  * whimsy_header_before
  * whimsy_header_after
  * whimsy_header_inside_before
@@ -28,6 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * whimsy_post_after
  * whimsy_post_meta_before
  * whimsy_post_meta_after
+ * whimsy_post_meta_inside
  * whimsy_post_footer_before
  * whimsy_post_footer_after
  *
@@ -48,6 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 // header.php
 function whimsy_body_start() 					{ whimsy_do_atomic( 'whimsy_body_start' ); }
+function whimsy_header() 				        { whimsy_do_atomic( 'whimsy_header' ); }
 function whimsy_header_before() 				{ whimsy_do_atomic( 'whimsy_header_before' ); }
 function whimsy_header_after() 					{ whimsy_do_atomic( 'whimsy_header_after' ); }
 function whimsy_header_inside_before()			{ whimsy_do_atomic( 'whimsy_header_inside_before' ); }
@@ -70,6 +73,7 @@ function whimsy_post_before() 					{ whimsy_do_atomic( 'whimsy_post_before' ); }
 function whimsy_post_after() 					{ whimsy_do_atomic( 'whimsy_post_after' ); }
 function whimsy_post_meta_before() 				{ whimsy_do_atomic( 'whimsy_post_meta_before' ); }
 function whimsy_post_meta_after() 				{ whimsy_do_atomic( 'whimsy_post_meta_after' ); }
+function whimsy_post_meta_inside() 		        { whimsy_do_atomic( 'whimsy_post_meta_inside' ); }
 function whimsy_post_footer_before() 			{ whimsy_do_atomic( 'whimsy_post_footer_before' ); }
 function whimsy_post_footer_after() 			{ whimsy_do_atomic( 'whimsy_post_footer_after' ); }
 
@@ -86,6 +90,7 @@ function whimsy_footer_before() 				{ whimsy_do_atomic( 'whimsy_footer_before' )
 function whimsy_footer_after() 					{ whimsy_do_atomic( 'whimsy_footer_after' ); }
 function whimsy_footer_inside_before() 			{ whimsy_do_atomic( 'whimsy_footer_inside_before' ); }
 function whimsy_footer_inside_after() 			{ whimsy_do_atomic( 'whimsy_footer_inside_after' ); }
+function whimsy_footer() 				        { whimsy_do_atomic( 'whimsy_footer' ); }
 function whimsy_body_end() 						{ whimsy_do_atomic( 'whimsy_body_end' ); }
 
 if ( ! function_exists( 'whimsy_do_atomic' ) ) {

@@ -6,14 +6,27 @@
     background: rgba(255,255,255,0.8);
     -webkit-box-shadow: 0 0;
     box-shadow: 0 0;
-    font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.9px;
     width: 100%;
     display: block;
     z-index: 99999;
-    position: relative;
     text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+}
+#site-navigation a {
+    padding: 10px 26px 10px 10px;
+    transition: all 0.4s ease;
+}
+@media screen and (max-width: 980px) {
+    #site-navigation a {
+        padding: 0;
+    }
+}
+#site-navigation a img {
+    padding: 0;
+    transition: all 0.4s ease;
 }
 .whimsy-nav {
     clear: both;
@@ -29,13 +42,11 @@ ul.whimsy-nav  {
     list-style: none;
     margin: 0;
     padding-left: 0;
-    min-height: 47px;
+    /*min-height: 47px;*/
 }
 .whimsy-nav li {
     position: relative;
-    text-align: center;
     display: inline-block;
-    padding: 10px 26px 10px 10px;
 }
 ul.whimsy-nav li.bordered {
     /* Use .bordered in your WordPress Menu to add a separator. */
@@ -56,7 +67,7 @@ ul.whimsy-nav li.bordered {
     display: none;
     position: absolute;
     left: 0;
-    top: 47px; /* This number should match the min-height for ul.whimsy-nav */
+    /*top: 47px; /* This number should match the min-height for ul.whimsy-nav */
     z-index: 1100;
     text-align: left;
 }
@@ -69,6 +80,7 @@ ul.whimsy-nav li.bordered {
     display: none;
     border-radius: 0 0 3px 3px;
     min-width: 200px;
+    width: 100%;
     display: block;
     left: 100%;
     top: 0;
@@ -99,6 +111,7 @@ ul.whimsy-nav li.bordered {
     background: rgba(255,255,255,0.95);
     border-bottom: 1px solid rgba(216,216,216,0.3);
     min-width: 200px;
+    width: 100%;
     text-align: left;
     padding: 0;
 }
@@ -119,8 +132,7 @@ ul.whimsy-nav li.bordered {
     position: absolute;
     right: 0;
     top: 49%;
-    width: 60px;
-    padding: 14px;
+    padding: 12px;
     cursor: pointer;
     font-size: 2em;
     text-align: center;
@@ -147,7 +159,7 @@ ul.whimsy-nav li.bordered {
 .collapse-button:hover, .collapse-button:focus {
     background-image: none;
     background-color: #040404;
-    color: #FFF;
+    color: #fff;
 }
 .collapse-button:before {
     font-family: 'FontAwesome';
@@ -212,7 +224,6 @@ ul.whimsy-nav.collapsed {
     font-family: 'FontAwesome';
     content: '\f106';
 }
-
 @media screen and (max-width: 980px) {
 /* 980 =================================================== */
 

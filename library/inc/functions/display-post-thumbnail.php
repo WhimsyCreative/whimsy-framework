@@ -15,6 +15,23 @@ if ( ! function_exists( 'whimsy_display_post_thumbnail' ) ) :
 
         <!-- Don't show post thumbnil galleries -->
 
+        <?php elseif( get_post_format() == 'image' ) : ?>
+
+            <div class="entry-img">
+                 <?php 
+                    if ( has_post_thumbnail()) {
+                    
+                        $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full');
+                    
+                        echo '<a href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >';
+                    
+                        the_post_thumbnail('thumbnail');
+                    
+                        echo '</a>';
+                    } 
+                ?>
+
+            </div>
         <?php else : ?>
 
             <div class="entry-img">
