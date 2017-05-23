@@ -185,7 +185,6 @@ ul.whimsy-nav li.bordered {
 .whimsy-nav li .sub-collapser:before {
     font-family: 'FontAwesome';
     content: '\f107';
-    display: block;
     height: 100%;
     vertical-align: middle;
     padding-top: 1em;
@@ -254,7 +253,7 @@ ul.whimsy-nav.collapsed {
         width: 100%;
         top: 0;
     }
-.   
+  
     .whimsy-nav li ul {
         top: 0;
     }

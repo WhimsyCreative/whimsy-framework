@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 body.single-download .entry-meta {
-    display:none;
+    display: none;
 }
 
 .edd-submit {
@@ -19,10 +19,12 @@ body.single-download .entry-meta {
 }
 
 a.edd-submit:hover {
-	border-color: #000;
+    border-color: #000;
 }
+
 a.edd-submit:focus,
-a.edd-submit:active{
+a.edd-submit:active {
+    border-color: #000;
 }
 
 .edd-meta {
@@ -30,7 +32,7 @@ a.edd-submit:active{
     text-transform: uppercase;
 }
 
-.edd-download-info-features-widget  {
+.edd-download-info-features-widget {
     -moz-column-count: 3;
     -moz-column-gap: 1em;
     -webkit-column-count: 3;
@@ -56,15 +58,16 @@ a.edd-submit:active{
     font-size: 0.8em;
 }
 
+
 /* Checkout */
 
 .edd-checkout table {
-    border: 1px solid rgba(0,0,0,.1);
+    border: 1px solid rgba(0, 0, 0, .1);
     margin: 0 -1px 24px 0;
     text-align: left;
     width: 100%;
     border-collapse: separate;
-    border-radius: 5px;    
+    border-radius: 5px;
 }
 
 .edd-checkout .edd_cart_header_row th {
@@ -75,13 +78,13 @@ a.edd-submit:active{
     text-align: center;
     font-size: 12px;
     letter-spacing: 1px;
-    background: rgba(215,215,215,0.1);
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    background: rgba(215, 215, 215, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .edd-checkout table td {
     padding: 18px 10px;
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .edd_cart_total {
@@ -89,17 +92,19 @@ a.edd-submit:active{
     text-align: right;
 }
 
-.edd_cart_item_price, .edd_cart_actions {
+.edd_cart_item_price,
+.edd_cart_actions {
     text-align: center;
 }
+
 #edd_purchase_form fieldset {
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
     padding: 1em 0;
     margin: 1em 0;
-} 
+}
 
-#edd_purchase_form #edd_checkout_user_info legend, 
-#edd_purchase_form #edd_cc_address legend, 
+#edd_purchase_form #edd_checkout_user_info legend,
+#edd_purchase_form #edd_cc_address legend,
 #edd_purchase_form #edd_cc_fields legend {
     text-align: left;
     padding: 0 0 14px 0;
