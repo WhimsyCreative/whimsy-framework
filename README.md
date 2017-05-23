@@ -20,6 +20,9 @@ http://whimsycreative.co/docs
 
 == Changelog ==
 
+= 2.2, June 1, 2017 =
+* Style tweaks to navigation.
+
 = 2.1, April 23, 2017 =
 * Style tweaks to navigation.
 * New action hooks.
