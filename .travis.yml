@@ -14,4 +14,4 @@ matrix:
 before_script:
   - composer self-update -q
   - composer show -i
-  - phpcs --version
+  - phpcs install
