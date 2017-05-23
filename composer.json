@@ -1,0 +1,16 @@
+{
+    "name": "WhimsyCreative/whimsy-framework",
+    "description": "The Whimsy Framework is a free minimal WordPress theme.",
+    "keywords": ["wordpress-theme"],
+    "homepage": "https://github.com/WhimsyCreative/whimsy-framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [{
+        "name": "Natasha Cozad",
+        "email": "hello@whimsycreative.co",
+        "homepage": "https://whimsycreative.co"
+    }],
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
