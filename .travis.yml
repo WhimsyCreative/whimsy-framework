@@ -1,1 +1,11 @@
 language: php
+
+install:
+  # Set the GitHub OAuth token for Composer
+  - composer config -g github-oauth.github.com "$COMPOSER_OAUTH_TOKEN"
+  - export PATH="$PATH:$HOME/.composer/vendor/bin"
+  # Install PHPCS
+  - composer global require "squizlabs/php_codesniffer $PHPCS_VER"
+
+before_script:
+  - phpcs --version
