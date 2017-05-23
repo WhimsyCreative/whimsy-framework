@@ -282,38 +282,41 @@ ul.whimsy-nav.collapsed {
         width: 100%;
         top: 0;
     }
-<<<<<<< HEAD
-  
-=======
->>>>>>> 89818b0f993d1423dba166f7f631d1e72e305049
-    .whimsy-nav li ul {
-        top: 0;
-    }
-    .whimsy-nav ul ul a {
-        width: 100%;
-    }
-    .whimsy-nav li .sub-collapser>i {
-        font-size: 2em;
-    }
-    .whimsy-nav li .special-menu-link {
-        text-transform: uppercase;
-        text-align: right;
-    }
-    .whimsy-nav li {
-        float: none;
-        text-align: left;
-        width: 100%;
-        display: block;
-    }
-    .menu-toggle,
-    .whimsy-nav.toggled .nav-menu {
-        display: block;
-        font-size: 1em;
-        border: 0;
-    }
-    .whimsy-nav.collapsed li>ul {
-        left: 0;
-    }
+}
+
+.whimsy-nav li ul {
+    top: 0;
+}
+
+.whimsy-nav ul ul a {
+    width: 100%;
+}
+
+.whimsy-nav li .sub-collapser>i {
+    font-size: 2em;
+}
+
+.whimsy-nav li .special-menu-link {
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.whimsy-nav li {
+    float: none;
+    text-align: left;
+    width: 100%;
+    display: block;
+}
+
+.menu-toggle,
+.whimsy-nav.toggled .nav-menu {
+    display: block;
+    font-size: 1em;
+    border: 0;
+}
+
+.whimsy-nav.collapsed li>ul {
+    left: 0;
 }
 
 @media screen and (max-width: 360px) {
