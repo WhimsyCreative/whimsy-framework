@@ -1,3 +1,4 @@
+================
 README
 Whimsy Framework
 ================
@@ -9,18 +10,18 @@ The Whimsy Framework is a minimal theme ready for customization with lots of ext
 * Download the Whimsy Framework.
 * On your WordPress site go to Dashboard > Appearance > Add New.
 * On the next page, click the Upload button.
-* Select Browse, and install the whimsy.zip file.
+* Select Browse, and install the whimsy-framework.zip file.
 * Activate the Whimsy Framework, or upload a child theme. 
 
 === Using the Customizer ===
-For detailed instructions on using the built-in WordPress Customizer with the Whimsy Framework please visit The Fanciful. https://whimsycreative.co/docs/using-wordpress-customizer/
+For detailed instructions on using the built-in WordPress Customizer with the Whimsy Framework please visit The Fanciful. http://whimsycreative.co/docs/using-wordpress-customizer/
 
 === Full Documentation ===
 https://whimsycreative.co/help
 
 == Changelog ==
 
-= 2.1, April 18, 2017 =
+= 2.1, April 23, 2017 =
 * Style tweaks to navigation.
 * New action hooks.
 * Added menu id's for better control.
@@ -50,7 +51,7 @@ https://whimsycreative.co/help
 * Updated dependencies:
 	* FontAwesome to 4.7.0
 
-### 2.0
+### 2.0.0
 = 2.0.0 =
 * Fixed issue with featured image display.
 

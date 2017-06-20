@@ -1,0 +1,12 @@
+env:
+  global:
+    - COMPOSER_DISABLE_XDEBUG_WARN="1"
+
+matrix:
+  include:
+    - os: linux
+      language: php
+      php: 7.1
+      env:
+        - ATOM_CHANNEL=stable
+        - PHPCS_VER="1.*"

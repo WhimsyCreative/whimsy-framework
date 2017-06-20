@@ -13,9 +13,6 @@ body.woocommerce-demo-store p.demo_store {
 	letter-spacing: 1px;
 	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) inset;
 }
-body.woocommerce-demo-store #page {
-	top: 23px;
-}
 .woocommerce a.button, 
 .woocommerce button.button, 
 .woocommerce input.button, 
@@ -170,4 +167,9 @@ body.woocommerce-demo-store #page {
 .woocommerce p.lost_password {
     font-style: italic;
     line-height: 2;
+}
+#add_payment_method #payment ul.payment_methods li img, 
+.woocommerce-cart #payment ul.payment_methods li img, 
+.woocommerce-checkout #payment ul.payment_methods li img {
+    display: inline-block;
 }

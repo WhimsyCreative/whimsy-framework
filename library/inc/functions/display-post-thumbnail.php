@@ -13,7 +13,7 @@ if ( ! function_exists( 'whimsy_display_post_thumbnail' ) ) :
 
         <?php elseif( get_post_format() == 'gallery' ) : ?>
 
-        <!-- Don't show post thumbnil galleries -->
+        <!-- Don't show post thumbnail for galleries -->
 
         <?php elseif( get_post_format() == 'image' ) : ?>
 
@@ -25,7 +25,7 @@ if ( ! function_exists( 'whimsy_display_post_thumbnail' ) ) :
                     
                         echo '<a href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >';
                     
-                        the_post_thumbnail('thumbnail');
+                        the_post_thumbnail( 'full' );
                     
                         echo '</a>';
                     } 

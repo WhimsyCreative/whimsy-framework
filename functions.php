@@ -1,8 +1,5 @@
 <?php
 
-// Include Freemius tracking data
-require_once get_template_directory() . '/library/inc/tracking.php';
-
 //Whimsy Framework functions and definitions
 
 add_action( 'after_setup_theme', 'whimsy_setup' );
@@ -61,7 +58,7 @@ if ( ! function_exists( 'whimsy_setup' ) ) :
          * Set custom thumbnail dimensions
          */
         set_post_thumbnail_size( 1200, 9999, true );
-        add_image_size( 'whimsy-single-background', 1200, 9999 ); //300 pixels wide (and unlimited height)
+        add_image_size( 'whimsy-featured-image', 1200, 9999 ); //1200 pixels wide (and unlimited height)
 
         /*
          * WooCommerce Support

@@ -7,7 +7,7 @@
     
 	<div class="entry-img">
         
-        <a href="<?php the_permalink(); ?>" rel="bookmark"><?php if ( has_post_thumbnail() ) { the_post_thumbnail('full'); } ?></a>
+        <a href="<?php the_permalink(); ?>" rel="bookmark"><?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'thumbnail' ); } ?></a>
         
     </div>
 
