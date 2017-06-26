@@ -8,14 +8,6 @@
 	<!-- Set a description for this ruleset. -->
 	<description>A custom set of code standard rules to check for WordPress themes.</description>
 
-	<!-- Pass some flags to PHPCS:
-		 p flag: Show progress of the run.
-		 s flag: Show sniff codes in all reports.
-		 v flag: Print verbose output.
-		 n flag: Do not print warnings.
-	-->
-	<arg value="psvn"/>
-
 	<!-- Only check the PHP files. JS files are checked separately with JSCS and JSHint. -->
 	<arg name="extensions" value="php"/>
 	
@@ -44,8 +36,44 @@
 			<property name="is_theme" value="true" />
 		</properties>
 	</rule>
+	
+	<!-- Exclude Composer Vendor directory. -->
+	<exclude-pattern>/vendor/*</exclude-pattern>
 
-	<!-- Include sniffs for PHP cross-version compatibility. -->
+	<!--
+	We may also want to to include all the rules in a standard.
+	-->
+	<rule ref="WordPress-Extra">
+		<!--
+		We may want a middle ground though. The best way to do this is add the
+		entire ruleset, then rule by rule, remove ones that don't suit a project.
+		We can do this by running `phpcs` with the '-s' flag, to see the names of
+		the different Sniffs, as their rules are broken. From here, we can opt to
+		exclude problematic sniffs like so.
+		-->
+
+		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing"/>
+		<exclude name="WordPress.XSS.EscapeOutput"/>
+	</rule>
+
+	<!-- Let's also check that everything is properly documented. -->
+	<rule ref="WordPress-Docs"/>
+
+	<!-- Add in some extra rules from other standards. -->
+	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+	<rule ref="Generic.Commenting.Todo"/>
+
+	<!-- Check for PHP cross-version compatibility. -->
+	<!--
+	To enable this, the PHPCompatibility standard needs
+	to be installed.
+	See the readme for installation instructions:
+	https://github.com/wimg/PHPCompatibility
+	-->
+	<!--
 	<config name="testVersion" value="5.2-99.0"/>
 	<rule ref="PHPCompatibility"/>
+	-->
+
+
 </ruleset>
