@@ -8,14 +8,14 @@
  * @return void
  */
 if ( ! function_exists( 'whimsy_get_header' ) ) :
-function whimsy_get_header() { 
-?>
+function whimsy_get_header() {
+		?>
 				
-<header id="masthead" class="site-header" role="banner">
+		<header id="masthead" class="site-header" role="banner">
 		
-    <?php whimsy_header_inside_before(); ?>
-            
-        <?php whimsy_desktop_branding(); ?>
+		<?php whimsy_header_inside_before(); ?>
+
+					<?php whimsy_desktop_branding(); ?>
 
 		<?php if ( get_header_image() ) : ?>
 
@@ -27,15 +27,15 @@ function whimsy_get_header() {
 			
 			</div><!-- /.custom-header -->
 
-    <?php endif; // End header image check.
-    
-    whimsy_header_inside_after(); ?>
+	<?php endif; // End header image check.
 
-</header><!-- /#masthead -->
+		whimsy_header_inside_after(); ?>
 
-    <?php 
+										</header><!-- /#masthead -->
+
+										<?php
 }
-endif; // End function_exists whimsy_get_header check 
+endif; // End function_exists whimsy_get_header check
 
 /**
  * HTML output for mobile site branding.
@@ -46,25 +46,25 @@ endif; // End function_exists whimsy_get_header check
  */
 if ( ! function_exists( 'whimsy_mobile_branding' ) ) :
 function whimsy_mobile_branding() {
-?>
-            
-    <div class="mobile-site-branding"><!-- Does not display on screens larger than 980px -->
+		?>
 
-        <?php if ( get_theme_mod( 'whimsy_framework_logo_mobile' ) ) : ?>
+					<div class="mobile-site-branding"><!-- Does not display on screens larger than 980px -->
 
-            <div id="mobile-site-logo" class="site-logo">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'whimsy_framework_logo_mobile' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
-            </div>
+		<?php if ( get_theme_mod( 'whimsy_framework_logo_mobile' ) ) : ?>
 
-        <?php else : // If no logo is set, display title as text. ?>
+			<div id="mobile-site-logo" class="site-logo">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'whimsy_framework_logo_mobile' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+			</div>
 
-                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<?php else : // If no logo is set, display title as text. ?>
 
-        <?php endif; // End mobile logo check. ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-    </div><!-- /.mobile-site-branding -->
+		<?php endif; // End mobile logo check. ?>
 
-<?php }
+		</div><!-- /.mobile-site-branding -->
+
+		<?php }
 endif; // End function_exists mobile logo check.
 
 /**
@@ -75,25 +75,25 @@ endif; // End function_exists mobile logo check.
  * @return void
  */
 if ( ! function_exists( 'whimsy_desktop_branding' ) ) :
-function whimsy_desktop_branding() { 
-?>
+function whimsy_desktop_branding() {
+		?>
 
-    <div id="desktop-site-branding" class="site-branding"><!-- Does not display on screens smaller than 980px -->
+		<div id="desktop-site-branding" class="site-branding"><!-- Does not display on screens smaller than 980px -->
 
-        <?php if ( get_theme_mod( 'whimsy_framework_logo_desktop' ) ) : ?>
+		<?php if ( get_theme_mod( 'whimsy_framework_logo_desktop' ) ) : ?>
 
-            <div id="desktop-site-logo">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'whimsy_framework_logo_desktop' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="site-logo"></a>
-            </div><!-- /.site-logo -->
+			<div id="desktop-site-logo">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'whimsy_framework_logo_desktop' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="site-logo"></a>
+			</div><!-- /.site-logo -->
 
-        <?php else : // If no logo is set, display title and description text. ?>
+		<?php else : // If no logo is set, display title and description text. ?>
 
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-        
-        <?php endif; // End desktop logo check. ?>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 
-    </div><!-- /.site-branding -->
+				<?php endif; // End desktop logo check. ?>
 
-<?php }
-endif; // End function_exists desktop logo check. 
+		</div><!-- /.site-branding -->
+
+		<?php }
+endif; // End function_exists desktop logo check.

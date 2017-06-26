@@ -5,12 +5,12 @@
 
 if ( ! function_exists( 'whimsy_responsive_nav' ) ) :
 
-    function whimsy_responsive_nav() {
-        wp_nav_menu( array( 
-            'theme_location' => 'primary',
-            'menu_class' => 'whimsy-nav',
-            'items_wrap' => '<ul id="whimsy-nav" class="%2$s">%3$s</ul>', 
-        ));
-    }
-    
-endif;
+	function whimsy_responsive_nav() {
+		wp_nav_menu( array(
+			'theme_location' => 'primary',
+			'menu_class' => 'whimsy-nav',
+			'items_wrap' => '<ul id="whimsy-nav" class="%2$s">%3$s</ul>',
+		));
+	}
+
+	endif;

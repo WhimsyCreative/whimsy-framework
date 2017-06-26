@@ -21,7 +21,7 @@ function whimsy_custom_header_setup() {
 		'default-text-color'     => '000000',
 		'width'                  => 1600,
 		'height'                 => 500,
-        'flex-width'             => true,
+		'flex-width'             => true,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'whimsy_header_style',
 		'admin-head-callback'    => 'whimsy_admin_header_style',
@@ -37,18 +37,18 @@ if ( ! function_exists( 'whimsy_header_style' ) ) :
  * @see whimsy_custom_header_setup().
  */
 function whimsy_header_style() {
-	$header_text_color = get_header_textcolor();
+		$header_text_color = get_header_textcolor();
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == $header_text_color ) {
-		return;
-	}
+		// If no custom options for text are set, let's bail
+		// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
+		if ( HEADER_TEXTCOLOR == $header_text_color ) {
+			return;
+			}
 
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php
+		// If we get this far, we have custom styles. Let's do this.
+		?>
+		<style type="text/css">
+		<?php
 		// Has the text been hidden?
 		if ( 'blank' == $header_text_color ) :
 	?>

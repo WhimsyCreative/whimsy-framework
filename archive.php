@@ -20,7 +20,7 @@ get_header(); ?>
 				<h1 class="page-title">
 					<?php
 						if ( is_category() ) :
-							single_cat_title();
+						single_cat_title();
 
 						elseif ( is_tag() ) :
 							single_tag_title();
@@ -74,7 +74,7 @@ get_header(); ?>
 					// Show an optional term description.
 					$term_description = term_description();
 					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
+					printf( '<div class="taxonomy-description">%s</div>', $term_description );
 					endif;
 				?>
 			</header><!-- .page-header -->
@@ -93,7 +93,8 @@ get_header(); ?>
 			<?php whimsy_post_before(); ?>
 
 				<?php
-					/* Include the Post-Format-specific template for the content.
+					/*
+					 Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */

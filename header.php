@@ -13,12 +13,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php
 	if ( ! function_exists( 'whimsy_render_title_tag' ) ) {
-		function whimsy_render_title() {
+	function whimsy_render_title() {
 	?>
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<?php
-		}
-		add_action( 'wp_head', 'whimsy_render_title' );
+	}
+	add_action( 'wp_head', 'whimsy_render_title' );
 	}
 ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -38,8 +38,8 @@
 	<div id="header-container">
 
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'whimsy-framework' ); ?></a>		
-            
-		<?php whimsy_header(); ?>
+
+					<?php whimsy_header(); ?>
 
 	</div><!-- /#header-container -->
 

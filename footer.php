@@ -17,44 +17,50 @@
 	<?php whimsy_footer_before(); ?>
 
 		<div id="footer-widgets">
-            
-		<?php whimsy_footer_inside_before(); ?>
-            <?php
-            
-            $whimsy_framework_layout_footer = get_theme_mod( 'whimsy_framework_layout_footer' );
 
-            if( $whimsy_framework_layout_footer  == 'footer-1' ) : ?>
+					<?php whimsy_footer_inside_before(); ?>
+			<?php
 
-            <!-- Show 1 widget area in the footer. -->
-            
-                <div class="c12 end"><?php dynamic_sidebar( 'footer-widgets-1' ); ?></div>  
+						$whimsy_framework_layout_footer = get_theme_mod( 'whimsy_framework_layout_footer' );
 
-            <?php elseif( $whimsy_framework_layout_footer  == 'footer-2' ) : ?>
+			if ( $whimsy_framework_layout_footer == 'footer-1' ) : ?>
 
-            <!-- Show 2 widget areas in the footer. -->
-            
-                <div class="c6"><?php dynamic_sidebar( 'footer-widgets-1' ); ?></div>    
-                <div class="c6 end"><?php dynamic_sidebar( 'footer-widgets-2' ); ?></div>    
+			<!-- Show 1 widget area in the footer. -->
 
-            <?php else : ?>
-            
-            <!-- Show 3 widget areas in the footer. -->
+							<div class="c12 end"><?php dynamic_sidebar( 'footer-widgets-1' ); ?></div>  
 
-                <div class="c4"><?php dynamic_sidebar( 'footer-widgets-1' ); ?></div>
-                <div class="c4"><?php dynamic_sidebar( 'footer-widgets-2' ); ?></div>
-                <div class="c4 end"><?php dynamic_sidebar( 'footer-widgets-3' ); ?></div> 
-            
-            <?php endif;  ?>
+			<?php elseif ( $whimsy_framework_layout_footer == 'footer-2' ) : ?>
+
+			<!-- Show 2 widget areas in the footer. -->
+
+							<div class="c6"><?php dynamic_sidebar( 'footer-widgets-1' ); ?></div>    
+				<div class="c6 end"><?php dynamic_sidebar( 'footer-widgets-2' ); ?></div>    
+
+			<?php else : ?>
+
+						<!-- Show 3 widget areas in the footer. -->
+
+				<div class="c4"><?php dynamic_sidebar( 'footer-widgets-1' ); ?></div>
+				<div class="c4"><?php dynamic_sidebar( 'footer-widgets-2' ); ?></div>
+				<div class="c4 end"><?php dynamic_sidebar( 'footer-widgets-3' ); ?></div> 
+
+						<?php endif;  ?>
 
 		</div>
-        
-		<div id="footer-menu">
-			<?php 
-				if(wp_nav_menu( array( 'theme_location' => 'footer', 'fallback_cb' => 'false') )) {
-				echo wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu-footer', 'theme_location' => 'footer' , 'echo' => '0' ) );
-			}
-			else
-			{
+
+				<div id="footer-menu">
+			<?php
+				if (wp_nav_menu( array(
+					'theme_location' => 'footer',
+					'fallback_cb' => 'false',
+				) )) {
+				echo wp_nav_menu( array(
+				'sort_column' => 'menu_order',
+				'container_class' => 'menu-footer',
+				'theme_location' => 'footer',
+				'echo' => '0',
+				) );
+			} else {
 				// there's no custom menu created.
 			}?>
 		</div>

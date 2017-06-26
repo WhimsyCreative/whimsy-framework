@@ -16,29 +16,29 @@ class Whimsy_Layout_Control extends WP_Customize_Control {
 	 * @var array
 	 */
 	public $layouts;
-    
-	/**
-	 * Constructor.
-	 *
-	 * @since 2.0.0
-	 * @uses WP_Customize_Control::__construct()
-	 *
-	 * @param WP_Customize_Manager $manager
-	 * @param string $id
-	 * @param array $args
-	 */
+
+		/**
+		 * Constructor.
+		 *
+		 * @since 2.0.0
+		 * @uses WP_Customize_Control::__construct()
+		 *
+		 * @param WP_Customize_Manager $manager
+		 * @param string               $id
+		 * @param array                $args
+		 */
 	public function __construct( $manager, $id, $args = array() ) {
-		$this->layouts = $args[ 'layouts' ];
+		$this->layouts = $args['layouts'];
 		parent::__construct( $manager, $id, $args );
 	}
-    
-	/**
-	 * Enqueue control related scripts/styles.
-	 *
-	 * @since 2.0.0
-	 */
+
+		/**
+		 * Enqueue control related scripts/styles.
+		 *
+		 * @since 2.0.0
+		 */
 	public function enqueue() {
-        wp_enqueue_style(  'whimsy-customizer-controls', get_template_directory_uri() . '/library/css/customizer-controls.css'                  );
+		wp_enqueue_style( 'whimsy-customizer-controls', get_template_directory_uri() . '/library/css/customizer-controls.css' );
 	}
 
 
@@ -49,12 +49,12 @@ class Whimsy_Layout_Control extends WP_Customize_Control {
 	 * @uses WP_Customize_Control::to_json()
 	 */
 	public function to_json() {
-        
-		parent::to_json();
-        
-		$this->json['layouts'] = $this->layouts;
-        
-	}
+
+				parent::to_json();
+
+				$this->json['layouts'] = $this->layouts;
+
+			}
 
 	/**
 	 * Render the control's content.
@@ -62,8 +62,9 @@ class Whimsy_Layout_Control extends WP_Customize_Control {
 	 * @since 2.0.0
 	 */
 	public function render_content() {
-		if ( empty( $this->layouts ) )
+		if ( empty( $this->layouts ) ) {
 			return;
+		}
 
 		$name = '_customize-layout-' . $this->id;
 
@@ -75,8 +76,9 @@ class Whimsy_Layout_Control extends WP_Customize_Control {
 			foreach ( $this->layouts as $value => $layout ) :
 				?>
 				<label class="layout" data-value="<?php echo $value; ?>">
-					<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> />
-                    <div class="icon" title="<?php echo esc_html( $layout[ 'label' ] ); ?>"><span class="icon-text"><?php echo esc_html( $layout[ 'label' ] ); ?></span></div>
+					<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link();
+checked( $this->value(), $value ); ?> />
+					<div class="icon" title="<?php echo esc_html( $layout['label'] ); ?>"><span class="icon-text"><?php echo esc_html( $layout['label'] ); ?></span></div>
 				</label>
 				<?php
 			endforeach;

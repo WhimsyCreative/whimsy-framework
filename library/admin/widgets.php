@@ -1,22 +1,21 @@
 <?php
- 
+
 add_action( 'widgets_init', 'whimsy_widgets_init' );
 
 /**
  * Register Whimsy Framework widget areas.
  */
 
-//function whimsy_widgets_init() {
-//	register_sidebar( array(
-//		'name'          => __( 'Header', 'whimsy-framework' ),
-//		'id'            => 'header-widgets',
-//		'description'   => '',
-//		'before_widget' => '<header id="%1$s" class="widget %2$s">',
-//		'after_widget'  => '</aside>',
-//		'before_title'  => '<h1 class="header-widget-title">',
-//		'after_title'   => '</h1>',
-//	) );
-
+// function whimsy_widgets_init() {
+// register_sidebar( array(
+// 'name'          => __( 'Header', 'whimsy-framework' ),
+// 'id'            => 'header-widgets',
+// 'description'   => '',
+// 'before_widget' => '<header id="%1$s" class="widget %2$s">',
+// 'after_widget'  => '</aside>',
+// 'before_title'  => '<h1 class="header-widget-title">',
+// 'after_title'   => '</h1>',
+// ) );
 function whimsy_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'whimsy-framework' ),
@@ -59,6 +58,6 @@ function whimsy_widgets_init() {
 /**
  * Include custom widgets for the Whimsy Framework.
  */
- 
-    require_once WHIMSY_ADMIN . '/widgets/about-me.php';
-    require_once WHIMSY_ADMIN . '/widgets/social.php';
+
+	require_once WHIMSY_ADMIN . '/widgets/about-me.php';
+	require_once WHIMSY_ADMIN . '/widgets/social.php';

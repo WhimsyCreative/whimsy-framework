@@ -259,8 +259,6 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			// Announce that the class is ready, and pass the object (for advanced use).
 			do_action_ref_array( 'tgmpa_init', array( $this ) );
 
-
-
 			// When the rest of WP has loaded, kick-start the rest of the class.
 			add_action( 'init', array( $this, 'init' ) );
 		}
@@ -838,7 +836,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				if ( false === $this->activate_single_plugin( $this->plugins[ $slug ]['file_path'], $slug ) ) {
 					return true; // Finish execution of the function early as we encountered an error.
 				}
-			}
+			}// End if().
 
 			return false;
 		}
@@ -998,7 +996,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					// Simpler message layout for use on the plugin install page.
 					echo '<p>', sprintf( esc_html( $this->strings['plugin_needs_higher_version'] ), esc_html( $this->plugins[ $slug ]['name'] ) ), '</p>';
 				}
-			}
+			}// End if().
 
 			return true;
 		}
@@ -1082,8 +1080,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 							$total_required_action_count++;
 						}
 					}
-				}
-			}
+				}// End if().
+			}// End foreach().
 			unset( $slug, $plugin );
 
 			// If we have notices to display, we move forward.
@@ -1133,11 +1131,11 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					unset( $type, $plugin_group, $linked_plugins, $count, $last_plugin, $imploded );
 
 					$rendered .= $this->create_user_action_links_for_notice( $install_link_count, $update_link_count, $activate_link_count, $line_template );
-				}
+				}// End if().
 
 				// Register the nag messages and prepare them to be processed.
 				add_settings_error( 'tgmpa', 'tgmpa', $rendered, $this->get_admin_notice_class() );
-			}
+			}// End if().
 
 			// Admin options pages already output settings_errors, so this is to avoid duplication.
 			if ( 'options-general' !== $GLOBALS['current_screen']->parent_base ) {
@@ -2018,7 +2016,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 	} else {
 		add_action( 'plugins_loaded', 'load_tgm_plugin_activation' );
 	}
-}
+}// End if().
 
 if ( ! function_exists( 'tgmpa' ) ) {
 	/**
@@ -2056,7 +2054,7 @@ if ( ! function_exists( 'tgmpa' ) ) {
 			call_user_func( array( $instance, 'config' ), $config );
 		}
 	}
-}
+}// End if().
 
 /**
  * WP_List_Table isn't always available. If it isn't available,
@@ -2413,7 +2411,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 						sprintf( $text, number_format_i18n( $count ) )
 					);
 				}
-			}
+			}// End foreach().
 
 			return $status_links;
 		}
@@ -2897,7 +2895,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				echo '</div></div>';
 
 				return true;
-			}
+			}// End if().
 
 			// Bulk activation process.
 			if ( 'tgmpa-bulk-activate' === $this->current_action() ) {
@@ -2966,7 +2964,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				unset( $_POST ); // Reset the $_POST variable in case user wants to perform one action after another.
 
 				return true;
-			}
+			}// End if().
 
 			return false;
 		}
@@ -3011,7 +3009,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			return $this->tgmpa->_get_plugin_data_from_name( $name, $data );
 		}
 	}
-}
+}// End if().
 
 
 if ( ! class_exists( 'TGM_Bulk_Installer' ) ) {
@@ -3294,7 +3292,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 							if ( false === $result ) {
 								break;
 							}
-						} //end foreach $plugins
+						} // End foreach().
 
 						$this->maintenance_mode( false );
 
@@ -3397,7 +3395,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 						return $bool;
 					}
 				}
-			}
+			}// End if().
 
 			if ( ! class_exists( 'TGMPA_Bulk_Installer_Skin' ) ) {
 
@@ -3626,10 +3624,10 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 						$this->i++;
 					}
 				}
-			}
-		}
+			}// End if().
+		}// End if().
 	}
-}
+}// End if().
 
 if ( ! class_exists( 'TGMPA_Utils' ) ) {
 
@@ -3757,4 +3755,4 @@ if ( ! class_exists( 'TGMPA_Utils' ) ) {
 			return false;
 		}
 	} // End of class TGMPA_Utils
-} // End of class_exists wrapper
+} // End if().

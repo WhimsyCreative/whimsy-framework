@@ -11,7 +11,7 @@
 	<?php whimsy_post_meta_before(); ?>
 
 	<div class="entry-meta">
-        <?php whimsy_post_meta_inside(); ?>
+		<?php whimsy_post_meta_inside(); ?>
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 	</div>
 	
@@ -40,7 +40,7 @@
 				if ( $categories_list && whimsy_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'whimsy-framework' ), $categories_list ); ?>
+			<?php printf( __( 'Posted in %1$s', 'whimsy-framework' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
@@ -50,7 +50,7 @@
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'whimsy-framework' ), $tags_list ); ?>
+			<?php printf( __( 'Tagged %1$s', 'whimsy-framework' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>

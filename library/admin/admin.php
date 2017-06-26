@@ -1,12 +1,14 @@
 <?php
 /**
  * Welcome Page Class
+ *
  * @copyright   Copyright (c) 2015, Pippin Williamson
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  */
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) { exit;
+}
 
 /**
  * Whimsy_Framework_Welcome Class
@@ -28,9 +30,9 @@ class Whimsy_Framework_Welcome {
 	 * @since 1.4
 	 */
 	public function __construct() {
-		add_action( 'admin_menu', array( $this, 'admin_menus') );
+		add_action( 'admin_menu', array( $this, 'admin_menus' ) );
 		add_action( 'admin_head', array( $this, 'admin_head' ) );
-		add_action( 'admin_init', array( $this, 'welcome'    ), 11 );
+		add_action( 'admin_init', array( $this, 'welcome' ), 11 );
 	}
 
 	/**
@@ -141,13 +143,19 @@ class Whimsy_Framework_Welcome {
 		$selected = isset( $_GET['page'] ) ? $_GET['page'] : 'whimsy-framework';
 		?>
 		<h1 class="nav-tab-wrapper">
-			<a class="nav-tab <?php echo $selected == 'whimsy-framework' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'whimsy-framework' ), 'themes.php' ) ) ); ?>">
+			<a class="nav-tab <?php echo $selected == 'whimsy-framework' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
+	'page' => 'whimsy-framework',
+), 'themes.php' ) ) ); ?>">
 				<?php _e( "What's New", 'whimsy-framework' ); ?>
 			</a>
-			<a class="nav-tab <?php echo $selected == 'whimsy-getting-started' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'whimsy-getting-started' ), 'themes.php' ) ) ); ?>">
+			<a class="nav-tab <?php echo $selected == 'whimsy-getting-started' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
+	'page' => 'whimsy-getting-started',
+), 'themes.php' ) ) ); ?>">
 				<?php _e( 'Getting Started', 'whimsy-framework' ); ?>
 			</a>
-			<a class="nav-tab <?php echo $selected == 'whimsy-changelog' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'whimsy-changelog' ), 'themes.php' ) ) ); ?>">
+			<a class="nav-tab <?php echo $selected == 'whimsy-changelog' ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
+	'page' => 'whimsy-changelog',
+), 'themes.php' ) ) ); ?>">
 				<?php _e( 'Changelog', 'whimsy-framework' ); ?>
 			</a>
 		</h1>
@@ -171,14 +179,14 @@ class Whimsy_Framework_Welcome {
 			?>
 			<div class="changelog">
 				<div class="feature-section">
-				    <h3><?php _e( 'Improved typography and updated design', 'whimsy-framework' );?></h3>
+					<h3><?php _e( 'Improved typography and updated design', 'whimsy-framework' );?></h3>
 					<div class="feature-section-media">
 						<img src="<?php echo WHIMSY_IMG . 'whimsy-framework-display.png'; ?>" class="whimsy-welcome-screenshots alignleft" />
 					</div>
 					<div class="feature-section-content">
 						<p><?php _e( 'Drop shadows were removed for a flat look, fonts and spacing were tweaked, and we made some updates to the menu.', 'whimsy-framework' );?></p>
 					</div>
-				    <h3><?php _e( 'More options in the Customizer', 'whimsy-framework' );?></h3>
+					<h3><?php _e( 'More options in the Customizer', 'whimsy-framework' );?></h3>
 					<div class="feature-section-content">
 						<p><?php _e( 'The Whimsy Framework Customizer was updated to included display options like layout, widget areas, and the option to hide meta options like dates and titles on pages.', 'whimsy-framework' );?></p>
 					</div>
@@ -197,7 +205,7 @@ class Whimsy_Framework_Welcome {
 						<p><?php _e( 'FontAwesome was updated to 4.7.0.', 'whimsy-framework' );?></p>
 					</div>
 					<div class="col">
-				        <h4><?php _e( 'The Framework Library', 'whimsy-framework' );?></h4>
+						<h4><?php _e( 'The Framework Library', 'whimsy-framework' );?></h4>
 						<p><?php _e( 'The functions powering the framework are now more in line with Object-Oriented Programming. OOP is one of the driving WordPress standards for development which means enhanced compatibility with plugins developed to the same standards.', 'whimsy-framework' );?></p>
 					</div>
 					<div class="col">
@@ -234,8 +242,8 @@ class Whimsy_Framework_Welcome {
 					<?php echo $this->parse_readme(); ?>
 				</div>
 			</div>
-            
-		</div>
+
+					</div>
 		<?php
 	}
 
@@ -283,16 +291,16 @@ class Whimsy_Framework_Welcome {
 
 						<h4><?php _e( 'Choose your widgets', 'whimsy-framework' );?></h4>
 						<p><?php _e( 'Whimsy Framework includes two widgets made with bloggers in mind. An About Me widget, and a Social Network widget. You can see them in action in my sidebar here.', 'whimsy-framework' );?></p>
-                        <div class="two-col">
-                            <div class="col">
-                                <h4><?php _e( 'About Me','whimsy-framework' );?></h4>
-                                <p><?php _e( 'This widget features an image, a paragraph to introduce yourself and your website, and a link with customized text to read more.', 'whimsy-framework' );?></p>
-                            </div>
-                            <div class="col">
-                                <h4><?php _e( 'Social Networks', 'whimsy-framework' );?></h4>
-                                <p><?php _e( 'The Social Media widget features icons for many social networks, big and small. ', 'whimsy-framework' );?></p>
-                            </div>
-                        </div>
+						<div class="two-col">
+							<div class="col">
+								<h4><?php _e( 'About Me','whimsy-framework' );?></h4>
+								<p><?php _e( 'This widget features an image, a paragraph to introduce yourself and your website, and a link with customized text to read more.', 'whimsy-framework' );?></p>
+							</div>
+							<div class="col">
+								<h4><?php _e( 'Social Networks', 'whimsy-framework' );?></h4>
+								<p><?php _e( 'The Social Media widget features icons for many social networks, big and small. ', 'whimsy-framework' );?></p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -300,7 +308,7 @@ class Whimsy_Framework_Welcome {
 		<?php
 	}
 
-	public function addons_screen($content) {
+	public function addons_screen( $content) {
 		ob_start();
 
 		?>
@@ -318,7 +326,7 @@ class Whimsy_Framework_Welcome {
 		return ob_get_clean();
 	}
 
-	public function account_screen($content) {
+	public function account_screen( $content) {
 		ob_start();
 
 		?>
@@ -341,59 +349,56 @@ class Whimsy_Framework_Welcome {
 	 * @since 2.0.3
 	 * @return string $readme HTML formatted readme file
 	 */
-	public function parse_readme() {         
-        
-        $access_type = get_filesystem_method();
-        if($access_type === 'direct')
-        {
-        /* you can safely run request_filesystem_credentials() without any issues and don't need to worry about passing in a URL */
-        $creds = request_filesystem_credentials(site_url() . '/wp-admin/', '', false, false, array());
+	public function parse_readme() {
 
-        /* initialize the API */
-        if ( ! WP_Filesystem($creds) ) {
-        /* any problems and we exit */
-        return false;
-        }	
+				$access_type = get_filesystem_method();
+		if ($access_type === 'direct') {
+		/* you can safely run request_filesystem_credentials() without any issues and don't need to worry about passing in a URL */
+		$creds = request_filesystem_credentials( site_url() . '/wp-admin/', '', false, false, array() );
 
-        global $wp_filesystem;
-        /* do our file manipulations below */
+		/* initialize the API */
+		if ( ! WP_Filesystem( $creds ) ) {
+				/* any problems and we exit */
+				return false;
+		}
 
-          $readme = '';
+		global $wp_filesystem;
+		/* do our file manipulations below */
 
-          $method = ''; //leave this empty to perform test for 'direct' writing
-          $context = get_template_directory(); //target folder  
-          /*
+		  $readme = '';
+
+		  $method = ''; // leave this empty to perform test for 'direct' writing
+		  $context = get_template_directory(); // target folder
+		  /*
            * now $wp_filesystem could be used
            * get correct target file first
            **/
-          $target_dir = $wp_filesystem->find_folder($context);
-          $target_file = trailingslashit($target_dir).'readme.txt';
+		  $target_dir = $wp_filesystem->find_folder( $context );
+		  $target_file = trailingslashit( $target_dir ) . 'readme.txt';
 
-          /* read the file */
-          if($wp_filesystem->exists($target_file)){ //check for existence
+		  /* read the file */
+		  if ($wp_filesystem->exists( $target_file )) { // check for existence
 
-            $readme = $wp_filesystem->get_contents($target_file);
-              
-			$readme = nl2br( esc_html( $readme ) );
-			$readme = explode( '== Changelog ==', $readme );
-			$readme = end( $readme );
+				$readme = $wp_filesystem->get_contents( $target_file );
 
-			$readme = preg_replace( '/`(.*?)`/', '<code>\\1</code>', $readme );
-			$readme = preg_replace( '/[\040]\*\*(.*?)\*\*/', ' <strong>\\1</strong>', $readme );
-			$readme = preg_replace( '/[\040]\*(.*?)\*/', ' <em>\\1</em>', $readme );
-			$readme = preg_replace( '/= (.*?) =/', '<h4>\\1</h4>', $readme );
-			$readme = preg_replace( '/\[(.*?)\]\((.*?)\)/', '<a href="\\2">\\1</a>', $readme );    
+							  $readme = nl2br( esc_html( $readme ) );
+				$readme = explode( '== Changelog ==', $readme );
+				$readme = end( $readme );
 
-          }  
+				$readme = preg_replace( '/`(.*?)`/', '<code>\\1</code>', $readme );
+				$readme = preg_replace( '/[\040]\*\*(.*?)\*\*/', ' <strong>\\1</strong>', $readme );
+				$readme = preg_replace( '/[\040]\*(.*?)\*/', ' <em>\\1</em>', $readme );
+				$readme = preg_replace( '/= (.*?) =/', '<h4>\\1</h4>', $readme );
+				$readme = preg_replace( '/\[(.*?)\]\((.*?)\)/', '<a href="\\2">\\1</a>', $readme );
 
-          return $readme;
-        }	
-        else
-        {
-        /* don't have direct write access. Prompt user with our notice */
-        add_action('admin_notices', 'whimsy_admin_notice_permission'); 	
-        }
-    }    
+		  }
+
+		  return $readme;
+		} else {
+		/* don't have direct write access. Prompt user with our notice */
+		add_action( 'admin_notices', 'whimsy_admin_notice_permission' );
+		}// End if().
+	}
 
 	/**
 	 * Sends user to the Welcome page on first activation of Whimsy Framework as well as each
@@ -405,24 +410,28 @@ class Whimsy_Framework_Welcome {
 	 */
 
 	public function welcome() {
-        
-		// Bail if no activation redirect
-		if ( ! get_transient( '_whimsy_activation_redirect' ) )
+
+				// Bail if no activation redirect
+		if ( ! get_transient( '_whimsy_activation_redirect' ) ) {
 			return;
+		}
 
 		// Delete the redirect transient
 		delete_transient( '_whimsy_activation_redirect' );
 
 		// Bail if activating from network, or bulk
-		if ( is_network_admin() || isset( $_GET['activate-multi'] ) )
+		if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
 			return;
+		}
 
 		$upgrade = get_option( 'whimsy_version_upgraded_from' );
 
-		if( ! $upgrade ) { // First time install
-			wp_safe_redirect( admin_url( 'themes.php?page=whimsy-getting-started' ) ); exit;
+		if ( ! $upgrade ) { // First time install
+			wp_safe_redirect( admin_url( 'themes.php?page=whimsy-getting-started' ) );
+exit;
 		} else { // Update
-			wp_safe_redirect( admin_url( 'themes.php?page=whimsy-framework' ) ); exit;
+			wp_safe_redirect( admin_url( 'themes.php?page=whimsy-framework' ) );
+exit;
 		}
 	}
 }

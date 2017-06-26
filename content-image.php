@@ -11,8 +11,8 @@
 	<?php whimsy_post_meta_before(); ?>
 
 	<div class="entry-meta">
-        <?php whimsy_post_meta_inside(); ?>
-        <?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php whimsy_post_meta_inside(); ?>
+		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 	</div>
 	
 	<?php whimsy_post_meta_after(); ?>
@@ -21,9 +21,9 @@
 
 	<div class="entry-content">
 		
-        <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'whimsy-framework' ) ); 
-            
-			wp_link_pages( array(
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'whimsy-framework' ) );
+
+						wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'whimsy-framework' ),
 				'after'  => '</div>',
 			) ); ?>

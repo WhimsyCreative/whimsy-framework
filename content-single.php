@@ -11,7 +11,7 @@
 	<?php whimsy_post_meta_before(); ?>
 
 	<div class="entry-meta">
-        <?php whimsy_post_meta_inside(); ?>
+		<?php whimsy_post_meta_inside(); ?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</div>
 	
@@ -44,22 +44,22 @@
 			$tag_list = get_the_tag_list( '', __( ', ', 'whimsy-framework' ) );
 
 			if ( ! whimsy_categorized_blog() ) {
-				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'whimsy-framework' );
+			// This blog only has 1 category so we just need to worry about tags in the meta text
+			if ( '' != $tag_list ) {
+				$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'whimsy-framework' );
 				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'whimsy-framework' );
+				$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'whimsy-framework' );
 				}
 
 			} else {
-				// But this blog has loads of categories so we should probably display them here
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'whimsy-framework' );
+			// But this blog has loads of categories so we should probably display them here
+			if ( '' != $tag_list ) {
+				$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'whimsy-framework' );
 				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'whimsy-framework' );
+				$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'whimsy-framework' );
 				}
 
-			} // end check for categories on this blog
+			} // End if().
 
 			printf(
 				$meta_text,
@@ -67,13 +67,13 @@
 				$tag_list,
 				get_permalink()
 			);
-        
 
-                $whimsy_framework_hide_page_comments = get_theme_mod( 'whimsy_framework_hide_page_comments' );
-                if ( $whimsy_framework_hide_page_comments == 0 ) { ?>
-            
-			     <div class="entry-comment-meta"><a rel="nofollow" class="entry-comment" href="<?php the_permalink(); ?>#comments"><?php comments_number('0', '1', '%' );?> <i class="fa fa-comments"></i></a></div>
-                <?php }
+
+				$whimsy_framework_hide_page_comments = get_theme_mod( 'whimsy_framework_hide_page_comments' );
+				if ( $whimsy_framework_hide_page_comments == 0 ) { ?>
+
+							 <div class="entry-comment-meta"><a rel="nofollow" class="entry-comment" href="<?php the_permalink(); ?>#comments"><?php comments_number( '0', '1', '%' );?> <i class="fa fa-comments"></i></a></div>
+				<?php }
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'whimsy-framework' ), '<span class="edit-link">', '</span>' ); ?>
