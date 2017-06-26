@@ -2,6 +2,7 @@
 ###################
 vendor
 .vscode
+errorlog.txt
 
 # Compiled source #
 ###################
