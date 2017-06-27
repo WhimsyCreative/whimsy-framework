@@ -16,6 +16,8 @@ function whimsy_primary_menu() {
 
 		<?php whimsy_nav_inside_before(); ?>
 
+		<?php whimsy_responsive_nav(); ?>
+
 		<?php whimsy_nav_inside_after(); ?>
 
 		</nav><!-- /#site-navigation -->
@@ -24,11 +26,3 @@ function whimsy_primary_menu() {
 
 		<?php }
 endif; // End function_exists Primary Menu.
-
-// add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
-// function your_custom_menu_item ( $items, $args ) {
-// if (is_single() && $args->theme_location == 'primary') {
-// $items .= '<li>Show whatever</li>';
-// }
-// return $items;
-// }

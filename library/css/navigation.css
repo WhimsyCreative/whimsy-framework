@@ -326,3 +326,28 @@ ul.whimsy-nav.collapsed {
         padding-left: 2em;
     }
 }
+
+/* Sticky Menu */
+.sticky-menu {
+    position: fixed!important;
+    top: 0;
+}
+
+#site-navigation.sticky-menu a {
+    padding: 20px 26px 20px 10px;
+}
+
+#site-navigation.sticky-menu .whimsy-nav li .sub-collapser:before {
+    padding-top: 24px;
+    transition: all 0.4s ease;
+}
+
+body.admin-bar .sticky-menu {
+    top: 32px;
+}
+
+@media screen and (max-width: 980px) {
+    body.admin-bar .sticky-menu {
+        top: 46px;
+    }
+}

@@ -6,7 +6,6 @@
  * @return array
  */
 
-
 if ( ! function_exists( 'whimsy_body_classes' ) ) :
 	add_filter( 'body_class', 'whimsy_body_classes' );
 

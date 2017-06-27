@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Dynamically build out the header so it can be extended by the Customizer.
  *
@@ -7,6 +6,7 @@
  * @access public
  * @return void
  */
+
 if ( ! function_exists( 'whimsy_get_header' ) ) :
 function whimsy_get_header() {
 		?>
@@ -36,7 +36,6 @@ function whimsy_get_header() {
 										<?php
 }
 endif; // End function_exists whimsy_get_header check
-
 /**
  * HTML output for mobile site branding.
  *
@@ -44,6 +43,7 @@ endif; // End function_exists whimsy_get_header check
  * @access public
  * @return void
  */
+
 if ( ! function_exists( 'whimsy_mobile_branding' ) ) :
 function whimsy_mobile_branding() {
 		?>
@@ -66,7 +66,6 @@ function whimsy_mobile_branding() {
 
 		<?php }
 endif; // End function_exists mobile logo check.
-
 /**
  * HTML output for desktop site branding.
  *
@@ -74,6 +73,7 @@ endif; // End function_exists mobile logo check.
  * @access public
  * @return void
  */
+
 if ( ! function_exists( 'whimsy_desktop_branding' ) ) :
 function whimsy_desktop_branding() {
 		?>
@@ -96,4 +96,4 @@ function whimsy_desktop_branding() {
 		</div><!-- /.site-branding -->
 
 		<?php }
-endif; // End function_exists desktop logo check.
+endif; // End function_exists desktop logo check

@@ -78,11 +78,11 @@ if ( ! function_exists( 'whimsy_setup' ) ) :
          */
 		add_theme_support( 'html5', array(
 			'search-form',
-'comment-form',
-'comment-list',
-'gallery',
-'caption',
-		) );
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+					) );
 
 		/*
          * Enable support for Post Formats.
@@ -90,12 +90,12 @@ if ( ! function_exists( 'whimsy_setup' ) ) :
          */
 		add_theme_support( 'post-formats', array(
 			'aside',
-'image',
-'video',
-'quote',
-'link',
-'gallery',
-		) );
+			'image',
+			'video',
+			'quote',
+			'link',
+			'gallery',
+					) );
 
 		/**
 		 * Setup the WordPress core custom background feature.

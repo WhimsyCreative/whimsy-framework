@@ -39,7 +39,7 @@
 
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'whimsy-framework' ); ?></a>		
 
-					<?php whimsy_header(); ?>
+			<?php whimsy_header(); ?>
 
 	</div><!-- /#header-container -->
 
